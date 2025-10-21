@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import type { Database } from "@/integrations/supabase/types";
 
 export const useProducts = () => {
-  return useQuery({
+  return useQuery<Database['public']['Tables']['products']['Row'][]>({
     queryKey: ["products"],
     queryFn: async () => {
       const { data, error } = await supabase
@@ -18,7 +19,7 @@ export const useProducts = () => {
 };
 
 export const useFeaturedProducts = () => {
-  return useQuery({
+  return useQuery<Database['public']['Tables']['products']['Row'][]>({
     queryKey: ["featured-products"],
     queryFn: async () => {
       const { data, error } = await supabase
@@ -35,7 +36,7 @@ export const useFeaturedProducts = () => {
 };
 
 export const useProduct = (id: string) => {
-  return useQuery({
+  return useQuery<Database['public']['Tables']['products']['Row'] | null>({
     queryKey: ["product", id],
     queryFn: async () => {
       const { data, error } = await supabase

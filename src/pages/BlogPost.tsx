@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Loader2, Clock, Calendar } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import type { Database } from '@/integrations/supabase/types';
 
 interface BlogPost {
   id: string;
@@ -32,7 +33,7 @@ const BlogPost = () => {
         .from('blog_posts')
         .select('*')
         .eq('slug', slug)
-        .maybeSingle();
+        .maybeSingle() as { data: Database['public']['Tables']['blog_posts']['Row'] | null; error: any };
       if (error) {
         console.error('Error fetching blog post:', error);
         setLoading(false);

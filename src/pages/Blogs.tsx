@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import type { Database } from '@/integrations/supabase/types';
 
 interface BlogPost {
   id: string;
@@ -25,7 +26,7 @@ const Blogs = () => {
       const { data, error } = await supabase
         .from('blog_posts')
         .select('id, title, excerpt, slug, published_date, author')
-        .order('published_date', { ascending: false });
+        .order('published_date', { ascending: false }) as { data: BlogPost[] | null; error: any };
       if (error) {
         console.error('Error fetching blog posts:', error);
         setLoading(false);

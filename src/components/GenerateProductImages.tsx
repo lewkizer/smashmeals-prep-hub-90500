@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
+import type { Database } from "@/integrations/supabase/types";
 
 export const GenerateProductImages = () => {
   const [isGenerating, setIsGenerating] = useState(false);
@@ -18,7 +19,7 @@ export const GenerateProductImages = () => {
         .from("products")
         .select("*")
         .is("image_url", null)
-        .eq("featured_this_week", true);
+        .eq("featured_this_week", true) as { data: Database['public']['Tables']['products']['Row'][] | null; error: any };
 
       if (error) throw error;
 
