@@ -95,7 +95,7 @@ const WeeklyMenu = () => {
         </div>
 
         <div className="text-center">
-          <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+          <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
             <Button variant="hero" size="lg">
               View Full Menu & Order
             </Button>

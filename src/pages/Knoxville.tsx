@@ -31,7 +31,7 @@ const Knoxville = () => {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 East Tennessee's premier gluten-free meal prep, now shipping to Knoxville. Chef-prepared meals delivered to your doorstep weekly.
               </p>
-              <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+              <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
                   View This Week's Menu
                 </Button>
@@ -134,7 +134,7 @@ const Knoxville = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Join Knoxville residents eating healthier with SmashMeals
             </p>
-            <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 Order Now - Ships to Knoxville
               </Button>

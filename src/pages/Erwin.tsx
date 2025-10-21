@@ -31,7 +31,7 @@ const Erwin = () => {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Fresh, chef-prepared meals delivered to Erwin. 100% gluten-free with full nutritional tracking.
               </p>
-              <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+              <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
                   View This Week's Menu
                 </Button>
@@ -103,7 +103,7 @@ const Erwin = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Join Erwin residents simplifying their nutrition
             </p>
-            <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 Order Now
               </Button>

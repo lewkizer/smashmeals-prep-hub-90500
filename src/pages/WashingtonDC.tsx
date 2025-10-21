@@ -31,7 +31,7 @@ const WashingtonDC = () => {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Premium meal prep shipped directly to Washington, DC. 100% gluten-free, chef-prepared meals for busy professionals.
               </p>
-              <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+              <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
                   View This Week's Menu
                 </Button>
@@ -134,7 +134,7 @@ const WashingtonDC = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Join busy DC professionals eating healthier with SmashMeals
             </p>
-            <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 Order Now - Ships to DC
               </Button>

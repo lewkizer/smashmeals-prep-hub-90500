@@ -74,7 +74,7 @@ const Menu = () => {
                 </Badge>
               ))}
             </div>
-            <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg px-12 py-7 h-auto font-inter shadow-elevated">
                 View Full Menu & Order
               </Button>
@@ -269,7 +269,7 @@ const Menu = () => {
             <p className="text-xl font-inter text-muted-foreground mb-8">
               Browse over 20 delicious options and place your order before Thursday at midnight
             </p>
-            <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg px-12 py-7 h-auto font-inter shadow-elevated">
                 View Menu & Order Now
               </Button>

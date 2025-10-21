@@ -32,7 +32,7 @@ const Asheville = () => {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Premium meal prep shipped directly to your Asheville doorstep. 100% gluten-free, chef-prepared meals that make healthy eating effortless.
               </p>
-              <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+              <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
                   View This Week's Menu
                 </Button>
@@ -168,7 +168,7 @@ const Asheville = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Join Asheville residents enjoying convenient, gluten-free meal prep
             </p>
-            <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 Order Now - Ships to Asheville
               </Button>

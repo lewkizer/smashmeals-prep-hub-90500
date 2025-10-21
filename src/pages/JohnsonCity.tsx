@@ -32,7 +32,7 @@ const JohnsonCity = () => {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Fresh, chef-prepared meals delivered weekly to Johnson City and surrounding areas. 100% gluten-free, macro-counted, and ready to eat.
               </p>
-              <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+              <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
                   View This Week's Menu
                 </Button>
@@ -157,7 +157,7 @@ const JohnsonCity = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Join hundreds of Johnson City residents eating healthier with SmashMeals
             </p>
-            <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 Order Now for This Week
               </Button>

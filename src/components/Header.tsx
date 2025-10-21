@@ -87,7 +87,7 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+          <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
             <Button variant="hero" size="lg" className="hidden md:flex">
               Order Now
             </Button>
@@ -117,7 +117,7 @@ const Header = () => {
                   {link.name}
                 </a>
               ))}
-              <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer" className="w-full">
+              <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer" className="w-full">
                 <Button variant="hero" className="w-full">
                   Order Now
                 </Button>

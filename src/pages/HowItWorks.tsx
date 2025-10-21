@@ -426,7 +426,7 @@ const HowItWorks = () => {
             <p className="text-xl font-inter text-muted-foreground mb-8">
               Browse this week's menu and place your order before <span className="text-accent font-bold">Thursday at midnight</span>
             </p>
-            <a href="https://smashmeals.bottle.com/b/9521039" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg px-12 py-7 h-auto font-inter shadow-elevated hover:shadow-[0_30px_90px_-20px_hsl(var(--primary)/0.6)]">
                 View Menu & Order Now
               </Button>
