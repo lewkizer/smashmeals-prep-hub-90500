@@ -14,7 +14,102 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blog_posts: {
+        Row: {
+          author: string | null
+          content: string
+          created_at: string
+          excerpt: string | null
+          featured_image_url: string | null
+          id: string
+          published_date: string | null
+          reading_time: number | null
+          slug: string
+          tags: string[] | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author?: string | null
+          content: string
+          created_at?: string
+          excerpt?: string | null
+          featured_image_url?: string | null
+          id?: string
+          published_date?: string | null
+          reading_time?: number | null
+          slug: string
+          tags?: string[] | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author?: string | null
+          content?: string
+          created_at?: string
+          excerpt?: string | null
+          featured_image_url?: string | null
+          id?: string
+          published_date?: string | null
+          reading_time?: number | null
+          slug?: string
+          tags?: string[] | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      products: {
+        Row: {
+          calories: number
+          carbs: number
+          category: string
+          created_at: string
+          description: string | null
+          fat: number
+          featured_this_week: boolean
+          id: string
+          image_url: string | null
+          is_available: boolean
+          name: string
+          price: number
+          protein: number
+          updated_at: string
+        }
+        Insert: {
+          calories: number
+          carbs: number
+          category?: string
+          created_at?: string
+          description?: string | null
+          fat: number
+          featured_this_week?: boolean
+          id?: string
+          image_url?: string | null
+          is_available?: boolean
+          name: string
+          price: number
+          protein: number
+          updated_at?: string
+        }
+        Update: {
+          calories?: number
+          carbs?: number
+          category?: string
+          created_at?: string
+          description?: string | null
+          fat?: number
+          featured_this_week?: boolean
+          id?: string
+          image_url?: string | null
+          is_available?: boolean
+          name?: string
+          price?: number
+          protein?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
