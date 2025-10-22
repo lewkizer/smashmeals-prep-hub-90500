@@ -2,15 +2,76 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Mail, MessageSquare } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle subscription logic here
-    console.log("Subscribed:", { email, phone });
+    
+    if (!email) {
+      toast({
+        title: "Email required",
+        description: "Please enter your email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      // Insert into database
+      const { error: dbError } = await supabase
+        .from("newsletter_subscribers")
+        .insert({ email, phone: phone || null });
+
+      if (dbError) {
+        if (dbError.code === "23505") {
+          toast({
+            title: "Already subscribed",
+            description: "This email is already on our list!",
+          });
+        } else {
+          throw dbError;
+        }
+        return;
+      }
+
+      // Send notification emails
+      const { error: emailError } = await supabase.functions.invoke(
+        "notify-newsletter-signup",
+        {
+          body: { email, phone },
+        }
+      );
+
+      if (emailError) {
+        console.error("Email notification error:", emailError);
+      }
+
+      toast({
+        title: "Success!",
+        description: "You're subscribed! Check your email for confirmation.",
+      });
+
+      setEmail("");
+      setPhone("");
+    } catch (error: any) {
+      console.error("Subscription error:", error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -48,8 +109,14 @@ const Newsletter = () => {
                 />
               </div>
             </div>
-            <Button type="submit" variant="hero" size="lg" className="w-full md:w-auto px-12">
-              Subscribe
+            <Button 
+              type="submit" 
+              variant="hero" 
+              size="lg" 
+              className="w-full md:w-auto px-12"
+              disabled={isLoading}
+            >
+              {isLoading ? "Subscribing..." : "Subscribe"}
             </Button>
           </form>
 
