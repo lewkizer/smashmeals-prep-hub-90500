@@ -42,7 +42,7 @@ const Hero = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-on-scroll animate-delay-300">
-            <a href="/menu">
+            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg px-8 py-6 h-auto w-full sm:w-auto font-inter hover:scale-105 hover:shadow-2xl transition-all duration-300">
                 View This Week's Menu
               </Button>
