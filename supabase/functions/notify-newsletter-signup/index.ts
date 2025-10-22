@@ -1,6 +1,10 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 
-const RESEND_API_KEY = "re_aQZDb2xv_KJQYiHpXhoH5v5cQd6tAhzKn";
+const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+
+if (!RESEND_API_KEY) {
+  throw new Error("RESEND_API_KEY is not configured in secrets");
+}
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
