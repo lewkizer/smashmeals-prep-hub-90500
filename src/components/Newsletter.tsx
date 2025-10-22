@@ -43,17 +43,8 @@ const Newsletter = () => {
         return;
       }
 
-      // Send notification emails
-      const { error: emailError } = await supabase.functions.invoke(
-        "notify-newsletter-signup",
-        {
-          body: { email, phone },
-        }
-      );
-
-      if (emailError) {
-        console.error("Email notification error:", emailError);
-      }
+      // Email notifications can be added later with Resend integration
+      console.log("New subscriber:", email, phone);
 
       toast({
         title: "Success!",
