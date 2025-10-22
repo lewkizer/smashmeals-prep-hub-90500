@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Calendar } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import type { Database } from '@/integrations/supabase/types';
 
@@ -47,36 +47,37 @@ const Blogs = () => {
         <link rel="canonical" href="https://smashmeals.com/blogs" />
       </Helmet>
       
-      <div className="min-h-screen flex flex-col bg-background">
+      <div className="min-h-screen flex flex-col">
         <Header />
         
-        <main className="flex-1 pt-32 pb-16">
-          <div className="container mx-auto px-4">
+        <main className="flex-1 pt-32 pb-20">
+          <div className="container mx-auto px-4 max-w-7xl">
             {/* Hero Section */}
-            <section className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold font-playfair mb-4">
+            <section className="text-center mb-16">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-playfair mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 SmashMeals Blog
               </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl font-inter text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Discover meal prep tips, healthy recipes, nutrition advice, and wellness content to fuel your fitness journey.
               </p>
             </section>
 
             {/* Blog Posts Grid */}
             {loading ? (
-              <div className="flex justify-center items-center py-20">
-                <Loader2 className="h-8 w-8 animate-spin text-primary" />
+              <div className="flex justify-center items-center py-32">
+                <Loader2 className="h-12 w-12 animate-spin text-primary" />
               </div>
             ) : posts.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {posts.map(post => (
-                  <Card key={post.id} className="flex flex-col hover:shadow-lg transition-shadow">
-                    <CardHeader>
-                      <CardTitle className="font-playfair text-xl">
+                  <Card key={post.id} className="flex flex-col border-0 bg-white/60 dark:bg-card/60 backdrop-blur-sm shadow-card hover:shadow-elevated transition-all duration-300 hover:scale-105">
+                    <CardHeader className="space-y-4 pb-4">
+                      <CardTitle className="font-playfair text-2xl leading-tight line-clamp-2">
                         {post.title}
                       </CardTitle>
                       {post.published_date && (
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm font-inter text-muted-foreground flex items-center gap-2">
+                          <Calendar className="h-4 w-4" />
                           {new Date(post.published_date).toLocaleDateString('en-US', {
                             year: 'numeric',
                             month: 'long',
@@ -84,13 +85,18 @@ const Blogs = () => {
                           })}
                         </p>
                       )}
+                      {post.author && (
+                        <p className="text-sm font-inter text-primary font-medium">
+                          By {post.author}
+                        </p>
+                      )}
                     </CardHeader>
-                    <CardContent className="flex-1 flex flex-col">
-                      <p className="text-muted-foreground mb-4 flex-1">
+                    <CardContent className="flex-1 flex flex-col space-y-6">
+                      <p className="text-muted-foreground font-inter leading-relaxed flex-1 line-clamp-4">
                         {post.excerpt}
                       </p>
-                      <a href={`/blog/${post.slug}`}>
-                        <Button variant="outline" className="w-full">
+                      <a href={`/blog/${post.slug}`} className="mt-auto">
+                        <Button variant="hero" className="w-full font-inter">
                           Read More
                         </Button>
                       </a>
@@ -99,8 +105,8 @@ const Blogs = () => {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-20">
-                <p className="text-muted-foreground text-lg">
+              <div className="text-center py-32">
+                <p className="text-muted-foreground text-xl font-inter">
                   No blog posts available at the moment. Check back soon!
                 </p>
               </div>

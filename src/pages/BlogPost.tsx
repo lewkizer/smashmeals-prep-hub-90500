@@ -5,7 +5,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Loader2, Clock, Calendar } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Loader2, Clock, Calendar, ArrowLeft } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import type { Database } from '@/integrations/supabase/types';
 
@@ -81,31 +82,51 @@ const BlogPost = () => {
         {post.tags && <meta name="keywords" content={post.tags.join(', ')} />}
       </Helmet>
       
-      <div className="min-h-screen flex flex-col bg-background">
+      <div className="min-h-screen flex flex-col">
         <Header />
         
-        <main className="flex-1 pt-32 pb-16">
-          <article className="container mx-auto px-4 max-w-4xl">
+        <main className="flex-1 pt-32 pb-20">
+          <article className="container mx-auto px-4 max-w-5xl">
+            {/* Back Button */}
+            <a href="/blogs" className="inline-flex items-center text-primary hover:text-primary/80 mb-8 transition-colors group">
+              <ArrowLeft className="w-5 h-5 mr-2 transition-transform group-hover:-translate-x-1" />
+              <span className="font-inter font-medium">Back to Blog</span>
+            </a>
+
             {/* Featured Image */}
             {post.featured_image_url && (
-              <img 
-                src={post.featured_image_url} 
-                alt={post.title}
-                className="w-full h-64 md:h-96 object-cover rounded-lg mb-8"
-              />
+              <div className="relative w-full h-80 md:h-[500px] rounded-2xl overflow-hidden mb-12 shadow-elevated">
+                <img 
+                  src={post.featured_image_url} 
+                  alt={post.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             )}
 
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl font-bold font-playfair mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-playfair mb-8 leading-tight">
               {post.title}
             </h1>
 
             {/* Metadata */}
-            <div className="flex flex-wrap items-center gap-4 mb-8 text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-6 mb-10 pb-10 border-b border-border">
+              {post.author && (
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-primary font-bold font-inter">
+                      {post.author.charAt(0).toUpperCase()}
+                    </span>
+                  </div>
+                  <span className="font-inter font-medium text-foreground">
+                    {post.author}
+                  </span>
+                </div>
+              )}
               {post.published_at && (
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4" />
-                  <span className="text-sm">
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Calendar className="h-5 w-5" />
+                  <span className="text-sm font-inter">
                     {new Date(post.published_at).toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'long',
@@ -115,18 +136,18 @@ const BlogPost = () => {
                 </div>
               )}
               {post.reading_time && (
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4" />
-                  <span className="text-sm">{post.reading_time} min read</span>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Clock className="h-5 w-5" />
+                  <span className="text-sm font-inter">{post.reading_time} min read</span>
                 </div>
               )}
             </div>
 
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="flex flex-wrap gap-3 mb-12">
                 {post.tags.map((tag, index) => (
-                  <Badge key={index} variant="secondary">
+                  <Badge key={index} variant="secondary" className="px-4 py-2 text-sm font-inter">
                     {tag}
                   </Badge>
                 ))}
@@ -134,11 +155,24 @@ const BlogPost = () => {
             )}
 
             {/* Content */}
-            <Card>
-              <CardContent className="prose prose-lg max-w-none pt-6">
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            <Card className="border-0 bg-white/80 dark:bg-card/80 backdrop-blur-sm shadow-card mb-12">
+              <CardContent className="prose prose-lg md:prose-xl max-w-none pt-12 pb-12 px-8 md:px-12">
+                <div 
+                  dangerouslySetInnerHTML={{ __html: post.content }} 
+                  className="font-inter leading-relaxed"
+                />
               </CardContent>
             </Card>
+
+            {/* Back to Blog CTA */}
+            <div className="text-center py-12 border-t border-border">
+              <a href="/blogs">
+                <Button variant="hero" size="lg" className="font-inter">
+                  <ArrowLeft className="w-5 h-5 mr-2" />
+                  Read More Articles
+                </Button>
+              </a>
+            </div>
           </article>
         </main>
 
