@@ -156,11 +156,20 @@ const BlogPost = () => {
 
             {/* Content */}
             <Card className="border-0 bg-white/80 dark:bg-card/80 backdrop-blur-sm shadow-card mb-12">
-              <CardContent className="prose prose-lg md:prose-xl max-w-none pt-12 pb-12 px-8 md:px-12">
-                <div 
-                  dangerouslySetInnerHTML={{ __html: post.content }} 
-                  className="font-inter leading-relaxed"
-                />
+              <CardContent className="pt-12 pb-12 px-8 md:px-12">
+                <div className="prose prose-lg md:prose-xl max-w-none dark:prose-invert
+                  [&>p]:mb-6 [&>p]:leading-relaxed [&>p]:text-foreground
+                  [&>h1]:text-4xl [&>h1]:font-bold [&>h1]:mb-6 [&>h1]:mt-8 [&>h1]:font-playfair [&>h1]:text-foreground
+                  [&>h2]:text-3xl [&>h2]:font-bold [&>h2]:mb-4 [&>h2]:mt-8 [&>h2]:font-playfair [&>h2]:text-foreground
+                  [&>h3]:text-2xl [&>h3]:font-semibold [&>h3]:mb-3 [&>h3]:mt-6 [&>h3]:font-playfair [&>h3]:text-foreground
+                  [&>ul]:mb-6 [&>ul]:ml-6 [&>ul]:list-disc [&>ul]:space-y-2
+                  [&>ol]:mb-6 [&>ol]:ml-6 [&>ol]:list-decimal [&>ol]:space-y-2
+                  [&>li]:text-foreground [&>li]:leading-relaxed
+                  [&>blockquote]:border-l-4 [&>blockquote]:border-primary [&>blockquote]:pl-4 [&>blockquote]:italic [&>blockquote]:my-6
+                  font-inter whitespace-pre-wrap"
+                >
+                  {post.content}
+                </div>
               </CardContent>
             </Card>
 
