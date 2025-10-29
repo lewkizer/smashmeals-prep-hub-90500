@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import ReactMarkdown from 'react-markdown';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -166,9 +167,11 @@ const BlogPost = () => {
                   [&>ol]:mb-6 [&>ol]:ml-6 [&>ol]:list-decimal [&>ol]:space-y-2
                   [&>li]:text-foreground [&>li]:leading-relaxed
                   [&>blockquote]:border-l-4 [&>blockquote]:border-primary [&>blockquote]:pl-4 [&>blockquote]:italic [&>blockquote]:my-6
-                  font-inter whitespace-pre-wrap"
+                  [&>a]:text-primary [&>a]:font-semibold [&>a]:underline [&>a:hover]:text-primary/80
+                  [&>strong]:font-bold [&>strong]:text-foreground
+                  font-inter"
                 >
-                  {post.content}
+                  <ReactMarkdown>{post.content}</ReactMarkdown>
                 </div>
               </CardContent>
             </Card>
