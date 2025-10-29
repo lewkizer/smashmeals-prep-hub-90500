@@ -44,7 +44,7 @@ const Header = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Menu", href: "https://smashmeals.bottle.com/b/9730175" },
+    { name: "Menu", href: "https://smashmeals.bottle.com/b/9814360" },
     { name: "Thanksgiving", href: "/thanksgiving" },
     { name: "How It Works", href: "/how-it-works" },
     { name: "Catering", href: "/catering" },
@@ -88,7 +88,7 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer" onClick={() => {
+          <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer" onClick={() => {
             if ((window as any).fbq) (window as any).fbq('track', 'InitiateCheckout');
           }}>
             <Button variant="hero" size="lg" className="hidden md:flex">
@@ -120,7 +120,7 @@ const Header = () => {
                   {link.name}
                 </a>
               ))}
-              <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer" className="w-full" onClick={() => {
+              <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer" className="w-full" onClick={() => {
                 if ((window as any).fbq) (window as any).fbq('track', 'InitiateCheckout');
               }}>
                 <Button variant="hero" className="w-full">
