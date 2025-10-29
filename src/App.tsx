@@ -26,6 +26,7 @@ import Blountville from "./pages/Blountville";
 import Erwin from "./pages/Erwin";
 import WashingtonDC from "./pages/WashingtonDC";
 import Jonesborough from "./pages/Jonesborough";
+import Thanksgiving from "./pages/Thanksgiving";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -60,6 +61,7 @@ const App = () => (
           <Route path="/erwin" element={<Erwin />} />
           <Route path="/washington-dc" element={<WashingtonDC />} />
           <Route path="/jonesborough" element={<Jonesborough />} />
+          <Route path="/thanksgiving" element={<Thanksgiving />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
