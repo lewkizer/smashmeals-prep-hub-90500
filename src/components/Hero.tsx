@@ -34,11 +34,22 @@ const Hero = () => {
             Order by Thursday at 11:59 PM. Pick up Sunday. <span className="font-caveat text-2xl md:text-3xl text-accent">Fresh</span>, chef-made meals—no guessing, no gluten.
           </p>
           
-          {/* Promo Code Banner */}
-          <div className="inline-block bg-accent/90 backdrop-blur-sm border-2 border-white/20 rounded-lg px-6 py-4 mb-8 shadow-elevated animate-on-scroll animate-delay-200 hover:scale-105 transition-transform duration-300">
-            <p className="text-white font-inter text-lg">
-              <span className="font-bold">New Customer?</span> Use code <span className="font-bold text-white bg-white/20 px-3 py-1 rounded">WELCOME</span> for 10% off your first order!
-            </p>
+          {/* Promo Banners */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-on-scroll animate-delay-200">
+            <div className="flex-1 bg-accent/90 backdrop-blur-sm border-2 border-white/20 rounded-lg px-6 py-4 shadow-elevated hover:scale-105 transition-transform duration-300">
+              <p className="text-white font-inter text-lg">
+                <span className="font-bold">New Customer?</span> Use code <span className="font-bold text-white bg-white/20 px-3 py-1 rounded">WELCOME</span> for 10% off your first order!
+              </p>
+            </div>
+            <a href="https://smashmeals.bottle.com/b/9814348" target="_blank" rel="noopener noreferrer" onClick={() => {
+              if ((window as any).fbq) (window as any).fbq('track', 'InitiateCheckout');
+            }}>
+              <div className="bg-gradient-to-r from-orange-600 to-orange-500 backdrop-blur-sm border-2 border-orange-300 rounded-lg px-6 py-4 shadow-elevated hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <p className="text-white font-inter text-lg font-bold text-center whitespace-nowrap">
+                  🦃 Special Thanksgiving Menu
+                </p>
+              </div>
+            </a>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-on-scroll animate-delay-300">

@@ -45,6 +45,7 @@ const Header = () => {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Menu", href: "https://smashmeals.bottle.com/b/9730175" },
+    { name: "Thanksgiving", href: "/thanksgiving" },
     { name: "How It Works", href: "/how-it-works" },
     { name: "Catering", href: "/catering" },
     { name: "About", href: "/about" },

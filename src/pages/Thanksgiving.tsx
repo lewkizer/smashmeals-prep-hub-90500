@@ -69,7 +69,7 @@ const Thanksgiving = () => {
               asChild
             >
               <a 
-                href="https://smashmeals.hrpos.heartland.us/menu" 
+                href="https://smashmeals.bottle.com/b/9814348" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
@@ -124,7 +124,7 @@ const Thanksgiving = () => {
                     asChild
                   >
                     <a 
-                      href="https://smashmeals.hrpos.heartland.us/menu" 
+                      href="https://smashmeals.bottle.com/b/9814348" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
