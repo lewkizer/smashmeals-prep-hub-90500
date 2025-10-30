@@ -3,25 +3,95 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const Thanksgiving = () => {
   const thanksgivingItems = [
-    { name: "Green Bean Casserole", category: "Sides" },
-    { name: "Smoked Bourbon Honey Ham", category: "Mains" },
-    { name: "Broccoli Rice Casserole", category: "Sides" },
-    { name: "Smoked Turkey Platter (feeds 6)", category: "Mains" },
-    { name: "Smoked Turkey Platter (feeds 12)", category: "Mains" },
-    { name: "Orange Bourbon Cranberry Sauce (quart)", category: "Sides" },
-    { name: "Orange Bourbon Cranberry Sauce (pint)", category: "Sides" },
-    { name: "Paleo Sweet Potato Casserole (feeds 6)", category: "Sides" },
-    { name: "Sweet Potato Casserole (feeds 12)", category: "Sides" },
-    { name: "Pumpkin Pie (gluten free/dairy free)", category: "Desserts" },
-    { name: "Chocolate Chip Cookie", category: "Desserts" },
-    { name: "Bacon Deviled Eggs (12 Halves)", category: "Appetizers" },
-    { name: "Baked Potato Salad", category: "Sides" },
-    { name: "Dirty Mashed Potatoes", category: "Sides" },
-    { name: "White Cheddar Mac and Cheese", category: "Sides" },
-    { name: "Pumpkin Cheese Cake Cup", category: "Desserts" },
+    { 
+      name: "Green Bean Casserole", 
+      category: "Sides",
+      description: "Classic green beans baked with creamy mushroom sauce and crispy fried onions. A traditional Thanksgiving favorite ready to heat and serve."
+    },
+    { 
+      name: "Smoked Bourbon Honey Ham", 
+      category: "Mains",
+      description: "Slow-smoked ham glazed with a sweet bourbon honey sauce. Fully cooked and ready to slice, perfect as your main course or alongside turkey."
+    },
+    { 
+      name: "Broccoli Rice Casserole", 
+      category: "Sides",
+      description: "Fresh broccoli and fluffy rice baked in a creamy cheese sauce. Comfort food at its finest, ready to warm up and enjoy."
+    },
+    { 
+      name: "Smoked Turkey Platter (feeds 6)", 
+      category: "Mains",
+      description: "Whole smoked turkey, perfectly seasoned and fully cooked. Feeds 6 people. Just warm and serve for an effortless main course."
+    },
+    { 
+      name: "Smoked Turkey Platter (feeds 12)", 
+      category: "Mains",
+      description: "Whole smoked turkey, perfectly seasoned and fully cooked. Feeds 12 people. Just warm and serve for an effortless main course."
+    },
+    { 
+      name: "Orange Bourbon Cranberry Sauce (quart)", 
+      category: "Sides",
+      description: "House-made cranberry sauce with hints of orange zest and bourbon. Sweet, tangy, and perfect for turkey. One quart size."
+    },
+    { 
+      name: "Orange Bourbon Cranberry Sauce (pint)", 
+      category: "Sides",
+      description: "House-made cranberry sauce with hints of orange zest and bourbon. Sweet, tangy, and perfect for turkey. One pint size."
+    },
+    { 
+      name: "Paleo Sweet Potato Casserole (feeds 6)", 
+      category: "Sides",
+      description: "Naturally sweet, mashed sweet potatoes with a pecan topping. Paleo-friendly, gluten-free, and dairy-free. Ready to bake."
+    },
+    { 
+      name: "Sweet Potato Casserole (feeds 12)", 
+      category: "Sides",
+      description: "Creamy mashed sweet potatoes topped with buttery pecans. A holiday classic ready to pop in the oven and serve 12."
+    },
+    { 
+      name: "Pumpkin Pie (gluten free/dairy free)", 
+      category: "Desserts",
+      description: "Classic pumpkin pie with warm spices in a gluten-free and dairy-free crust. The perfect end to your Thanksgiving feast."
+    },
+    { 
+      name: "Chocolate Chip Cookie", 
+      category: "Desserts",
+      description: "Fresh-baked chocolate chip cookies. Soft, chewy, and loaded with chocolate chips. A sweet treat everyone will love."
+    },
+    { 
+      name: "Bacon Deviled Eggs (12 Halves)", 
+      category: "Appetizers",
+      description: "Creamy deviled eggs topped with crispy bacon bits. The perfect appetizer to start your Thanksgiving meal. 12 halves per order."
+    },
+    { 
+      name: "Baked Potato Salad", 
+      category: "Sides",
+      description: "Tender potatoes baked with cheese, bacon, and green onions. All the flavors of a loaded baked potato in a shareable side dish."
+    },
+    { 
+      name: "Dirty Mashed Potatoes", 
+      category: "Sides",
+      description: "Creamy mashed potatoes loaded with bacon, cheese, and green onions. Rich, indulgent, and ready to warm up."
+    },
+    { 
+      name: "White Cheddar Mac and Cheese", 
+      category: "Sides",
+      description: "Elbow pasta in a rich white cheddar cheese sauce. Creamy, comforting, and loved by kids and adults alike. Ready to bake."
+    },
+    { 
+      name: "Pumpkin Cheese Cake Cup", 
+      category: "Desserts",
+      description: "Individual pumpkin cheesecake cups with a graham cracker crust. Creamy, spiced, and perfectly portioned for easy serving."
+    },
   ];
 
   const categories = {
@@ -88,20 +158,28 @@ const Thanksgiving = () => {
                   <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-8 text-foreground text-center">
                     {category}
                   </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {items.map((item, index) => (
-                      <Card 
-                        key={index}
-                        className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card/80 backdrop-blur-sm border-2"
-                      >
-                        <CardContent className="p-6">
-                          <h3 className="font-playfair text-xl font-semibold text-foreground text-center">
-                            {item.name}
-                          </h3>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
+                  <TooltipProvider>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {items.map((item, index) => (
+                        <Tooltip key={index}>
+                          <TooltipTrigger asChild>
+                            <Card 
+                              className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card/80 backdrop-blur-sm border-2 cursor-help"
+                            >
+                              <CardContent className="p-6">
+                                <h3 className="font-playfair text-xl font-semibold text-foreground text-center">
+                                  {item.name}
+                                </h3>
+                              </CardContent>
+                            </Card>
+                          </TooltipTrigger>
+                          <TooltipContent className="max-w-xs">
+                            <p>{item.description}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      ))}
+                    </div>
+                  </TooltipProvider>
                 </div>
               )
             ))}
