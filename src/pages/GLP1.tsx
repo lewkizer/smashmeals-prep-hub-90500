@@ -18,7 +18,7 @@ const GLP1 = () => {
 
       <Header />
 
-      <main className="container mx-auto px-4 py-8 max-w-7xl">
+      <main className="container mx-auto px-4 pt-32 pb-8 max-w-7xl">
         {/* Hero Section */}
         <section className="grid lg:grid-cols-[1.3fr_0.7fr] gap-8 items-center mb-16">
           <div>
