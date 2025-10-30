@@ -73,6 +73,11 @@ const Thanksgiving = () => {
       description: "Creamy deviled eggs topped with crispy bacon bits. The perfect appetizer to start your Thanksgiving meal. 12 halves per order."
     },
     { 
+      name: "Thanksgiving Smash Charcuterie Special", 
+      category: "Appetizers",
+      description: "Delight your family and friends with a charcuterie appetizer box to snack on while waiting for the main meal. Each box includes a trio of cured meats, four artisanal cheeses along with dried fruits, mixed nuts, olives, pickles, and sweet treats. Gluten free crackers and pretzels packaged separately. The 10x10 bakery box is beautifully arranged and ready to serve straight from the fridge to the table. Serves 6 people as an appetizer. For a larger board customized to your event reach out directly to info@tasteandseecharcuterie.com."
+    },
+    { 
       name: "Baked Potato Salad", 
       category: "Sides",
       description: "Tender potatoes baked with cheese, bacon, and green onions. All the flavors of a loaded baked potato in a shareable side dish."
