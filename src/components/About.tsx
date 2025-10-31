@@ -7,12 +7,12 @@ const About = () => {
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">About SmashMeals</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Founded in Kingsport, SmashMeals has been serving the Tri-Cities for over 8 years. 
-                We're proud to be the region's <span className="text-primary font-semibold">ONLY 100% gluten-free kitchen</span>.
+                Founded in Kingsport in 2017, SmashMeals was the <span className="text-primary font-bold">FIRST meal prep company</span> in the Tri-Cities region. 
+                For over 8 years, we've been serving our community with the region's <span className="text-primary font-semibold">ONLY 100% gluten-free kitchen</span>.
               </p>
               <p className="text-lg text-muted-foreground mb-6">
-                Our mission is simple: make healthy eating accessible, delicious, and stress-free. 
-                Every meal is chef-crafted with high-quality ingredients in our dedicated gluten-free facility.
+                While others have come and gone, we've remained committed to our founding mission: make healthy eating accessible, delicious, and stress-free. 
+                Every meal is chef-crafted with high-quality ingredients in our dedicated gluten-free facility—never cross-contaminated, always trustworthy.
               </p>
               <p className="text-lg font-semibold text-foreground">
                 Eat Healthy. Live Healthy.
