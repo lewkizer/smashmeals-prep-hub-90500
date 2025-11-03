@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { useQueryClient } from "@tanstack/react-query";
@@ -7,10 +8,25 @@ import { Loader2 } from "lucide-react";
 import type { Database } from "@/integrations/supabase/types";
 
 export const GenerateProductImages = () => {
+  const navigate = useNavigate();
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const queryClient = useQueryClient();
 
+  useEffect(() => {
+    // Check if user is authenticated
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setIsAuthenticated(!!session);
+    });
+  }, []);
+
   const generateImages = async () => {
+    if (!isAuthenticated) {
+      toast.error("You must be logged in to generate images");
+      navigate("/auth");
+      return;
+    }
+
     setIsGenerating(true);
     
     try {

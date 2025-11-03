@@ -29,6 +29,8 @@ import Jonesborough from "./pages/Jonesborough";
 import Thanksgiving from "./pages/Thanksgiving";
 import GLP1 from "./pages/GLP1";
 import NotFound from "./pages/NotFound";
+import Auth from "./pages/Auth";
+import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -64,6 +66,8 @@ const App = () => (
           <Route path="/jonesborough" element={<Jonesborough />} />
           <Route path="/thanksgiving" element={<Thanksgiving />} />
           <Route path="/glp1" element={<GLP1 />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
