@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import type { Database } from "@/integrations/supabase/types";
 
 type Product = Database['public']['Tables']['products']['Row'];
@@ -20,7 +20,7 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [items, setItems] = useState<CartItem[]>(() => {
     const saved = localStorage.getItem("smashmeals-cart");
     return saved ? JSON.parse(saved) : [];
