@@ -4,11 +4,10 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 const Thanksgiving = () => {
   const thanksgivingItems = [
@@ -163,28 +162,29 @@ const Thanksgiving = () => {
                   <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-8 text-foreground text-center">
                     {category}
                   </h2>
-                  <TooltipProvider>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {items.map((item, index) => (
-                        <Tooltip key={index}>
-                          <TooltipTrigger asChild>
-                            <Card 
-                              className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card/80 backdrop-blur-sm border-2 cursor-help"
-                            >
-                              <CardContent className="p-6">
-                                <h3 className="font-playfair text-xl font-semibold text-foreground text-center">
-                                  {item.name}
-                                </h3>
-                              </CardContent>
-                            </Card>
-                          </TooltipTrigger>
-                          <TooltipContent className="max-w-xs">
-                            <p>{item.description}</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      ))}
-                    </div>
-                  </TooltipProvider>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {items.map((item, index) => (
+                      <Popover key={index}>
+                        <PopoverTrigger asChild>
+                          <Card 
+                            className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card/80 backdrop-blur-sm border-2 cursor-pointer active:scale-95"
+                          >
+                            <CardContent className="p-6">
+                              <h3 className="font-playfair text-xl font-semibold text-foreground text-center">
+                                {item.name}
+                              </h3>
+                              <p className="text-xs text-muted-foreground text-center mt-2">
+                                Tap for details
+                              </p>
+                            </CardContent>
+                          </Card>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-80">
+                          <p className="text-sm">{item.description}</p>
+                        </PopoverContent>
+                      </Popover>
+                    ))}
+                  </div>
                 </div>
               )
             ))}
