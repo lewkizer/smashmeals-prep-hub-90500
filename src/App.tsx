@@ -32,6 +32,10 @@ import ComparisonPage from "./pages/ComparisonPage";
 import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
+import CustomerAuth from "./pages/CustomerAuth";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import Account from "./pages/Account";
 
 const queryClient = new QueryClient();
 
@@ -71,6 +75,10 @@ const App = () => (
           <Route path="/comparison" element={<ComparisonPage />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/customer-auth" element={<CustomerAuth />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/account" element={<Account />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
