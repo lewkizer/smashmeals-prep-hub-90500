@@ -28,6 +28,7 @@ import WashingtonDC from "./pages/WashingtonDC";
 import Jonesborough from "./pages/Jonesborough";
 import Thanksgiving from "./pages/Thanksgiving";
 import GLP1 from "./pages/GLP1";
+import ComparisonPage from "./pages/ComparisonPage";
 import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
@@ -66,6 +67,8 @@ const App = () => (
           <Route path="/jonesborough" element={<Jonesborough />} />
           <Route path="/thanksgiving" element={<Thanksgiving />} />
           <Route path="/glp1" element={<GLP1 />} />
+          <Route path="/vs-clean-eatz" element={<ComparisonPage />} />
+          <Route path="/comparison" element={<ComparisonPage />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

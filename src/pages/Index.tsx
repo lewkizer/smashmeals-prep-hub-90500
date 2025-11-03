@@ -10,6 +10,7 @@ import Shipping from "@/components/Shipping";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
+import SEOContent from "@/components/SEOContent";
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
       <Shipping />
       <Newsletter />
       <Footer />
+      <SEOContent />
     </div>
   );
 };
