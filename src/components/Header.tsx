@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { Menu, X, ShoppingCart, ChevronDown } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import logo from "@/assets/smashmeals-logo.webp";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,9 +58,21 @@ const Header = () => {
     { name: "How It Works", href: "/how-it-works" },
     { name: "Catering", href: "/catering" },
     { name: "About", href: "/about" },
-    { name: "Partners", href: "/partners" },
+    { name: "Blogs", href: "/blogs" },
+    { name: "Contact", href: "/contact" },
+  ];
+
+  const mobileNavLinks = [
+    { name: "Home", href: "/" },
+    { name: "Menu", href: "https://smashmeals.bottle.com/b/9814360" },
+    { name: "Thanksgiving", href: "/thanksgiving" },
+    { name: "GLP-1", href: "/glp1" },
+    { name: "How It Works", href: "/how-it-works" },
+    { name: "Catering", href: "/catering" },
+    { name: "About", href: "/about" },
     { name: "Blogs", href: "/blogs" },
     { name: "FAQ", href: "/faq" },
+    { name: "Partners", href: "/partners" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -89,6 +107,19 @@ const Header = () => {
                 {link.name}
               </a>
             ))}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1">
+                FAQ <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem asChild>
+                  <a href="/faq" className="cursor-pointer">FAQ</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/partners" className="cursor-pointer">Partners</a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
           {/* CTA Button */}
@@ -114,7 +145,7 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
+              {mobileNavLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
