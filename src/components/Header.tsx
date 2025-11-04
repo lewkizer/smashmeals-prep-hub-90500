@@ -54,7 +54,6 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "Menu", href: "https://smashmeals.bottle.com/b/9814360" },
     { name: "Thanksgiving", href: "/thanksgiving" },
-    { name: "GLP-1", href: "/glp1" },
     { name: "How It Works", href: "/how-it-works" },
     { name: "Catering", href: "/catering" },
     { name: "About", href: "/about" },
@@ -114,6 +113,9 @@ const Header = () => {
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
                   <a href="/faq" className="cursor-pointer">FAQ</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/glp1" className="cursor-pointer">GLP-1</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a href="/partners" className="cursor-pointer">Partners</a>
