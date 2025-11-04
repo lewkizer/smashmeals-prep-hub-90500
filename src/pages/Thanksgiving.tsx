@@ -9,92 +9,125 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
+// Import Thanksgiving images
+import smokedTurkey from "@/assets/thanksgiving/smoked-turkey.jpg";
+import bourbonHam from "@/assets/thanksgiving/bourbon-ham.jpg";
+import greenBeanCasserole from "@/assets/thanksgiving/green-bean-casserole.jpg";
+import sweetPotatoCasserole from "@/assets/thanksgiving/sweet-potato-casserole.jpg";
+import cranberrySauce from "@/assets/thanksgiving/cranberry-sauce.jpg";
+import macCheese from "@/assets/thanksgiving/mac-cheese.jpg";
+import deviledEggs from "@/assets/thanksgiving/deviled-eggs.jpg";
+import pumpkinPie from "@/assets/thanksgiving/pumpkin-pie.jpg";
+import chocolateChipCookies from "@/assets/thanksgiving/chocolate-chip-cookies.jpg";
+import broccoliRiceCasserole from "@/assets/thanksgiving/broccoli-rice-casserole.jpg";
+import dirtyMashedPotatoes from "@/assets/thanksgiving/dirty-mashed-potatoes.jpg";
+import bakedPotatoSalad from "@/assets/thanksgiving/baked-potato-salad.jpg";
+import charcuterie from "@/assets/thanksgiving/charcuterie.jpg";
+import pumpkinCheesecakeCup from "@/assets/thanksgiving/pumpkin-cheesecake-cup.jpg";
+
 const Thanksgiving = () => {
   const thanksgivingItems = [
     { 
       name: "Green Bean Casserole", 
       category: "Sides",
-      description: "Classic green beans baked with creamy mushroom sauce and crispy fried onions. A traditional Thanksgiving favorite ready to heat and serve."
+      description: "Classic green beans baked with creamy mushroom sauce and crispy fried onions. A traditional Thanksgiving favorite ready to heat and serve.",
+      image: greenBeanCasserole
     },
     { 
       name: "Smoked Bourbon Honey Ham", 
       category: "Mains",
-      description: "Slow-smoked ham glazed with a sweet bourbon honey sauce. Fully cooked and ready to slice, perfect as your main course or alongside turkey."
+      description: "Slow-smoked ham glazed with a sweet bourbon honey sauce. Fully cooked and ready to slice, perfect as your main course or alongside turkey.",
+      image: bourbonHam
     },
     { 
       name: "Broccoli Rice Casserole", 
       category: "Sides",
-      description: "Fresh broccoli and fluffy rice baked in a creamy cheese sauce. Comfort food at its finest, ready to warm up and enjoy."
+      description: "Fresh broccoli and fluffy rice baked in a creamy cheese sauce. Comfort food at its finest, ready to warm up and enjoy.",
+      image: broccoliRiceCasserole
     },
     { 
       name: "Smoked Turkey Platter (feeds 6)", 
       category: "Mains",
-      description: "Whole smoked turkey, perfectly seasoned and fully cooked. Feeds 6 people. Just warm and serve for an effortless main course."
+      description: "Whole smoked turkey, perfectly seasoned and fully cooked. Feeds 6 people. Just warm and serve for an effortless main course.",
+      image: smokedTurkey
     },
     { 
       name: "Smoked Turkey Platter (feeds 12)", 
       category: "Mains",
-      description: "Whole smoked turkey, perfectly seasoned and fully cooked. Feeds 12 people. Just warm and serve for an effortless main course."
+      description: "Whole smoked turkey, perfectly seasoned and fully cooked. Feeds 12 people. Just warm and serve for an effortless main course.",
+      image: smokedTurkey
     },
     { 
       name: "Orange Bourbon Cranberry Sauce (quart)", 
       category: "Sides",
-      description: "House-made cranberry sauce with hints of orange zest and bourbon. Sweet, tangy, and perfect for turkey. One quart size."
+      description: "House-made cranberry sauce with hints of orange zest and bourbon. Sweet, tangy, and perfect for turkey. One quart size.",
+      image: cranberrySauce
     },
     { 
       name: "Orange Bourbon Cranberry Sauce (pint)", 
       category: "Sides",
-      description: "House-made cranberry sauce with hints of orange zest and bourbon. Sweet, tangy, and perfect for turkey. One pint size."
+      description: "House-made cranberry sauce with hints of orange zest and bourbon. Sweet, tangy, and perfect for turkey. One pint size.",
+      image: cranberrySauce
     },
     { 
       name: "Paleo Sweet Potato Casserole (feeds 6)", 
       category: "Sides",
-      description: "Naturally sweet, mashed sweet potatoes with a pecan topping. Paleo-friendly, gluten-free, and dairy-free. Ready to bake."
+      description: "Naturally sweet, mashed sweet potatoes with a pecan topping. Paleo-friendly, gluten-free, and dairy-free. Ready to bake.",
+      image: sweetPotatoCasserole
     },
     { 
       name: "Sweet Potato Casserole (feeds 12)", 
       category: "Sides",
-      description: "Creamy mashed sweet potatoes topped with buttery pecans. A holiday classic ready to pop in the oven and serve 12."
+      description: "Creamy mashed sweet potatoes topped with buttery pecans. A holiday classic ready to pop in the oven and serve 12.",
+      image: sweetPotatoCasserole
     },
     { 
       name: "Pumpkin Pie (gluten free/dairy free)", 
       category: "Desserts",
-      description: "Classic pumpkin pie with warm spices in a gluten-free and dairy-free crust. The perfect end to your Thanksgiving feast."
+      description: "Classic pumpkin pie with warm spices in a gluten-free and dairy-free crust. The perfect end to your Thanksgiving feast.",
+      image: pumpkinPie
     },
     { 
       name: "Chocolate Chip Cookie", 
       category: "Desserts",
-      description: "Fresh-baked chocolate chip cookies. Soft, chewy, and loaded with chocolate chips. A sweet treat everyone will love."
+      description: "Fresh-baked chocolate chip cookies. Soft, chewy, and loaded with chocolate chips. A sweet treat everyone will love.",
+      image: chocolateChipCookies
     },
     { 
       name: "Bacon Deviled Eggs (12 Halves)", 
       category: "Appetizers",
-      description: "Creamy deviled eggs topped with crispy bacon bits. The perfect appetizer to start your Thanksgiving meal. 12 halves per order."
+      description: "Creamy deviled eggs topped with crispy bacon bits. The perfect appetizer to start your Thanksgiving meal. 12 halves per order.",
+      image: deviledEggs
     },
     { 
       name: "Thanksgiving Smash Charcuterie Special", 
       category: "Appetizers",
-      description: "Delight your family and friends with a charcuterie appetizer box to snack on while waiting for the main meal. Each box includes a trio of cured meats, four artisanal cheeses along with dried fruits, mixed nuts, olives, pickles, and sweet treats. Gluten free crackers and pretzels packaged separately. The 10x10 bakery box is beautifully arranged and ready to serve straight from the fridge to the table. Serves 6 people as an appetizer. For a larger board customized to your event reach out directly to info@tasteandseecharcuterie.com."
+      description: "Delight your family and friends with a charcuterie appetizer box to snack on while waiting for the main meal. Each box includes a trio of cured meats, four artisanal cheeses along with dried fruits, mixed nuts, olives, pickles, and sweet treats. Gluten free crackers and pretzels packaged separately. The 10x10 bakery box is beautifully arranged and ready to serve straight from the fridge to the table. Serves 6 people as an appetizer. For a larger board customized to your event reach out directly to info@tasteandseecharcuterie.com.",
+      image: charcuterie
     },
     { 
       name: "Baked Potato Salad", 
       category: "Sides",
-      description: "Tender potatoes baked with cheese, bacon, and green onions. All the flavors of a loaded baked potato in a shareable side dish."
+      description: "Tender potatoes baked with cheese, bacon, and green onions. All the flavors of a loaded baked potato in a shareable side dish.",
+      image: bakedPotatoSalad
     },
     { 
       name: "Dirty Mashed Potatoes", 
       category: "Sides",
-      description: "Creamy mashed potatoes loaded with bacon, cheese, and green onions. Rich, indulgent, and ready to warm up."
+      description: "Creamy mashed potatoes loaded with bacon, cheese, and green onions. Rich, indulgent, and ready to warm up.",
+      image: dirtyMashedPotatoes
     },
     { 
       name: "White Cheddar Mac and Cheese", 
       category: "Sides",
-      description: "Elbow pasta in a rich white cheddar cheese sauce. Creamy, comforting, and loved by kids and adults alike. Ready to bake."
+      description: "Elbow pasta in a rich white cheddar cheese sauce. Creamy, comforting, and loved by kids and adults alike. Ready to bake.",
+      image: macCheese
     },
     { 
       name: "Pumpkin Cheese Cake Cup", 
       category: "Desserts",
-      description: "Individual pumpkin cheesecake cups with a graham cracker crust. Creamy, spiced, and perfectly portioned for easy serving."
+      description: "Individual pumpkin cheesecake cups with a graham cracker crust. Creamy, spiced, and perfectly portioned for easy serving.",
+      image: pumpkinCheesecakeCup
     },
   ];
 
@@ -167,20 +200,37 @@ const Thanksgiving = () => {
                       <Popover key={index}>
                         <PopoverTrigger asChild>
                           <Card 
-                            className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card/80 backdrop-blur-sm border-2 cursor-pointer active:scale-95"
+                            className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card/80 backdrop-blur-sm border-2 cursor-pointer active:scale-95 overflow-hidden"
                           >
-                            <CardContent className="p-6">
-                              <h3 className="font-playfair text-xl font-semibold text-foreground text-center">
-                                {item.name}
-                              </h3>
-                              <p className="text-xs text-muted-foreground text-center mt-2">
-                                Tap for details
-                              </p>
+                            <CardContent className="p-0">
+                              <div className="aspect-square overflow-hidden">
+                                <img 
+                                  src={item.image} 
+                                  alt={item.name}
+                                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                />
+                              </div>
+                              <div className="p-4">
+                                <h3 className="font-playfair text-lg font-semibold text-foreground text-center">
+                                  {item.name}
+                                </h3>
+                                <p className="text-xs text-muted-foreground text-center mt-2">
+                                  Tap for details
+                                </p>
+                              </div>
                             </CardContent>
                           </Card>
                         </PopoverTrigger>
                         <PopoverContent className="w-80">
-                          <p className="text-sm">{item.description}</p>
+                          <div className="space-y-3">
+                            <img 
+                              src={item.image} 
+                              alt={item.name}
+                              className="w-full h-48 object-cover rounded-lg"
+                            />
+                            <h4 className="font-playfair text-lg font-semibold">{item.name}</h4>
+                            <p className="text-sm text-muted-foreground">{item.description}</p>
+                          </div>
                         </PopoverContent>
                       </Popover>
                     ))}
