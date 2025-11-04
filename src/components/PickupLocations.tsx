@@ -89,6 +89,79 @@ const PickupLocations = () => {
           ))}
         </div>
 
+        {/* Grab & Go Section */}
+        <div className="max-w-4xl mx-auto mb-8">
+          <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-lg p-8">
+            <h3 className="text-2xl font-bold font-playfair text-center mb-2">Grab & Go Locations</h3>
+            <p className="text-center text-muted-foreground mb-6">Meals available Monday through Friday at these partner locations</p>
+            
+            <div className="grid md:grid-cols-3 gap-4">
+              <Card className="p-4 bg-background/80 backdrop-blur-sm">
+                <div className="flex items-start space-x-3">
+                  <a 
+                    href="https://misfitsfitnessjc.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 bg-primary/20 hover:bg-primary/30 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110"
+                  >
+                    <MapPin className="w-4 h-4 text-primary" />
+                  </a>
+                  <div>
+                    <h4 className="font-bold text-sm">Misfits Fitness</h4>
+                    <p className="text-xs text-muted-foreground">Johnson City, TN</p>
+                    <div className="flex items-center space-x-1 mt-1">
+                      <Clock className="w-3 h-3 text-primary" />
+                      <span className="text-xs text-muted-foreground">Mon-Fri</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-4 bg-background/80 backdrop-blur-sm">
+                <div className="flex items-start space-x-3">
+                  <a 
+                    href="https://www.crossfitarcane.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 bg-primary/20 hover:bg-primary/30 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110"
+                  >
+                    <MapPin className="w-4 h-4 text-primary" />
+                  </a>
+                  <div>
+                    <h4 className="font-bold text-sm">CrossFit Arcane</h4>
+                    <p className="text-xs text-muted-foreground">Greeneville, TN</p>
+                    <div className="flex items-center space-x-1 mt-1">
+                      <Clock className="w-3 h-3 text-primary" />
+                      <span className="text-xs text-muted-foreground">Mon-Fri</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-4 bg-background/80 backdrop-blur-sm">
+                <div className="flex items-start space-x-3">
+                  <a 
+                    href="https://www.greatbodycompany.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 bg-primary/20 hover:bg-primary/30 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110"
+                  >
+                    <MapPin className="w-4 h-4 text-primary" />
+                  </a>
+                  <div>
+                    <h4 className="font-bold text-sm">The Great Body Company</h4>
+                    <p className="text-xs text-muted-foreground">Kingsport, TN</p>
+                    <div className="flex items-center space-x-1 mt-1">
+                      <Clock className="w-3 h-3 text-primary" />
+                      <span className="text-xs text-muted-foreground">Mon-Fri</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+
         <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 max-w-4xl mx-auto text-center">
           <p className="text-foreground font-medium">
             <span className="text-primary font-bold">Delivery available</span> across the Tri-Cities area.{" "}
