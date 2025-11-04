@@ -6,39 +6,52 @@ import { ExternalLink } from "lucide-react";
 const Partners = () => {
   const partners = [
     {
-      name: "Collar Chiropractic",
-      url: "", // URL to be added
-      description: "Professional chiropractic care for optimal health and wellness"
+      name: "Collart Chiropractic & Healthcare",
+      url: "https://www.collartchiro.com/",
+      location: "Johnson City, TN",
+      description: "Whole-body chiropractic & rehab care including adjustments, PT, massage, dry-needling, and laser therapy. Recovery meets nutrition — where healing and fueling come together."
     },
     {
-      name: "Misfits",
-      url: "", // URL to be added
-      description: "Fitness and training facility"
+      name: "Misfits Fitness Johnson City",
+      url: "https://misfitsfitnessjc.com/",
+      location: "Johnson City, TN",
+      description: "Group & semi-private training for motivated, community-focused athletes. For the outliers, the grinders, the never-quitters. Train hard. Eat smart. Live Misfit strong."
     },
     {
-      name: "CrossFit Arcan",
-      url: "", // URL to be added
-      description: "High-intensity functional fitness training"
+      name: "CrossFit Arcane",
+      url: "https://www.crossfitarcane.com/",
+      location: "Greeneville, TN",
+      description: "A CrossFit-style community with committed coaches & athletes pushing limits together. Fuel your WOD. Feed your goals."
     },
     {
-      name: "Olson's Martial Arts",
-      url: "", // URL to be added
-      description: "Expert martial arts instruction for all ages"
+      name: "Olson's Martial Arts Academy",
+      url: "https://olsonsma.com/",
+      location: "Johnson City, TN",
+      description: "Martial-arts training for kids, teens, and adults — building confidence, discipline, and strength. Discipline starts in the dojo and continues at the dinner table."
     },
     {
       name: "Build Power Grind",
-      url: "", // URL to be added
-      description: "Strength and conditioning training"
+      url: "https://www.buildpowergrind.com/",
+      location: "Johnson City, TN",
+      description: "Strength-training facility focused on lifting heavy, building power, and high performance. Lift heavy. Eat healthy. Build power."
     },
     {
       name: "Center of Strength",
-      url: "", // URL to be added
-      description: "Complete fitness and strength training facility"
+      url: "https://www.cosfit22.com/",
+      location: "Bulls Gap, TN",
+      description: "CrossFit-inspired functional training community dedicated to building resilience and strength. From Bulls Gap to the barbell — fueling stronger bodies and healthier lives."
     },
     {
       name: "Taste and See Charcuterie",
-      url: "", // URL to be added
-      description: "Artisan charcuterie and specialty food"
+      url: "https://www.tasteandseecharcuterie.com/",
+      location: "Johnson City, TN",
+      description: "Artisan charcuterie and grazing boards for events, upscale gatherings, and social moments. When healthy meets heavenly."
+    },
+    {
+      name: "The Great Body Company",
+      url: "https://www.greatbodycompany.com/",
+      location: "Kingsport, TN",
+      description: "Full-service gym & medically-oriented wellness facility with personal training, sports performance, rehab, and functional training. Where strong bodies meet smart meals."
     }
   ];
 
@@ -68,22 +81,17 @@ const Partners = () => {
                       <ExternalLink className="h-5 w-5 text-primary flex-shrink-0 ml-2" />
                     )}
                   </div>
+                  <p className="text-sm text-muted-foreground mb-2">{partner.location}</p>
                   <p className="text-muted-foreground mb-4">{partner.description}</p>
-                  {partner.url ? (
-                    <a
-                      href={partner.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline font-medium inline-flex items-center"
-                    >
-                      Visit Website
-                      <ExternalLink className="h-4 w-4 ml-1" />
-                    </a>
-                  ) : (
-                    <span className="text-muted-foreground text-sm italic">
-                      Website coming soon
-                    </span>
-                  )}
+                  <a
+                    href={partner.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline font-medium inline-flex items-center"
+                  >
+                    Visit Website
+                    <ExternalLink className="h-4 w-4 ml-1" />
+                  </a>
                 </CardContent>
               </Card>
             ))}
