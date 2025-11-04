@@ -26,15 +26,15 @@ export default defineConfig(({ mode }) => ({
         start_url: '/',
         icons: [
           {
-            src: '/placeholder.svg',
+            src: '/app-icon.webp',
             sizes: '192x192',
-            type: 'image/svg+xml',
+            type: 'image/webp',
             purpose: 'any maskable'
           },
           {
-            src: '/placeholder.svg',
+            src: '/app-icon.webp',
             sizes: '512x512',
-            type: 'image/svg+xml',
+            type: 'image/webp',
             purpose: 'any maskable'
           }
         ]
