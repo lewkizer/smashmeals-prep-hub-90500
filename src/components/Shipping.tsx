@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Package, Truck, Snowflake } from "lucide-react";
 import { Link } from "react-router-dom";
+import fedexMap from "@/assets/fedex-coverage-map.webp";
 
 const Shipping = () => {
   const features = [
@@ -43,6 +44,15 @@ const Shipping = () => {
                 <p className="text-muted-foreground text-sm">{feature.description}</p>
               </div>
             ))}
+          </div>
+
+          <div className="bg-background rounded-lg p-6 shadow-lg mb-8">
+            <h3 className="font-bold text-xl mb-4">FedEx 2-Day Shipping Coverage Area</h3>
+            <img 
+              src={fedexMap} 
+              alt="FedEx 2-Day Shipping Coverage Map showing delivery areas across the United States" 
+              className="w-full rounded-lg"
+            />
           </div>
 
           <Link to="/how-it-works">
