@@ -1,8 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import meal1 from "@/assets/meal-1.jpg";
-import meal2 from "@/assets/meal-2.jpg";
-import meal3 from "@/assets/meal-3.jpg";
+import filetMignonPlate from "@/assets/featured/filet-mignon-plate.jpg";
+import lemonHerbChicken from "@/assets/featured/lemon-herb-chicken.jpg";
+import shrimpCheeseGrits from "@/assets/featured/shrimp-cheese-grits.jpg";
 import { Flame, Heart, Sparkles } from "lucide-react";
 
 const FeaturedMeals = () => {
@@ -11,7 +11,7 @@ const FeaturedMeals = () => {
       name: "Garlic Herb Filet Mignon Plate",
       description: "Roasted Brussels with choice of Mashed Potato or Cauliflower",
       price: "$15.00",
-      image: meal1,
+      image: filetMignonPlate,
       badge: "Customer Favorite",
       icon: Heart,
     },
@@ -19,7 +19,7 @@ const FeaturedMeals = () => {
       name: "Smash Lemon Herb Chicken",
       description: "Served with spaghetti and zucchini",
       price: "$10.00",
-      image: meal2,
+      image: lemonHerbChicken,
       badge: "Best Seller",
       icon: Flame,
     },
@@ -27,7 +27,7 @@ const FeaturedMeals = () => {
       name: "Shrimp and Cheese Grits",
       description: "Creamy cheese grits with perfectly seasoned shrimp",
       price: "$11.00",
-      image: meal3,
+      image: shrimpCheeseGrits,
       badge: "Fan Favorite",
       icon: Sparkles,
     },
