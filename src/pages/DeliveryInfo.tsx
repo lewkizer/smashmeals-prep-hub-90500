@@ -261,15 +261,7 @@ const DeliveryInfo = () => {
               </p>
             </div>
 
-            <Card className="overflow-hidden">
-              <img 
-                src={homeDeliveryMap} 
-                alt="Home Delivery area covering Johnson City, Kingsport, Bristol, and surrounding ZIP codes in the Tri-Cities region"
-                className="w-full h-auto"
-              />
-            </Card>
-            
-            <div className="mt-8 max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               <h3 className="text-2xl font-bold text-center mb-6">Covered ZIP Codes</h3>
               <Card className="p-6">
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -323,6 +315,11 @@ const DeliveryInfo = () => {
                       <p>37877, 37871, 37880, 37874</p>
                     </div>
                   </div>
+                </div>
+                <div className="mt-6 pt-6 border-t">
+                  <p className="text-center text-muted-foreground">
+                    Don't see your ZIP code? <span className="text-primary font-semibold">Reach out to us</span> and we'll see what we can do!
+                  </p>
                 </div>
               </Card>
             </div>
