@@ -67,27 +67,51 @@ const Morristown = () => {
 
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-6xl">
-            <Card className="p-8 max-w-2xl mx-auto">
-              <Truck className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-2xl font-bold mb-4">Morristown Delivery</h3>
-              <p className="text-muted-foreground mb-4">
-                We serve all of Morristown including:
-              </p>
-              <ul className="space-y-2 text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  Downtown Morristown
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  West Hills
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  All Morristown zip codes
-                </li>
-              </ul>
-            </Card>
+            <h2 className="text-3xl md:text-4xl font-bold font-playfair text-center mb-12">
+              Morristown Pickup & Delivery Options
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="p-8">
+                <MapPin className="w-10 h-10 text-primary mb-4" />
+                <h3 className="text-2xl font-bold mb-4">Drive to Pickup</h3>
+                <p className="text-lg mb-2 font-semibold">Bulls Gap Location</p>
+                <p className="text-muted-foreground mb-4">
+                  Just a short drive from Morristown!<br />
+                  <span className="text-sm">Perfect for your weekly meal pickup</span>
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  <strong>Pickup Hours:</strong><br />
+                  Sunday: 5:00 PM - 7:00 PM<br />
+                  Monday: 5:00 PM - 7:00 PM
+                </p>
+              </Card>
+
+              <Card className="p-8">
+                <Truck className="w-10 h-10 text-primary mb-4" />
+                <h3 className="text-2xl font-bold mb-4">Shipping to Morristown</h3>
+                <p className="text-muted-foreground mb-4">
+                  Prefer delivery? We ship throughout Morristown:
+                </p>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    Downtown Morristown
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    West Hills area
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    All Morristown zip codes
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <strong>FREE shipping over $130</strong>
+                  </li>
+                </ul>
+              </Card>
+            </div>
           </div>
         </section>
 
