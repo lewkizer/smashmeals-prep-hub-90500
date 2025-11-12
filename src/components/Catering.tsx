@@ -45,9 +45,11 @@ const Catering = () => {
               </p>
               <p className="text-sm text-muted-foreground mt-2">— Verified ezCater Review</p>
             </div>
-            <Button variant="hero" size="lg">
-              Request a Catering Quote
-            </Button>
+            <a href="mailto:lew@smashmeals.com?subject=Catering%20Request">
+              <Button variant="hero" size="lg">
+                Request a Catering Quote
+              </Button>
+            </a>
           </div>
         </div>
       </div>
