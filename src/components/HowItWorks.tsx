@@ -7,18 +7,24 @@ const HowItWorks = () => {
       title: "Choose Your Meals",
       description: "Select from our rotating weekly menu of fresh, gluten-free options.",
       step: "1",
+      link: "https://smashmeals.bottle.com/b/9814360",
+      external: true,
     },
     {
       icon: MapPin,
       title: "Pick Up, Deliver, or Ship",
       description: "Convenient pickup sites, doorstep delivery, or insulated shipping to our coverage area.",
       step: "2",
+      link: "/delivery-info",
+      external: false,
     },
     {
       icon: Utensils,
       title: "Heat & Eat",
       description: "Ready in minutes, fresh all week. No prep, no stress, just delicious meals.",
       step: "3",
+      link: "/heat-and-eat",
+      external: false,
     },
   ];
 
@@ -33,23 +39,46 @@ const HowItWorks = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {steps.map((step, index) => (
-            <div key={index} className="relative">
-              {/* Step Number */}
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-xl shadow-lg">
-                {step.step}
-              </div>
-
-              {/* Card */}
-              <div className="bg-card border border-border rounded-lg p-8 pt-12 text-center hover:shadow-lg transition-all h-full card-hover">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <step.icon className="w-8 h-8 text-primary" />
+          {steps.map((step, index) => {
+            const CardContent = (
+              <>
+                {/* Step Number */}
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-xl shadow-lg">
+                  {step.step}
                 </div>
-                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
+
+                {/* Card */}
+                <div className="bg-card border border-border rounded-lg p-8 pt-12 text-center hover:shadow-lg transition-all h-full card-hover cursor-pointer">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <step.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground">{step.description}</p>
+                </div>
+              </>
+            );
+
+            return (
+              <div key={index} className="relative">
+                {step.external ? (
+                  <a 
+                    href={step.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={() => {
+                      if ((window as any).fbq) (window as any).fbq('track', 'InitiateCheckout');
+                    }}
+                  >
+                    {CardContent}
+                  </a>
+                ) : (
+                  <a href={step.link}>
+                    {CardContent}
+                  </a>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
