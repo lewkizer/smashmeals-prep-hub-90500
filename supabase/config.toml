@@ -1,1 +1,9 @@
 project_id = "oefferyglcqoxdgqncjx"
+
+# Public endpoint - disable JWT verification
+[functions.notify-newsletter-signup]
+verify_jwt = false
+
+# Protected endpoint - JWT required
+[functions.generate-product-images]
+verify_jwt = true
