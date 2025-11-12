@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { MapPin, Clock, Package, Truck } from "lucide-react";
+import { MapPin, Clock, Package, Truck, CheckCircle } from "lucide-react";
 
 const Newport = () => {
   return (
@@ -62,6 +62,32 @@ const Newport = () => {
                 <p className="text-muted-foreground">Arrives at your door</p>
               </Card>
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <Card className="p-8 max-w-2xl mx-auto">
+              <Truck className="w-10 h-10 text-primary mb-4" />
+              <h3 className="text-2xl font-bold mb-4">Newport Shipping</h3>
+              <p className="text-muted-foreground mb-4">
+                We ship fresh meals directly to Newport:
+              </p>
+              <ul className="space-y-2 text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  All Newport addresses
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <strong>FREE shipping on orders over $130</strong>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  Packed with ice, arrives fresh
+                </li>
+              </ul>
+            </Card>
           </div>
         </section>
 

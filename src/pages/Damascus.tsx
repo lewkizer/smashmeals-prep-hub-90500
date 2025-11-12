@@ -69,7 +69,10 @@ const Damascus = () => {
           <div className="container mx-auto max-w-6xl">
             <Card className="p-8 max-w-2xl mx-auto">
               <Truck className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-2xl font-bold mb-4">FREE Damascus Delivery</h3>
+              <h3 className="text-2xl font-bold mb-4">Damascus Shipping</h3>
+              <p className="text-muted-foreground mb-4">
+                We ship to Trail Town USA:
+              </p>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-primary" />
@@ -78,6 +81,10 @@ const Damascus = () => {
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-primary" />
                   All Damascus addresses
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <strong>FREE shipping over $130</strong>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-primary" />
