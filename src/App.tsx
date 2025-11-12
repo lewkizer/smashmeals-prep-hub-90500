@@ -26,6 +26,7 @@ import Blountville from "./pages/Blountville";
 import Erwin from "./pages/Erwin";
 import WashingtonDC from "./pages/WashingtonDC";
 import Jonesborough from "./pages/Jonesborough";
+import Charlotte from "./pages/Charlotte";
 import Thanksgiving from "./pages/Thanksgiving";
 import GLP1 from "./pages/GLP1";
 import ComparisonPage from "./pages/ComparisonPage";
@@ -71,6 +72,7 @@ const App = () => (
           <Route path="/erwin" element={<Erwin />} />
           <Route path="/washington-dc" element={<WashingtonDC />} />
           <Route path="/jonesborough" element={<Jonesborough />} />
+          <Route path="/charlotte" element={<Charlotte />} />
           <Route path="/thanksgiving" element={<Thanksgiving />} />
           <Route path="/glp1" element={<GLP1 />} />
           <Route path="/vs-clean-eatz" element={<ComparisonPage />} />
