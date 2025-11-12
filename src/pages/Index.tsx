@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
-import DeliveryCoverageMap from "@/components/DeliveryCoverageMap";
 import HowItWorks from "@/components/HowItWorks";
 import WeeklyMenu from "@/components/WeeklyMenu";
 import PickupLocations from "@/components/PickupLocations";
@@ -18,7 +17,6 @@ const Index = () => {
       <Header />
       <Hero />
       <TrustStrip />
-      <DeliveryCoverageMap />
       <HowItWorks />
       <WeeklyMenu />
       <Testimonials />
