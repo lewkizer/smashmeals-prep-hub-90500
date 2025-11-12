@@ -29,7 +29,7 @@ const Unicoi = () => {
                 Unicoi's Fresh<br />Gluten-Free Meal Prep
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Locally prepared, gluten-free meals delivered FREE to your Unicoi home every week.
+                Locally prepared, gluten-free meals with $12 home delivery to your Unicoi home every week.
               </p>
               <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
@@ -64,8 +64,8 @@ const Unicoi = () => {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">FREE Delivery</h3>
-                <p className="text-muted-foreground">To Unicoi Sunday-Monday</p>
+                <h3 className="text-xl font-bold mb-2">Home Delivery</h3>
+                <p className="text-muted-foreground">$12 to Unicoi Sunday-Monday</p>
               </Card>
             </div>
           </div>
@@ -75,7 +75,7 @@ const Unicoi = () => {
           <div className="container mx-auto max-w-6xl">
             <Card className="p-8 max-w-2xl mx-auto">
               <Truck className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-2xl font-bold mb-4">FREE Unicoi Delivery</h3>
+              <h3 className="text-2xl font-bold mb-4">Unicoi Home Delivery - $12</h3>
               <p className="text-muted-foreground mb-4">
                 We deliver throughout Unicoi and the surrounding area:
               </p>
@@ -92,6 +92,10 @@ const Unicoi = () => {
                   <CheckCircle className="w-5 h-5 text-primary" />
                   Delivered fresh Sunday-Monday
                 </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <strong>10% off orders over $130</strong>
+                </li>
               </ul>
             </Card>
           </div>
@@ -103,11 +107,11 @@ const Unicoi = () => {
               Start Eating Healthier in Unicoi
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              FREE delivery makes healthy eating effortless
+              $12 home delivery • 10% off orders over $130
             </p>
             <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
-                Order Now - FREE Delivery
+                Order Now
               </Button>
             </a>
           </div>

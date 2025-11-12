@@ -29,7 +29,7 @@ const Gray = () => {
                 Gray's Local<br />Gluten-Free Meal Prep
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Your neighbor for healthy eating. Fresh, chef-prepared meals with FREE local delivery to Gray.
+                Your neighbor for healthy eating. Fresh, chef-prepared meals with $12 home delivery to Gray.
               </p>
               <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
@@ -64,8 +64,8 @@ const Gray = () => {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">FREE Delivery</h3>
-                <p className="text-muted-foreground">To your Gray home Sunday-Monday</p>
+                <h3 className="text-xl font-bold mb-2">Home Delivery</h3>
+                <p className="text-muted-foreground">$12 to your Gray home Sunday-Monday</p>
               </Card>
             </div>
           </div>
@@ -95,9 +95,9 @@ const Gray = () => {
 
               <Card className="p-8">
                 <Truck className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-2xl font-bold mb-4">FREE Home Delivery</h3>
+                <h3 className="text-2xl font-bold mb-4">Home Delivery - $12</h3>
                 <p className="text-muted-foreground mb-4">
-                  We deliver FREE to all Gray addresses Sunday-Monday including:
+                  We deliver to all Gray addresses Sunday-Monday including:
                 </p>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-center gap-2">
@@ -112,6 +112,10 @@ const Gray = () => {
                     <CheckCircle className="w-5 h-5 text-primary" />
                     All Gray zip codes
                   </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <strong>10% off orders over $130</strong>
+                  </li>
                 </ul>
               </Card>
             </div>
@@ -124,11 +128,11 @@ const Gray = () => {
               Join Your Gray Neighbors
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Eating healthier has never been easier with FREE local delivery
+              Eating healthier has never been easier • $12 delivery • 10% off orders over $130
             </p>
             <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
-                Order Now - FREE Delivery
+                Order Now
               </Button>
             </a>
           </div>

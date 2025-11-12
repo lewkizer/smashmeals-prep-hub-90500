@@ -29,7 +29,7 @@ const Abingdon = () => {
                 Abingdon's Premier<br />Gluten-Free Meal Prep
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Fresh, chef-prepared meals delivered weekly to Abingdon. 100% gluten-free with full macro tracking on every meal.
+                Fresh, chef-prepared meals with $12 home delivery to Abingdon. 100% gluten-free with full macro tracking on every meal.
               </p>
               <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
@@ -64,8 +64,8 @@ const Abingdon = () => {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Free Delivery</h3>
-                <p className="text-muted-foreground">Delivered to Abingdon Sunday-Monday</p>
+                <h3 className="text-xl font-bold mb-2">Home Delivery</h3>
+                <p className="text-muted-foreground">$12 to Abingdon Sunday-Monday</p>
               </Card>
             </div>
           </div>
@@ -75,7 +75,7 @@ const Abingdon = () => {
           <div className="container mx-auto max-w-6xl">
             <Card className="p-8 max-w-2xl mx-auto">
               <Truck className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-2xl font-bold mb-4">Free Abingdon Delivery</h3>
+              <h3 className="text-2xl font-bold mb-4">Abingdon Home Delivery - $12</h3>
               <p className="text-muted-foreground mb-4">We deliver throughout Abingdon including:</p>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-center gap-2">
@@ -93,6 +93,10 @@ const Abingdon = () => {
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-primary" />
                   Meadowview
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <strong>10% off orders over $130</strong>
                 </li>
               </ul>
             </Card>

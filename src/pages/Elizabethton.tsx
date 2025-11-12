@@ -29,7 +29,7 @@ const Elizabethton = () => {
                 Elizabethton's<br />Gluten-Free Meal Prep
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Fresh, locally-prepared meals delivered to Elizabethton. 100% gluten-free with complete nutrition info.
+                Fresh, locally-prepared meals with $12 home delivery to Elizabethton. 100% gluten-free with complete nutrition info.
               </p>
               <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
@@ -64,8 +64,8 @@ const Elizabethton = () => {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Free Delivery</h3>
-                <p className="text-muted-foreground">Delivered to Elizabethton Sunday-Monday</p>
+                <h3 className="text-xl font-bold mb-2">Home Delivery</h3>
+                <p className="text-muted-foreground">$12 to Elizabethton Sunday-Monday</p>
               </Card>
             </div>
           </div>
@@ -75,7 +75,7 @@ const Elizabethton = () => {
           <div className="container mx-auto max-w-6xl">
             <Card className="p-8 max-w-2xl mx-auto">
               <Truck className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-2xl font-bold mb-4">Free Elizabethton Delivery</h3>
+              <h3 className="text-2xl font-bold mb-4">Elizabethton Home Delivery - $12</h3>
               <p className="text-muted-foreground mb-4">We deliver throughout Elizabethton including:</p>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-center gap-2">
@@ -93,6 +93,10 @@ const Elizabethton = () => {
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-primary" />
                   Roan Mountain area
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <strong>10% off orders over $130</strong>
                 </li>
               </ul>
             </Card>
