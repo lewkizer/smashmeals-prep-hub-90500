@@ -14,41 +14,53 @@ const DeliveryInfo = () => {
   const [deliveryOption, setDeliveryOption] = useState<null | "home" | "shipping" | "pickup">(null);
   const locations = [
     {
-      name: "Johnson City - Main Location",
-      address: "3211 Peoples St, Johnson City, TN 37604",
-      time: "Sunday 12-4 PM, Monday 8-11 AM",
-      mapUrl: "https://maps.google.com/?q=3211+Peoples+St+Johnson+City+TN+37604"
+      name: "SmashMeals Kitchen",
+      address: "1917 Meadowview Pkwy, Suite 100, Kingsport, TN",
+      time: "Sunday 2:00–3:00 PM",
+      mapUrl: "https://maps.google.com/?q=1917+Meadowview+Pkwy+Suite+100+Kingsport+TN+37660",
     },
     {
-      name: "Kingsport - Colonial Heights",
-      address: "2136 Fort Henry Dr, Kingsport, TN 37664",
-      time: "Sunday 12-4 PM, Monday 8-11 AM",
-      mapUrl: "https://maps.google.com/?q=2136+Fort+Henry+Dr+Kingsport+TN+37664"
+      name: "Bristol Pinnacle",
+      address: "Between Dick's Sporting Goods and Tesla Charging",
+      time: "Sunday 2:00 PM",
+      mapUrl: "https://www.google.com/maps/search/Bristol+Pinnacle+Tesla+Charging+Bristol+TN",
     },
     {
-      name: "Bristol - State Street",
-      address: "900 State St, Bristol, TN 37620",
-      time: "Sunday 12-4 PM, Monday 8-11 AM",
-      mapUrl: "https://maps.google.com/?q=900+State+St+Bristol+TN+37620"
+      name: "Collart Chiropractic",
+      address: "Johnson City, TN",
+      time: "Sunday 4:00–4:15 PM",
+      mapUrl: "https://www.collartchiro.com/",
     },
     {
-      name: "Greeneville",
-      address: "3810 E Andrew Johnson Hwy, Greeneville, TN 37745",
-      time: "Sunday 12-4 PM, Monday 8-11 AM",
-      mapUrl: "https://maps.google.com/?q=3810+E+Andrew+Johnson+Hwy+Greeneville+TN+37745"
+      name: "Misfits fitness Drop-off Fridge",
+      address: "Johnson City, TN",
+      time: "Sunday after 4:30 PM",
+      mapUrl: "https://www.google.com/maps/search/Misfits+fitness+Johnson+City+TN",
     },
     {
-      name: "Elizabethton",
-      address: "1500 W Elk Ave, Elizabethton, TN 37643",
-      time: "Sunday 12-4 PM, Monday 8-11 AM",
-      mapUrl: "https://maps.google.com/?q=1500+W+Elk+Ave+Elizabethton+TN+37643"
+      name: "Crossfit Arcane",
+      address: "75 Tusculum Heights Dr, Tusculum, TN 37745",
+      time: "Monday (Contact for time)",
+      mapUrl: "https://www.google.com/maps/search/75+Tusculum+Heights+Dr+Tusculum+TN+37745",
     },
     {
-      name: "Jonesborough",
-      address: "120 Marketplace Blvd, Jonesborough, TN 37659",
-      time: "Sunday 12-4 PM, Monday 8-11 AM",
-      mapUrl: "https://maps.google.com/?q=120+Marketplace+Blvd+Jonesborough+TN+37659"
-    }
+      name: "Olson's Martial Arts",
+      address: "Under ECU sign, Johnson City, TN",
+      time: "Monday 5:00 PM",
+      mapUrl: "https://olsonsma.com/",
+    },
+    {
+      name: "Build power grind",
+      address: "Johnson City, TN",
+      time: "Monday 6:00 PM",
+      mapUrl: "https://www.google.com/maps/search/Build+power+grind+Johnson+City+TN",
+    },
+    {
+      name: "Center of Strength",
+      address: "Bulls Gap, TN",
+      time: "Monday 9:00–10:00 AM & 4:30–6:30 PM",
+      mapUrl: "https://www.cosfit22.com/",
+    },
   ];
 
   const homeDeliveryZips = [
@@ -188,7 +200,7 @@ const DeliveryInfo = () => {
                         <div>
                           <h3 className="text-xl font-bold text-primary mb-2">Pickup Available!</h3>
                           <div className="space-y-2">
-                            <p className="font-semibold">Free Pickup at Any of Our 6 Locations</p>
+                            <p className="font-semibold">Free Pickup at Any of Our 8 Locations</p>
                             <p className="text-sm text-muted-foreground">
                               Your ZIP code is outside our delivery and shipping zones, but you can pick up your order for free at any of our convenient locations!
                             </p>
@@ -211,7 +223,7 @@ const DeliveryInfo = () => {
                 Pickup Locations
               </h2>
               <p className="text-xl text-muted-foreground">
-                Free pickup at any of our convenient locations
+                Free pickup at any of our 8 convenient locations
               </p>
             </div>
 
