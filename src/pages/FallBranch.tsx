@@ -29,7 +29,7 @@ const FallBranch = () => {
                 Fall Branch's<br />Gluten-Free Meal Prep
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Fresh, chef-prepared meals delivered FREE to Fall Branch every week.
+                Fresh, chef-prepared meals with $12 home delivery to Fall Branch.
               </p>
               <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
@@ -58,8 +58,8 @@ const FallBranch = () => {
               </Card>
               <Card className="p-6 text-center">
                 <MapPin className="w-12 h-12 text-primary mb-4 mx-auto" />
-                <h3 className="text-xl font-bold mb-2">FREE Delivery</h3>
-                <p className="text-muted-foreground">To Fall Branch</p>
+                <h3 className="text-xl font-bold mb-2">Home Delivery</h3>
+                <p className="text-muted-foreground">$12 to Fall Branch</p>
               </Card>
             </div>
           </div>
@@ -69,8 +69,12 @@ const FallBranch = () => {
           <div className="container mx-auto max-w-6xl">
             <Card className="p-8 max-w-2xl mx-auto">
               <Truck className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-2xl font-bold mb-4">FREE Fall Branch Delivery</h3>
+              <h3 className="text-2xl font-bold mb-4">Fall Branch Home Delivery</h3>
               <ul className="space-y-2 text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  $12 home delivery fee
+                </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-primary" />
                   All Fall Branch addresses
@@ -83,6 +87,10 @@ const FallBranch = () => {
                   <CheckCircle className="w-5 h-5 text-primary" />
                   Sunday-Monday delivery
                 </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <strong>10% off orders over $130</strong>
+                </li>
               </ul>
             </Card>
           </div>
@@ -94,7 +102,7 @@ const FallBranch = () => {
               Start Eating Healthier
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              FREE delivery to Fall Branch
+              $12 home delivery to Fall Branch • 10% off orders over $130
             </p>
             <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">

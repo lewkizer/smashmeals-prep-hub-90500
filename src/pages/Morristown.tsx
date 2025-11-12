@@ -88,9 +88,9 @@ const Morristown = () => {
 
               <Card className="p-8">
                 <Truck className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-2xl font-bold mb-4">Shipping to Morristown</h3>
+                <h3 className="text-2xl font-bold mb-4">Shipping to Morristown - $25</h3>
                 <p className="text-muted-foreground mb-4">
-                  Prefer delivery? We ship throughout Morristown:
+                  We ship throughout Morristown:
                 </p>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-center gap-2">
@@ -107,7 +107,7 @@ const Morristown = () => {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <strong>FREE shipping over $130</strong>
+                    <strong>10% off orders over $130</strong>
                   </li>
                 </ul>
               </Card>

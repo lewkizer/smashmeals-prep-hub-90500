@@ -29,7 +29,7 @@ const Telford = () => {
                 Telford's<br />Gluten-Free Meal Solution
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Fresh, chef-prepared meals with FREE local delivery to Telford every week.
+                Fresh, chef-prepared meals with $12 home delivery to Telford every week.
               </p>
               <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
@@ -64,8 +64,8 @@ const Telford = () => {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">FREE Delivery</h3>
-                <p className="text-muted-foreground">To Telford Sunday-Monday</p>
+                <h3 className="text-xl font-bold mb-2">Home Delivery</h3>
+                <p className="text-muted-foreground">$12 to Telford Sunday-Monday</p>
               </Card>
             </div>
           </div>
@@ -91,7 +91,7 @@ const Telford = () => {
 
               <Card className="p-8">
                 <Truck className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-2xl font-bold mb-4">FREE Telford Delivery</h3>
+                <h3 className="text-2xl font-bold mb-4">Telford Home Delivery - $12</h3>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-primary" />
@@ -105,6 +105,10 @@ const Telford = () => {
                     <CheckCircle className="w-5 h-5 text-primary" />
                     Sunday-Monday delivery
                   </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <strong>10% off orders over $130</strong>
+                  </li>
                 </ul>
               </Card>
             </div>
@@ -117,7 +121,7 @@ const Telford = () => {
               Join Telford's Healthy Eaters
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              FREE delivery makes meal prep easy
+              $12 home delivery • 10% off orders over $130
             </p>
             <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">

@@ -29,7 +29,7 @@ const MountCarmel = () => {
                 Mount Carmel's<br />Gluten-Free Meal Prep
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Fresh, chef-prepared meals delivered FREE to Mount Carmel.
+                Fresh, chef-prepared meals with $12 home delivery to Mount Carmel.
               </p>
               <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
@@ -58,8 +58,8 @@ const MountCarmel = () => {
               </Card>
               <Card className="p-6 text-center">
                 <MapPin className="w-12 h-12 text-primary mb-4 mx-auto" />
-                <h3 className="text-xl font-bold mb-2">FREE Delivery</h3>
-                <p className="text-muted-foreground">Sunday-Monday</p>
+                <h3 className="text-xl font-bold mb-2">Home Delivery</h3>
+                <p className="text-muted-foreground">$12 delivery Sunday-Monday</p>
               </Card>
             </div>
           </div>
@@ -69,7 +69,7 @@ const MountCarmel = () => {
           <div className="container mx-auto max-w-6xl">
             <Card className="p-8 max-w-2xl mx-auto">
               <Truck className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-2xl font-bold mb-4">FREE Mount Carmel Delivery</h3>
+              <h3 className="text-2xl font-bold mb-4">Mount Carmel Home Delivery - $12</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-primary" />
@@ -78,6 +78,10 @@ const MountCarmel = () => {
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-primary" />
                   Church Hill area
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <strong>10% off orders over $130</strong>
                 </li>
               </ul>
             </Card>
@@ -90,7 +94,7 @@ const MountCarmel = () => {
               Order Now
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              FREE delivery to Mount Carmel
+              $12 home delivery • 10% off orders over $130
             </p>
             <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">

@@ -30,7 +30,7 @@ const Kingsport = () => {
                 Kingsport's Original<br />Gluten-Free Meal Prep
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Locally owned and operated in Kingsport since 2017. Fresh, macro-counted meals prepared in our local kitchen every Friday.
+                Locally owned and operated in Kingsport since 2017. Fresh, macro-counted meals with $12 home delivery prepared in our local kitchen every Friday.
               </p>
               <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
@@ -69,7 +69,7 @@ const Kingsport = () => {
                   <MapPin className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Pickup/Delivery</h3>
-                <p className="text-muted-foreground">Free local Kingsport delivery or pickup Sunday-Monday</p>
+                <p className="text-muted-foreground">$12 home delivery or pickup in Kingsport Sunday-Monday</p>
               </Card>
             </div>
           </div>
@@ -99,9 +99,9 @@ const Kingsport = () => {
 
               <Card className="p-8">
                 <Truck className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-2xl font-bold mb-4">Free Kingsport Delivery</h3>
+                <h3 className="text-2xl font-bold mb-4">Kingsport Home Delivery - $12</h3>
                 <p className="text-muted-foreground mb-4">
-                  Complimentary delivery throughout Kingsport including:
+                  Home delivery throughout Kingsport including:
                 </p>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-center gap-2">
@@ -120,6 +120,10 @@ const Kingsport = () => {
                     <CheckCircle className="w-5 h-5 text-primary" />
                     Bloomingdale
                   </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <strong>10% off orders over $130</strong>
+                  </li>
                 </ul>
               </Card>
             </div>
@@ -137,7 +141,7 @@ const Kingsport = () => {
                 { title: "Locally Owned", desc: "Kingsport-based since 2017" },
                 { title: "100% Gluten-Free", desc: "Dedicated gluten-free facility" },
                 { title: "Fresh Weekly", desc: "Never frozen, cooked Friday" },
-                { title: "Free Delivery", desc: "Throughout Kingsport area" }
+                { title: "$12 Delivery", desc: "Throughout Kingsport area" }
               ].map((benefit) => (
                 <Card key={benefit.title} className="p-6 text-center">
                   <h3 className="font-bold text-lg mb-2">{benefit.title}</h3>
