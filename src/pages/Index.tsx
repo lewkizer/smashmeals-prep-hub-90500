@@ -1,25 +1,31 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import StickyOrderBanner from "@/components/StickyOrderBanner";
 import TrustStrip from "@/components/TrustStrip";
 import HowItWorks from "@/components/HowItWorks";
+import FeaturedMeals from "@/components/FeaturedMeals";
+import Testimonials from "@/components/Testimonials";
+import Mission from "@/components/Mission";
 import WeeklyMenu from "@/components/WeeklyMenu";
 import PickupLocations from "@/components/PickupLocations";
 import Catering from "@/components/Catering";
 import About from "@/components/About";
 import Shipping from "@/components/Shipping";
-import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import SEOContent from "@/components/SEOContent";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <StickyOrderBanner />
       <Header />
       <Hero />
       <TrustStrip />
       <HowItWorks />
-      <WeeklyMenu />
+      <FeaturedMeals />
       <Testimonials />
+      <Mission />
+      <WeeklyMenu />
       <PickupLocations />
       <Catering />
       <About />

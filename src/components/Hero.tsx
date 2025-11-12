@@ -28,13 +28,13 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-playfair text-white mb-6 leading-tight animate-on-scroll">
-            Tri-Cities' <span className="text-accent">First</span> 100% Gluten-Free Meal Prep
+            More Than Meals—<span className="text-accent">Time Back</span> with Your Family
           </h1>
           <p className="text-xl md:text-2xl font-inter text-white/90 mb-6 leading-relaxed animate-on-scroll animate-delay-100">
-            <span className="font-semibold">Trusted for 8+ years.</span> Order by Thursday at 11:59 PM. Pick up Sunday. <span className="font-caveat text-2xl md:text-3xl text-accent">Fresh</span>, chef-made meals—no guessing, no gluten.
+            <span className="font-semibold">Trusted by Tri-Cities families for 8+ years.</span> We handle the cooking, so you can focus on what matters most. 100% gluten-free, chef-made, <span className="font-caveat text-2xl md:text-3xl text-accent">delivered fresh</span> every week.
           </p>
           <p className="text-lg font-inter text-white/80 mb-8 animate-on-scroll animate-delay-100">
-            The original Tri-Cities meal prep company. 100% gluten-free kitchen since day one.
+            Order by Thursday at 11:59 PM → Pick up Sunday → Enjoy more family time.
           </p>
           
           {/* Promo Banners */}
