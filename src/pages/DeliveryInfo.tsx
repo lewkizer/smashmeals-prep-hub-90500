@@ -318,7 +318,7 @@ const DeliveryInfo = () => {
                 </div>
                 <div className="mt-6 pt-6 border-t">
                   <p className="text-center text-muted-foreground">
-                    Don't see your ZIP code? <span className="text-primary font-semibold">Reach out to us</span> and we'll see what we can do!
+                    Don't see your ZIP code? <a href="mailto:lew@smashmeals.com" className="text-primary font-semibold hover:underline">Reach out to us</a> and we'll see what we can do!
                   </p>
                 </div>
               </Card>
