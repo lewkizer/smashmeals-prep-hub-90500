@@ -73,6 +73,8 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Account from "./pages/Account";
 import Partners from "./pages/Partners";
+import DeliveryInfo from "./pages/DeliveryInfo";
+import HeatAndEat from "./pages/HeatAndEat";
 
 const queryClient = new QueryClient();
 
@@ -153,6 +155,8 @@ const App = () => (
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/delivery-info" element={<DeliveryInfo />} />
+          <Route path="/heat-and-eat" element={<HeatAndEat />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
