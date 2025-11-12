@@ -29,7 +29,7 @@ const PineyFlats = () => {
                 Piney Flats'<br />Gluten-Free Meal Solution
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Your local gluten-free meal prep service. Fresh, chef-prepared meals delivered right to Piney Flats.
+                Your local gluten-free meal prep service. Fresh, chef-prepared meals with $12 home delivery to Piney Flats.
               </p>
               <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
@@ -64,8 +64,8 @@ const PineyFlats = () => {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Free Delivery</h3>
-                <p className="text-muted-foreground">To your Piney Flats home</p>
+                <h3 className="text-xl font-bold mb-2">Home Delivery</h3>
+                <p className="text-muted-foreground">$12 to your Piney Flats home</p>
               </Card>
             </div>
           </div>
@@ -77,7 +77,7 @@ const PineyFlats = () => {
               Ready to Simplify Your Meals?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Join your Piney Flats neighbors eating healthier
+              Join your Piney Flats neighbors • $12 delivery • 10% off orders over $130
             </p>
             <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
