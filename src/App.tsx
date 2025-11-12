@@ -21,6 +21,27 @@ import Greeneville from "./pages/Greeneville";
 import Knoxville from "./pages/Knoxville";
 import Elizabethton from "./pages/Elizabethton";
 import Abingdon from "./pages/Abingdon";
+import Damascus from "./pages/Damascus";
+import Gray from "./pages/Gray";
+import Chucky from "./pages/Chucky";
+import Mosheim from "./pages/Mosheim";
+import Unicoi from "./pages/Unicoi";
+import Telford from "./pages/Telford";
+import Limestone from "./pages/Limestone";
+import FallBranch from "./pages/FallBranch";
+import MountCarmel from "./pages/MountCarmel";
+import ChurchHill from "./pages/ChurchHill";
+import Rogersville from "./pages/Rogersville";
+import Morristown from "./pages/Morristown";
+import MountainCity from "./pages/MountainCity";
+import Tusculum from "./pages/Tusculum";
+import Baileyton from "./pages/Baileyton";
+import BullsGap from "./pages/BullsGap";
+import Surgoinsville from "./pages/Surgoinsville";
+import Newport from "./pages/Newport";
+import GladeSpring from "./pages/GladeSpring";
+import Chilhowie from "./pages/Chilhowie";
+import Marion from "./pages/Marion";
 import PineyFlats from "./pages/PineyFlats";
 import Blountville from "./pages/Blountville";
 import Erwin from "./pages/Erwin";
@@ -105,6 +126,27 @@ const App = () => (
           <Route path="/glp1" element={<GLP1 />} />
           <Route path="/vs-clean-eatz" element={<ComparisonPage />} />
           <Route path="/comparison" element={<ComparisonPage />} />
+          <Route path="/damascus" element={<Damascus />} />
+          <Route path="/gray" element={<Gray />} />
+          <Route path="/chucky" element={<Chucky />} />
+          <Route path="/mosheim" element={<Mosheim />} />
+          <Route path="/unicoi" element={<Unicoi />} />
+          <Route path="/telford" element={<Telford />} />
+          <Route path="/limestone" element={<Limestone />} />
+          <Route path="/fall-branch" element={<FallBranch />} />
+          <Route path="/mount-carmel" element={<MountCarmel />} />
+          <Route path="/church-hill" element={<ChurchHill />} />
+          <Route path="/rogersville" element={<Rogersville />} />
+          <Route path="/morristown" element={<Morristown />} />
+          <Route path="/mountain-city" element={<MountainCity />} />
+          <Route path="/tusculum" element={<Tusculum />} />
+          <Route path="/baileyton" element={<Baileyton />} />
+          <Route path="/bulls-gap" element={<BullsGap />} />
+          <Route path="/surgoinsville" element={<Surgoinsville />} />
+          <Route path="/newport" element={<Newport />} />
+          <Route path="/glade-spring" element={<GladeSpring />} />
+          <Route path="/chilhowie" element={<Chilhowie />} />
+          <Route path="/marion" element={<Marion />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/customer-auth" element={<CustomerAuth />} />
