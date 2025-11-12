@@ -11,7 +11,7 @@ const HowItWorks = () => {
     {
       icon: MapPin,
       title: "Pick Up, Deliver, or Ship",
-      description: "Convenient pickup sites, doorstep delivery, or insulated shipping nationwide.",
+      description: "Convenient pickup sites, doorstep delivery, or insulated shipping to our coverage area.",
       step: "2",
     },
     {
