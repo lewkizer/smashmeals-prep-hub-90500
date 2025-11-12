@@ -165,7 +165,7 @@ const PickupLocations = () => {
         <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 max-w-4xl mx-auto text-center">
           <p className="text-foreground font-medium">
             <span className="text-primary font-bold">Delivery available</span> across the Tri-Cities area.{" "}
-            <span className="text-primary font-bold">Shipping now available nationwide</span> with insulated packaging.
+            <span className="text-primary font-bold">Regional shipping available</span> with insulated packaging to select coverage areas.
           </p>
         </div>
       </div>

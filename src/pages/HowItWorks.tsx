@@ -311,7 +311,7 @@ const HowItWorks = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-block bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-bold mb-6 shadow-card">
-                NEW - NATIONWIDE SHIPPING
+                NEW - REGIONAL SHIPPING
               </div>
               <h2 className="text-4xl md:text-5xl font-bold font-playfair mb-4">
                 Can't Pick Up? We Ship!
@@ -327,7 +327,7 @@ const HowItWorks = () => {
                   <Truck className="w-10 h-10 text-primary-foreground" />
                 </div>
                 <h3 className="text-2xl font-bold font-playfair mb-3">FedEx 2-Day</h3>
-                <p className="text-muted-foreground font-inter">Fast, reliable nationwide delivery</p>
+                <p className="text-muted-foreground font-inter">Fast, reliable delivery to select regions</p>
               </Card>
 
               <Card className="p-8 text-center border-0 bg-white/80 dark:bg-card/80 backdrop-blur-sm shadow-elevated hover:scale-105 transition-all">
