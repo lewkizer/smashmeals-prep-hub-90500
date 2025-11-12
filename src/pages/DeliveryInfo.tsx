@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { MapPin, Truck, Clock } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import coverageMap from "@/assets/fedex-coverage-map.webp";
+import homeDeliveryMap from "@/assets/home-delivery-map.jpg";
 
 const DeliveryInfo = () => {
   const locations = [
@@ -131,18 +132,19 @@ const DeliveryInfo = () => {
               </p>
             </div>
 
-            <Card className="p-8">
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
-                {homeDeliveryZips.map((zip) => (
-                  <div 
-                    key={zip}
-                    className="bg-blue-500/10 border border-blue-500/20 rounded-lg px-4 py-3 text-center font-mono font-bold text-blue-600"
-                  >
-                    {zip}
-                  </div>
-                ))}
-              </div>
+            <Card className="overflow-hidden">
+              <img 
+                src={homeDeliveryMap} 
+                alt="Home delivery coverage map showing $12 delivery zones in the Tri-Cities area"
+                className="w-full h-auto"
+              />
             </Card>
+            
+            <div className="mt-6 text-center">
+              <p className="text-muted-foreground">
+                Covering Johnson City, Kingsport, Bristol, Greeneville, Elizabethton, and surrounding areas
+              </p>
+            </div>
           </div>
         </section>
 
