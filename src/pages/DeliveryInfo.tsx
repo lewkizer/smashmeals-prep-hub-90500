@@ -174,23 +174,6 @@ const DeliveryInfo = () => {
                 className="w-full h-auto"
               />
             </Card>
-
-            <div className="mt-8 grid md:grid-cols-2 gap-6">
-              <Card className="p-6 bg-blue-500/5 border-blue-500/20">
-                <MapPin className="w-8 h-8 text-blue-500 mb-4" />
-                <h3 className="text-xl font-bold mb-2">Blue Zone - $12 Home Delivery</h3>
-                <p className="text-muted-foreground">
-                  See zip codes listed above for local home delivery
-                </p>
-              </Card>
-              <Card className="p-6 bg-pink-500/5 border-pink-500/20">
-                <Truck className="w-8 h-8 text-pink-500 mb-4" />
-                <h3 className="text-xl font-bold mb-2">Pink Zone - $25 FedEx Shipping</h3>
-                <p className="text-muted-foreground">
-                  2-day insulated shipping to select coverage areas shown on map
-                </p>
-              </Card>
-            </div>
           </div>
         </section>
       </main>
