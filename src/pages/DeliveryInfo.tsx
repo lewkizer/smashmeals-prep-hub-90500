@@ -1,12 +1,17 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { MapPin, Truck, Clock } from "lucide-react";
+import { MapPin, Truck, Clock, Search, CheckCircle2, Package } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import coverageMap from "@/assets/fedex-coverage-map.webp";
 import homeDeliveryMap from "@/assets/home-delivery-map.jpg";
+import { useState } from "react";
 
 const DeliveryInfo = () => {
+  const [zipCode, setZipCode] = useState("");
+  const [deliveryOption, setDeliveryOption] = useState<null | "home" | "shipping" | "pickup">(null);
   const locations = [
     {
       name: "Johnson City - Main Location",
@@ -52,6 +57,38 @@ const DeliveryInfo = () => {
     "37857", "37699", "37821", "37752", "37872", "37687", "37729", "37825", "37880", "37874"
   ];
 
+  // FedEx shipping states (approximate coverage from the map)
+  const shippingStates = ["TN", "VA", "NC", "SC", "GA", "KY", "WV", "MD", "DC"];
+
+  const checkZipCode = () => {
+    if (!zipCode || zipCode.length !== 5) return;
+    
+    if (homeDeliveryZips.includes(zipCode)) {
+      setDeliveryOption("home");
+    } else {
+      // For simplicity, check if ZIP starts with state codes from shipping coverage
+      const prefix = zipCode.substring(0, 3);
+      // TN: 370-385, VA: 220-246, NC: 270-289, SC: 290-299, GA: 300-319, KY: 400-427, WV: 247-268, MD: 206-219
+      const shippingPrefixes = [
+        ...Array.from({ length: 16 }, (_, i) => (370 + i).toString()), // TN
+        ...Array.from({ length: 27 }, (_, i) => (220 + i).toString()), // VA
+        ...Array.from({ length: 20 }, (_, i) => (270 + i).toString()), // NC
+        ...Array.from({ length: 10 }, (_, i) => (290 + i).toString()), // SC
+        ...Array.from({ length: 20 }, (_, i) => (300 + i).toString()), // GA
+        ...Array.from({ length: 28 }, (_, i) => (400 + i).toString()), // KY
+        ...Array.from({ length: 22 }, (_, i) => (247 + i).toString()), // WV
+        ...Array.from({ length: 14 }, (_, i) => (206 + i).toString()), // MD
+        "200", "201", "202", "203", "204", "205" // DC
+      ];
+      
+      if (shippingPrefixes.some(p => prefix.startsWith(p))) {
+        setDeliveryOption("shipping");
+      } else {
+        setDeliveryOption("pickup");
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen">
       <Helmet>
@@ -62,15 +99,107 @@ const DeliveryInfo = () => {
       <Header />
       
       <main className="pt-32 pb-16">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 py-16 px-4">
-          <div className="container mx-auto max-w-6xl text-center">
+        {/* Hero Section with ZIP Checker */}
+        <section className="bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 py-20 px-4">
+          <div className="container mx-auto max-w-4xl text-center">
             <h1 className="text-4xl md:text-6xl font-bold font-playfair mb-6">
               Get Your Meals Your Way
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Choose from convenient pickup locations, home delivery, or shipping to our coverage area
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
+              Enter your ZIP code to see your delivery options
             </p>
+
+            {/* ZIP Code Checker */}
+            <Card className="p-8 max-w-xl mx-auto shadow-elevated">
+              <div className="flex gap-3 mb-6">
+                <Input 
+                  type="text"
+                  placeholder="Enter ZIP code"
+                  value={zipCode}
+                  onChange={(e) => setZipCode(e.target.value.replace(/\D/g, '').slice(0, 5))}
+                  onKeyDown={(e) => e.key === 'Enter' && checkZipCode()}
+                  className="text-lg"
+                  maxLength={5}
+                />
+                <Button 
+                  onClick={checkZipCode}
+                  size="lg"
+                  disabled={zipCode.length !== 5}
+                >
+                  <Search className="w-5 h-5 mr-2" />
+                  Check
+                </Button>
+              </div>
+
+              {deliveryOption && (
+                <div className="space-y-4 animate-in fade-in-50 duration-300">
+                  {deliveryOption === "home" && (
+                    <div className="bg-blue-500/10 border-2 border-blue-500/30 rounded-lg p-6 text-left">
+                      <div className="flex items-start gap-3 mb-4">
+                        <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                        <div>
+                          <h3 className="text-xl font-bold text-blue-600 mb-2">Great news! You qualify for:</h3>
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2">
+                              <MapPin className="w-5 h-5 text-blue-500" />
+                              <span className="font-semibold">$12 Home Delivery</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Package className="w-5 h-5 text-primary" />
+                              <span className="font-semibold">Free Pickup at Any Location</span>
+                            </div>
+                          </div>
+                          <p className="text-sm text-muted-foreground mt-3">
+                            10% off orders over $130 • Sunday-Monday delivery window
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {deliveryOption === "shipping" && (
+                    <div className="bg-pink-500/10 border-2 border-pink-500/30 rounded-lg p-6 text-left">
+                      <div className="flex items-start gap-3 mb-4">
+                        <CheckCircle2 className="w-6 h-6 text-pink-500 flex-shrink-0 mt-1" />
+                        <div>
+                          <h3 className="text-xl font-bold text-pink-600 mb-2">You're in our shipping zone!</h3>
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2">
+                              <Truck className="w-5 h-5 text-pink-500" />
+                              <span className="font-semibold">$25 FedEx 2-Day Shipping</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Package className="w-5 h-5 text-primary" />
+                              <span className="font-semibold">Free Pickup at Any Location</span>
+                            </div>
+                          </div>
+                          <p className="text-sm text-muted-foreground mt-3">
+                            10% off orders over $130 • Arrives frozen in insulated packaging
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {deliveryOption === "pickup" && (
+                    <div className="bg-primary/10 border-2 border-primary/30 rounded-lg p-6 text-left">
+                      <div className="flex items-start gap-3 mb-4">
+                        <Package className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                        <div>
+                          <h3 className="text-xl font-bold text-primary mb-2">Pickup Available!</h3>
+                          <div className="space-y-2">
+                            <p className="font-semibold">Free Pickup at Any of Our 6 Locations</p>
+                            <p className="text-sm text-muted-foreground">
+                              Your ZIP code is outside our delivery and shipping zones, but you can pick up your order for free at any of our convenient locations!
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </Card>
           </div>
         </section>
 
