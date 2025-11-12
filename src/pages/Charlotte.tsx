@@ -201,7 +201,7 @@ const Charlotte = () => {
               Ready to Try SmashMeals in Charlotte?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Order this week's menu and taste the SmashMeals difference. Free shipping on orders over $120!
+              Order this week's menu and taste the SmashMeals difference. Free shipping on orders over $130!
             </p>
             <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
