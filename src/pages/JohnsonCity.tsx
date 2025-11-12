@@ -30,7 +30,7 @@ const JohnsonCity = () => {
                 Johnson City's Premier<br />Gluten-Free Meal Prep
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Fresh, chef-prepared meals delivered weekly to Johnson City and surrounding areas. 100% gluten-free, macro-counted, and ready to eat.
+                Fresh, chef-prepared meals with $12 home delivery to Johnson City and surrounding areas. 100% gluten-free, macro-counted, and ready to eat.
               </p>
               <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
@@ -69,7 +69,7 @@ const JohnsonCity = () => {
                   <MapPin className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Pickup/Delivery</h3>
-                <p className="text-muted-foreground">Pick up in Johnson City or get free local delivery Sunday-Monday</p>
+                <p className="text-muted-foreground">Pick up in Johnson City or get $12 home delivery Sunday-Monday</p>
               </Card>
             </div>
           </div>
@@ -99,9 +99,9 @@ const JohnsonCity = () => {
 
               <Card className="p-8">
                 <Truck className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-2xl font-bold mb-4">Free Local Delivery</h3>
+                <h3 className="text-2xl font-bold mb-4">Home Delivery - $12</h3>
                 <p className="text-muted-foreground mb-4">
-                  Free delivery available throughout Johnson City and surrounding areas including:
+                  Home delivery available throughout Johnson City and surrounding areas including:
                 </p>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-center gap-2">
@@ -119,6 +119,10 @@ const JohnsonCity = () => {
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-primary" />
                     Gray
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <strong>10% off orders over $130</strong>
                   </li>
                 </ul>
               </Card>
