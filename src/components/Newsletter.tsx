@@ -4,6 +4,20 @@ import { Input } from "@/components/ui/input";
 import { Mail, MessageSquare } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const newsletterSchema = z.object({
+  email: z.string()
+    .trim()
+    .email({ message: "Please enter a valid email" })
+    .max(255, { message: "Email too long" }),
+  phone: z.string()
+    .trim()
+    .max(20, { message: "Phone number too long" })
+    .regex(/^[+]?[0-9\s.()-]*$/, { message: "Invalid phone number format" })
+    .optional()
+    .or(z.literal(''))
+});
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
@@ -14,10 +28,11 @@ const Newsletter = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!email) {
+    const result = newsletterSchema.safeParse({ email, phone });
+    if (!result.success) {
       toast({
-        title: "Email required",
-        description: "Please enter your email address",
+        title: "Invalid input",
+        description: result.error.errors[0].message,
         variant: "destructive",
       });
       return;
@@ -26,10 +41,11 @@ const Newsletter = () => {
     setIsLoading(true);
 
     try {
+      const validData = result.data;
       // Insert into database
       const { error: dbError } = await supabase
         .from("newsletter_subscribers")
-        .insert({ email, phone: phone || null });
+        .insert({ email: validData.email, phone: validData.phone || null });
 
       if (dbError) {
         if (dbError.code === "23505") {
@@ -47,7 +63,7 @@ const Newsletter = () => {
       const { error: emailError } = await supabase.functions.invoke(
         "notify-newsletter-signup",
         {
-          body: { email, phone },
+          body: { email: validData.email, phone: validData.phone },
         }
       );
 

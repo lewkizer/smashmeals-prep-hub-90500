@@ -121,7 +121,7 @@ const handler = async (req: Request): Promise<Response> => {
     if (!emailResponse.ok) {
       const error = await emailResponse.text();
       console.error("Resend API error:", error);
-      throw new Error(`Failed to send email: ${error}`);
+      throw new Error("Failed to send confirmation email");
     }
 
     const emailData = await emailResponse.json();
@@ -137,7 +137,7 @@ const handler = async (req: Request): Promise<Response> => {
   } catch (error: any) {
     console.error("Error in notify-newsletter-signup function:", error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "Failed to process newsletter signup. Please try again later." }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },

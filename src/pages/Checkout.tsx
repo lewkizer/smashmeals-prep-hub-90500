@@ -13,6 +13,25 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { z } from "zod";
+
+const checkoutSchema = z.object({
+  deliveryMethod: z.enum(['pickup', 'delivery']),
+  pickupLocation: z.string()
+    .trim()
+    .min(1, { message: "Please select a pickup location" })
+    .max(200, { message: "Location name too long" })
+    .optional(),
+  notes: z.string()
+    .trim()
+    .max(500, { message: "Notes must be less than 500 characters" })
+    .optional()
+    .or(z.literal('')),
+  creditToUse: z.number()
+    .min(0, { message: "Credit amount cannot be negative" })
+    .max(999999, { message: "Invalid credit amount" })
+    .optional()
+});
 
 const Checkout = () => {
   const { items, subtotal, clearCart } = useCart();
@@ -54,16 +73,37 @@ const Checkout = () => {
 
   const handlePlaceOrder = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!customer) {
+      toast.error("Customer profile not found");
+      return;
+    }
+
+    // Validate pickup location is provided when needed
+    if (deliveryMethod === "pickup" && !pickupLocation?.trim()) {
+      toast.error("Please select a pickup location");
+      return;
+    }
+
+    // Validate checkout data
+    const result = checkoutSchema.safeParse({
+      deliveryMethod,
+      pickupLocation,
+      notes,
+      creditToUse: Number(creditToUse) || 0
+    });
+
+    if (!result.success) {
+      toast.error(result.error.errors[0].message);
+      return;
+    }
+
     setIsLoading(true);
 
     try {
-      if (!customer) {
-        toast.error("Customer profile not found");
-        return;
-      }
-
+      const validData = result.data;
       const orderNumber = `SM-${Date.now()}`;
-      const creditApplied = Math.min(creditToUse, maxCredit);
+      const creditApplied = Math.min(validData.creditToUse || 0, maxCredit);
       const total = subtotal - creditApplied;
 
       // Create order
@@ -76,9 +116,9 @@ const Checkout = () => {
           subtotal: subtotal,
           credit_applied: creditApplied,
           total: total,
-          delivery_method: deliveryMethod,
-          pickup_location: deliveryMethod === "pickup" ? pickupLocation : null,
-          notes: notes || null,
+          delivery_method: validData.deliveryMethod,
+          pickup_location: validData.deliveryMethod === "pickup" ? validData.pickupLocation : null,
+          notes: validData.notes || null,
         })
         .select()
         .single();
@@ -187,10 +227,14 @@ const Checkout = () => {
                 <CardContent>
                   <Textarea
                     value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
+                    onChange={(e) => setNotes(e.target.value.slice(0, 500))}
                     placeholder="Any special instructions?"
                     rows={4}
+                    maxLength={500}
                   />
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {notes.length}/500 characters
+                  </p>
                 </CardContent>
               </Card>
 

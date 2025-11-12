@@ -7,6 +7,26 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
+import { z } from "zod";
+
+const signupSchema = z.object({
+  email: z.string()
+    .trim()
+    .email({ message: "Please enter a valid email" })
+    .max(255, { message: "Email too long" }),
+  password: z.string()
+    .min(6, { message: "Password must be at least 6 characters" })
+    .max(128, { message: "Password too long" }),
+  fullName: z.string()
+    .trim()
+    .min(1, { message: "Name is required" })
+    .max(100, { message: "Name must be less than 100 characters" })
+    .regex(/^[a-zA-Z\s'-]+$/, { message: "Name contains invalid characters" }),
+  phone: z.string()
+    .trim()
+    .regex(/^[+]?[0-9\s.()-]{10,20}$/, { message: "Please enter a valid phone number" })
+    .max(20, { message: "Phone number too long" }),
+});
 
 const CustomerAuth = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -42,20 +62,22 @@ const CustomerAuth = () => {
 
     try {
       if (isSignUp) {
-        if (!fullName || !phone) {
-          toast.error("Please fill in all fields");
+        const result = signupSchema.safeParse({ email, password, fullName, phone });
+        if (!result.success) {
+          toast.error(result.error.errors[0].message);
           setIsLoading(false);
           return;
         }
 
+        const validData = result.data;
         const { error } = await supabase.auth.signUp({
-          email,
-          password,
+          email: validData.email,
+          password: validData.password,
           options: {
             emailRedirectTo: `${window.location.origin}/account`,
             data: {
-              full_name: fullName,
-              phone: phone,
+              full_name: validData.fullName,
+              phone: validData.phone,
             },
           },
         });

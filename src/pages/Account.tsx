@@ -12,6 +12,40 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Loader2, LogOut } from "lucide-react";
 import { toast } from "sonner";
+import { z } from "zod";
+
+const profileSchema = z.object({
+  full_name: z.string()
+    .trim()
+    .min(1, { message: "Name is required" })
+    .max(100, { message: "Name too long" })
+    .regex(/^[a-zA-Z\s'-]+$/, { message: "Invalid name format" }),
+  phone: z.string()
+    .trim()
+    .regex(/^[+]?[0-9\s.()-]{10,20}$/, { message: "Invalid phone number" })
+    .max(20, { message: "Phone number too long" }),
+  address: z.string()
+    .trim()
+    .max(200, { message: "Address too long" })
+    .optional()
+    .or(z.literal('')),
+  city: z.string()
+    .trim()
+    .max(100, { message: "City name too long" })
+    .regex(/^[a-zA-Z\s-]*$/, { message: "Invalid city name" })
+    .optional()
+    .or(z.literal('')),
+  state: z.string()
+    .trim()
+    .regex(/^[A-Z]{0,2}$/, { message: "Use 2-letter state code" })
+    .optional()
+    .or(z.literal('')),
+  zip_code: z.string()
+    .trim()
+    .regex(/^\d{0,5}(-\d{4})?$/, { message: "Invalid ZIP code" })
+    .optional()
+    .or(z.literal(''))
+});
 
 const Account = () => {
   const [session, setSession] = useState<any>(null);
@@ -61,17 +95,24 @@ const Account = () => {
     e.preventDefault();
     if (!customer) return;
 
+    const result = profileSchema.safeParse({
+      full_name: fullName,
+      phone: phone,
+      address: address,
+      city: city,
+      state: state,
+      zip_code: zipCode
+    });
+
+    if (!result.success) {
+      toast.error(result.error.errors[0].message);
+      return;
+    }
+
     try {
       await updateCustomer.mutateAsync({
         id: customer.id,
-        updates: {
-          full_name: fullName,
-          phone: phone,
-          address: address || null,
-          city: city || null,
-          state: state || null,
-          zip_code: zipCode || null,
-        },
+        updates: result.data,
       });
       toast.success("Profile updated successfully!");
       setIsEditing(false);
