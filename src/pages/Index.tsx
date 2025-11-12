@@ -8,7 +8,6 @@ import Catering from "@/components/Catering";
 import About from "@/components/About";
 import Shipping from "@/components/Shipping";
 import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import SEOContent from "@/components/SEOContent";
 
@@ -25,7 +24,6 @@ const Index = () => {
       <Catering />
       <About />
       <Shipping />
-      <Newsletter />
       <Footer />
       <SEOContent />
     </div>
