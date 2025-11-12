@@ -26,7 +26,7 @@ const SEOContent = () => {
         <li>Trusted by ETSU Athletes and Local Gyms</li>
         <li>Professional Catering Services - 5 Star Reviews</li>
         <li>Weekly Menu with 20+ Fresh Options</li>
-        <li>Nationwide FedEx Shipping Available</li>
+        <li>Regional FedEx Shipping Available</li>
       </ul>
 
       {/* Clean Eatz Alternative Content */}
@@ -55,7 +55,7 @@ const SEOContent = () => {
         Johnson City TN meal prep, Kingsport TN meal prep, Bristol TN meal prep, Bristol VA meal prep,
         Elizabethton meal prep, Greeneville meal prep, Jonesborough meal prep, Blountville meal prep, 
         Piney Flats meal prep, Erwin meal prep, Abingdon VA meal prep.
-        We also ship nationwide via FedEx 2-day delivery to Asheville NC, Knoxville TN, Washington DC, and beyond.
+        We also ship via FedEx 2-day delivery to select regions including Asheville NC, Knoxville TN, Washington DC, and more coverage areas.
         Tri-Cities gluten-free meal delivery. East Tennessee meal prep service. Northeast Tennessee healthy meals.
       </p>
 
@@ -87,7 +87,7 @@ const SEOContent = () => {
         Order delicious gluten-free meals online by Thursday at 11:59 PM each week. 
         New menu launches every Monday morning with 20+ fresh options including protein-packed entrees, healthy breakfasts, nutritious sides, and guilt-free snacks. 
         Convenient pickup on Sunday (2-3 PM) or Monday at our Kingsport location and partner gyms across Tri-Cities including Misfits Fitness Johnson City, CrossFit Arcane Greeneville, and The Great Body Company Kingsport.
-        Can't pickup? We offer nationwide shipping via FedEx 2-day delivery - meals arrive frozen for maximum freshness. 
+        Can't pickup? We offer regional shipping via FedEx 2-day delivery to select coverage areas - meals arrive frozen for maximum freshness. 
         All meals include complete nutritional information with calories, protein, carbohydrates, and fat macros clearly labeled.
         No subscriptions required. No commitments. Order what you want, when you want it.
       </p>
