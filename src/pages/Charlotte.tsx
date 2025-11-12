@@ -31,10 +31,10 @@ const Charlotte = () => {
                 <span className="text-lg font-semibold">Now Shipping to Charlotte, NC</span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold font-playfair">
-                Fresh Gluten-Free Meal Prep<br />Delivered to Charlotte
+                Smash Meals — Charlotte's Healthy Meal Prep Partner
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Chef-prepared, 100% gluten-free meals shipped directly to your door in Charlotte. No subscription, no commitment—just delicious, healthy food.
+                From uptown offices to South End gyms — clean, gluten-free meals made fresh for Charlotte.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">

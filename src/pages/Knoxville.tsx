@@ -26,10 +26,10 @@ const Knoxville = () => {
                 <span className="text-lg font-semibold">Now Shipping to Knoxville, TN</span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold font-playfair">
-                Fresh Gluten-Free<br />Meal Prep for Knoxville
+                Fueling Knoxville,<br />One Healthy Bite at a Time
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                East Tennessee's premier gluten-free meal prep, now shipping to Knoxville. Chef-prepared meals delivered to your doorstep weekly.
+                Fresh, gluten-free, chef-prepared meals delivered straight to your Knoxville doorstep — ready to heat and eat.
               </p>
               <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">

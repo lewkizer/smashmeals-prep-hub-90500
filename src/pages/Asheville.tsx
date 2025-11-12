@@ -27,10 +27,10 @@ const Asheville = () => {
                 <span className="text-lg font-semibold">Now Shipping to Asheville, NC</span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold font-playfair">
-                Fresh Gluten-Free<br />Meal Prep for Asheville
+                Asheville's Clean-Eating<br />Meal Prep Solution
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Premium meal prep shipped directly to your Asheville doorstep. 100% gluten-free, chef-prepared meals that make healthy eating effortless.
+                Gluten-free, high-protein meals crafted for mountain living — delivered fresh each week from Smash Meals.
               </p>
               <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">

@@ -27,6 +27,20 @@ import Erwin from "./pages/Erwin";
 import WashingtonDC from "./pages/WashingtonDC";
 import Jonesborough from "./pages/Jonesborough";
 import Charlotte from "./pages/Charlotte";
+import Greenville from "./pages/Greenville";
+import Chattanooga from "./pages/Chattanooga";
+import Lexington from "./pages/Lexington";
+import Nashville from "./pages/Nashville";
+import Roanoke from "./pages/Roanoke";
+import TriadNC from "./pages/TriadNC";
+import Richmond from "./pages/Richmond";
+import Charlottesville from "./pages/Charlottesville";
+import BooneHickory from "./pages/BooneHickory";
+import Spartanburg from "./pages/Spartanburg";
+import Atlanta from "./pages/Atlanta";
+import RaleighDurham from "./pages/RaleighDurham";
+import Charleston from "./pages/Charleston";
+import Columbia from "./pages/Columbia";
 import Thanksgiving from "./pages/Thanksgiving";
 import GLP1 from "./pages/GLP1";
 import ComparisonPage from "./pages/ComparisonPage";
@@ -73,6 +87,20 @@ const App = () => (
           <Route path="/washington-dc" element={<WashingtonDC />} />
           <Route path="/jonesborough" element={<Jonesborough />} />
           <Route path="/charlotte" element={<Charlotte />} />
+          <Route path="/greenville" element={<Greenville />} />
+          <Route path="/chattanooga" element={<Chattanooga />} />
+          <Route path="/lexington" element={<Lexington />} />
+          <Route path="/nashville" element={<Nashville />} />
+          <Route path="/roanoke" element={<Roanoke />} />
+          <Route path="/triad-nc" element={<TriadNC />} />
+          <Route path="/richmond" element={<Richmond />} />
+          <Route path="/charlottesville" element={<Charlottesville />} />
+          <Route path="/boone-hickory" element={<BooneHickory />} />
+          <Route path="/spartanburg" element={<Spartanburg />} />
+          <Route path="/atlanta" element={<Atlanta />} />
+          <Route path="/raleigh-durham" element={<RaleighDurham />} />
+          <Route path="/charleston" element={<Charleston />} />
+          <Route path="/columbia" element={<Columbia />} />
           <Route path="/thanksgiving" element={<Thanksgiving />} />
           <Route path="/glp1" element={<GLP1 />} />
           <Route path="/vs-clean-eatz" element={<ComparisonPage />} />
