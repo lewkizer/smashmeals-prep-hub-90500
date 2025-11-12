@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import coverageMap from "@/assets/fedex-coverage-map.webp";
-import homeDeliveryMap from "@/assets/home-delivery-map.jpg";
+import homeDeliveryMap from "@/assets/home-delivery-map.webp";
 import { useState } from "react";
 
 const DeliveryInfo = () => {
@@ -264,15 +264,67 @@ const DeliveryInfo = () => {
             <Card className="overflow-hidden">
               <img 
                 src={homeDeliveryMap} 
-                alt="Home delivery coverage map showing $12 delivery zones in the Tri-Cities area"
+                alt="Home Delivery area covering Johnson City, Kingsport, Bristol, and surrounding ZIP codes in the Tri-Cities region"
                 className="w-full h-auto"
               />
             </Card>
             
-            <div className="mt-6 text-center">
-              <p className="text-muted-foreground">
-                Covering Johnson City, Kingsport, Bristol, Greeneville, Elizabethton, and surrounding areas
-              </p>
+            <div className="mt-8 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold text-center mb-6">Covered ZIP Codes</h3>
+              <Card className="p-6">
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                  <div>
+                    <h4 className="font-bold text-primary mb-3">Johnson City Area</h4>
+                    <div className="text-sm text-muted-foreground space-y-1">
+                      <p>37604, 37601, 37615, 37617</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-3">Kingsport Area</h4>
+                    <div className="text-sm text-muted-foreground space-y-1">
+                      <p>37664, 37660, 37650</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-3">Bristol Area</h4>
+                    <div className="text-sm text-muted-foreground space-y-1">
+                      <p>37620</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-3">Jonesborough Area</h4>
+                    <div className="text-sm text-muted-foreground space-y-1">
+                      <p>37659, 37687, 37729</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-3">Elizabethton Area</h4>
+                    <div className="text-sm text-muted-foreground space-y-1">
+                      <p>37643, 37642, 37658, 37656</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-3">Greeneville Area</h4>
+                    <div className="text-sm text-muted-foreground space-y-1">
+                      <p>37745, 37752</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-3">Morristown Area</h4>
+                    <div className="text-sm text-muted-foreground space-y-1">
+                      <p>37801, 37814, 37813</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-3">Other Covered Areas</h4>
+                    <div className="text-sm text-muted-foreground space-y-1">
+                      <p>37690, 37681, 37692, 37857</p>
+                      <p>37699, 37821, 37825, 37872</p>
+                      <p>37877, 37871, 37880, 37874</p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
             </div>
           </div>
         </section>
