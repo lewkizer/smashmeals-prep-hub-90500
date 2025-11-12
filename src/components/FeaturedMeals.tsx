@@ -8,24 +8,27 @@ import { Flame, Heart, Sparkles } from "lucide-react";
 const FeaturedMeals = () => {
   const featuredMeals = [
     {
-      name: "BBQ Chicken & Mac",
-      description: "Tender BBQ chicken with creamy gluten-free mac & cheese",
+      name: "Garlic Herb Filet Mignon Plate",
+      description: "Roasted Brussels with choice of Mashed Potato or Cauliflower",
+      price: "$15.00",
       image: meal1,
       badge: "Customer Favorite",
       icon: Heart,
     },
     {
-      name: "Baked Salmon",
-      description: "Perfectly seasoned salmon with roasted vegetables",
+      name: "Smash Lemon Herb Chicken",
+      description: "Served with spaghetti and zucchini",
+      price: "$10.00",
       image: meal2,
-      badge: "High Protein",
+      badge: "Best Seller",
       icon: Flame,
     },
     {
-      name: "Beef Brisket",
-      description: "Slow-cooked brisket with cauliflower mash",
+      name: "Shrimp and Cheese Grits",
+      description: "Creamy cheese grits with perfectly seasoned shrimp",
+      price: "$11.00",
       image: meal3,
-      badge: "New This Week",
+      badge: "Fan Favorite",
       icon: Sparkles,
     },
   ];
@@ -62,9 +65,12 @@ const FeaturedMeals = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold font-playfair text-foreground mb-2">
-                    {meal.name}
-                  </h3>
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="text-2xl font-bold font-playfair text-foreground flex-1">
+                      {meal.name}
+                    </h3>
+                    <span className="text-2xl font-bold text-primary ml-2">{meal.price}</span>
+                  </div>
                   <p className="text-muted-foreground mb-4">{meal.description}</p>
                 </div>
               </Card>
