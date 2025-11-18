@@ -18,6 +18,7 @@ interface BlogPost {
   content: string;
   slug: string;
   published_at?: string;
+  updated_at?: string;
   author?: string;
   featured_image_url?: string;
   reading_time?: number;
@@ -74,6 +75,38 @@ const BlogPost = () => {
     );
   }
 
+  // JSON-LD structured data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.excerpt,
+    "author": {
+      "@type": "Person",
+      "name": post.author || "SmashMeals"
+    },
+    "datePublished": post.published_at,
+    "dateModified": post.updated_at,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://smashmeals.com/blog/${post.slug}`
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SmashMeals",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://smashmeals.com/logo.png"
+      }
+    },
+    ...(post.featured_image_url && {
+      "image": post.featured_image_url
+    }),
+    ...(post.tags && {
+      "keywords": post.tags.join(', ')
+    })
+  };
+
   return (
     <>
       <Helmet>
@@ -81,6 +114,18 @@ const BlogPost = () => {
         <meta name="description" content={post.excerpt} />
         <link rel="canonical" href={`https://smashmeals.com/blog/${post.slug}`} />
         {post.tags && <meta name="keywords" content={post.tags.join(', ')} />}
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://smashmeals.com/blog/${post.slug}`} />
+        {post.featured_image_url && <meta property="og:image" content={post.featured_image_url} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        {post.featured_image_url && <meta name="twitter:image" content={post.featured_image_url} />}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       </Helmet>
       
       <div className="min-h-screen flex flex-col">
