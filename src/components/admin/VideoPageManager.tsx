@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { format } from "date-fns";
-import { Calendar, Video, Eye, EyeOff, Trash2, Plus, QrCode, Copy } from "lucide-react";
+import { Calendar, Video, Eye, EyeOff, Trash2, Plus, QrCode, Copy, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -78,6 +78,36 @@ export default function VideoPageManager() {
     const url = `${window.location.origin}/video/${slug}`;
     navigator.clipboard.writeText(url);
     toast.success("Video page URL copied to clipboard!");
+  };
+
+  const downloadQRCode = (slug: string) => {
+    const svg = document.getElementById(`qr-${slug}`);
+    if (!svg) return;
+
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    const svgData = new XMLSerializer().serializeToString(svg);
+    const img = new Image();
+    
+    img.onload = () => {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx?.drawImage(img, 0, 0);
+      
+      canvas.toBlob((blob) => {
+        if (blob) {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `qr-code-${slug}.png`;
+          a.click();
+          URL.revokeObjectURL(url);
+          toast.success("QR code downloaded!");
+        }
+      });
+    };
+    
+    img.src = "data:image/svg+xml;base64," + btoa(svgData);
   };
 
   if (isLoading) {
@@ -264,12 +294,21 @@ export default function VideoPageManager() {
               {showQRCode === page.id && (
                 <div className="flex flex-col items-center gap-4 p-4 bg-white rounded-lg">
                   <QRCode
+                    id={`qr-${page.slug}`}
                     value={`${window.location.origin}/video/${page.slug}`}
                     size={256}
                   />
                   <p className="text-sm text-center text-muted-foreground">
                     Scan to visit: /video/{page.slug}
                   </p>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => downloadQRCode(page.slug)}
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Download QR Code
+                  </Button>
                 </div>
               )}
             </CardContent>
