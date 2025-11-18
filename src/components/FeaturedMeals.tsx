@@ -1,8 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import filetMignonPlate from "@/assets/featured/filet-mignon-plate.jpg";
-import lemonHerbChicken from "@/assets/featured/lemon-herb-chicken.jpg";
-import shrimpCheeseGrits from "@/assets/featured/shrimp-cheese-grits.jpg";
+import mexicanChickenBowl from "@/assets/featured/mexican-chicken-bowl.jpg";
+import smokedTurkeyButternutSquash from "@/assets/featured/smoked-turkey-butternut-squash.jpg";
+import grilledSteakSalad from "@/assets/featured/grilled-steak-salad.jpg";
 import { Flame, Heart, Sparkles } from "lucide-react";
 
 const FeaturedMeals = () => {
@@ -11,7 +11,7 @@ const FeaturedMeals = () => {
       name: "SmashMeals Mexican Chicken Bowl",
       description: "Juicy chicken with smoky salsa, black beans, and peppers over rice or cauliflower rice",
       price: "$10.25",
-      image: filetMignonPlate,
+      image: mexicanChickenBowl,
       badge: "NEW This Week",
       icon: Sparkles,
       isNew: true,
@@ -20,7 +20,7 @@ const FeaturedMeals = () => {
       name: "Smoked Turkey & Maple-Roasted Butternut Squash",
       description: "Fall-inspired plate with tender smoked turkey and maple-kissed roasted butternut squash",
       price: "$10.75",
-      image: lemonHerbChicken,
+      image: smokedTurkeyButternutSquash,
       badge: "NEW This Week",
       icon: Sparkles,
       isNew: true,
@@ -29,7 +29,7 @@ const FeaturedMeals = () => {
       name: "Grilled Steak Salad",
       description: "Spring mix with grilled steak, sharp cheddar, bacon bits, cucumbers and cherry tomatoes",
       price: "$10.50",
-      image: shrimpCheeseGrits,
+      image: grilledSteakSalad,
       badge: "NEW This Week",
       icon: Sparkles,
       isNew: true,
