@@ -4,6 +4,7 @@ import StickyOrderBanner from "@/components/StickyOrderBanner";
 import TrustStrip from "@/components/TrustStrip";
 import HowItWorks from "@/components/HowItWorks";
 import FeaturedMeals from "@/components/FeaturedMeals";
+import SmashBarShowcase from "@/components/SmashBarShowcase";
 import Testimonials from "@/components/Testimonials";
 import Mission from "@/components/Mission";
 import WeeklyMenu from "@/components/WeeklyMenu";
@@ -25,6 +26,7 @@ const Index = () => {
       <TrustStrip />
       <HowItWorks />
       <FeaturedMeals />
+      <SmashBarShowcase />
       <Testimonials />
       <Mission />
       <WeeklyMenu />

@@ -14,7 +14,7 @@ import bbqChickenMacCheese from "@/assets/products/bbq-chicken-mac-cheese.jpg";
 import beefBrisketCauliflower from "@/assets/products/beef-brisket-cauliflower.jpg";
 import smashRanchyPopcorn from "@/assets/products/smash-ranchy-popcorn.webp";
 import smashSnackPack from "@/assets/products/smash-snack-pack.webp";
-import smashBar from "@/assets/products/smash-bar.webp";
+import smashBarReal from "@/assets/products/smash-bar-real.jpg";
 import smashProteinBar from "@/assets/products/smash-protein-bar.webp";
 import smashMistakeBar from "@/assets/products/smash-mistake-bar.webp";
 
@@ -30,7 +30,8 @@ const imageMap: Record<string, string> = {
   '/assets/products/beef-brisket-cauliflower.jpg': beefBrisketCauliflower,
   '/src/assets/products/smash-ranchy-popcorn.webp': smashRanchyPopcorn,
   '/src/assets/products/smash-snack-pack.webp': smashSnackPack,
-  '/src/assets/products/smash-bar.webp': smashBar,
+  '/src/assets/products/smash-bar.webp': smashBarReal,
+  '/assets/products/smash-bar-real.jpg': smashBarReal,
   '/src/assets/products/smash-protein-bar.webp': smashProteinBar,
   '/src/assets/products/smash-mistake-bar.webp': smashMistakeBar,
 };
