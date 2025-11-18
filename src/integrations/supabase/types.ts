@@ -384,6 +384,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      apply_customer_credit: {
+        Args: { _amount: number; _customer_id: string; _order_id: string }
+        Returns: boolean
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

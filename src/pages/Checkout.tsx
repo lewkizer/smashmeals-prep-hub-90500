@@ -140,25 +140,18 @@ const Checkout = () => {
 
       if (itemsError) throw itemsError;
 
-      // Update customer credit if used
+      // Apply credit atomically using database function with row-level locking
       if (creditApplied > 0) {
-        const { error: creditError } = await supabase
-          .from("customers")
-          .update({
-            account_credit: Number(customer.account_credit) - creditApplied,
-          })
-          .eq("id", customer.id);
+        const { data: creditSuccess, error: creditError } = await supabase
+          .rpc("apply_customer_credit", {
+            _customer_id: customer.id,
+            _amount: creditApplied,
+            _order_id: order.id,
+          });
 
-        if (creditError) throw creditError;
-
-        // Record credit usage
-        await supabase.from("customer_credit_history").insert({
-          customer_id: customer.id,
-          amount: -creditApplied,
-          type: "used",
-          order_id: order.id,
-          notes: `Credit applied to order ${orderNumber}`,
-        });
+        if (creditError || !creditSuccess) {
+          throw new Error(creditError?.message || "Insufficient credit or credit already applied");
+        }
       }
 
       toast.success("Order placed successfully!");
