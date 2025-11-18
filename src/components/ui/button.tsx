@@ -9,13 +9,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-r from-primary to-primary-glow text-primary-foreground hover:shadow-[0_10px_30px_-10px_hsl(var(--primary)/0.4)] hover:scale-[1.02] transition-all duration-300",
+        default: "bg-primary text-primary-foreground hover:shadow-[0_10px_30px_-10px_hsl(var(--primary)/0.4)] hover:scale-[1.02] transition-all duration-300",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 hover:scale-[1.02] transition-all",
         outline: "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground hover:scale-[1.02] transition-all",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:scale-[1.02] transition-all",
         ghost: "hover:bg-accent/10 hover:text-accent-foreground transition-all",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-to-r from-primary via-primary-glow to-[hsl(160_50%_50%)] text-primary-foreground hover:shadow-[0_20px_50px_-15px_hsl(var(--primary)/0.5)] hover:scale-[1.02] transition-all duration-300 font-semibold",
+        hero: "bg-primary text-primary-foreground hover:shadow-[0_20px_50px_-15px_hsl(var(--primary)/0.5)] hover:scale-[1.02] transition-all duration-300 font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",
