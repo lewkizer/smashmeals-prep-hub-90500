@@ -5,8 +5,10 @@ import { Session } from "@supabase/supabase-js";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
-import { Loader2, LogOut } from "lucide-react";
+import { Loader2, LogOut, Video, Image } from "lucide-react";
 import { GenerateProductImages } from "@/components/GenerateProductImages";
+import VideoPageManager from "@/components/admin/VideoPageManager";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Admin() {
   const navigate = useNavigate();
@@ -117,36 +119,55 @@ export default function Admin() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Product Management</CardTitle>
-              <CardDescription>
-                Generate AI images for products that don't have images yet
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <GenerateProductImages />
-            </CardContent>
-          </Card>
+        <Tabs defaultValue="videos" className="w-full">
+          <TabsList className="grid w-full max-w-md grid-cols-2">
+            <TabsTrigger value="videos" className="flex items-center gap-2">
+              <Video className="h-4 w-4" />
+              Video Pages
+            </TabsTrigger>
+            <TabsTrigger value="products" className="flex items-center gap-2">
+              <Image className="h-4 w-4" />
+              Products
+            </TabsTrigger>
+          </TabsList>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Quick Links</CardTitle>
-              <CardDescription>
-                Manage your SmashMeals content
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <Button onClick={() => navigate("/blogs")} variant="outline" className="w-full justify-start">
-                View Blog Posts
-              </Button>
-              <Button onClick={() => navigate("/menu")} variant="outline" className="w-full justify-start">
-                View Menu
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
+          <TabsContent value="videos" className="mt-6">
+            <VideoPageManager />
+          </TabsContent>
+
+          <TabsContent value="products" className="mt-6">
+            <div className="grid gap-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Product Management</CardTitle>
+                  <CardDescription>
+                    Generate AI images for products that don't have images yet
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <GenerateProductImages />
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Quick Links</CardTitle>
+                  <CardDescription>
+                    Manage your SmashMeals content
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  <Button onClick={() => navigate("/blogs")} variant="outline" className="w-full justify-start">
+                    View Blog Posts
+                  </Button>
+                  <Button onClick={() => navigate("/menu")} variant="outline" className="w-full justify-start">
+                    View Menu
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+        </Tabs>
       </main>
     </div>
   );
