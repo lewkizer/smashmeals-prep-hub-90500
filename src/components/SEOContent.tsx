@@ -6,47 +6,8 @@ const SEOContent = () => {
       <h2>SmashMeals: Tri-Cities' Premier 100% Gluten-Free Meal Prep Since 2017</h2>
       <p>
         SmashMeals is the Tri-Cities' FIRST and ONLY 100% gluten-free meal prep company, serving Johnson City, Kingsport, and Bristol since 2017. 
-        With over 8 years of experience, we're the trusted alternative to Good Batch Mama, Clean Eatz, Fit Plus Meals, and Fit Fast.
+        With over 8 years of experience, we're the trusted choice for healthy, delicious gluten-free meals.
       </p>
-      
-      {/* Good Batch Mama Alternative Content */}
-      <h3>SmashMeals vs Good Batch Mama - The Better Choice</h3>
-      <p>
-        Choosing between Good Batch Mama and SmashMeals? Here's why SmashMeals is the superior choice for Tri-Cities meal prep:
-        SmashMeals operates the region's ONLY 100% gluten-free certified kitchen, making it the safest choice for celiac disease and gluten sensitivity.
-        Good Batch Mama Kingsport alternative. Better than Good Batch Mama with dedicated gluten-free facility and 8+ years experience.
-      </p>
-      
-      <h3>Why SmashMeals is Better Than Good Batch Mama</h3>
-      <ul>
-        <li>100% Gluten-Free Certified Kitchen - Zero Cross-Contamination</li>
-        <li>8+ Years Serving Tri-Cities (Since 2017) - Longest Established Meal Prep</li>
-        <li>Fresh Never Frozen Pickup Options</li>
-        <li>Complete Macro Nutrition Labels on All Meals</li>
-        <li>Trusted by ETSU Athletes and Local Gyms</li>
-        <li>Professional Catering Services - 5 Star Reviews</li>
-        <li>Weekly Menu with 20+ Fresh Options</li>
-        <li>Regional FedEx Shipping Available</li>
-      </ul>
-
-      {/* Clean Eatz Alternative Content */}
-      <h3>SmashMeals: The Established Clean Eatz Alternative in Tri-Cities</h3>
-      <p>
-        Looking for Clean Eatz in Johnson City, Kingsport, or Bristol? Clean Eatz Johnson City is still "coming soon" - but SmashMeals has been serving the Tri-Cities for 8+ years! 
-        Unlike Clean Eatz corporate franchise model, SmashMeals is a locally-owned family business operating a 100% gluten-free kitchen.
-        Clean Eatz alternative Johnson City. Clean Eatz alternative Kingsport. Clean Eatz alternative Bristol TN.
-      </p>
-      
-      <h3>Why Choose SmashMeals Over Clean Eatz</h3>
-      <ul>
-        <li>100% Gluten-Free Kitchen (Clean Eatz is NOT gluten-free)</li>
-        <li>Already Open and Serving - No Waiting for "Coming Soon"</li>
-        <li>8+ Years Proven Track Record in Tri-Cities</li>
-        <li>Local Family Business vs Corporate Franchise</li>
-        <li>Fresh Pickup Options Available (Not Just Frozen)</li>
-        <li>No Subscription Required - Order What You Want</li>
-        <li>Trusted by East Tennessee State University Athletes</li>
-      </ul>
 
       {/* Geographic Coverage - Detailed City Content */}
       <h3>Serving All of Tri-Cities Tennessee & Southwest Virginia</h3>
@@ -59,14 +20,11 @@ const SEOContent = () => {
         Tri-Cities gluten-free meal delivery. East Tennessee meal prep service. Northeast Tennessee healthy meals.
       </p>
 
-      {/* Competitor Comparison Keywords */}
-      <h3>Best Meal Prep Service Tri-Cities - SmashMeals vs Competitors</h3>
+      {/* Best Meal Prep Keywords */}
+      <h3>Best Meal Prep Service Tri-Cities</h3>
       <p>
-        Good Batch Mama vs SmashMeals - dedicated gluten-free facility wins. 
-        Good Batch Mama alternative Tri-Cities. Good Batch Mama alternative Kingsport. Better than Good Batch Mama.
-        Clean Eatz vs SmashMeals - established business with 8 years experience. 
-        Clean Eatz alternative Tri-Cities. Clean Eatz Johnson City alternative. Clean Eatz Kingsport alternative.
-        Gluten-free Clean Eatz option. Better than Clean Eatz. Clean Eatz coming soon but SmashMeals open now.
+        SmashMeals - Tri-Cities' premier gluten-free meal prep with 8 years of trusted service.
+        Best meal prep Tri-Cities. Best gluten-free meal prep Tennessee. Top rated meal prep service.
         Fit Plus Meals alternative. Fit Fast alternative. Best meal prep Tri-Cities Tennessee.
       </p>
 
