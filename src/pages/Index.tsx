@@ -13,10 +13,12 @@ import About from "@/components/About";
 import Shipping from "@/components/Shipping";
 import Footer from "@/components/Footer";
 import SEOContent from "@/components/SEOContent";
+import MenuSchema from "@/components/MenuSchema";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <MenuSchema />
       <StickyOrderBanner />
       <Header />
       <Hero />
