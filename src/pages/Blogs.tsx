@@ -45,6 +45,10 @@ const Blogs = () => {
         <meta name="description" content="Read the latest meal prep tips, healthy recipes, nutrition advice, and wellness content from SmashMeals. Stay informed about clean eating and fitness." />
         <meta name="keywords" content="meal prep blog, healthy recipes, nutrition tips, fitness advice, clean eating, wellness blog" />
         <link rel="canonical" href="https://smashmeals.com/blogs" />
+        <meta property="og:title" content="SmashMeals Blog - Meal Prep Tips & Nutrition Advice" />
+        <meta property="og:description" content="Read the latest meal prep tips, healthy recipes, nutrition advice, and wellness content from SmashMeals." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://smashmeals.com/blogs" />
       </Helmet>
       
       <div className="min-h-screen flex flex-col">
