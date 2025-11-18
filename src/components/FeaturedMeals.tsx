@@ -8,28 +8,31 @@ import { Flame, Heart, Sparkles } from "lucide-react";
 const FeaturedMeals = () => {
   const featuredMeals = [
     {
-      name: "Garlic Herb Filet Mignon Plate",
-      description: "Roasted Brussels with choice of Mashed Potato or Cauliflower",
-      price: "$15.00",
+      name: "SmashMeals Mexican Chicken Bowl",
+      description: "Seasoned chicken with rice, beans, and fresh toppings",
+      price: "$10.25",
       image: filetMignonPlate,
-      badge: "Customer Favorite",
-      icon: Heart,
-    },
-    {
-      name: "Smash Lemon Herb Chicken",
-      description: "Served with spaghetti and zucchini",
-      price: "$10.00",
-      image: lemonHerbChicken,
-      badge: "Best Seller",
-      icon: Flame,
-    },
-    {
-      name: "Shrimp and Cheese Grits",
-      description: "Creamy cheese grits with perfectly seasoned shrimp",
-      price: "$11.00",
-      image: shrimpCheeseGrits,
-      badge: "Fan Favorite",
+      badge: "NEW This Week",
       icon: Sparkles,
+      isNew: true,
+    },
+    {
+      name: "Smoked Turkey & Maple-Roasted Butternut Squash",
+      description: "Fall-inspired plate with perfectly seasoned turkey",
+      price: "$10.75",
+      image: lemonHerbChicken,
+      badge: "NEW This Week",
+      icon: Sparkles,
+      isNew: true,
+    },
+    {
+      name: "Grilled Steak Salad",
+      description: "Fresh greens topped with tender grilled steak",
+      price: "$10.50",
+      image: shrimpCheeseGrits,
+      badge: "NEW This Week",
+      icon: Sparkles,
+      isNew: true,
     },
   ];
 
@@ -37,11 +40,15 @@ const FeaturedMeals = () => {
     <section className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/30 rounded-full px-6 py-2 mb-4">
+            <Sparkles className="w-5 h-5 text-accent" />
+            <span className="text-sm font-semibold text-accent">New Items Just Added</span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold font-playfair text-foreground mb-4">
             Featured This Week
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Chef-crafted meals that our community can't get enough of
+            Order by <span className="font-bold text-primary">Thursday at Midnight</span> for Sunday pickup
           </p>
         </div>
 
@@ -56,10 +63,10 @@ const FeaturedMeals = () => {
                 <div className="relative">
                   <img
                     src={meal.image}
-                    alt={meal.name}
+                    alt={`${meal.name} - Gluten-free meal prep in Tri-Cities TN`}
                     className="w-full h-64 object-cover"
                   />
-                  <div className="absolute top-4 left-4 bg-accent text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
+                  <div className={`absolute top-4 left-4 ${meal.isNew ? 'bg-gradient-to-r from-accent to-primary' : 'bg-accent'} text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg animate-pulse`}>
                     <Icon className="w-4 h-4" />
                     <span className="text-sm font-semibold">{meal.badge}</span>
                   </div>
