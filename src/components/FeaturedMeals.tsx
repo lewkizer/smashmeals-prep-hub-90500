@@ -8,17 +8,17 @@ import { Flame, Heart, Sparkles } from "lucide-react";
 const FeaturedMeals = () => {
   const featuredMeals = [
     {
-      name: "SmashMeals Mexican Chicken Bowl",
-      description: "Seasoned chicken with rice, beans, and fresh toppings",
-      price: "$10.25",
+      name: "Filet Mignon Plate",
+      description: "Premium filet mignon with roasted vegetables and savory sides",
+      price: "$14.25",
       image: filetMignonPlate,
       badge: "NEW This Week",
       icon: Sparkles,
       isNew: true,
     },
     {
-      name: "Smoked Turkey & Maple-Roasted Butternut Squash",
-      description: "Fall-inspired plate with perfectly seasoned turkey",
+      name: "Lemon Herb Chicken",
+      description: "Tender chicken breast with fresh herbs and seasonal vegetables",
       price: "$10.75",
       image: lemonHerbChicken,
       badge: "NEW This Week",
@@ -26,9 +26,9 @@ const FeaturedMeals = () => {
       isNew: true,
     },
     {
-      name: "Grilled Steak Salad",
-      description: "Fresh greens topped with tender grilled steak",
-      price: "$10.50",
+      name: "Shrimp & Cheese Grits",
+      description: "Southern comfort with succulent shrimp over creamy cheese grits",
+      price: "$11.50",
       image: shrimpCheeseGrits,
       badge: "NEW This Week",
       icon: Sparkles,
