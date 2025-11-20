@@ -53,6 +53,7 @@ const Header = () => {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Menu", href: "https://smashmeals.bottle.com/b/9814360" },
+    { name: "Freezer Meals", href: "/freezer-meals" },
     { name: "Thanksgiving", href: "/thanksgiving" },
     { name: "How It Works", href: "/how-it-works" },
     { name: "Catering", href: "/catering" },
@@ -64,6 +65,7 @@ const Header = () => {
   const mobileNavLinks = [
     { name: "Home", href: "/" },
     { name: "Menu", href: "https://smashmeals.bottle.com/b/9814360" },
+    { name: "Freezer Meals", href: "/freezer-meals" },
     { name: "Thanksgiving", href: "/thanksgiving" },
     { name: "GLP-1", href: "/glp1" },
     { name: "How It Works", href: "/how-it-works" },

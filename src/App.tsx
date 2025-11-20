@@ -76,6 +76,7 @@ import Partners from "./pages/Partners";
 import DeliveryInfo from "./pages/DeliveryInfo";
 import HeatAndEat from "./pages/HeatAndEat";
 import VideoPage from "./pages/VideoPage";
+import FreezerMeals from "./pages/FreezerMeals";
 
 const queryClient = new QueryClient();
 
@@ -158,6 +159,7 @@ const App = () => (
           <Route path="/account" element={<Account />} />
           <Route path="/delivery-info" element={<DeliveryInfo />} />
           <Route path="/heat-and-eat" element={<HeatAndEat />} />
+          <Route path="/freezer-meals" element={<FreezerMeals />} />
           <Route path="/video/:slug" element={<VideoPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
