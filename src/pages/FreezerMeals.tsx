@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Clock, Flame, ShoppingCart, Truck, ChefHat, Users, Heart, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/freezer-meals/hero-freezer-meals.jpg";
@@ -449,6 +450,135 @@ export default function FreezerMeals() {
               </cite>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-background">
+        <div className="container max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Everything you need to know about our freezer meals
+            </p>
+          </div>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                How do I reheat my freezer meals?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground space-y-3 pt-2">
+                <div>
+                  <p className="font-semibold text-foreground mb-2">From Frozen (Recommended):</p>
+                  <ul className="space-y-2 ml-4">
+                    <li>• <strong>Oven:</strong> Preheat to 350°F. Remove lid, cover with foil, and bake for 60-75 minutes until internal temperature reaches 165°F. Remove foil for last 10 minutes for crispy top.</li>
+                    <li>• <strong>Microwave:</strong> Remove from container and place in microwave-safe dish. Heat on 50% power for 8-10 minutes, stirring halfway. Then heat on high for 3-5 minutes until steaming hot.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground mb-2">From Thawed:</p>
+                  <ul className="space-y-2 ml-4">
+                    <li>• <strong>Oven:</strong> Preheat to 350°F and bake for 30-40 minutes until heated through (165°F).</li>
+                    <li>• <strong>Stovetop:</strong> Heat in a large skillet over medium heat for 10-15 minutes, stirring occasionally.</li>
+                  </ul>
+                </div>
+                <p className="text-sm italic mt-3">💡 Tip: For best results, thaw in refrigerator overnight before reheating.</p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                How long do the meals last in the freezer?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground space-y-2 pt-2">
+                <p>Our freezer meals will stay fresh for <strong className="text-foreground">3-6 months</strong> when stored properly in your freezer at 0°F or below.</p>
+                <p>For best quality and flavor, we recommend enjoying them within the first 3 months. Each meal is labeled with the date it was prepared.</p>
+                <p className="text-sm italic mt-2">🧊 Storage Tip: Keep meals in the back of your freezer where temperature is most consistent.</p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                Are all meals 100% gluten-free?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground space-y-2 pt-2">
+                <p><strong className="text-foreground">Yes!</strong> Every single meal we prepare is certified 100% gluten-free. We use:</p>
+                <ul className="space-y-1 ml-4 mt-2">
+                  <li>• Gluten-free quinoa pasta in our Alfredo and pesto dishes</li>
+                  <li>• Certified gluten-free oats in breakfast bakes</li>
+                  <li>• Fresh, whole ingredients with no gluten-containing fillers</li>
+                  <li>• Dedicated gluten-free preparation area in our commercial kitchen</li>
+                </ul>
+                <p className="mt-3">All our meals are prepared in a facility that prioritizes gluten-free safety protocols, making them safe for those with celiac disease or gluten sensitivity.</p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                How many people does each meal feed?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground space-y-2 pt-2">
+                <p>Our family freezer meals are designed to serve <strong className="text-foreground">4-6 people</strong> with generous portions.</p>
+                <p><strong className="text-foreground">Dinner entrees</strong> include 20 oz of protein plus 36 oz of sides - that's over 3.5 pounds of food per meal!</p>
+                <p><strong className="text-foreground">Breakfast meals</strong> total 42 oz, perfect for feeding the whole family or meal prepping for the week.</p>
+                <p className="text-sm italic mt-2">👨‍👩‍👧‍👦 For smaller families, these meals also work great for having leftovers or splitting into two separate meals.</p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                Can I customize meals or request specific ingredients?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground space-y-2 pt-2">
+                <p>Currently, our freezer meals come as pre-designed complete meals to ensure consistent quality and efficient preparation. However, we offer a wide variety of options to suit different tastes!</p>
+                <p>If you have specific dietary needs or allergies beyond gluten-free, please <Link to="/contact" className="text-primary hover:underline font-medium">contact us</Link> and we'll do our best to accommodate your request for future meal prep sessions.</p>
+                <p className="mt-2">We're always adding new meal options based on customer feedback, so let us know what you'd like to see!</p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                What containers are the meals packaged in?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground space-y-2 pt-2">
+                <p>All meals come in <strong className="text-foreground">food-safe, freezer-friendly aluminum containers</strong> with tight-sealing lids.</p>
+                <p>These containers are:</p>
+                <ul className="space-y-1 ml-4 mt-2">
+                  <li>• Oven-safe (remove plastic lid first)</li>
+                  <li>• Recyclable after use</li>
+                  <li>• Designed to prevent freezer burn</li>
+                  <li>• Easy to stack in your freezer</li>
+                </ul>
+                <p className="text-sm italic mt-2">♻️ We recommend transferring to microwave-safe dishes when reheating in the microwave.</p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-7" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                Do you offer delivery or just pickup?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground space-y-2 pt-2">
+                <p>We offer <strong className="text-foreground">both pickup and delivery</strong> options!</p>
+                <p><strong className="text-foreground">Pickup Locations:</strong> Available at multiple convenient locations throughout the Tri-Cities area. <Link to="/pickup-locations" className="text-primary hover:underline font-medium">View all pickup locations</Link>.</p>
+                <p><strong className="text-foreground">Home Delivery:</strong> We deliver within our service area. Meals are transported in insulated coolers to maintain proper temperature. <Link to="/delivery-info" className="text-primary hover:underline font-medium">Check if we deliver to you</Link>.</p>
+                <p className="text-sm italic mt-2">📦 All orders include dry ice or ice packs to keep meals frozen during transport.</p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-8" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                Can I freeze meals again after thawing?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground space-y-2 pt-2">
+                <p><strong className="text-foreground">We do not recommend refreezing</strong> meals once they've been fully thawed, as this can affect food safety and quality.</p>
+                <p>However, if a meal is still partially frozen with ice crystals present and has been kept refrigerated (below 40°F), it can be safely refrozen.</p>
+                <p className="mt-2"><strong className="text-foreground">Best practice:</strong> Only thaw the meals you plan to eat within 3-4 days. Keep the rest frozen until you're ready to use them.</p>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
