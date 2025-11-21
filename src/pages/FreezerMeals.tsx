@@ -13,6 +13,13 @@ import beefTacoCasserole from "@/assets/freezer-meals/beef-taco-casserole.jpg";
 import lemonSalmon from "@/assets/freezer-meals/lemon-salmon.jpg";
 import breakfastBurritoSkillet from "@/assets/freezer-meals/breakfast-burrito-skillet.jpg";
 import southernBreakfastBake from "@/assets/freezer-meals/southern-breakfast-bake.jpg";
+import porkTenderloinDinner from "@/assets/freezer-meals/pork-tenderloin-dinner.jpg";
+import bbqPorkMeal from "@/assets/freezer-meals/bbq-pork-meal.jpg";
+import chickenPestoPasta from "@/assets/freezer-meals/chicken-pesto-pasta.jpg";
+import steakBiteDinner from "@/assets/freezer-meals/steak-bite-dinner.jpg";
+import blueberryOatBake from "@/assets/freezer-meals/blueberry-oat-bake.jpg";
+import chickenSausageHash from "@/assets/freezer-meals/chicken-sausage-hash.jpg";
+import baconEggCheeseCasserole from "@/assets/freezer-meals/bacon-egg-cheese-casserole.jpg";
 
 const entrees = [
   {
@@ -70,6 +77,7 @@ const entrees = [
     halfSides: ["Half portion roasted potatoes", "Half portion mixed vegetables"],
     serves: "Serves 6",
     halfServes: "Serves 3",
+    image: porkTenderloinDinner,
   },
   {
     name: "BBQ Pork Family Meal",
@@ -79,6 +87,7 @@ const entrees = [
     halfProtein: "10 oz house-smoked pulled pork with BBQ sauce",
     sides: ["Baked beans", "Corn"],
     halfSides: ["Half portion baked beans", "Half portion corn"],
+    image: bbqPorkMeal,
     badge: "Southern Classic",
   },
   {
@@ -89,6 +98,7 @@ const entrees = [
     halfProtein: "10 oz grilled chicken breast",
     sides: ["Pesto quinoa pasta (gluten-free)", "Choice of seasonal vegetables"],
     halfSides: ["Half portion pesto quinoa pasta (gluten-free)", "Choice of seasonal vegetables"],
+    image: chickenPestoPasta,
     badge: "Fresh & Light",
   },
   {
@@ -101,6 +111,7 @@ const entrees = [
     halfSides: ["Half portion roasted potatoes", "Half portion seasonal vegetable medley"],
     serves: "Serves 6",
     halfServes: "Serves 3",
+    image: steakBiteDinner,
     badge: "Premium",
   },
 ];
@@ -165,6 +176,7 @@ const breakfastMeals = [
       "4 oz blueberries",
       "2 oz vanilla + cinnamon",
     ],
+    image: blueberryOatBake,
     badge: "High Protein",
   },
   {
@@ -183,6 +195,7 @@ const breakfastMeals = [
       "6 oz chicken sausage",
       "6 oz scrambled eggs",
     ],
+    image: chickenSausageHash,
   },
   {
     name: "Family Bacon, Egg & Cheese Breakfast Casserole",
@@ -202,6 +215,7 @@ const breakfastMeals = [
       "2 oz bacon",
       "Light cheddar on top",
     ],
+    image: baconEggCheeseCasserole,
     badge: "Classic",
   },
 ];
