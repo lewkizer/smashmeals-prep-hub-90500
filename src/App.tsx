@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import MealDetail from "./pages/MealDetail";
+import GlutenFreeMealPrepGuide from "./pages/GlutenFreeMealPrepGuide";
 import ProductDetail from "./pages/ProductDetail";
 import HowItWorks from "./pages/HowItWorks";
 import About from "./pages/About";
@@ -160,6 +162,8 @@ const App = () => (
           <Route path="/delivery-info" element={<DeliveryInfo />} />
           <Route path="/heat-and-eat" element={<HeatAndEat />} />
           <Route path="/freezer-meals" element={<FreezerMeals />} />
+          <Route path="/meals/:slug" element={<MealDetail />} />
+          <Route path="/gluten-free-meal-prep-guide" element={<GlutenFreeMealPrepGuide />} />
           <Route path="/video/:slug" element={<VideoPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

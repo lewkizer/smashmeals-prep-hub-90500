@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import mexicanChickenBowl from "@/assets/featured/mexican-chicken-bowl.jpg";
 import smokedTurkeyButternutSquash from "@/assets/featured/smoked-turkey-butternut-squash.jpg";
 import grilledSteakSalad from "@/assets/featured/grilled-steak-salad.jpg";
@@ -8,6 +9,7 @@ import { Flame, Heart, Sparkles } from "lucide-react";
 const FeaturedMeals = () => {
   const featuredMeals = [
     {
+      slug: "mexican-chicken-bowl",
       name: "SmashMeals Mexican Chicken Bowl",
       description: "Juicy chicken with smoky salsa, black beans, and peppers over rice or cauliflower rice",
       price: "$10.25",
@@ -17,6 +19,7 @@ const FeaturedMeals = () => {
       isNew: true,
     },
     {
+      slug: "smoked-turkey-butternut-squash",
       name: "Smoked Turkey & Maple-Roasted Butternut Squash",
       description: "Fall-inspired plate with tender smoked turkey and maple-kissed roasted butternut squash",
       price: "$10.75",
@@ -26,6 +29,7 @@ const FeaturedMeals = () => {
       isNew: true,
     },
     {
+      slug: "grilled-steak-salad",
       name: "Grilled Steak Salad",
       description: "Spring mix with grilled steak, sharp cheddar, bacon bits, cucumbers and cherry tomatoes",
       price: "$10.50",
@@ -56,31 +60,30 @@ const FeaturedMeals = () => {
           {featuredMeals.map((meal, index) => {
             const Icon = meal.icon;
             return (
-              <Card
-                key={index}
-                className="overflow-hidden hover:shadow-elevated transition-all duration-300 hover:scale-105 border-2"
-              >
-                <div className="relative">
-                  <img
-                    src={meal.image}
-                    alt={`${meal.name} - Gluten-free meal prep in Tri-Cities TN`}
-                    className="w-full h-64 object-cover"
-                  />
-                  <div className={`absolute top-4 left-4 ${meal.isNew ? 'bg-gradient-to-r from-accent to-primary' : 'bg-accent'} text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg animate-pulse`}>
-                    <Icon className="w-4 h-4" />
-                    <span className="text-sm font-semibold">{meal.badge}</span>
+              <Link key={index} to={`/meals/${meal.slug}`}>
+                <Card className="overflow-hidden hover:shadow-elevated transition-all duration-300 hover:scale-105 border-2 cursor-pointer">
+                  <div className="relative">
+                    <img
+                      src={meal.image}
+                      alt={`${meal.name} - Gluten-free meal prep in Tri-Cities TN`}
+                      className="w-full h-64 object-cover"
+                    />
+                    <div className={`absolute top-4 left-4 ${meal.isNew ? 'bg-gradient-to-r from-accent to-primary' : 'bg-accent'} text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg animate-pulse`}>
+                      <Icon className="w-4 h-4" />
+                      <span className="text-sm font-semibold">{meal.badge}</span>
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-2xl font-bold font-playfair text-foreground flex-1">
-                      {meal.name}
-                    </h3>
-                    <span className="text-2xl font-bold text-primary ml-2">{meal.price}</span>
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-2">
+                      <h3 className="text-2xl font-bold font-playfair text-foreground flex-1">
+                        {meal.name}
+                      </h3>
+                      <span className="text-2xl font-bold text-primary ml-2">{meal.price}</span>
+                    </div>
+                    <p className="text-muted-foreground mb-4">{meal.description}</p>
                   </div>
-                  <p className="text-muted-foreground mb-4">{meal.description}</p>
-                </div>
-              </Card>
+                </Card>
+              </Link>
             );
           })}
         </div>
