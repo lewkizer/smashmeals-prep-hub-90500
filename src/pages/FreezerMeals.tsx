@@ -266,14 +266,51 @@ export default function FreezerMeals() {
         />
         <meta 
           name="keywords" 
-          content="family freezer meals, gluten-free freezer meals, Tri-Cities meal prep, family meal delivery, bulk meal prep, Johnson City freezer meals, Kingsport family meals, Bristol meal prep" 
+          content="family freezer meals, gluten-free freezer meals, Tri-Cities meal prep, family meal delivery, bulk meal prep, Johnson City freezer meals, Kingsport family meals, Bristol meal prep, family dinner meals, family breakfast meals, freezer meal delivery Tennessee" 
         />
         <link rel="canonical" href="https://smashmeals.com/freezer-meals" />
+        
+        {/* Open Graph / Facebook */}
         <meta property="og:title" content="Family Freezer Meals | SmashMeals Tri-Cities" />
         <meta property="og:description" content="100% gluten-free family freezer meals that serve 4-6. Heat and eat in minutes. Made fresh, never frozen until packaged." />
         <meta property="og:image" content={heroImage} />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://smashmeals.com/freezer-meals" />
+        
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Family Freezer Meals | SmashMeals" />
+        <meta name="twitter:description" content="100% gluten-free family freezer meals that serve 4-6. $50-55 dinner entrees, $40 breakfast meals." />
+        <meta name="twitter:image" content={heroImage} />
+        
+        {/* Structured Data for Family Meals */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "SmashMeals Family Freezer Meals",
+            "description": "100% gluten-free family freezer meals that serve 4-6 people. Includes dinner entrees and breakfast meals with flexible half-size options.",
+            "brand": {
+              "@type": "Brand",
+              "name": "SmashMeals"
+            },
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "USD",
+              "lowPrice": "40.00",
+              "highPrice": "55.00",
+              "offerCount": "13",
+              "availability": "https://schema.org/InStock",
+              "url": "https://smashmeals.com/freezer-meals"
+            },
+            "category": "Gluten-Free Family Meals",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5.0",
+              "reviewCount": "150"
+            }
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Section */}
