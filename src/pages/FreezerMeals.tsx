@@ -226,18 +226,20 @@ const benefits = [
     icon: Heart,
     title: "Made With Love",
     description: "Prepared fresh in our commercial kitchen using the same recipes we make for our own families.",
+    link: "/about",
   },
   {
     icon: Truck,
     title: "Pickup or Delivery",
     description: "Available for pickup at multiple Tri-Cities locations or delivered right to your doorstep.",
+    link: "https://smashmeals.square.site",
   },
   {
     icon: ChefHat,
     title: "Restaurant Quality",
     description: "Chef-crafted meals that taste homemade, not mass-produced. Real food, real flavor, real convenient.",
   },
-];
+] as const;
 
 export default function FreezerMeals() {
   return (
@@ -311,17 +313,35 @@ export default function FreezerMeals() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="border-2 hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <benefit.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{benefit.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">{benefit.description}</CardDescription>
-                </CardContent>
-              </Card>
+              <div key={index}>
+                {'link' in benefit && benefit.link ? (
+                  <Link to={benefit.link} className="block h-full">
+                    <Card className="border-2 hover:shadow-lg transition-shadow h-full">
+                      <CardHeader>
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                          <benefit.icon className="w-6 h-6 text-primary" />
+                        </div>
+                        <CardTitle className="text-xl">{benefit.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-base">{benefit.description}</CardDescription>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ) : (
+                  <Card className="border-2 hover:shadow-lg transition-shadow h-full">
+                    <CardHeader>
+                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <benefit.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <CardTitle className="text-xl">{benefit.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-base">{benefit.description}</CardDescription>
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
             ))}
           </div>
         </div>
@@ -524,43 +544,43 @@ export default function FreezerMeals() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            <Link to="/menu" className="text-center group cursor-pointer">
+              <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold mx-auto mb-4 group-hover:scale-110 transition-transform">
                 1
               </div>
               <h3 className="text-2xl font-bold mb-3">Order Online</h3>
               <p className="text-muted-foreground">
                 Browse our menu and select your favorite family meals. Mix and match dinners and breakfasts.
               </p>
-            </div>
+            </Link>
 
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            <Link to="/pickup-locations" className="text-center group cursor-pointer">
+              <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold mx-auto mb-4 group-hover:scale-110 transition-transform">
                 2
               </div>
               <h3 className="text-2xl font-bold mb-3">Pickup or Delivery</h3>
               <p className="text-muted-foreground">
                 Choose from multiple Tri-Cities pickup locations or have meals delivered to your door.
               </p>
-            </div>
+            </Link>
 
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            <Link to="/how-it-works" className="text-center group cursor-pointer">
+              <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold mx-auto mb-4 group-hover:scale-110 transition-transform">
                 3
               </div>
               <h3 className="text-2xl font-bold mb-3">Heat & Enjoy</h3>
               <p className="text-muted-foreground">
                 Store in your freezer, reheat when ready, and enjoy a delicious family meal in minutes.
               </p>
-            </div>
+            </Link>
           </div>
 
           <div className="text-center mt-12">
             <Button size="lg" className="text-lg px-8 py-6" asChild>
-              <a href="https://smashmeals.square.site" target="_blank" rel="noopener noreferrer">
+              <Link to="/menu">
                 <ShoppingCart className="mr-2 h-5 w-5" />
                 Order Your Family Meals Today
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
@@ -697,7 +717,7 @@ export default function FreezerMeals() {
               <AccordionContent className="text-base text-muted-foreground space-y-2 pt-2">
                 <p>We offer <strong className="text-foreground">both pickup and delivery</strong> options!</p>
                 <p><strong className="text-foreground">Pickup Locations:</strong> Available at multiple convenient locations throughout the Tri-Cities area. <Link to="/pickup-locations" className="text-primary hover:underline font-medium">View all pickup locations</Link>.</p>
-                <p><strong className="text-foreground">Home Delivery:</strong> We deliver within our service area. Meals are transported in insulated coolers to maintain proper temperature. <Link to="/delivery-info" className="text-primary hover:underline font-medium">Check if we deliver to you</Link>.</p>
+                <p><strong className="text-foreground">Home Delivery:</strong> We deliver within our service area. Meals are transported in insulated coolers to maintain proper temperature. <Link to="/shipping" className="text-primary hover:underline font-medium">Check if we deliver to you</Link>.</p>
                 <p className="text-sm italic mt-2">📦 All orders include dry ice or ice packs to keep meals frozen during transport.</p>
               </AccordionContent>
             </AccordionItem>
@@ -727,10 +747,10 @@ export default function FreezerMeals() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8 py-6" asChild>
-              <a href="https://smashmeals.square.site" target="_blank" rel="noopener noreferrer">
+              <Link to="/menu">
                 <ShoppingCart className="mr-2 h-5 w-5" />
                 Start Your Order
-              </a>
+              </Link>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6" asChild>
               <Link to="/contact">
