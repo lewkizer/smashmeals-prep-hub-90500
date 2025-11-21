@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,64 +17,90 @@ import southernBreakfastBake from "@/assets/freezer-meals/southern-breakfast-bak
 const entrees = [
   {
     name: "Family Honey Garlic Chicken & Rice Bowl",
-    price: "$50-55",
+    fullPrice: "$50-55",
+    halfPrice: "$25-28",
     protein: "20 oz grilled chicken breast tossed in honey-garlic sauce",
+    halfProtein: "10 oz grilled chicken breast tossed in honey-garlic sauce",
     sides: ["24 oz white rice", "12 oz steamed green beans"],
+    halfSides: ["12 oz white rice", "6 oz steamed green beans"],
     image: honeyGarlicChicken,
     badge: "Fan Favorite",
   },
   {
     name: "Family Smoked Turkey Alfredo Bake",
-    price: "$50-55",
+    fullPrice: "$50-55",
+    halfPrice: "$25-28",
     protein: "20 oz house-smoked turkey, cubed",
+    halfProtein: "10 oz house-smoked turkey, cubed",
     sides: ["36 oz quinoa pasta Alfredo (gluten-free Alfredo, light cream cheese, parmesan, garlic)"],
+    halfSides: ["18 oz quinoa pasta Alfredo (gluten-free Alfredo, light cream cheese, parmesan, garlic)"],
     image: turkeyAlfredo,
     badge: "Creamy & Rich",
   },
   {
     name: "Family Beef Taco Casserole",
-    price: "$50-55",
+    fullPrice: "$50-55",
+    halfPrice: "$25-28",
     protein: "20 oz seasoned ground beef (taco blend)",
+    halfProtein: "10 oz seasoned ground beef (taco blend)",
     sides: ["24 oz rice base", "12 oz corn/black bean mix"],
+    halfSides: ["12 oz rice base", "6 oz corn/black bean mix"],
     extras: "Layered with mild salsa + cheddar on top",
     image: beefTacoCasserole,
     badge: "Kid-Approved",
   },
   {
     name: "Family Lemon Salmon Plate",
-    price: "$50-55",
+    fullPrice: "$50-55",
+    halfPrice: "$25-28",
     protein: "20 oz seasoned baked salmon",
+    halfProtein: "10 oz seasoned baked salmon",
     sides: ["18 oz roasted potatoes", "18 oz roasted zucchini + squash"],
+    halfSides: ["9 oz roasted potatoes", "9 oz roasted zucchini + squash"],
     image: lemonSalmon,
     badge: "Heart Healthy",
   },
   {
     name: "Family Pork Tenderloin Dinner",
-    price: "$50-55",
+    fullPrice: "$50-55",
+    halfPrice: "$25-28",
     protein: "20 oz seasoned sliced pork tenderloin",
+    halfProtein: "10 oz seasoned sliced pork tenderloin",
     sides: ["Roasted potatoes", "Mixed vegetables"],
+    halfSides: ["Half portion roasted potatoes", "Half portion mixed vegetables"],
     serves: "Serves 6",
+    halfServes: "Serves 3",
   },
   {
     name: "BBQ Pork Family Meal",
-    price: "$50-55",
+    fullPrice: "$50-55",
+    halfPrice: "$25-28",
     protein: "20 oz house-smoked pulled pork with BBQ sauce",
+    halfProtein: "10 oz house-smoked pulled pork with BBQ sauce",
     sides: ["Baked beans", "Corn"],
+    halfSides: ["Half portion baked beans", "Half portion corn"],
     badge: "Southern Classic",
   },
   {
     name: "Family Chicken & Pesto Pasta",
-    price: "$50-55",
+    fullPrice: "$50-55",
+    halfPrice: "$25-28",
     protein: "20 oz grilled chicken breast",
+    halfProtein: "10 oz grilled chicken breast",
     sides: ["Pesto quinoa pasta (gluten-free)", "Choice of seasonal vegetables"],
+    halfSides: ["Half portion pesto quinoa pasta (gluten-free)", "Choice of seasonal vegetables"],
     badge: "Fresh & Light",
   },
   {
     name: "Family Steak Bite Dinner",
-    price: "$50-55",
+    fullPrice: "$50-55",
+    halfPrice: "$25-28",
     protein: "20 oz seared steak bites",
+    halfProtein: "10 oz seared steak bites",
     sides: ["Roasted potatoes", "Seasonal vegetable medley"],
+    halfSides: ["Half portion roasted potatoes", "Half portion seasonal vegetable medley"],
     serves: "Serves 6",
+    halfServes: "Serves 3",
     badge: "Premium",
   },
 ];
@@ -81,59 +108,98 @@ const entrees = [
 const breakfastMeals = [
   {
     name: "Family Breakfast Burrito Skillet",
-    price: "$40",
+    fullPrice: "$40",
+    halfPrice: "$20",
     portions: "42 oz",
+    halfPortions: "21 oz",
     ingredients: [
       "20 oz scrambled eggs",
       "12 oz diced potatoes",
       "8 oz turkey sausage crumbles",
       "2 oz light cheese",
     ],
+    halfIngredients: [
+      "10 oz scrambled eggs",
+      "6 oz diced potatoes",
+      "4 oz turkey sausage crumbles",
+      "1 oz light cheese",
+    ],
     image: breakfastBurritoSkillet,
   },
   {
     name: "Family Southern Smash Breakfast Bake",
-    price: "$40",
+    fullPrice: "$40",
+    halfPrice: "$20",
     portions: "42 oz",
+    halfPortions: "21 oz",
     ingredients: [
       "20 oz grits",
       "10 oz turkey sausage",
       "10 oz egg whites",
       "2 oz light cheese",
     ],
+    halfIngredients: [
+      "10 oz grits",
+      "5 oz turkey sausage",
+      "5 oz egg whites",
+      "1 oz light cheese",
+    ],
     image: southernBreakfastBake,
     badge: "Southern Style",
   },
   {
     name: "Family Blueberry Protein Oat Bake",
-    price: "$40",
+    fullPrice: "$40",
+    halfPrice: "$20",
     portions: "42 oz",
+    halfPortions: "21 oz",
     ingredients: [
       "20 oz rolled oats",
       "10 oz Greek yogurt mixture",
       "8 oz blueberries",
       "4 oz vanilla + cinnamon",
     ],
+    halfIngredients: [
+      "10 oz rolled oats",
+      "5 oz Greek yogurt mixture",
+      "4 oz blueberries",
+      "2 oz vanilla + cinnamon",
+    ],
     badge: "High Protein",
   },
   {
     name: "Family Chicken Sausage Hash & Eggs",
-    price: "$40",
+    fullPrice: "$40",
+    halfPrice: "$20",
     portions: "42 oz",
+    halfPortions: "21 oz",
     ingredients: [
       "18 oz diced sweet potatoes",
       "12 oz chicken sausage",
       "12 oz scrambled eggs",
     ],
+    halfIngredients: [
+      "9 oz diced sweet potatoes",
+      "6 oz chicken sausage",
+      "6 oz scrambled eggs",
+    ],
   },
   {
     name: "Family Bacon, Egg & Cheese Breakfast Casserole",
-    price: "$40",
+    fullPrice: "$40",
+    halfPrice: "$20",
     portions: "42 oz",
+    halfPortions: "21 oz",
     ingredients: [
       "20 oz eggs/egg whites",
       "16 oz hashbrown base",
       "4 oz bacon",
+      "Light cheddar on top",
+    ],
+    halfIngredients: [
+      "10 oz eggs/egg whites",
+      "8 oz hashbrown base",
+      "2 oz bacon",
       "Light cheddar on top",
     ],
     badge: "Classic",
@@ -275,53 +341,87 @@ export default function FreezerMeals() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {entrees.map((meal, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                {meal.image && (
-                  <div className="relative h-64 overflow-hidden">
-                    <img 
-                      src={meal.image} 
-                      alt={meal.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                    {meal.badge && (
-                      <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground">
-                        {meal.badge}
-                      </Badge>
+            {entrees.map((meal, index) => {
+              const MealCard = () => {
+                const [selectedSize, setSelectedSize] = useState<'full' | 'half'>('full');
+                const isFull = selectedSize === 'full';
+                
+                return (
+                  <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    {meal.image && (
+                      <div className="relative h-64 overflow-hidden">
+                        <img 
+                          src={meal.image} 
+                          alt={meal.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        {meal.badge && (
+                          <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground">
+                            {meal.badge}
+                          </Badge>
+                        )}
+                      </div>
                     )}
-                  </div>
-                )}
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl flex-1">{meal.name}</CardTitle>
-                    <span className="text-2xl font-bold text-primary whitespace-nowrap ml-2">{meal.price}</span>
-                  </div>
-                  {meal.serves && (
-                    <Badge variant="outline" className="w-fit">{meal.serves}</Badge>
-                  )}
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div>
-                    <p className="font-semibold text-sm text-muted-foreground mb-1">Protein:</p>
-                    <p className="text-sm">{meal.protein}</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-sm text-muted-foreground mb-1">Sides:</p>
-                    <ul className="text-sm space-y-1">
-                      {meal.sides.map((side, i) => (
-                        <li key={i}>• {side}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  {meal.extras && (
-                    <div>
-                      <p className="font-semibold text-sm text-muted-foreground mb-1">Extras:</p>
-                      <p className="text-sm">{meal.extras}</p>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
+                    <CardHeader>
+                      <div className="flex justify-between items-start mb-3">
+                        <CardTitle className="text-xl flex-1">{meal.name}</CardTitle>
+                        <span className="text-2xl font-bold text-primary whitespace-nowrap ml-2">
+                          {isFull ? meal.fullPrice : meal.halfPrice}
+                        </span>
+                      </div>
+                      
+                      {/* Size Selector */}
+                      <div className="flex gap-2 mb-2">
+                        <Button
+                          variant={isFull ? "default" : "outline"}
+                          size="sm"
+                          onClick={() => setSelectedSize('full')}
+                          className="flex-1"
+                        >
+                          Full Size
+                        </Button>
+                        <Button
+                          variant={!isFull ? "default" : "outline"}
+                          size="sm"
+                          onClick={() => setSelectedSize('half')}
+                          className="flex-1"
+                        >
+                          Half Size
+                        </Button>
+                      </div>
+                      
+                      {meal.serves && (
+                        <Badge variant="outline" className="w-fit">
+                          {isFull ? meal.serves : meal.halfServes}
+                        </Badge>
+                      )}
+                    </CardHeader>
+                    <CardContent className="space-y-3">
+                      <div>
+                        <p className="font-semibold text-sm text-muted-foreground mb-1">Protein:</p>
+                        <p className="text-sm">{isFull ? meal.protein : meal.halfProtein}</p>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-sm text-muted-foreground mb-1">Sides:</p>
+                        <ul className="text-sm space-y-1">
+                          {(isFull ? meal.sides : meal.halfSides).map((side, i) => (
+                            <li key={i}>• {side}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      {meal.extras && (
+                        <div>
+                          <p className="font-semibold text-sm text-muted-foreground mb-1">Extras:</p>
+                          <p className="text-sm">{meal.extras}</p>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                );
+              };
+              
+              return <MealCard key={index} />;
+            })}
           </div>
         </div>
       </section>
@@ -340,39 +440,73 @@ export default function FreezerMeals() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {breakfastMeals.map((meal, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                {meal.image && (
-                  <div className="relative h-64 overflow-hidden">
-                    <img 
-                      src={meal.image} 
-                      alt={meal.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                    {meal.badge && (
-                      <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground">
-                        {meal.badge}
-                      </Badge>
+            {breakfastMeals.map((meal, index) => {
+              const BreakfastCard = () => {
+                const [selectedSize, setSelectedSize] = useState<'full' | 'half'>('full');
+                const isFull = selectedSize === 'full';
+                
+                return (
+                  <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    {meal.image && (
+                      <div className="relative h-64 overflow-hidden">
+                        <img 
+                          src={meal.image} 
+                          alt={meal.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        {meal.badge && (
+                          <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground">
+                            {meal.badge}
+                          </Badge>
+                        )}
+                      </div>
                     )}
-                  </div>
-                )}
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl flex-1">{meal.name}</CardTitle>
-                    <span className="text-2xl font-bold text-primary whitespace-nowrap ml-2">{meal.price}</span>
-                  </div>
-                  <Badge variant="outline" className="w-fit">{meal.portions}</Badge>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-semibold text-sm text-muted-foreground mb-2">Ingredients:</p>
-                  <ul className="text-sm space-y-1">
-                    {meal.ingredients.map((ingredient, i) => (
-                      <li key={i}>• {ingredient}</li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
+                    <CardHeader>
+                      <div className="flex justify-between items-start mb-3">
+                        <CardTitle className="text-xl flex-1">{meal.name}</CardTitle>
+                        <span className="text-2xl font-bold text-primary whitespace-nowrap ml-2">
+                          {isFull ? meal.fullPrice : meal.halfPrice}
+                        </span>
+                      </div>
+                      
+                      {/* Size Selector */}
+                      <div className="flex gap-2 mb-2">
+                        <Button
+                          variant={isFull ? "default" : "outline"}
+                          size="sm"
+                          onClick={() => setSelectedSize('full')}
+                          className="flex-1"
+                        >
+                          Full Size
+                        </Button>
+                        <Button
+                          variant={!isFull ? "default" : "outline"}
+                          size="sm"
+                          onClick={() => setSelectedSize('half')}
+                          className="flex-1"
+                        >
+                          Half Size
+                        </Button>
+                      </div>
+                      
+                      <Badge variant="outline" className="w-fit">
+                        {isFull ? meal.portions : meal.halfPortions}
+                      </Badge>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="font-semibold text-sm text-muted-foreground mb-2">Ingredients:</p>
+                      <ul className="text-sm space-y-1">
+                        {(isFull ? meal.ingredients : meal.halfIngredients).map((ingredient, i) => (
+                          <li key={i}>• {ingredient}</li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                );
+              };
+              
+              return <BreakfastCard key={index} />;
+            })}
           </div>
         </div>
       </section>
