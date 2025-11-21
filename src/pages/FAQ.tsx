@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -110,8 +111,47 @@ const FAQ = () => {
     },
   ];
 
+  // Generate FAQ schema for SEO
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.flatMap(category => 
+      category.questions.map(faq => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a
+        }
+      }))
+    )
+  };
+
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>FAQ - Frequently Asked Questions | SmashMeals Tri-Cities</title>
+        <meta 
+          name="description" 
+          content="Got questions about SmashMeals? Find answers about ordering, delivery, gluten-free meals, pricing, pickup locations, and more. 100% gluten-free meal prep in Tri-Cities TN." 
+        />
+        <meta 
+          name="keywords" 
+          content="SmashMeals FAQ, meal prep questions, gluten-free meal prep FAQ, Tri-Cities meal prep, delivery information, pickup locations, gluten-free questions, celiac safe meals, meal prep pricing" 
+        />
+        <link rel="canonical" href="https://smashmeals.com/faq" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="FAQ - Frequently Asked Questions | SmashMeals" />
+        <meta property="og:description" content="Find answers to common questions about SmashMeals gluten-free meal prep, ordering, delivery, and more." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://smashmeals.com/faq" />
+        
+        {/* FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
       <Header />
       
       {/* Hero Section */}
