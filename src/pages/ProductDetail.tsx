@@ -65,7 +65,7 @@ const ProductDetail = () => {
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Meal Not Found</h1>
             <p className="text-muted-foreground mb-8">Sorry, we couldn't find that meal.</p>
-            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
               <Button variant="hero">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Menu
@@ -86,7 +86,7 @@ const ProductDetail = () => {
       <Header />
       <main className="min-h-screen pt-32 pb-20">
         <div className="container mx-auto px-4">
-          <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-primary hover:text-primary/80 mb-8 transition-colors">
+          <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-primary hover:text-primary/80 mb-8 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Menu
           </a>

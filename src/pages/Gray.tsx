@@ -31,7 +31,7 @@ const Gray = () => {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Your neighbor for healthy eating. Fresh, chef-prepared meals with $12 home delivery to Gray.
               </p>
-              <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+              <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
                   View This Week's Menu
                 </Button>
@@ -130,7 +130,7 @@ const Gray = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Eating healthier has never been easier • $12 delivery • 10% off orders over $130
             </p>
-            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 Order Now
               </Button>

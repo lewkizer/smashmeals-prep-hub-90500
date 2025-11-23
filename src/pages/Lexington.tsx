@@ -36,7 +36,7 @@ const Lexington = () => {
                 Healthy, gluten-free meal prep delivered fresh — straight from East Tennessee kitchens.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+                <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
                   <Button variant="hero" size="lg" className="text-lg">
                     View This Week's Menu
                   </Button>
@@ -121,7 +121,7 @@ const Lexington = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Free shipping on orders over $130!
             </p>
-            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 Order Now
               </Button>

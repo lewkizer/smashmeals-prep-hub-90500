@@ -31,7 +31,7 @@ const Damascus = () => {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Fresh, chef-prepared meals delivered to Trail Town USA. Fuel your adventures with gluten-free nutrition.
               </p>
-              <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+              <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
                   View This Week's Menu
                 </Button>
@@ -107,7 +107,7 @@ const Damascus = () => {
             <p className="text-xl text-muted-foreground mb-8">
               $25 shipping • 10% off orders over $130
             </p>
-            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 Order Now
               </Button>

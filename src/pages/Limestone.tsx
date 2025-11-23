@@ -31,7 +31,7 @@ const Limestone = () => {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Chef-prepared, gluten-free meals with $12 home delivery to Limestone every week.
               </p>
-              <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+              <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
                   View This Week's Menu
                 </Button>
@@ -100,7 +100,7 @@ const Limestone = () => {
             <p className="text-xl text-muted-foreground mb-8">
               $12 home delivery • 10% off orders over $130 • Zero hassle
             </p>
-            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 Order Now
               </Button>
