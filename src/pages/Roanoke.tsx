@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
@@ -18,6 +19,8 @@ const Roanoke = () => {
         <meta property="og:description" content="Roanoke's favorite gluten-free meal delivery. Smash Meals delivers chef-prepared, high-protein meals every week." />
         <meta property="og:url" content="https://smashmeals.com/roanoke" />
       </Helmet>
+
+      <CitySchema cityName="Roanoke" state="Virginia" stateAbbr="VA" />
 
       <Header />
 

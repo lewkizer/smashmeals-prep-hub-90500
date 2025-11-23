@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock } from "lucide-react";
@@ -15,6 +16,8 @@ const Maryville = () => {
         <meta name="keywords" content="meal prep Maryville, gluten free Maryville TN, healthy meal delivery Maryville" />
         <link rel="canonical" href="https://smashmeals.com/maryville" />
       </Helmet>
+
+      <CitySchema cityName="Maryville" state="Tennessee" stateAbbr="TN" />
 
       <Header />
 

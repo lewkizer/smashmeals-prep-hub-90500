@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Package, Truck, CheckCircle } from "lucide-react";
@@ -14,6 +15,8 @@ const Newport = () => {
         <meta name="keywords" content="meal prep Newport TN, gluten free Newport Tennessee, healthy meal delivery Newport" />
         <link rel="canonical" href="https://smashmeals.com/newport" />
       </Helmet>
+
+      <CitySchema cityName="Newport" state="Tennessee" stateAbbr="TN" />
 
       <Header />
 

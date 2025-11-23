@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
@@ -15,6 +16,8 @@ const Atlanta = () => {
         <meta name="keywords" content="meal prep Atlanta, gluten free Atlanta GA, healthy meal delivery Atlanta, prepared meals Atlanta" />
         <link rel="canonical" href="https://smashmeals.com/atlanta" />
       </Helmet>
+
+      <CitySchema cityName="Atlanta" state="Georgia" stateAbbr="GA" />
 
       <Header />
 

@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
@@ -14,6 +15,8 @@ const MountainCity = () => {
         <meta name="keywords" content="meal prep Mountain City TN, gluten free Mountain City Tennessee, healthy meals Mountain City" />
         <link rel="canonical" href="https://smashmeals.com/mountain-city" />
       </Helmet>
+
+      <CitySchema cityName="Mountain City" state="Tennessee" stateAbbr="TN" />
 
       <Header />
 

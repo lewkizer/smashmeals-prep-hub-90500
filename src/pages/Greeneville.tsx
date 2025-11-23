@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
@@ -14,6 +15,8 @@ const Greeneville = () => {
         <meta name="keywords" content="meal prep Greeneville, gluten free Greeneville TN, healthy meal delivery Greeneville, prepared meals Greeneville Tennessee" />
         <link rel="canonical" href="https://smashmeals.com/greeneville" />
       </Helmet>
+
+      <CitySchema cityName="Greeneville" state="Tennessee" stateAbbr="TN" />
 
       <Header />
 

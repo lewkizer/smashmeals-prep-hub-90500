@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock } from "lucide-react";
@@ -15,6 +16,8 @@ const Loudon = () => {
         <meta name="keywords" content="meal prep Loudon, gluten free Loudon TN, healthy meal delivery Loudon" />
         <link rel="canonical" href="https://smashmeals.com/loudon" />
       </Helmet>
+
+      <CitySchema cityName="Loudon" state="Tennessee" stateAbbr="TN" />
 
       <Header />
 

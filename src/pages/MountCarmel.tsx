@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
@@ -14,6 +15,8 @@ const MountCarmel = () => {
         <meta name="keywords" content="meal prep Mount Carmel TN, gluten free Mount Carmel Tennessee, healthy meals Mount Carmel" />
         <link rel="canonical" href="https://smashmeals.com/mount-carmel" />
       </Helmet>
+
+      <CitySchema cityName="Mount Carmel" state="Tennessee" stateAbbr="TN" />
 
       <Header />
 

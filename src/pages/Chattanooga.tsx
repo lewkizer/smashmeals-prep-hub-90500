@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
@@ -18,6 +19,8 @@ const Chattanooga = () => {
         <meta property="og:description" content="Healthy, gluten-free meals delivered in Chattanooga. Fresh, chef-crafted, and ready to heat." />
         <meta property="og:url" content="https://smashmeals.com/chattanooga" />
       </Helmet>
+
+      <CitySchema cityName="Chattanooga" state="Tennessee" stateAbbr="TN" />
 
       <Header />
 

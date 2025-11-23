@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
@@ -18,6 +19,8 @@ const TriadNC = () => {
         <meta property="og:description" content="Healthy, gluten-free meal prep in Greensboro, Winston-Salem, and High Point. Delivered fresh weekly." />
         <meta property="og:url" content="https://smashmeals.com/triad-nc" />
       </Helmet>
+
+      <CitySchema cityName="Triad NC" state="North Carolina" stateAbbr="NC" />
 
       <Header />
 

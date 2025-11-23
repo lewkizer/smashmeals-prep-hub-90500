@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock } from "lucide-react";
@@ -15,6 +16,8 @@ const Richmond = () => {
         <meta name="keywords" content="Richmond meal prep, healthy meal delivery Richmond VA" />
         <link rel="canonical" href="https://smashmeals.com/richmond" />
       </Helmet>
+
+      <CitySchema cityName="Richmond" state="Virginia" stateAbbr="VA" />
 
       <Header />
 

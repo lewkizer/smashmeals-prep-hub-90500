@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock } from "lucide-react";
@@ -15,6 +16,8 @@ const Spartanburg = () => {
         <meta name="keywords" content="Spartanburg meal prep, healthy meal delivery Spartanburg SC" />
         <link rel="canonical" href="https://smashmeals.com/spartanburg" />
       </Helmet>
+
+      <CitySchema cityName="Spartanburg" state="South Carolina" stateAbbr="SC" />
 
       <Header />
 

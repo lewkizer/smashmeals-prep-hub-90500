@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
@@ -18,6 +19,8 @@ const Charlotte = () => {
         <meta property="og:description" content="Fresh gluten-free meal prep delivery to Charlotte, NC. Chef-prepared, macro-counted meals shipped within 2 days." />
         <meta property="og:url" content="https://smashmeals.com/charlotte" />
       </Helmet>
+
+      <CitySchema cityName="Charlotte" state="North Carolina" stateAbbr="NC" />
 
       <Header />
 

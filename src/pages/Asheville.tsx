@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Package, CheckCircle } from "lucide-react";
@@ -14,6 +15,8 @@ const Asheville = () => {
         <meta name="keywords" content="meal prep Asheville, gluten free Asheville NC, healthy meal delivery Asheville, prepared meals Asheville" />
         <link rel="canonical" href="https://smashmeals.com/asheville" />
       </Helmet>
+
+      <CitySchema cityName="Asheville" state="North Carolina" stateAbbr="NC" />
 
       <Header />
 

@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
@@ -14,6 +15,8 @@ const Bristol = () => {
         <meta name="keywords" content="meal prep Bristol, gluten free Bristol TN, gluten free Bristol VA, healthy meal delivery Bristol" />
         <link rel="canonical" href="https://smashmeals.com/bristol" />
       </Helmet>
+
+      <CitySchema cityName="Bristol" state="Tennessee" stateAbbr="TN" />
 
       <Header />
 

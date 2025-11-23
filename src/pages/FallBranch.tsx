@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
@@ -14,6 +15,8 @@ const FallBranch = () => {
         <meta name="keywords" content="meal prep Fall Branch TN, gluten free Fall Branch Tennessee, healthy meals Fall Branch" />
         <link rel="canonical" href="https://smashmeals.com/fall-branch" />
       </Helmet>
+
+      <CitySchema cityName="Fall Branch" state="Tennessee" stateAbbr="TN" />
 
       <Header />
 
