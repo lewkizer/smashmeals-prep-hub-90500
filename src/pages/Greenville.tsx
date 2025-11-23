@@ -36,7 +36,7 @@ const Greenville = () => {
                 Healthy eating made simple — chef-prepared, high-protein meals delivered fresh to your Greenville home or gym.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+              <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
                   <Button variant="hero" size="lg" className="text-lg">
                     View This Week's Menu
                   </Button>
@@ -127,7 +127,7 @@ const Greenville = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Free shipping on orders over $130!
             </p>
-            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 View Menu & Order Now
               </Button>

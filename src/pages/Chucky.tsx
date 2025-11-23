@@ -31,7 +31,7 @@ const Chucky = () => {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Fresh, chef-prepared meals with FREE delivery to Chucky. Pickup available at CrossFit Arcane!
               </p>
-              <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+              <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
                   View This Week's Menu
                 </Button>
@@ -125,7 +125,7 @@ const Chucky = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Whether you train at CrossFit Arcane or prefer home delivery, we've got you covered
             </p>
-            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 Order Now - FREE Delivery
               </Button>

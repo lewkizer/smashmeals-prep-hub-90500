@@ -32,7 +32,7 @@ const Bristol = () => {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Serving both sides of State Street! Fresh, macro-counted meals with $12 home delivery to Bristol Tennessee and Virginia.
               </p>
-              <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+              <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
                   View This Week's Menu
                 </Button>
@@ -161,7 +161,7 @@ const Bristol = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Join Bristol residents on both sides of State Street eating better with SmashMeals
             </p>
-            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 Order Now for This Week
               </Button>

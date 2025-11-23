@@ -260,7 +260,7 @@ const FAQ = () => {
                 <p className="text-muted-foreground font-inter mb-6">
                   Check out this week's rotating menu options
                 </p>
-                <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+                <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="font-inter">
                     Browse Menu
                   </Button>

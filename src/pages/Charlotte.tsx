@@ -37,7 +37,7 @@ const Charlotte = () => {
                 From uptown offices to South End gyms — clean, gluten-free meals made fresh for Charlotte.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+                <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
                   <Button variant="hero" size="lg" className="text-lg">
                     View This Week's Menu
                   </Button>
@@ -203,7 +203,7 @@ const Charlotte = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Order this week's menu and taste the SmashMeals difference. Free shipping on orders over $130!
             </p>
-            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 View Menu & Order Now
               </Button>

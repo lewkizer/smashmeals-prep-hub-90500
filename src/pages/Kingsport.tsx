@@ -32,7 +32,7 @@ const Kingsport = () => {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Locally owned and operated in Kingsport since 2017. Fresh, macro-counted meals with $12 home delivery prepared in our local kitchen every Friday.
               </p>
-              <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+              <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg" className="text-lg">
                   View This Week's Menu
                 </Button>
@@ -161,7 +161,7 @@ const Kingsport = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Join your neighbors who are eating healthier with SmashMeals
             </p>
-            <a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer">
+            <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
                 Order Now for This Week
               </Button>
