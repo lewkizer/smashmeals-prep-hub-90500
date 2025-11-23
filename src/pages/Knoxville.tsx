@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Package, CheckCircle } from "lucide-react";
@@ -14,6 +15,8 @@ const Knoxville = () => {
         <meta name="keywords" content="meal prep Knoxville, gluten free Knoxville TN, healthy meal delivery Knoxville, prepared meals Knoxville Tennessee" />
         <link rel="canonical" href="https://smashmeals.com/knoxville" />
       </Helmet>
+
+      <CitySchema cityName="Knoxville" state="Tennessee" stateAbbr="TN" />
 
       <Header />
 

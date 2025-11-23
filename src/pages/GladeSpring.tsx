@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
@@ -14,6 +15,8 @@ const GladeSpring = () => {
         <meta name="keywords" content="meal prep Glade Spring VA, gluten free Glade Spring Virginia, healthy meals Glade Spring" />
         <link rel="canonical" href="https://smashmeals.com/glade-spring" />
       </Helmet>
+
+      <CitySchema cityName="Glade Spring" state="Virginia" stateAbbr="VA" />
 
       <Header />
 

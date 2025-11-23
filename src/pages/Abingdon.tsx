@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
@@ -14,6 +15,8 @@ const Abingdon = () => {
         <meta name="keywords" content="meal prep Abingdon, gluten free Abingdon VA, healthy meal delivery Abingdon, prepared meals Abingdon Virginia" />
         <link rel="canonical" href="https://smashmeals.com/abingdon" />
       </Helmet>
+
+      <CitySchema cityName="Abingdon" state="Virginia" stateAbbr="VA" />
 
       <Header />
 

@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock } from "lucide-react";
@@ -15,6 +16,8 @@ const Tazewell = () => {
         <meta name="keywords" content="meal prep Tazewell, gluten free Tazewell TN, healthy meal delivery Tazewell" />
         <link rel="canonical" href="https://smashmeals.com/tazewell" />
       </Helmet>
+
+      <CitySchema cityName="Tazewell" state="Tennessee" stateAbbr="TN" />
 
       <Header />
 

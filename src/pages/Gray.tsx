@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
@@ -14,6 +15,8 @@ const Gray = () => {
         <meta name="keywords" content="meal prep Gray TN, gluten free Gray Tennessee, healthy meals Gray, prepared meals Gray TN" />
         <link rel="canonical" href="https://smashmeals.com/gray" />
       </Helmet>
+
+      <CitySchema cityName="Gray" state="Tennessee" stateAbbr="TN" />
 
       <Header />
 

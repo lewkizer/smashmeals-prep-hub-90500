@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
@@ -18,6 +19,8 @@ const Lexington = () => {
         <meta property="og:description" content="Gluten-free meal prep delivery in Lexington KY. Chef-made, high-protein meals for busy lives." />
         <meta property="og:url" content="https://smashmeals.com/lexington" />
       </Helmet>
+
+      <CitySchema cityName="Lexington" state="Virginia" stateAbbr="VA" />
 
       <Header />
 

@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
@@ -14,6 +15,8 @@ const Elizabethton = () => {
         <meta name="keywords" content="meal prep Elizabethton, gluten free Elizabethton TN, healthy meal delivery Elizabethton, prepared meals Elizabethton Tennessee" />
         <link rel="canonical" href="https://smashmeals.com/elizabethton" />
       </Helmet>
+
+      <CitySchema cityName="Elizabethton" state="Tennessee" stateAbbr="TN" />
 
       <Header />
 

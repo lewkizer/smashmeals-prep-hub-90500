@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
@@ -18,6 +19,8 @@ const Greenville = () => {
         <meta property="og:description" content="Healthy, gluten-free meal prep delivered in Greenville SC. High-protein meals for athletes, families, and busy professionals." />
         <meta property="og:url" content="https://smashmeals.com/greenville" />
       </Helmet>
+
+      <CitySchema cityName="Greenville" state="South Carolina" stateAbbr="SC" />
 
       <Header />
 
