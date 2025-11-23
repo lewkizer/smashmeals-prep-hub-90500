@@ -79,6 +79,26 @@ import DeliveryInfo from "./pages/DeliveryInfo";
 import HeatAndEat from "./pages/HeatAndEat";
 import VideoPage from "./pages/VideoPage";
 import FreezerMeals from "./pages/FreezerMeals";
+import Sevierville from "./pages/Sevierville";
+import Gatlinburg from "./pages/Gatlinburg";
+import PigeonForge from "./pages/PigeonForge";
+import OakRidge from "./pages/OakRidge";
+import Cleveland from "./pages/Cleveland";
+import Cookeville from "./pages/Cookeville";
+import Crossville from "./pages/Crossville";
+import Maryville from "./pages/Maryville";
+import Dandridge from "./pages/Dandridge";
+import Seymour from "./pages/Seymour";
+import Alcoa from "./pages/Alcoa";
+import Athens from "./pages/Athens";
+import LenoirCity from "./pages/LenoirCity";
+import Loudon from "./pages/Loudon";
+import Sweetwater from "./pages/Sweetwater";
+import Madisonville from "./pages/Madisonville";
+import Harriman from "./pages/Harriman";
+import LaFollette from "./pages/LaFollette";
+import Tazewell from "./pages/Tazewell";
+import Jellico from "./pages/Jellico";
 
 const queryClient = new QueryClient();
 
@@ -165,6 +185,26 @@ const App = () => (
           <Route path="/meals/:slug" element={<MealDetail />} />
           <Route path="/gluten-free-meal-prep-guide" element={<GlutenFreeMealPrepGuide />} />
           <Route path="/video/:slug" element={<VideoPage />} />
+          <Route path="/sevierville" element={<Sevierville />} />
+          <Route path="/gatlinburg" element={<Gatlinburg />} />
+          <Route path="/pigeon-forge" element={<PigeonForge />} />
+          <Route path="/oak-ridge" element={<OakRidge />} />
+          <Route path="/cleveland" element={<Cleveland />} />
+          <Route path="/cookeville" element={<Cookeville />} />
+          <Route path="/crossville" element={<Crossville />} />
+          <Route path="/maryville" element={<Maryville />} />
+          <Route path="/dandridge" element={<Dandridge />} />
+          <Route path="/seymour" element={<Seymour />} />
+          <Route path="/alcoa" element={<Alcoa />} />
+          <Route path="/athens" element={<Athens />} />
+          <Route path="/lenoir-city" element={<LenoirCity />} />
+          <Route path="/loudon" element={<Loudon />} />
+          <Route path="/sweetwater" element={<Sweetwater />} />
+          <Route path="/madisonville" element={<Madisonville />} />
+          <Route path="/harriman" element={<Harriman />} />
+          <Route path="/la-follette" element={<LaFollette />} />
+          <Route path="/tazewell" element={<Tazewell />} />
+          <Route path="/jellico" element={<Jellico />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
