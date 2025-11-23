@@ -23,7 +23,7 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="https://smashmeals.bottle.com/b/9730175" target="_blank" rel="noopener noreferrer" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Weekly Menu</a></li>
+              <li><a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Weekly Menu</a></li>
               <li><a href="/#catering" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Catering</a></li>
               <li><a href="/#about" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">About</a></li>
               <li><a href="/faq" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">FAQ</a></li>
