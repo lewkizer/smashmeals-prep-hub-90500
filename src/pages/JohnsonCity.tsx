@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
+import CitySchema from "@/components/CitySchema";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -8,6 +9,7 @@ import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
 const JohnsonCity = () => {
   return (
     <>
+      <CitySchema cityName="Johnson City" state="Tennessee" stateAbbr="TN" />
       <Helmet>
         <title>Gluten-Free Meal Prep Johnson City TN | SmashMeals Delivery</title>
         <meta name="description" content="Johnson City's #1 gluten-free meal prep delivery service. Chef-prepared, macro-counted meals delivered weekly. Order by Thursday, pickup Sunday-Monday." />

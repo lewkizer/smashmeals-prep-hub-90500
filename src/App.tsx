@@ -99,6 +99,7 @@ import Harriman from "./pages/Harriman";
 import LaFollette from "./pages/LaFollette";
 import Tazewell from "./pages/Tazewell";
 import Jellico from "./pages/Jellico";
+import ServiceAreas from "./pages/ServiceAreas";
 
 const queryClient = new QueryClient();
 
@@ -114,6 +115,7 @@ const App = () => (
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/about" element={<About />} />
           <Route path="/partners" element={<Partners />} />
+          <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/catering" element={<Catering />} />
           <Route path="/menu" element={<Menu />} />
