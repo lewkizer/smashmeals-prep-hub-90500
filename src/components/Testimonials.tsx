@@ -1,9 +1,20 @@
 import { Card } from "@/components/ui/card";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet";
 
 const Testimonials = () => {
   const testimonials = [
+    {
+      name: "Becky Halbrook",
+      location: "Sullivan County, TN",
+      rating: 5,
+      text: "We recently utilized Smash Meals for a football banquet in Sullivan County, and I must say that Smash Meals was truly exceptional. The food was remarkable, and not a single barbecue sandwich remained. He was very helpful even when I asked a million questions. I highly recommend their services for your meal preparation and catering requirements.",
+      meal: "Catering - Football Banquet",
+      verified: true,
+      source: "Facebook",
+      tags: ["Fast delivery", "Comfort food", "Large portions", "Child-friendly"]
+    },
     {
       name: "Sarah M.",
       location: "Kingsport, TN",
@@ -48,9 +59,47 @@ const Testimonials = () => {
     },
   ];
 
+  // Generate Review schema for SEO
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SmashMeals",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": testimonials.length.toString(),
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": testimonials.map(t => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": t.name
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": t.rating.toString(),
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": t.text,
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "SmashMeals"
+      }
+    }))
+  };
+
   return (
-    <section id="testimonials" className="py-20 bg-gradient-to-b from-secondary to-background">
-      <div className="container mx-auto px-4">
+    <>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(reviewSchema)}
+        </script>
+      </Helmet>
+      <section id="testimonials" className="py-20 bg-gradient-to-b from-secondary to-background">
+        <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
@@ -84,6 +133,16 @@ const Testimonials = () => {
               >
                 <Quote className="w-10 h-10 text-primary/20 absolute top-6 right-6" />
                 
+                {/* Verified Badge */}
+                {testimonial.verified && (
+                  <div className="flex items-center gap-2 mb-3">
+                    <CheckCircle2 className="w-4 h-4 text-green-500" />
+                    <span className="text-xs font-semibold text-green-600 dark:text-green-400">
+                      Verified {testimonial.source} Review
+                    </span>
+                  </div>
+                )}
+
                 {/* Rating */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -96,12 +155,26 @@ const Testimonials = () => {
                   "{testimonial.text}"
                 </p>
 
+                {/* Tags */}
+                {testimonial.tags && (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {testimonial.tags.map((tag, idx) => (
+                      <span 
+                        key={idx}
+                        className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full font-inter"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
                 {/* Reviewer Info */}
                 <div className="border-t border-border pt-4">
                   <p className="font-bold font-playfair text-lg">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground font-inter">{testimonial.location}</p>
                   <p className="text-sm text-primary font-semibold font-inter mt-2">
-                    Favorite: {testimonial.meal}
+                    {testimonial.meal.includes("Catering") ? testimonial.meal : `Favorite: ${testimonial.meal}`}
                   </p>
                 </div>
               </Card>
@@ -142,6 +215,7 @@ const Testimonials = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
