@@ -2,12 +2,36 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Roanoke = () => {
+  const faqItems = [
+    {
+      question: "Do you ship meal prep to Roanoke VA?",
+      answer: "Yes! We deliver fresh, gluten-free meals to Roanoke, Virginia every week. Order by Thursday for next-week delivery."
+    },
+    {
+      question: "Are SmashMeals gluten-free certified?",
+      answer: "Yes, our entire facility is 100% gluten-free with zero cross-contamination. Safe for celiac disease and gluten sensitivity."
+    },
+    {
+      question: "How long do meals last after delivery?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen, giving you maximum flexibility."
+    },
+    {
+      question: "What's included in the price?",
+      answer: "Meals range from $10-14 per serving. Orders over $130 ship free to Roanoke—no hidden fees or subscriptions required."
+    },
+    {
+      question: "How do I order for Roanoke delivery?",
+      answer: "Simply browse our weekly menu online and place your order by Thursday at 11:59 PM. Your meals will be delivered the following week."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -115,6 +139,8 @@ const Roanoke = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqItems} />
 
         <section className="py-20 px-4 bg-muted/30">
           <div className="container mx-auto max-w-4xl text-center">

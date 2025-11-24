@@ -2,12 +2,36 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Chattanooga = () => {
+  const faqItems = [
+    {
+      question: "Do you deliver meal prep to Chattanooga?",
+      answer: "Yes! We ship fresh meal prep to Chattanooga via FedEx. Orders placed by Thursday are delivered the following week."
+    },
+    {
+      question: "How long do the meals last?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated, or up to 6 months frozen. This gives you flexibility in how you enjoy them throughout the week."
+    },
+    {
+      question: "Are SmashMeals really 100% gluten-free?",
+      answer: "Yes! We operate a dedicated 100% gluten-free facility with zero risk of cross-contamination. Safe for celiac disease and gluten sensitivity."
+    },
+    {
+      question: "What's the cost of meal prep delivery to Chattanooga?",
+      answer: "Meals range from $10-14 per serving. We offer FREE shipping on orders over $130, making it affordable and convenient."
+    },
+    {
+      question: "How do I order for Chattanooga delivery?",
+      answer: "Browse our weekly menu online and place your order by Thursday at 11:59 PM. Your meals will be freshly prepared and shipped to arrive early the following week."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -115,6 +139,8 @@ const Chattanooga = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqItems} />
 
         <section className="py-20 px-4 bg-muted/30">
           <div className="container mx-auto max-w-4xl text-center">
