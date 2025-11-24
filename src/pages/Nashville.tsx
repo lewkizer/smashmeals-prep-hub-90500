@@ -2,12 +2,32 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Nashville = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Nashville, TN?",
+      answer: "Yes! We ship to all Nashville neighborhoods via FedEx 2-day delivery including Downtown, East Nashville, 12 South, Germantown, and surrounding areas. Free shipping on orders over $130."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated 100% gluten-free kitchen with zero cross-contamination risk. Safe for celiac disease."
+    },
+    {
+      question: "How fresh are meals when they arrive in Nashville?",
+      answer: "Meals are cooked fresh on Friday, shipped Monday, and arrive Wednesday. They stay fresh for 5-7 days refrigerated or up to 6 months frozen."
+    },
+    {
+      question: "Do I need a subscription?",
+      answer: "No! Order only when you need meals. No contracts, no recurring charges, no commitment required."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -115,6 +135,8 @@ const Nashville = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4 bg-muted/30">
           <div className="container mx-auto max-w-4xl text-center">

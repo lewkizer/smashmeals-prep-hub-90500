@@ -2,12 +2,32 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Atlanta = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Atlanta, GA?",
+      answer: "Yes! We ship to all Atlanta metro areas via FedEx 2-day delivery including Midtown, Buckhead, Decatur, and surrounding suburbs. Free shipping on orders over $130."
+    },
+    {
+      question: "Are all meals gluten-free?",
+      answer: "Yes! Every single meal is prepared in our 100% gluten-free kitchen with no cross-contamination. Safe for celiac disease and gluten sensitivity."
+    },
+    {
+      question: "How long do meals stay fresh during shipping?",
+      answer: "Meals arrive in insulated packaging with ice packs and stay fresh for 5-7 days refrigerated or up to 6 months frozen."
+    },
+    {
+      question: "Do I need a subscription?",
+      answer: "No! Order only when you need meals. No contracts, no recurring charges, no commitment required."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -104,6 +124,8 @@ const Atlanta = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4 bg-muted/30">
           <div className="container mx-auto max-w-4xl text-center">
