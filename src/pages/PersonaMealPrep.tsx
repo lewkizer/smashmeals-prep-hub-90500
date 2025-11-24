@@ -2,12 +2,41 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import InternalLinks from "@/components/InternalLinks";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Users, Dumbbell, Heart, Baby, UtensilsCrossed } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const PersonaMealPrep = () => {
+  const internalLinks = [
+    {
+      title: "High Protein Shipping Guide",
+      description: "How we ship 30-45g protein meals nationwide with FedEx 2-day delivery.",
+      path: "/high-protein-shipping"
+    },
+    {
+      title: "Tri-Cities Meal Prep",
+      description: "Local delivery and pickup in Kingsport, Johnson City, and Bristol.",
+      path: "/tri-cities-meal-prep"
+    },
+    {
+      title: "Charlotte Delivery",
+      description: "FedEx shipping to all Charlotte neighborhoods. Free on orders $130+.",
+      path: "/charlotte"
+    },
+    {
+      title: "Nashville Delivery",
+      description: "Ship to Music City with fresh, gluten-free high-protein meals.",
+      path: "/nashville"
+    },
+    {
+      title: "Why SmashMeals Beats Competitors",
+      description: "Compare us to Factor75, Clean Eatz, and other meal prep services.",
+      path: "/comparison"
+    }
+  ];
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -276,6 +305,11 @@ const PersonaMealPrep = () => {
             </p>
           </div>
         </section>
+
+        <InternalLinks 
+          title="More SmashMeals Resources" 
+          links={internalLinks} 
+        />
 
         {/* FAQ */}
         <section className="py-20 px-4">

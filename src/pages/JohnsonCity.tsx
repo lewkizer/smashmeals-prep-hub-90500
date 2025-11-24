@@ -2,11 +2,31 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import CitySchema from "@/components/CitySchema";
 import Footer from "@/components/Footer";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
 
 const JohnsonCity = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Johnson City, TN?",
+      answer: "Yes! We offer $12 home delivery throughout Johnson City and surrounding areas. You can also pick up at our location on 2104 Knob Creek Rd on Sunday or Monday from 5-7 PM."
+    },
+    {
+      question: "Are your meals really 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated 100% gluten-free kitchen with zero cross-contamination risk. Safe for celiac disease."
+    },
+    {
+      question: "How long do the meals last?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen—longer than most competitors."
+    },
+    {
+      question: "Can I order meals for just one week?",
+      answer: "Yes! No subscriptions required. Order as many or as few meals as you need, only when you need them."
+    }
+  ];
+
   return (
     <>
       <CitySchema cityName="Johnson City" state="Tennessee" stateAbbr="TN" />
@@ -153,6 +173,8 @@ const JohnsonCity = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         {/* CTA */}
         <section className="py-20 px-4">

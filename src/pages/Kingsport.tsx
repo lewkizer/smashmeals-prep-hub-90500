@@ -2,11 +2,31 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
 
 const Kingsport = () => {
+  const faqs = [
+    {
+      question: "Where is SmashMeals located in Kingsport?",
+      answer: "We're locally owned and operated right here in Kingsport! Our kitchen is at 2104 Knob Creek Rd in Johnson City, and we offer $12 delivery throughout Kingsport or pickup Sunday-Monday 5-7 PM."
+    },
+    {
+      question: "Are all meals gluten-free?",
+      answer: "Yes! Every single meal is prepared in our 100% gluten-free facility with no risk of cross-contamination. Perfect for celiac or gluten sensitivity."
+    },
+    {
+      question: "How much does delivery cost in Kingsport?",
+      answer: "$12 for home delivery throughout Kingsport including Colonial Heights, Downtown, Sullivan Gardens, and Bloomingdale. Get 10% off orders over $130."
+    },
+    {
+      question: "When do I need to order?",
+      answer: "Orders close Thursday at 11:59 PM. Meals are prepared fresh on Friday and ready for pickup or delivery Sunday-Monday."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -154,6 +174,8 @@ const Kingsport = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         {/* CTA */}
         <section className="py-20 px-4">
