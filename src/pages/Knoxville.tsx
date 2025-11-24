@@ -2,11 +2,31 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Package, CheckCircle } from "lucide-react";
 
 const Knoxville = () => {
+  const faqs = [
+    {
+      question: "Do you ship to Knoxville, TN?",
+      answer: "Yes! We ship to all Knoxville neighborhoods via FedEx 2-day delivery. Free shipping on orders over $130. Your meals arrive Tuesday or Wednesday in insulated packaging."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated 100% gluten-free kitchen with zero cross-contamination risk. Safe for celiac disease."
+    },
+    {
+      question: "How long do the meals last?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen—longer than most competitors."
+    },
+    {
+      question: "Is there a minimum order for free shipping?",
+      answer: "Yes, orders over $130 qualify for free shipping to Knoxville."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -128,6 +148,8 @@ const Knoxville = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">
