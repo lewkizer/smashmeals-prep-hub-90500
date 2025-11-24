@@ -2,12 +2,46 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import InternalLinks from "@/components/InternalLinks";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock, Shield, Award, Users, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TriCitiesMealPrep = () => {
+  const internalLinks = [
+    {
+      title: "Johnson City Meal Prep",
+      description: "Free local delivery to Johnson City. Pickup locations and delivery details.",
+      path: "/johnson-city"
+    },
+    {
+      title: "Kingsport Meal Prep",
+      description: "Locally owned in Kingsport since 2017. Free delivery throughout Kingsport.",
+      path: "/kingsport"
+    },
+    {
+      title: "Bristol Meal Prep",
+      description: "Serving both Bristol TN and Bristol VA with local delivery and pickup.",
+      path: "/bristol"
+    },
+    {
+      title: "Athletes & Bodybuilders",
+      description: "Trusted by ETSU Division I athletics. 30-45g protein per meal, macro-counted.",
+      path: "/athletes"
+    },
+    {
+      title: "Families",
+      description: "100% gluten-free means everyone eats the same meals—no separate prep.",
+      path: "/families"
+    },
+    {
+      title: "Why SmashMeals Beats Competitors",
+      description: "Compare us to Factor75, Clean Eatz, FitPlus Meals, and Good Batch Mama.",
+      path: "/comparison"
+    }
+  ];
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -350,6 +384,11 @@ const TriCitiesMealPrep = () => {
             </div>
           </div>
         </section>
+
+        <InternalLinks 
+          title="Explore More SmashMeals Services" 
+          links={internalLinks} 
+        />
 
         {/* FAQ Section */}
         <section className="py-20 px-4">

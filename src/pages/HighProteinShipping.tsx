@@ -2,12 +2,46 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import InternalLinks from "@/components/InternalLinks";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Truck, Package, Snowflake, Clock, Award, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HighProteinShipping = () => {
+  const internalLinks = [
+    {
+      title: "Charlotte Delivery",
+      description: "FedEx 2-day shipping to all Charlotte neighborhoods. Free on orders $130+.",
+      path: "/charlotte"
+    },
+    {
+      title: "Asheville Delivery",
+      description: "Fresh meal delivery to all Asheville zip codes with insulated packaging.",
+      path: "/asheville"
+    },
+    {
+      title: "Nashville Delivery",
+      description: "Ship to Music City! High-protein gluten-free meals delivered to Nashville.",
+      path: "/nashville"
+    },
+    {
+      title: "Athletes & Bodybuilders",
+      description: "Trusted by ETSU athletes. Hit your protein goals with 30-45g per meal.",
+      path: "/athletes"
+    },
+    {
+      title: "GLP-1 Meal Prep",
+      description: "High-protein meals perfect for Ozempic, Wegovy, Mounjaro users.",
+      path: "/glp1"
+    },
+    {
+      title: "Bariatric Meal Prep",
+      description: "Protein-dense, portion-controlled meals for post-surgery nutrition.",
+      path: "/bariatric"
+    }
+  ];
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -373,6 +407,11 @@ const HighProteinShipping = () => {
             </div>
           </div>
         </section>
+
+        <InternalLinks 
+          title="Related Meal Prep Services" 
+          links={internalLinks} 
+        />
 
         {/* FAQ */}
         <section className="py-20 px-4">

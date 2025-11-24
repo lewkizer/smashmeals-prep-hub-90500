@@ -2,11 +2,31 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
 
 const Bristol = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to both Bristol TN and Bristol VA?",
+      answer: "Yes! We deliver to both sides of State Street with $12 home delivery throughout Bristol Tennessee and Bristol Virginia. We also serve Blountville and Bluff City."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated gluten-free facility with no cross-contamination. Safe for celiac disease."
+    },
+    {
+      question: "What are the pickup hours?",
+      answer: "You can pick up meals Sunday or Monday from 5:00-7:00 PM at our location on 2104 Knob Creek Rd in Johnson City."
+    },
+    {
+      question: "How long do meals stay fresh?",
+      answer: "Our meals last 5-7 days refrigerated or up to 6 months frozen. They're fresher and last longer than most competitors."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -154,6 +174,8 @@ const Bristol = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         {/* CTA */}
         <section className="py-20 px-4">

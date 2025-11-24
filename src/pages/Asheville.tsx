@@ -2,11 +2,31 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Package, CheckCircle } from "lucide-react";
 
 const Asheville = () => {
+  const faqs = [
+    {
+      question: "Do you ship to Asheville, NC?",
+      answer: "Yes! We ship to all Asheville zip codes via FedEx 2-day delivery. Order by Thursday, and your meals arrive Sunday-Monday in insulated packaging with ice packs."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated 100% gluten-free kitchen with zero cross-contamination risk. Safe for celiac disease."
+    },
+    {
+      question: "How long will meals stay fresh during shipping?",
+      answer: "Meals are packed with gel ice packs in insulated containers and stay fresh during transit. Once delivered, they last 5-7 days refrigerated or up to 6 months frozen."
+    },
+    {
+      question: "Is there free shipping to Asheville?",
+      answer: "Yes! Orders over $130 qualify for free shipping to Asheville."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -161,6 +181,8 @@ const Asheville = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         {/* CTA */}
         <section className="py-20 px-4">
