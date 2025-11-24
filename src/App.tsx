@@ -111,6 +111,10 @@ import Lynchburg from "./pages/Lynchburg";
 import TriCitiesMealPrep from "./pages/TriCitiesMealPrep";
 import HighProteinShipping from "./pages/HighProteinShipping";
 import PersonaMealPrep from "./pages/PersonaMealPrep";
+import Athletes from "./pages/Athletes";
+import Bariatric from "./pages/Bariatric";
+import Families from "./pages/Families";
+import Elderly from "./pages/Elderly";
 
 const queryClient = new QueryClient();
 
@@ -229,6 +233,10 @@ const App = () => (
           <Route path="/tri-cities-meal-prep" element={<TriCitiesMealPrep />} />
           <Route path="/high-protein-shipping" element={<HighProteinShipping />} />
           <Route path="/persona-meal-prep" element={<PersonaMealPrep />} />
+          <Route path="/athletes" element={<Athletes />} />
+          <Route path="/bariatric" element={<Bariatric />} />
+          <Route path="/families" element={<Families />} />
+          <Route path="/elderly" element={<Elderly />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
