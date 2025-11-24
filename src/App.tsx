@@ -100,6 +100,17 @@ import LaFollette from "./pages/LaFollette";
 import Tazewell from "./pages/Tazewell";
 import Jellico from "./pages/Jellico";
 import ServiceAreas from "./pages/ServiceAreas";
+import Louisville from "./pages/Louisville";
+import BowlingGreen from "./pages/BowlingGreen";
+import Owensboro from "./pages/Owensboro";
+import Paducah from "./pages/Paducah";
+import RichmondKY from "./pages/RichmondKY";
+import Frankfort from "./pages/Frankfort";
+import Blacksburg from "./pages/Blacksburg";
+import Lynchburg from "./pages/Lynchburg";
+import TriCitiesMealPrep from "./pages/TriCitiesMealPrep";
+import HighProteinShipping from "./pages/HighProteinShipping";
+import PersonaMealPrep from "./pages/PersonaMealPrep";
 
 const queryClient = new QueryClient();
 
@@ -207,6 +218,17 @@ const App = () => (
           <Route path="/la-follette" element={<LaFollette />} />
           <Route path="/tazewell" element={<Tazewell />} />
           <Route path="/jellico" element={<Jellico />} />
+          <Route path="/louisville" element={<Louisville />} />
+          <Route path="/bowling-green" element={<BowlingGreen />} />
+          <Route path="/owensboro" element={<Owensboro />} />
+          <Route path="/paducah" element={<Paducah />} />
+          <Route path="/richmond-ky" element={<RichmondKY />} />
+          <Route path="/frankfort" element={<Frankfort />} />
+          <Route path="/blacksburg" element={<Blacksburg />} />
+          <Route path="/lynchburg" element={<Lynchburg />} />
+          <Route path="/tri-cities-meal-prep" element={<TriCitiesMealPrep />} />
+          <Route path="/high-protein-shipping" element={<HighProteinShipping />} />
+          <Route path="/persona-meal-prep" element={<PersonaMealPrep />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

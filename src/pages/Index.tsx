@@ -15,11 +15,13 @@ import Shipping from "@/components/Shipping";
 import Footer from "@/components/Footer";
 import SEOContent from "@/components/SEOContent";
 import MenuSchema from "@/components/MenuSchema";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <MenuSchema />
+      <LocalBusinessSchema />
       <StickyOrderBanner />
       <Header />
       <Hero />
