@@ -2,12 +2,36 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Greenville = () => {
+  const faqItems = [
+    {
+      question: "Do you deliver to Greenville SC?",
+      answer: "Yes! We deliver fresh, gluten-free meal prep to Greenville, South Carolina via fast FedEx shipping. Order by Thursday for next-week delivery."
+    },
+    {
+      question: "How much protein is in each meal?",
+      answer: "Our meals contain 30-45g of protein per serving, perfect for athletes, gym-goers, and anyone focused on fitness goals."
+    },
+    {
+      question: "Are your meals safe for celiac disease?",
+      answer: "Absolutely. Our entire kitchen is 100% gluten-free with zero cross-contamination risk. Safe for celiac, gluten sensitivity, and gluten-free lifestyles."
+    },
+    {
+      question: "What's the shelf life of SmashMeals?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen—significantly longer than most competitors."
+    },
+    {
+      question: "Is there free shipping to Greenville?",
+      answer: "Yes! Orders over $130 ship free to Greenville. Most customers meet this threshold with a week's worth of meals."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -137,6 +161,8 @@ const Greenville = () => {
             </a>
           </div>
         </section>
+
+        <FAQSection faqs={faqItems} />
 
         <section className="py-12 px-4">
           <div className="container mx-auto max-w-4xl">

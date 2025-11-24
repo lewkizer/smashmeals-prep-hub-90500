@@ -2,12 +2,36 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock, CheckCircle, Users, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Louisville = () => {
+  const faqItems = [
+    {
+      question: "Do you deliver meal prep to Louisville KY?",
+      answer: "Yes! We deliver premium gluten-free meal prep to Louisville, Kentucky every week. Order by Thursday for delivery the following week."
+    },
+    {
+      question: "Is SmashMeals safe for celiac disease?",
+      answer: "Absolutely. Our entire facility is 100% gluten-free with zero cross-contamination risk. Trusted by the gluten-free community for over 8 years."
+    },
+    {
+      question: "How much does meal prep delivery cost in Louisville?",
+      answer: "Meals range from $10-14 per serving with FREE shipping on orders over $130. Most customers easily meet this with a week's worth of meals."
+    },
+    {
+      question: "How long do the meals stay fresh?",
+      answer: "Our meals stay fresh for 7-10 days refrigerated or up to 6 months frozen—longer than most competitors."
+    },
+    {
+      question: "What makes SmashMeals different from other meal prep services?",
+      answer: "We're a 100% gluten-free facility trusted by ETSU athletes for 8+ years. Our meals are chef-prepared, macro-counted, and delivered fresh—never frozen during shipping."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -149,6 +173,8 @@ const Louisville = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqItems} />
 
         <section className="py-20 px-4 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="container mx-auto max-w-4xl text-center">

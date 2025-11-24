@@ -2,12 +2,36 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Lexington = () => {
+  const faqItems = [
+    {
+      question: "Do you deliver to Lexington KY?",
+      answer: "Yes! We ship fresh meal prep to Lexington, Kentucky every week via FedEx. Order by Thursday for next-week delivery."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Yes. Our kitchen is a dedicated 100% gluten-free facility with zero risk of cross-contamination. Safe for celiac and gluten sensitivity."
+    },
+    {
+      question: "How much protein is in each meal?",
+      answer: "Our meals contain 30-45g of protein per serving, making them perfect for athletes, students, and active professionals."
+    },
+    {
+      question: "What's the cost and shipping?",
+      answer: "Meals range from $10-14 per serving. Orders over $130 ship FREE to Lexington."
+    },
+    {
+      question: "How long do meals last?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen, giving you flexibility throughout the week."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -115,6 +139,8 @@ const Lexington = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqItems} />
 
         <section className="py-20 px-4 bg-muted/30">
           <div className="container mx-auto max-w-4xl text-center">

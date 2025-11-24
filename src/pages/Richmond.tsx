@@ -2,12 +2,36 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Richmond = () => {
+  const faqItems = [
+    {
+      question: "Do you deliver meal prep to Richmond VA?",
+      answer: "Yes! We ship fresh, chef-prepared meals to Richmond, Virginia every week. Order by Thursday for delivery the following week."
+    },
+    {
+      question: "Are all meals gluten-free?",
+      answer: "Yes, 100%. Our entire kitchen is dedicated gluten-free with zero cross-contamination. Safe for celiac and gluten sensitivity."
+    },
+    {
+      question: "How much do meals cost?",
+      answer: "Meals range from $10-14 per serving with FREE shipping on orders over $130 to Richmond."
+    },
+    {
+      question: "How long do the meals stay fresh?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen."
+    },
+    {
+      question: "Can I see the nutrition facts?",
+      answer: "Yes! Every meal includes detailed macros—calories, protein, carbs, and fats—so you can track your nutrition with precision."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -77,6 +101,8 @@ const Richmond = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqItems} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">
