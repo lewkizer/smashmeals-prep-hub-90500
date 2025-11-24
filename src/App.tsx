@@ -115,6 +115,12 @@ import Athletes from "./pages/Athletes";
 import Bariatric from "./pages/Bariatric";
 import Families from "./pages/Families";
 import Elderly from "./pages/Elderly";
+import Winchester from "./pages/Winchester";
+import Staunton from "./pages/Staunton";
+import Harrisonburg from "./pages/Harrisonburg";
+import Danville from "./pages/Danville";
+import Martinsville from "./pages/Martinsville";
+import Hickory from "./pages/Hickory";
 
 const queryClient = new QueryClient();
 
@@ -237,6 +243,12 @@ const App = () => (
           <Route path="/bariatric" element={<Bariatric />} />
           <Route path="/families" element={<Families />} />
           <Route path="/elderly" element={<Elderly />} />
+          <Route path="/winchester" element={<Winchester />} />
+          <Route path="/staunton" element={<Staunton />} />
+          <Route path="/harrisonburg" element={<Harrisonburg />} />
+          <Route path="/danville" element={<Danville />} />
+          <Route path="/martinsville" element={<Martinsville />} />
+          <Route path="/hickory" element={<Hickory />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
