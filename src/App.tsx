@@ -121,6 +121,17 @@ import Harrisonburg from "./pages/Harrisonburg";
 import Danville from "./pages/Danville";
 import Martinsville from "./pages/Martinsville";
 import Hickory from "./pages/Hickory";
+import Gastonia from "./pages/Gastonia";
+import Wilmington from "./pages/Wilmington";
+import HighPoint from "./pages/HighPoint";
+import WinstonSalem from "./pages/WinstonSalem";
+import MyrtleBeach from "./pages/MyrtleBeach";
+import RockHill from "./pages/RockHill";
+import Augusta from "./pages/Augusta";
+import Columbus from "./pages/Columbus";
+import CharlestonWV from "./pages/CharlestonWV";
+import Huntington from "./pages/Huntington";
+import Huntsville from "./pages/Huntsville";
 
 const queryClient = new QueryClient();
 
@@ -249,6 +260,17 @@ const App = () => (
           <Route path="/danville" element={<Danville />} />
           <Route path="/martinsville" element={<Martinsville />} />
           <Route path="/hickory" element={<Hickory />} />
+          <Route path="/gastonia" element={<Gastonia />} />
+          <Route path="/wilmington" element={<Wilmington />} />
+          <Route path="/high-point" element={<HighPoint />} />
+          <Route path="/winston-salem" element={<WinstonSalem />} />
+          <Route path="/myrtle-beach" element={<MyrtleBeach />} />
+          <Route path="/rock-hill" element={<RockHill />} />
+          <Route path="/augusta" element={<Augusta />} />
+          <Route path="/columbus" element={<Columbus />} />
+          <Route path="/charleston-wv" element={<CharlestonWV />} />
+          <Route path="/huntington" element={<Huntington />} />
+          <Route path="/huntsville" element={<Huntsville />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
