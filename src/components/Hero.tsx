@@ -47,9 +47,9 @@ const Hero = () => {
             <a href="https://smashmeals.bottle.com/b/9814348" target="_blank" rel="noopener noreferrer" onClick={() => {
               if ((window as any).fbq) (window as any).fbq('track', 'InitiateCheckout');
             }}>
-              <div className="bg-gradient-to-r from-orange-600 to-orange-500 backdrop-blur-sm border-2 border-orange-300 rounded-lg px-6 py-4 shadow-elevated hover:scale-105 transition-transform duration-300 cursor-pointer">
+              <div className="bg-gradient-to-r from-red-600 to-green-700 backdrop-blur-sm border-2 border-red-300 rounded-lg px-6 py-4 shadow-elevated hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <p className="text-white font-inter text-lg font-bold text-center whitespace-nowrap">
-                  🦃 Special Thanksgiving Menu
+                  🎄 Special Christmas Menu
                 </p>
               </div>
             </a>
