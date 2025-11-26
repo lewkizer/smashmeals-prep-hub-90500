@@ -8,9 +8,10 @@ interface FAQItem {
 interface FAQSectionProps {
   title?: string;
   faqs: FAQItem[];
+  includeSchema?: boolean;
 }
 
-const FAQSection = ({ title = "Frequently Asked Questions", faqs }: FAQSectionProps) => {
+const FAQSection = ({ title = "Frequently Asked Questions", faqs, includeSchema = true }: FAQSectionProps) => {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -26,9 +27,11 @@ const FAQSection = ({ title = "Frequently Asked Questions", faqs }: FAQSectionPr
 
   return (
     <section className="py-20 px-4">
-      <script type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </script>
+      {includeSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      )}
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-3xl md:text-4xl font-bold font-playfair text-center mb-12">
           {title}
