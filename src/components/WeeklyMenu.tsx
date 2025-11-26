@@ -17,6 +17,10 @@ import smashSnackPack from "@/assets/products/smash-snack-pack.webp";
 import smashBarReal from "@/assets/products/smash-bar-real.jpg";
 import smashProteinBar from "@/assets/products/smash-protein-bar.webp";
 import smashMistakeBar from "@/assets/products/smash-mistake-bar.webp";
+import chickenBroccoliStirFry from "@/assets/products/chicken-broccoli-stir-fry.jpg";
+import grilledSteakPotatoBroccoli from "@/assets/products/grilled-steak-potato-broccoli.jpg";
+import pulledPork from "@/assets/products/pulled-pork.jpg";
+import shrimpCheeseGrits from "@/assets/products/shrimp-cheese-grits.jpg";
 
 // Map image URLs to imported assets
 const imageMap: Record<string, string> = {
@@ -34,6 +38,10 @@ const imageMap: Record<string, string> = {
   '/assets/products/smash-bar-real.jpg': smashBarReal,
   '/src/assets/products/smash-protein-bar.webp': smashProteinBar,
   '/src/assets/products/smash-mistake-bar.webp': smashMistakeBar,
+  '/assets/products/chicken-broccoli-stir-fry.jpg': chickenBroccoliStirFry,
+  '/assets/products/grilled-steak-potato-broccoli.jpg': grilledSteakPotatoBroccoli,
+  '/assets/products/pulled-pork.jpg': pulledPork,
+  '/assets/products/shrimp-cheese-grits.jpg': shrimpCheeseGrits,
 };
 
 const WeeklyMenu = () => {
