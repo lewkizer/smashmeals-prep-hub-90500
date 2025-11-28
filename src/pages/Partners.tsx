@@ -1,7 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Partners = () => {
   const partners = [
@@ -69,6 +72,37 @@ const Partners = () => {
               We're proud to partner with these amazing local businesses who share our commitment to health, fitness, and community.
             </p>
           </div>
+
+          {/* Featured Family Partner */}
+          <Card className="max-w-4xl mx-auto mb-12 overflow-hidden bg-gradient-to-r from-amber-50 to-amber-100 dark:from-amber-950 dark:to-amber-900 border-amber-200 dark:border-amber-800">
+            <CardContent className="p-0">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="aspect-video md:aspect-auto">
+                  <img 
+                    src="/assets/partners/lewis-charity-siblings.jpg" 
+                    alt="Lewis Kizer and Charity Teague"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6 md:p-8 flex flex-col justify-center">
+                  <Badge className="w-fit mb-3 bg-amber-600 text-white">
+                    <Heart className="w-3 h-3 mr-1" /> Family Partnership
+                  </Badge>
+                  <h3 className="text-2xl font-bold font-playfair mb-2">Charity's Chocolate</h3>
+                  <p className="text-sm text-muted-foreground mb-1">Martin, TN</p>
+                  <p className="text-muted-foreground mb-4">
+                    Hand-painted, gluten-free artisan chocolates crafted by Lewis's sister. 
+                    Small-batch bonbons that are as beautiful as they are delicious.
+                  </p>
+                  <Link to="/charitys-chocolate">
+                    <Button className="w-fit bg-amber-600 hover:bg-amber-700 text-white">
+                      Learn More <ExternalLink className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Partners Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
