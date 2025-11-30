@@ -3,45 +3,47 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useFeaturedProducts } from "@/hooks/useProducts";
 
-// Import product images
-import baconEggCheeseCasserole from "@/assets/products/bacon-egg-cheese-casserole.jpg";
-import blueberryPancakes from "@/assets/products/blueberry-pancakes.jpg";
-import breakfastBurrito from "@/assets/products/breakfast-burrito.jpg";
-import greekYogurtParfait from "@/assets/products/greek-yogurt-parfait.jpg";
-import arrozConPollo from "@/assets/products/arroz-con-pollo.jpg";
-import bakedSalmon from "@/assets/products/baked-salmon.jpg";
-import bbqChickenMacCheese from "@/assets/products/bbq-chicken-mac-cheese.jpg";
-import beefBrisketCauliflower from "@/assets/products/beef-brisket-cauliflower.jpg";
-import smashRanchyPopcorn from "@/assets/products/smash-ranchy-popcorn.webp";
-import smashSnackPack from "@/assets/products/smash-snack-pack.webp";
-import smashBarReal from "@/assets/products/smash-bar-real.jpg";
-import smashProteinBar from "@/assets/products/smash-protein-bar.webp";
-import smashMistakeBar from "@/assets/products/smash-mistake-bar.webp";
-import chickenBroccoliStirFry from "@/assets/products/chicken-broccoli-stir-fry.jpg";
-import grilledSteakPotatoBroccoli from "@/assets/products/grilled-steak-potato-broccoli.jpg";
-import pulledPork from "@/assets/products/pulled-pork.jpg";
-import shrimpCheeseGrits from "@/assets/products/shrimp-cheese-grits.jpg";
+// Import product images - Weekly Menu Items
+import santaFeBreakfastBowl from "@/assets/products/santa-fe-breakfast-bowl.jpg";
+import sunDriedTomatoOmelet from "@/assets/products/sun-dried-tomato-omelet.jpg";
+import bananaSmashPudding from "@/assets/products/banana-smash-pudding.jpg";
+import berryOatmealBake from "@/assets/products/berry-oatmeal-bake.jpg";
+import smokedChickenLeg from "@/assets/products/smoked-chicken-leg.jpg";
+import shrimpEggRollBowl from "@/assets/products/shrimp-egg-roll-bowl.jpg";
+import grilledSteakSalad from "@/assets/products/grilled-steak-salad.jpg";
+import grilledChickenSalad from "@/assets/products/grilled-chicken-salad.jpg";
+import sweetPotatoQuesadilla from "@/assets/products/sweet-potato-quesadilla.jpg";
+import spicyPeanutNoodles from "@/assets/products/spicy-peanut-noodles.jpg";
+import broccoliCheddarSoup from "@/assets/products/broccoli-cheddar-soup.jpg";
+import eggRollBowlTurkey from "@/assets/products/egg-roll-bowl-turkey.jpg";
+import honeyGlazedSalmon from "@/assets/products/honey-glazed-salmon.jpg";
+import filetMignonAlacarte from "@/assets/products/filet-mignon-alacarte.jpg";
+import smokedChickenWings from "@/assets/products/smoked-chicken-wings.jpg";
 
-// Map image URLs to imported assets
-const imageMap: Record<string, string> = {
-  '/assets/products/bacon-egg-cheese-casserole.jpg': baconEggCheeseCasserole,
-  '/assets/products/blueberry-pancakes.jpg': blueberryPancakes,
-  '/assets/products/breakfast-burrito.jpg': breakfastBurrito,
-  '/assets/products/greek-yogurt-parfait.jpg': greekYogurtParfait,
-  '/assets/products/arroz-con-pollo.jpg': arrozConPollo,
-  '/assets/products/baked-salmon.jpg': bakedSalmon,
-  '/assets/products/bbq-chicken-mac-cheese.jpg': bbqChickenMacCheese,
-  '/assets/products/beef-brisket-cauliflower.jpg': beefBrisketCauliflower,
-  '/src/assets/products/smash-ranchy-popcorn.webp': smashRanchyPopcorn,
-  '/src/assets/products/smash-snack-pack.webp': smashSnackPack,
-  '/src/assets/products/smash-bar.webp': smashBarReal,
-  '/assets/products/smash-bar-real.jpg': smashBarReal,
-  '/src/assets/products/smash-protein-bar.webp': smashProteinBar,
-  '/src/assets/products/smash-mistake-bar.webp': smashMistakeBar,
-  '/assets/products/chicken-broccoli-stir-fry.jpg': chickenBroccoliStirFry,
-  '/assets/products/grilled-steak-potato-broccoli.jpg': grilledSteakPotatoBroccoli,
-  '/assets/products/pulled-pork.jpg': pulledPork,
-  '/assets/products/shrimp-cheese-grits.jpg': shrimpCheeseGrits,
+// Fallback images
+import baconEggCheeseCasserole from "@/assets/products/bacon-egg-cheese-casserole.jpg";
+
+// Map product names to imported assets (case-insensitive matching)
+const getProductImage = (productName: string): string => {
+  const nameLower = productName.toLowerCase();
+  
+  if (nameLower.includes('santa fe breakfast')) return santaFeBreakfastBowl;
+  if (nameLower.includes('sun dried tomato') && nameLower.includes('omelet')) return sunDriedTomatoOmelet;
+  if (nameLower.includes('banana smash pudding')) return bananaSmashPudding;
+  if (nameLower.includes('berry oatmeal bake')) return berryOatmealBake;
+  if (nameLower.includes('smoked chicken leg')) return smokedChickenLeg;
+  if (nameLower.includes('shrimp egg roll bowl')) return shrimpEggRollBowl;
+  if (nameLower.includes('grilled steak salad')) return grilledSteakSalad;
+  if (nameLower.includes('grilled chicken salad')) return grilledChickenSalad;
+  if (nameLower.includes('sweet potato black bean quesadilla')) return sweetPotatoQuesadilla;
+  if (nameLower.includes('spicy peanut noodles')) return spicyPeanutNoodles;
+  if (nameLower.includes('broccoli cheddar soup')) return broccoliCheddarSoup;
+  if (nameLower.includes('egg roll in a bowl')) return eggRollBowlTurkey;
+  if (nameLower.includes('honey') && nameLower.includes('salmon')) return honeyGlazedSalmon;
+  if (nameLower.includes('filet mignon') && nameLower.includes('a la carte')) return filetMignonAlacarte;
+  if (nameLower.includes('smoked chicken wings')) return smokedChickenWings;
+  
+  return baconEggCheeseCasserole;
 };
 
 const WeeklyMenu = () => {
@@ -80,10 +82,10 @@ const WeeklyMenu = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-8">
           {products.map((product) => {
-            // Use the image_url from storage if available, otherwise fall back to imageMap
+            // Use the image_url from storage if available, otherwise match by product name
             const productImage = product.image_url?.startsWith('http') 
               ? product.image_url 
-              : imageMap[product.image_url || ''] || baconEggCheeseCasserole;
+              : getProductImage(product.name);
             return (
               <Link key={product.id} to={`/product/${product.id}`}>
                 <Card className="overflow-hidden group hover:shadow-[0_30px_80px_-20px_hsl(var(--primary)/0.15)] transition-all duration-300 cursor-pointer h-full border-0 bg-white/60 dark:bg-card/60 backdrop-blur-sm hover:scale-[1.02]">
