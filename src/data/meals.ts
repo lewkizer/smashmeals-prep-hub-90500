@@ -5,6 +5,9 @@ import grilledSteakSalad from "@/assets/featured/grilled-steak-salad.jpg";
 import lemonHerbChicken from "@/assets/featured/lemon-herb-chicken.jpg";
 import shrimpCheeseGrits from "@/assets/featured/shrimp-cheese-grits.jpg";
 import filetMignonPlate from "@/assets/featured/filet-mignon-plate.jpg";
+import southernSmashCup from "@/assets/featured/southern-smash-cup.jpg";
+import sweetPotatoHash from "@/assets/featured/sweet-potato-hash.jpg";
+import blueberryProteinOats from "@/assets/featured/blueberry-protein-oats.jpg";
 
 export interface Meal {
   id: string;
@@ -43,7 +46,7 @@ export const meals: Meal[] = [
     longDescription: "Start your morning with a Southern classic reimagined for health-conscious eaters. Our Southern Smash Cup combines savory turkey sausage, creamy stone-ground grits, sharp cheddar cheese, and fluffy egg whites in perfect harmony. This high-protein breakfast keeps you satisfied all morning while maintaining authentic Southern flavor.",
     price: 8.00,
     category: "breakfast",
-    image: mexicanChickenBowl,
+    image: southernSmashCup,
     calories: 320,
     protein: 28,
     carbs: 24,
@@ -74,7 +77,7 @@ export const meals: Meal[] = [
     longDescription: "Fuel your day with this nutrient-dense breakfast featuring crispy sweet potato cubes, savory chicken sausage, bell peppers, and perfectly cooked fried eggs on top. Rich in complex carbs and protein, this hash is ideal for athletes and active individuals who need sustained energy throughout the morning.",
     price: 8.25,
     category: "breakfast",
-    image: lemonHerbChicken,
+    image: sweetPotatoHash,
     calories: 385,
     protein: 26,
     carbs: 32,
@@ -105,7 +108,7 @@ export const meals: Meal[] = [
     longDescription: "Our Blueberry Protein Oats transform traditional oatmeal into a muscle-building powerhouse. Made with gluten-free oats, Greek yogurt, vanilla protein powder, and topped with antioxidant-rich blueberries, this breakfast delivers 25g of protein while satisfying your sweet tooth naturally.",
     price: 8.50,
     category: "breakfast",
-    image: shrimpCheeseGrits,
+    image: blueberryProteinOats,
     calories: 340,
     protein: 25,
     carbs: 42,
