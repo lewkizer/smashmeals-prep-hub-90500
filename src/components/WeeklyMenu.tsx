@@ -27,21 +27,26 @@ import baconEggCheeseCasserole from "@/assets/products/bacon-egg-cheese-casserol
 const getProductImage = (productName: string): string => {
   const nameLower = productName.toLowerCase();
   
+  // Breakfast items
   if (nameLower.includes('santa fe breakfast')) return santaFeBreakfastBowl;
-  if (nameLower.includes('sun dried tomato') && nameLower.includes('omelet')) return sunDriedTomatoOmelet;
-  if (nameLower.includes('banana smash pudding')) return bananaSmashPudding;
-  if (nameLower.includes('berry oatmeal bake')) return berryOatmealBake;
-  if (nameLower.includes('smoked chicken leg')) return smokedChickenLeg;
-  if (nameLower.includes('shrimp egg roll bowl')) return shrimpEggRollBowl;
-  if (nameLower.includes('grilled steak salad')) return grilledSteakSalad;
-  if (nameLower.includes('grilled chicken salad')) return grilledChickenSalad;
-  if (nameLower.includes('sweet potato black bean quesadilla')) return sweetPotatoQuesadilla;
-  if (nameLower.includes('spicy peanut noodles')) return spicyPeanutNoodles;
-  if (nameLower.includes('broccoli cheddar soup')) return broccoliCheddarSoup;
-  if (nameLower.includes('egg roll in a bowl')) return eggRollBowlTurkey;
-  if (nameLower.includes('honey') && nameLower.includes('salmon')) return honeyGlazedSalmon;
-  if (nameLower.includes('filet mignon') && nameLower.includes('a la carte')) return filetMignonAlacarte;
-  if (nameLower.includes('smoked chicken wings')) return smokedChickenWings;
+  if (nameLower.includes('sun dried tomato') || nameLower.includes('sundried tomato')) return sunDriedTomatoOmelet;
+  if (nameLower.includes('banana smash')) return bananaSmashPudding;
+  if (nameLower.includes('berry oatmeal')) return berryOatmealBake;
+  
+  // Entrees
+  if (nameLower.includes('smoked chicken leg') || nameLower.includes('leg quarter')) return smokedChickenLeg;
+  if (nameLower.includes('shrimp egg roll') || nameLower.includes('shrimp eggroll')) return shrimpEggRollBowl;
+  if (nameLower.includes('grilled steak salad') || nameLower.includes('steak salad')) return grilledSteakSalad;
+  if (nameLower.includes('grilled chicken salad') || nameLower.includes('chicken salad')) return grilledChickenSalad;
+  if (nameLower.includes('sweet potato') && nameLower.includes('quesadilla')) return sweetPotatoQuesadilla;
+  if (nameLower.includes('spicy peanut') || nameLower.includes('peanut noodles')) return spicyPeanutNoodles;
+  if (nameLower.includes('broccoli cheddar') || nameLower.includes('cheddar soup')) return broccoliCheddarSoup;
+  if (nameLower.includes('egg roll in a bowl') || nameLower.includes('turkey egg roll')) return eggRollBowlTurkey;
+  if (nameLower.includes('salmon') && (nameLower.includes('honey') || nameLower.includes('glazed'))) return honeyGlazedSalmon;
+  if (nameLower.includes('smoked chicken wings') || nameLower.includes('wings and drumsticks')) return smokedChickenWings;
+  
+  // A la carte
+  if (nameLower.includes('filet mignon')) return filetMignonAlacarte;
   
   return baconEggCheeseCasserole;
 };
