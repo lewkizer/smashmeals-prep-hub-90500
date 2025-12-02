@@ -8,6 +8,8 @@ import filetMignonPlate from "@/assets/featured/filet-mignon-plate.jpg";
 import southernSmashCup from "@/assets/featured/southern-smash-cup.jpg";
 import sweetPotatoHash from "@/assets/featured/sweet-potato-hash.jpg";
 import blueberryProteinOats from "@/assets/featured/blueberry-protein-oats.jpg";
+import honeyGlazedSalmon from "@/assets/products/honey-glazed-salmon.jpg";
+import shrimpEggRollBowl from "@/assets/products/shrimp-egg-roll-bowl.jpg";
 
 export interface Meal {
   id: string;
@@ -444,6 +446,68 @@ export const meals: Meal[] = [
     reviews: {
       rating: 4.7,
       count: 112
+    }
+  },
+  {
+    id: "honey-glazed-salmon",
+    slug: "honey-glazed-salmon",
+    name: "Honey-Glazed Salmon with Rice & Asparagus",
+    description: "Perfectly glazed salmon fillet served with fluffy rice and crisp asparagus spears",
+    longDescription: "Our Honey-Glazed Salmon features a premium Atlantic salmon fillet coated in a sweet and savory honey glaze, paired with perfectly cooked jasmine rice and tender-crisp asparagus spears. This omega-3 rich meal is both heart-healthy and absolutely delicious - a favorite among our health-conscious customers.",
+    price: 14.00,
+    category: "entree",
+    image: honeyGlazedSalmon,
+    calories: 485,
+    protein: 38,
+    carbs: 42,
+    fat: 16,
+    servingSize: "12 oz",
+    ingredients: ["Atlantic salmon", "Honey", "Soy sauce (gluten-free)", "Jasmine rice", "Asparagus", "Garlic", "Olive oil", "Lemon"],
+    allergens: ["Fish", "Soy"],
+    shelfLife: "5-6 days refrigerated",
+    prepInstructions: [
+      "Remove lid and vent",
+      "Microwave for 2.5-3 minutes",
+      "Let stand 1 minute before eating",
+      "Squeeze fresh lemon for extra flavor"
+    ],
+    featured: true,
+    tags: ["high-protein", "gluten-free", "heart-healthy", "omega-3", "seafood"],
+    bestFor: ["Heart health", "Brain function", "Clean eating", "Weight management"],
+    reviews: {
+      rating: 4.9,
+      count: 189
+    }
+  },
+  {
+    id: "shrimp-egg-roll-bowl",
+    slug: "shrimp-egg-roll-bowl",
+    name: "Shrimp Egg Roll Bowl",
+    description: "Asian-inspired bowl with seasoned shrimp, cabbage slaw, and savory egg roll flavors",
+    longDescription: "All the flavors of your favorite egg roll without the wrapper! Our Shrimp Egg Roll Bowl features succulent seasoned shrimp atop a bed of crispy cabbage slaw with carrots, green onions, and a savory Asian-inspired sauce. This low-carb, high-protein meal delivers authentic Asian flavors while keeping you on track with your health goals.",
+    price: 12.00,
+    category: "entree",
+    image: shrimpEggRollBowl,
+    calories: 345,
+    protein: 32,
+    carbs: 18,
+    fat: 14,
+    servingSize: "11 oz",
+    ingredients: ["Shrimp", "Cabbage", "Carrots", "Green onions", "Coconut aminos", "Sesame oil", "Ginger", "Garlic"],
+    allergens: ["Shellfish", "Sesame"],
+    shelfLife: "5-6 days refrigerated",
+    prepInstructions: [
+      "Remove lid and vent",
+      "Microwave for 2-2.5 minutes",
+      "Stir halfway through",
+      "Top with extra sesame seeds if desired"
+    ],
+    featured: true,
+    tags: ["high-protein", "gluten-free", "low-carb", "asian-inspired", "seafood"],
+    bestFor: ["Low-carb diet", "Keto-friendly", "Asian food lovers", "Weight loss"],
+    reviews: {
+      rating: 4.8,
+      count: 156
     }
   }
 ];
