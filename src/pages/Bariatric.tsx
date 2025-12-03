@@ -83,9 +83,14 @@ const Bariatric = () => {
                 30-45g protein per meal. Portion-controlled. Gentle ingredients. 100% gluten-free. Designed to support your post-surgery nutrition goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
+                <a href="/bariatric-line">
                   <Button variant="hero" size="lg" className="text-lg">
-                    View This Week's Menu
+                    Shop Bariatric Line
+                  </Button>
+                </a>
+                <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" size="lg" className="text-lg">
+                    View Full Menu
                   </Button>
                 </a>
               </div>
