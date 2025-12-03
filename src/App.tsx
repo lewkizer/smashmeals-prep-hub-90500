@@ -113,6 +113,7 @@ import HighProteinShipping from "./pages/HighProteinShipping";
 import PersonaMealPrep from "./pages/PersonaMealPrep";
 import Athletes from "./pages/Athletes";
 import Bariatric from "./pages/Bariatric";
+import BariatricLine from "./pages/BariatricLine";
 import Families from "./pages/Families";
 import Elderly from "./pages/Elderly";
 import Winchester from "./pages/Winchester";
@@ -253,6 +254,7 @@ const App = () => (
           <Route path="/persona-meal-prep" element={<PersonaMealPrep />} />
           <Route path="/athletes" element={<Athletes />} />
           <Route path="/bariatric" element={<Bariatric />} />
+          <Route path="/bariatric-line" element={<BariatricLine />} />
           <Route path="/families" element={<Families />} />
           <Route path="/elderly" element={<Elderly />} />
           <Route path="/winchester" element={<Winchester />} />
