@@ -7,6 +7,14 @@ import { Card } from "@/components/ui/card";
 import { Heart, Shield, Utensils, Scale, Clock, Sparkles, Check, ChefHat, ThermometerSnowflake } from "lucide-react";
 import InternalLinks from "@/components/InternalLinks";
 
+// Bariatric product images
+import shreddedBeefHibachi from "@/assets/bariatric/shredded-beef-hibachi.jpg";
+import chickenCreamCup from "@/assets/bariatric/chicken-cream-cup.jpg";
+import chickenHibachi from "@/assets/bariatric/chicken-hibachi.jpg";
+import cheesyEggWhite from "@/assets/bariatric/cheesy-egg-white.jpg";
+import strawberryCheesecakeBite from "@/assets/bariatric/strawberry-cheesecake-bite.jpg";
+import broccoliCheddarSoup from "@/assets/bariatric/broccoli-cheddar-soup.jpg";
+
 const BariatricLine = () => {
   const products = [
     {
@@ -14,42 +22,48 @@ const BariatricLine = () => {
       price: 8.00,
       description: "Tender, slow-cooked shredded beef with hibachi vegetables. Soft texture, easy to chew and digest.",
       protein: "22g",
-      highlights: ["Soft shredded texture", "Easy to portion", "Low carb"]
+      highlights: ["Soft shredded texture", "Easy to portion", "Low carb"],
+      image: shreddedBeefHibachi
     },
     {
       name: "Rotisserie-Style Chicken Cream Cup",
       price: 8.00,
       description: "Creamy, comforting rotisserie chicken in a smooth, satisfying sauce. Perfect for early post-op stages.",
       protein: "24g",
-      highlights: ["Creamy texture", "Gentle on stomach", "Comfort food"]
+      highlights: ["Creamy texture", "Gentle on stomach", "Comfort food"],
+      image: chickenCreamCup
     },
     {
       name: "Chicken Hibachi Bowl",
       price: 8.00,
       description: "Tender chicken pieces with savory hibachi-style vegetables. Soft, flavorful, and easy to eat slowly.",
       protein: "26g",
-      highlights: ["Lean protein", "Balanced macros", "Satisfying"]
+      highlights: ["Lean protein", "Balanced macros", "Satisfying"],
+      image: chickenHibachi
     },
     {
       name: "Cheesy Egg-White Breakfast",
       price: 6.00,
       description: "Fluffy egg whites with melted cheese. High protein breakfast that's gentle and easy to digest.",
       protein: "18g",
-      highlights: ["Morning protein boost", "Soft & fluffy", "Low fat"]
+      highlights: ["Morning protein boost", "Soft & fluffy", "Low fat"],
+      image: cheesyEggWhite
     },
     {
       name: "Strawberry Protein Cheesecake Bite",
       price: 3.00,
       description: "A small, protein-packed treat when you need something sweet. No guilt, no dumping syndrome risk.",
       protein: "8g",
-      highlights: ["Sweet treat", "No added sugar", "Portion-controlled"]
+      highlights: ["Sweet treat", "No added sugar", "Portion-controlled"],
+      image: strawberryCheesecakeBite
     },
     {
       name: "Broccoli Cheddar Soup",
       price: 6.00,
       description: "Warm, velvety soup with broccoli and cheddar. Perfect for soft food stages and cold days.",
       protein: "16g",
-      highlights: ["Soup texture", "Easy to sip", "Comforting"]
+      highlights: ["Soup texture", "Easy to sip", "Comforting"],
+      image: broccoliCheddarSoup
     }
   ];
 
@@ -291,6 +305,13 @@ const BariatricLine = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {products.map((product, index) => (
                 <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img 
+                      src={product.image} 
+                      alt={product.name}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
                   <div className="p-6 space-y-4">
                     <div className="flex justify-between items-start">
                       <h3 className="text-xl font-bold leading-tight">{product.name}</h3>
