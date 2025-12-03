@@ -54,19 +54,19 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "Menu", href: "https://smashmeals.bottle.com/b/9814360" },
     { name: "Freezer Meals", href: "/freezer-meals" },
-    { name: "Christmas", href: "/thanksgiving" },
+    { name: "Christmas", href: "/christmas" },
+    { name: "Bariatric Line", href: "/bariatric-line" },
     { name: "How It Works", href: "/how-it-works" },
     { name: "Catering", href: "/catering" },
     { name: "About", href: "/about" },
     { name: "Blogs", href: "/blogs" },
-    { name: "Contact", href: "/contact" },
   ];
 
   const mobileNavLinks = [
     { name: "Home", href: "/" },
     { name: "Menu", href: "https://smashmeals.bottle.com/b/9814360" },
     { name: "Freezer Meals", href: "/freezer-meals" },
-    { name: "Christmas", href: "/thanksgiving" },
+    { name: "Christmas", href: "/christmas" },
     { name: "Bariatric Line", href: "/bariatric-line" },
     { name: "GLP-1", href: "/glp1" },
     { name: "How It Works", href: "/how-it-works" },
@@ -111,7 +111,7 @@ const Header = () => {
             ))}
             <DropdownMenu>
               <DropdownMenuTrigger className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1">
-                FAQ <ChevronDown className="h-4 w-4" />
+                More <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
@@ -121,10 +121,10 @@ const Header = () => {
                   <a href="/glp1" className="cursor-pointer">GLP-1</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="/bariatric-line" className="cursor-pointer">Bariatric Line</a>
+                  <a href="/partners" className="cursor-pointer">Partners</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="/partners" className="cursor-pointer">Partners</a>
+                  <a href="/contact" className="cursor-pointer">Contact</a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
