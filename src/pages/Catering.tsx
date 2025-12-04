@@ -5,38 +5,64 @@ import { Card } from "@/components/ui/card";
 import { ChefHat, Users, Sparkles, Clock, DollarSign, CheckCircle2 } from "lucide-react";
 
 const Catering = () => {
-  const cateringItems = [
-    {
-      name: "Taco Bar",
-      description: "Enjoy a variety of toppings including ground beef, chicken, cheese, lettuce, tomatoes, sour cream, and all the fixings",
-      popular: true,
+  const menuCategories = {
+    appetizers: {
+      title: "Appetizers",
+      items: [
+        { name: "Appetizer Bar", price: "$16.00", description: "Your choice of up to five appetizers", popular: true },
+        { name: "Chips, Queso & Salsa", price: "$15.00", description: "Gluten-free, vegetarian" },
+        { name: "Chips & Guacamole", price: "$15.00", description: "Gluten-free, vegetarian" },
+      ]
     },
-    {
-      name: "Chicken Chili",
-      description: "Warm and hearty chili served with sour cream, shredded cheese, and chips. Perfect for game day or office events",
-      popular: true,
+    cateringBars: {
+      title: "Catering Bars",
+      items: [
+        { name: "Taco Bar", price: "$14.00", description: "Everything you need to build your own tacos, including ground beef, chicken, shredded cheese, sour cream, salsa, tortillas, soft & hard tortilla shells, lettuce, tomato, onion, cilantro, and lime wedges", popular: true },
+        { name: "BBQ Brisket Bar", price: "$19.00", description: "Includes sliced brisket, BBQ sauce, slaw, and baked beans" },
+        { name: "Pork BBQ Bar", price: "$15.00", description: "Includes pulled pork, BBQ sauce, slaw, and baked beans" },
+      ]
     },
-    {
-      name: "BBQ Brisket",
-      description: "Sliced tender brisket with BBQ sauce, buns, coleslaw, and baked beans. A southern favorite",
-      popular: false,
+    wraps: {
+      title: "Wraps",
+      items: [
+        { name: "Ham Wrap", price: "$11.00", description: "With your choice of cheese, lettuce, tomato, and bacon. Served with a bag of chips and a cookie. Individually packaged optional." },
+        { name: "Turkey Wrap", price: "$11.00", description: "With your choice of cheese, lettuce, tomato, and bacon. Served with a bag of chips and a cookie. Individually packaged optional." },
+      ]
     },
-    {
-      name: "Pulled Pork BBQ",
-      description: "Savory pulled pork with all the fixings. Tender, flavorful, and always a crowd-pleaser",
-      popular: false,
+    entrees: {
+      title: "Entrees",
+      items: [
+        { name: "Chicken Chili", price: "$11.00", description: "Served with sour cream, cheese, and chips. Individually packaged." },
+        { name: "Baked Potato w/ Grilled Chicken", price: "$12.00", description: "With bacon, cheese, sour cream, and butter. Served with community salad. Individually packaged optional." },
+        { name: "Baked Potato w/ Pulled Pork", price: "$12.00", description: "With bacon, cheese, sour cream, and butter. Served with community salad. Individually packaged optional." },
+      ]
     },
-    {
-      name: "Appetizer Bar",
-      description: "Choose from a selection of appetizers including meatballs, wings, dips, and more to kick off your event",
-      popular: false,
+    salads: {
+      title: "Salads",
+      items: [
+        { name: "Grilled Chicken Salad", price: "$12.00", description: "Fresh and satisfying", popular: true },
+        { name: "Grilled Steak Salad", price: "$13.00", description: "Premium steak on fresh greens" },
+      ]
     },
-    {
-      name: "Cookies",
-      description: "Freshly baked gluten-free cookies. 12 for $20, 40 for $60, or 100 for $140",
-      popular: false,
+    desserts: {
+      title: "Desserts",
+      items: [
+        { name: "Chocolate Chip Cookies", price: "$20.00", description: "Serves 12", popular: true },
+        { name: "Peanut Butter Cookies", price: "$20.00", description: "Serves 12" },
+        { name: "Rice Krispy Treats", price: "$30.00", description: "Serves 12" },
+        { name: "Almond Butter Cookies", price: "$20.00", description: "Serves 12" },
+      ]
     },
-  ];
+    beverages: {
+      title: "Beverages",
+      items: [
+        { name: "Gallon Unsweet Tea", price: "$6.99", description: "Serves 8", popular: true },
+        { name: "Gallon Sweet Tea", price: "$6.99", description: "Serves 8" },
+        { name: "Gallon Lemonade", price: "$7.99", description: "Serves 8" },
+        { name: "Assorted 2L Soda Bottles", price: "$3.59", description: "Serves 4" },
+      ]
+    },
+  };
 
   const benefits = [
     {
@@ -126,36 +152,48 @@ const Catering = () => {
               Catering Menu
             </h2>
             <p className="text-xl font-inter text-muted-foreground text-center mb-16">
-              Delicious options for any event size
+              All items are 100% gluten-free
             </p>
             
-            <div className="grid md:grid-cols-2 gap-8">
-              {cateringItems.map((item, index) => (
-                <Card 
-                  key={index} 
-                  className="p-8 border-0 bg-white/80 dark:bg-card/80 backdrop-blur-sm shadow-elevated hover:scale-105 transition-all group relative overflow-hidden"
-                >
-                  {item.popular && (
-                    <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold shadow-card">
-                      POPULAR
-                    </div>
-                  )}
-                  <h3 className="text-2xl font-bold font-playfair mb-3 group-hover:text-accent transition-colors">
-                    {item.name}
-                  </h3>
-                  <p className="text-muted-foreground font-inter leading-relaxed">
-                    {item.description}
-                  </p>
-                </Card>
-              ))}
-            </div>
+            {Object.values(menuCategories).map((category, categoryIndex) => (
+              <div key={categoryIndex} className="mb-12">
+                <h3 className="text-2xl md:text-3xl font-bold font-playfair mb-6 text-primary">
+                  {category.title}
+                </h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {category.items.map((item, index) => (
+                    <Card 
+                      key={index} 
+                      className="p-6 border-0 bg-white/80 dark:bg-card/80 backdrop-blur-sm shadow-card hover:shadow-elevated transition-all group relative overflow-hidden"
+                    >
+                      {item.popular && (
+                        <div className="absolute top-3 right-3 bg-accent text-accent-foreground px-2 py-1 rounded-full text-xs font-bold shadow-card">
+                          POPULAR
+                        </div>
+                      )}
+                      <div className="flex justify-between items-start mb-2">
+                        <h4 className="text-lg font-bold font-playfair group-hover:text-accent transition-colors pr-16">
+                          {item.name}
+                        </h4>
+                        <span className="text-lg font-bold text-primary whitespace-nowrap">
+                          {item.price}
+                        </span>
+                      </div>
+                      <p className="text-sm text-muted-foreground font-inter leading-relaxed">
+                        {item.description}
+                      </p>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            ))}
 
             <div className="text-center mt-12">
-              <Card className="inline-block p-6 border-0 bg-gradient-to-br from-accent/20 to-primary/20 backdrop-blur-sm shadow-card">
-                <p className="font-inter text-lg">
-                  <span className="font-bold">Add-Ons Available:</span> Sides, drinks, desserts, and more!
-                </p>
-              </Card>
+              <a href="https://smashmeals.bottle.com/b/9730176" target="_blank" rel="noopener noreferrer">
+                <Button variant="hero" size="lg" className="text-lg px-12 py-7 h-auto font-inter shadow-elevated">
+                  Order Catering Online
+                </Button>
+              </a>
             </div>
           </div>
         </div>
