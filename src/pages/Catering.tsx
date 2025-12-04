@@ -9,37 +9,31 @@ const Catering = () => {
     {
       name: "Taco Bar",
       description: "Enjoy a variety of toppings including ground beef, chicken, cheese, lettuce, tomatoes, sour cream, and all the fixings",
-      servingSize: "Serves 10-50 people",
       popular: true,
     },
     {
       name: "Chicken Chili",
       description: "Warm and hearty chili served with sour cream, shredded cheese, and chips. Perfect for game day or office events",
-      servingSize: "Serves 10-50 people",
       popular: true,
     },
     {
       name: "BBQ Brisket",
       description: "Sliced tender brisket with BBQ sauce, buns, coleslaw, and baked beans. A southern favorite",
-      servingSize: "Serves 10-50 people",
       popular: false,
     },
     {
       name: "Pulled Pork BBQ",
       description: "Savory pulled pork with all the fixings. Tender, flavorful, and always a crowd-pleaser",
-      servingSize: "Serves 10-50 people",
       popular: false,
     },
     {
       name: "Appetizer Bar",
       description: "Choose from a selection of appetizers including meatballs, wings, dips, and more to kick off your event",
-      servingSize: "Customizable portions",
       popular: false,
     },
     {
       name: "Cookies",
       description: "Freshly baked gluten-free cookies. 12 for $20, 40 for $60, or 100 for $140",
-      servingSize: "Various quantities",
       popular: false,
     },
   ];
@@ -149,13 +143,9 @@ const Catering = () => {
                   <h3 className="text-2xl font-bold font-playfair mb-3 group-hover:text-accent transition-colors">
                     {item.name}
                   </h3>
-                  <p className="text-muted-foreground font-inter mb-4 leading-relaxed">
+                  <p className="text-muted-foreground font-inter leading-relaxed">
                     {item.description}
                   </p>
-                  <div className="flex items-center gap-2 text-sm font-semibold text-primary">
-                    <Users className="w-4 h-4" />
-                    <span>{item.servingSize}</span>
-                  </div>
                 </Card>
               ))}
             </div>
