@@ -4,22 +4,30 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ChefHat, Users, Sparkles, Clock, DollarSign, CheckCircle2 } from "lucide-react";
 
+// Catering images
+import tacoBarImg from "@/assets/catering/taco-bar.jpg";
+import bbqBrisketImg from "@/assets/catering/bbq-brisket-bar.jpg";
+import porkBbqImg from "@/assets/catering/pork-bbq-bar.jpg";
+import chipsQuesoImg from "@/assets/catering/chips-queso-salsa.jpg";
+import grilledChickenSaladImg from "@/assets/catering/grilled-chicken-salad.jpg";
+import chocolateChipCookiesImg from "@/assets/catering/chocolate-chip-cookies.jpg";
+
 const Catering = () => {
   const menuCategories = {
     appetizers: {
       title: "Appetizers",
       items: [
-        { name: "Appetizer Bar", price: "$16.00", description: "Your choice of up to five appetizers", popular: true },
-        { name: "Chips, Queso & Salsa", price: "$15.00", description: "Gluten-free, vegetarian" },
+        { name: "Appetizer Bar", price: "$16.00", description: "Your choice of up to five appetizers", popular: true, image: chipsQuesoImg },
+        { name: "Chips, Queso & Salsa", price: "$15.00", description: "Gluten-free, vegetarian", image: chipsQuesoImg },
         { name: "Chips & Guacamole", price: "$15.00", description: "Gluten-free, vegetarian" },
       ]
     },
     cateringBars: {
       title: "Catering Bars",
       items: [
-        { name: "Taco Bar", price: "$14.00", description: "Everything you need to build your own tacos, including ground beef, chicken, shredded cheese, sour cream, salsa, tortillas, soft & hard tortilla shells, lettuce, tomato, onion, cilantro, and lime wedges", popular: true },
-        { name: "BBQ Brisket Bar", price: "$19.00", description: "Includes sliced brisket, BBQ sauce, slaw, and baked beans" },
-        { name: "Pork BBQ Bar", price: "$15.00", description: "Includes pulled pork, BBQ sauce, slaw, and baked beans" },
+        { name: "Taco Bar", price: "$14.00", description: "Everything you need to build your own tacos, including ground beef, chicken, shredded cheese, sour cream, salsa, tortillas, soft & hard tortilla shells, lettuce, tomato, onion, cilantro, and lime wedges", popular: true, image: tacoBarImg },
+        { name: "BBQ Brisket Bar", price: "$19.00", description: "Includes sliced brisket, BBQ sauce, slaw, and baked beans", image: bbqBrisketImg },
+        { name: "Pork BBQ Bar", price: "$15.00", description: "Includes pulled pork, BBQ sauce, slaw, and baked beans", image: porkBbqImg },
       ]
     },
     wraps: {
@@ -40,14 +48,14 @@ const Catering = () => {
     salads: {
       title: "Salads",
       items: [
-        { name: "Grilled Chicken Salad", price: "$12.00", description: "Fresh and satisfying", popular: true },
+        { name: "Grilled Chicken Salad", price: "$12.00", description: "Fresh and satisfying", popular: true, image: grilledChickenSaladImg },
         { name: "Grilled Steak Salad", price: "$13.00", description: "Premium steak on fresh greens" },
       ]
     },
     desserts: {
       title: "Desserts",
       items: [
-        { name: "Chocolate Chip Cookies", price: "$20.00", description: "Serves 12", popular: true },
+        { name: "Chocolate Chip Cookies", price: "$20.00", description: "Serves 12", popular: true, image: chocolateChipCookiesImg },
         { name: "Peanut Butter Cookies", price: "$20.00", description: "Serves 12" },
         { name: "Rice Krispy Treats", price: "$30.00", description: "Serves 12" },
         { name: "Almond Butter Cookies", price: "$20.00", description: "Serves 12" },
@@ -160,28 +168,45 @@ const Catering = () => {
                 <h3 className="text-2xl md:text-3xl font-bold font-playfair mb-6 text-primary">
                   {category.title}
                 </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {category.items.map((item, index) => (
                     <Card 
                       key={index} 
-                      className="p-6 border-0 bg-white/80 dark:bg-card/80 backdrop-blur-sm shadow-card hover:shadow-elevated transition-all group relative overflow-hidden"
+                      className="border-0 bg-white/80 dark:bg-card/80 backdrop-blur-sm shadow-card hover:shadow-elevated transition-all group relative overflow-hidden"
                     >
-                      {item.popular && (
-                        <div className="absolute top-3 right-3 bg-accent text-accent-foreground px-2 py-1 rounded-full text-xs font-bold shadow-card">
-                          POPULAR
+                      {item.image && (
+                        <div className="relative h-48 overflow-hidden">
+                          <img 
+                            src={item.image} 
+                            alt={item.name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                          />
+                          {item.popular && (
+                            <div className="absolute top-3 right-3 bg-accent text-accent-foreground px-2 py-1 rounded-full text-xs font-bold shadow-card">
+                              POPULAR
+                            </div>
+                          )}
                         </div>
                       )}
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="text-lg font-bold font-playfair group-hover:text-accent transition-colors pr-16">
-                          {item.name}
-                        </h4>
-                        <span className="text-lg font-bold text-primary whitespace-nowrap">
-                          {item.price}
-                        </span>
+                      <div className="p-6">
+                        {!item.image && item.popular && (
+                          <div className="absolute top-3 right-3 bg-accent text-accent-foreground px-2 py-1 rounded-full text-xs font-bold shadow-card">
+                            POPULAR
+                          </div>
+                        )}
+                        <div className="flex justify-between items-start mb-2">
+                          <h4 className="text-lg font-bold font-playfair group-hover:text-accent transition-colors pr-16">
+                            {item.name}
+                          </h4>
+                          <span className="text-lg font-bold text-primary whitespace-nowrap">
+                            {item.price}
+                          </span>
+                        </div>
+                        <p className="text-sm text-muted-foreground font-inter leading-relaxed">
+                          {item.description}
+                        </p>
                       </div>
-                      <p className="text-sm text-muted-foreground font-inter leading-relaxed">
-                        {item.description}
-                      </p>
                     </Card>
                   ))}
                 </div>
