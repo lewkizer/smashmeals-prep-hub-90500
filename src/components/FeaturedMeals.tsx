@@ -66,6 +66,10 @@ const FeaturedMeals = () => {
                     <img
                       src={meal.image}
                       alt={`${meal.name} - Gluten-free meal prep in Tri-Cities TN`}
+                      width={400}
+                      height={256}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-64 object-cover"
                     />
                     <div className={`absolute top-4 left-4 ${meal.isNew ? 'bg-gradient-to-r from-accent to-primary' : 'bg-accent'} text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg animate-pulse`}>
