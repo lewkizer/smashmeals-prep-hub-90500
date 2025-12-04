@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import StickyOrderBanner from "@/components/StickyOrderBanner";
+import ChristmasBanner from "@/components/ChristmasBanner";
 import TrustStrip from "@/components/TrustStrip";
 import HowItWorks from "@/components/HowItWorks";
 import FeaturedMeals from "@/components/FeaturedMeals";
@@ -56,6 +57,7 @@ const Index = () => {
       <LocalBusinessSchema />
       <StickyOrderBanner />
       <Header />
+      <ChristmasBanner />
       <Hero />
       <TrustStrip />
       <HowItWorks />
