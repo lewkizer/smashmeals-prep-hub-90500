@@ -3,13 +3,13 @@ import { Button } from '@/components/ui/button';
 
 const ChristmasBanner = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-red-700 via-red-600 to-green-700 py-6 px-4">
+    <section className="relative overflow-hidden bg-red-600 py-8 px-4" style={{ minHeight: '100px' }}>
       {/* Decorative snowflakes */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-20">
         <Snowflake className="absolute top-2 left-[10%] h-8 w-8 text-white animate-pulse" />
-        <Snowflake className="absolute bottom-2 left-[30%] h-6 w-6 text-white animate-pulse delay-100" />
-        <Snowflake className="absolute top-3 right-[20%] h-10 w-10 text-white animate-pulse delay-200" />
-        <Snowflake className="absolute bottom-1 right-[40%] h-5 w-5 text-white animate-pulse delay-300" />
+        <Snowflake className="absolute bottom-2 left-[30%] h-6 w-6 text-white animate-pulse" />
+        <Snowflake className="absolute top-3 right-[20%] h-10 w-10 text-white animate-pulse" />
+        <Snowflake className="absolute bottom-1 right-[40%] h-5 w-5 text-white animate-pulse" />
       </div>
       
       <div className="container mx-auto max-w-6xl relative z-10">
