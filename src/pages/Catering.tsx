@@ -11,6 +11,12 @@ import porkBbqImg from "@/assets/catering/pork-bbq-bar.jpg";
 import chipsQuesoImg from "@/assets/catering/chips-queso-salsa.jpg";
 import grilledChickenSaladImg from "@/assets/catering/grilled-chicken-salad.jpg";
 import chocolateChipCookiesImg from "@/assets/catering/chocolate-chip-cookies.jpg";
+import turkeyWrapImg from "@/assets/catering/turkey-wrap.jpg";
+import bakedPotatoPorkImg from "@/assets/catering/baked-potato-pork.jpg";
+import grilledSteakSaladImg from "@/assets/catering/grilled-steak-salad.jpg";
+import lemonadeImg from "@/assets/catering/lemonade.jpg";
+import chickenChiliImg from "@/assets/catering/chicken-chili.jpg";
+import peanutButterCookiesImg from "@/assets/catering/peanut-butter-cookies.jpg";
 
 const Catering = () => {
   const menuCategories = {
@@ -33,30 +39,30 @@ const Catering = () => {
     wraps: {
       title: "Wraps",
       items: [
-        { name: "Ham Wrap", price: "$11.00", description: "With your choice of cheese, lettuce, tomato, and bacon. Served with a bag of chips and a cookie. Individually packaged optional." },
-        { name: "Turkey Wrap", price: "$11.00", description: "With your choice of cheese, lettuce, tomato, and bacon. Served with a bag of chips and a cookie. Individually packaged optional." },
+        { name: "Ham Wrap", price: "$11.00", description: "With your choice of cheese, lettuce, tomato, and bacon. Served with a bag of chips and a cookie. Individually packaged optional.", image: turkeyWrapImg },
+        { name: "Turkey Wrap", price: "$11.00", description: "With your choice of cheese, lettuce, tomato, and bacon. Served with a bag of chips and a cookie. Individually packaged optional.", popular: true, image: turkeyWrapImg },
       ]
     },
     entrees: {
       title: "Entrees",
       items: [
-        { name: "Chicken Chili", price: "$11.00", description: "Served with sour cream, cheese, and chips. Individually packaged." },
-        { name: "Baked Potato w/ Grilled Chicken", price: "$12.00", description: "With bacon, cheese, sour cream, and butter. Served with community salad. Individually packaged optional." },
-        { name: "Baked Potato w/ Pulled Pork", price: "$12.00", description: "With bacon, cheese, sour cream, and butter. Served with community salad. Individually packaged optional." },
+        { name: "Chicken Chili", price: "$11.00", description: "Served with sour cream, cheese, and chips. Individually packaged.", popular: true, image: chickenChiliImg },
+        { name: "Baked Potato w/ Grilled Chicken", price: "$12.00", description: "With bacon, cheese, sour cream, and butter. Served with community salad. Individually packaged optional.", image: bakedPotatoPorkImg },
+        { name: "Baked Potato w/ Pulled Pork", price: "$12.00", description: "With bacon, cheese, sour cream, and butter. Served with community salad. Individually packaged optional.", image: bakedPotatoPorkImg },
       ]
     },
     salads: {
       title: "Salads",
       items: [
         { name: "Grilled Chicken Salad", price: "$12.00", description: "Fresh and satisfying", popular: true, image: grilledChickenSaladImg },
-        { name: "Grilled Steak Salad", price: "$13.00", description: "Premium steak on fresh greens" },
+        { name: "Grilled Steak Salad", price: "$13.00", description: "Premium steak on fresh greens", image: grilledSteakSaladImg },
       ]
     },
     desserts: {
       title: "Desserts",
       items: [
         { name: "Chocolate Chip Cookies", price: "$20.00", description: "Serves 12", popular: true, image: chocolateChipCookiesImg },
-        { name: "Peanut Butter Cookies", price: "$20.00", description: "Serves 12" },
+        { name: "Peanut Butter Cookies", price: "$20.00", description: "Serves 12", image: peanutButterCookiesImg },
         { name: "Rice Krispy Treats", price: "$30.00", description: "Serves 12" },
         { name: "Almond Butter Cookies", price: "$20.00", description: "Serves 12" },
       ]
@@ -66,7 +72,7 @@ const Catering = () => {
       items: [
         { name: "Gallon Unsweet Tea", price: "$6.99", description: "Serves 8", popular: true },
         { name: "Gallon Sweet Tea", price: "$6.99", description: "Serves 8" },
-        { name: "Gallon Lemonade", price: "$7.99", description: "Serves 8" },
+        { name: "Gallon Lemonade", price: "$7.99", description: "Serves 8", image: lemonadeImg },
         { name: "Assorted 2L Soda Bottles", price: "$3.59", description: "Serves 4" },
       ]
     },
