@@ -135,6 +135,11 @@ import Huntington from "./pages/Huntington";
 import Huntsville from "./pages/Huntsville";
 import CharitysChocolate from "./pages/CharitysChocolate";
 import Sneedville from "./pages/Sneedville";
+import Rutledge from "./pages/Rutledge";
+import BeanStation from "./pages/BeanStation";
+import NewTazewell from "./pages/NewTazewell";
+import Harrogate from "./pages/Harrogate";
+import Maynardville from "./pages/Maynardville";
 
 const queryClient = new QueryClient();
 
@@ -278,6 +283,11 @@ const App = () => (
           <Route path="/huntsville" element={<Huntsville />} />
           <Route path="/charitys-chocolate" element={<CharitysChocolate />} />
           <Route path="/sneedville" element={<Sneedville />} />
+          <Route path="/rutledge" element={<Rutledge />} />
+          <Route path="/bean-station" element={<BeanStation />} />
+          <Route path="/new-tazewell" element={<NewTazewell />} />
+          <Route path="/harrogate" element={<Harrogate />} />
+          <Route path="/maynardville" element={<Maynardville />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
