@@ -9,6 +9,7 @@ import tacoBarImg from "@/assets/catering/taco-bar.jpg";
 import bbqBrisketImg from "@/assets/catering/bbq-brisket-bar.jpg";
 import porkBbqImg from "@/assets/catering/pork-bbq-bar.jpg";
 import chipsQuesoImg from "@/assets/catering/chips-queso-salsa.jpg";
+import chipsGuacamoleImg from "@/assets/catering/chips-guacamole.jpg";
 import grilledChickenSaladImg from "@/assets/catering/grilled-chicken-salad.jpg";
 import chocolateChipCookiesImg from "@/assets/catering/chocolate-chip-cookies.jpg";
 import turkeyWrapImg from "@/assets/catering/turkey-wrap.jpg";
@@ -27,7 +28,7 @@ const Catering = () => {
       items: [
         { name: "Appetizer Bar", price: "$16.00", description: "Your choice of up to five appetizers", popular: true, image: chipsQuesoImg },
         { name: "Chips, Queso & Salsa", price: "$15.00", description: "Gluten-free, vegetarian", image: chipsQuesoImg },
-        { name: "Chips & Guacamole", price: "$15.00", description: "Gluten-free, vegetarian" },
+        { name: "Chips & Guacamole", price: "$15.00", description: "Gluten-free, vegetarian", image: chipsGuacamoleImg },
       ]
     },
     cateringBars: {
