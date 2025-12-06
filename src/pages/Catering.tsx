@@ -17,6 +17,8 @@ import grilledSteakSaladImg from "@/assets/catering/grilled-steak-salad.jpg";
 import lemonadeImg from "@/assets/catering/lemonade.jpg";
 import chickenChiliImg from "@/assets/catering/chicken-chili.jpg";
 import peanutButterCookiesImg from "@/assets/catering/peanut-butter-cookies.jpg";
+import riceKrispyTreatsImg from "@/assets/catering/rice-krispy-treats.jpg";
+import almondButterCookiesImg from "@/assets/catering/almond-butter-cookies.jpg";
 
 const Catering = () => {
   const menuCategories = {
@@ -63,8 +65,8 @@ const Catering = () => {
       items: [
         { name: "Chocolate Chip Cookies", price: "$20.00", description: "Serves 12", popular: true, image: chocolateChipCookiesImg },
         { name: "Peanut Butter Cookies", price: "$20.00", description: "Serves 12", image: peanutButterCookiesImg },
-        { name: "Rice Krispy Treats", price: "$30.00", description: "Serves 12" },
-        { name: "Almond Butter Cookies", price: "$20.00", description: "Serves 12" },
+        { name: "Rice Krispy Treats", price: "$30.00", description: "Serves 12", image: riceKrispyTreatsImg },
+        { name: "Almond Butter Cookies", price: "$20.00", description: "Serves 12", image: almondButterCookiesImg },
       ]
     },
     beverages: {
