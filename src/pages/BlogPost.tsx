@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -214,9 +215,14 @@ const BlogPost = () => {
                   [&>blockquote]:border-l-4 [&>blockquote]:border-primary [&>blockquote]:pl-4 [&>blockquote]:italic [&>blockquote]:my-6
                   [&>a]:text-primary [&>a]:font-semibold [&>a]:underline [&>a:hover]:text-primary/80
                   [&>strong]:font-bold [&>strong]:text-foreground
+                  [&_video]:w-full [&_video]:max-w-3xl [&_video]:rounded-lg [&_video]:my-6
                   font-inter"
                 >
-                  <ReactMarkdown>{post.content}</ReactMarkdown>
+                  <ReactMarkdown
+                    rehypePlugins={[rehypeRaw]}
+                  >
+                    {post.content}
+                  </ReactMarkdown>
                 </div>
               </CardContent>
             </Card>
