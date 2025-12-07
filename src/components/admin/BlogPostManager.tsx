@@ -214,76 +214,79 @@ export default function BlogPostManager() {
   if (isNew || editingPost) {
     return (
       <Card>
-        <CardHeader>
+        <CardHeader className="pb-4">
           <div className="flex items-center justify-between">
-            <CardTitle>{editingPost ? "Edit Blog Post" : "New Blog Post"}</CardTitle>
-            <Button variant="ghost" size="sm" onClick={resetForm}>
-              <X className="h-4 w-4" />
+            <CardTitle className="text-lg sm:text-xl">{editingPost ? "Edit Blog Post" : "New Blog Post"}</CardTitle>
+            <Button variant="outline" size="icon" onClick={resetForm} className="h-10 w-10">
+              <X className="h-5 w-5" />
             </Button>
           </div>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <CardContent className="space-y-5">
+          <div className="grid grid-cols-1 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="title">Title *</Label>
+              <Label htmlFor="title" className="text-sm font-medium">Title *</Label>
               <Input
                 id="title"
                 value={title}
                 onChange={(e) => handleTitleChange(e.target.value)}
                 placeholder="Blog post title"
+                className="h-12 text-base"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="slug">Slug *</Label>
+              <Label htmlFor="slug" className="text-sm font-medium">Slug *</Label>
               <Input
                 id="slug"
                 value={slug}
                 onChange={(e) => setSlug(e.target.value)}
                 placeholder="blog-post-slug"
+                className="h-12 text-base"
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="excerpt">Excerpt</Label>
+            <Label htmlFor="excerpt" className="text-sm font-medium">Excerpt</Label>
             <Textarea
               id="excerpt"
               value={excerpt}
               onChange={(e) => setExcerpt(e.target.value)}
               placeholder="Brief description for SEO and previews"
               rows={2}
+              className="text-base min-h-[80px]"
             />
           </div>
 
           <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <Label htmlFor="content">Content * (Markdown supported)</Label>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <Label htmlFor="content" className="text-sm font-medium">Content * (Markdown)</Label>
               <Dialog open={showVideoDialog} onOpenChange={setShowVideoDialog}>
                 <DialogTrigger asChild>
-                  <Button variant="outline" size="sm">
-                    <Video className="h-4 w-4 mr-2" />
+                  <Button variant="outline" size="default" className="h-11 w-full sm:w-auto">
+                    <Video className="h-5 w-5 mr-2" />
                     Insert Video
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto mx-4">
                   <DialogHeader>
                     <DialogTitle>Select Video to Embed</DialogTitle>
                   </DialogHeader>
-                  <div className="space-y-2">
+                  <div className="space-y-2 py-2">
                     {videos.length === 0 ? (
-                      <p className="text-sm text-muted-foreground py-4">
-                        No videos uploaded. Go to Video Uploads tab to upload videos first.
+                      <p className="text-sm text-muted-foreground py-4 text-center">
+                        No videos uploaded. Go to Video Uploads tab first.
                       </p>
                     ) : (
                       videos.map((video) => (
                         <Button
                           key={video.name}
                           variant="outline"
-                          className="w-full justify-start"
+                          className="w-full justify-start h-12 text-left"
                           onClick={() => insertVideoEmbed(video.url)}
                         >
-                          <Video className="h-4 w-4 mr-2" />
-                          {video.name}
+                          <Video className="h-5 w-5 mr-3 flex-shrink-0" />
+                          <span className="truncate">{video.name}</span>
                         </Button>
                       ))
                     )}
@@ -296,62 +299,67 @@ export default function BlogPostManager() {
               value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder="Write your blog post content here... Use Markdown for formatting."
-              rows={15}
-              className="font-mono text-sm"
+              rows={12}
+              className="font-mono text-sm min-h-[250px]"
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="author">Author</Label>
+              <Label htmlFor="author" className="text-sm font-medium">Author</Label>
               <Input
                 id="author"
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
                 placeholder="Author name"
+                className="h-12 text-base"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="readingTime">Reading Time (min)</Label>
+              <Label htmlFor="readingTime" className="text-sm font-medium">Reading Time (min)</Label>
               <Input
                 id="readingTime"
                 type="number"
                 value={readingTime}
                 onChange={(e) => setReadingTime(e.target.value)}
                 placeholder="5"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="featuredImage">Featured Image URL</Label>
-              <Input
-                id="featuredImage"
-                value={featuredImageUrl}
-                onChange={(e) => setFeaturedImageUrl(e.target.value)}
-                placeholder="/assets/blog/image.jpg"
+                className="h-12 text-base"
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="tags">Tags (comma-separated)</Label>
+            <Label htmlFor="featuredImage" className="text-sm font-medium">Featured Image URL</Label>
+            <Input
+              id="featuredImage"
+              value={featuredImageUrl}
+              onChange={(e) => setFeaturedImageUrl(e.target.value)}
+              placeholder="/assets/blog/image.jpg"
+              className="h-12 text-base"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="tags" className="text-sm font-medium">Tags (comma-separated)</Label>
             <Input
               id="tags"
               value={tags}
               onChange={(e) => setTags(e.target.value)}
               placeholder="ETSU, Athletes, Meal Prep"
+              className="h-12 text-base"
             />
           </div>
 
-          <div className="flex gap-2 pt-4">
-            <Button onClick={handleSave} disabled={saving}>
+          <div className="flex flex-col sm:flex-row gap-3 pt-4">
+            <Button onClick={handleSave} disabled={saving} className="h-12 text-base flex-1 sm:flex-none">
               {saving ? (
-                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                <Loader2 className="h-5 w-5 mr-2 animate-spin" />
               ) : (
-                <Save className="h-4 w-4 mr-2" />
+                <Save className="h-5 w-5 mr-2" />
               )}
               {editingPost ? "Update Post" : "Create Post"}
             </Button>
-            <Button variant="outline" onClick={resetForm}>
+            <Button variant="outline" onClick={resetForm} className="h-12 text-base">
               Cancel
             </Button>
           </div>
@@ -363,45 +371,50 @@ export default function BlogPostManager() {
   // Show list view
   return (
     <Card>
-      <CardHeader>
-        <div className="flex items-center justify-between">
+      <CardHeader className="pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <CardTitle>Blog Posts</CardTitle>
+            <CardTitle className="text-lg sm:text-xl">Blog Posts</CardTitle>
             <CardDescription>Manage your blog posts and embed videos</CardDescription>
           </div>
-          <Button onClick={startNew}>
-            <Plus className="h-4 w-4 mr-2" />
+          <Button onClick={startNew} className="h-12 sm:h-10 text-base w-full sm:w-auto">
+            <Plus className="h-5 w-5 mr-2" />
             New Post
           </Button>
         </div>
       </CardHeader>
       <CardContent>
         {posts.length === 0 ? (
-          <p className="text-sm text-muted-foreground py-4">
+          <p className="text-sm text-muted-foreground py-4 text-center">
             No blog posts yet. Create your first post above.
           </p>
         ) : (
-          <div className="space-y-2">
+          <div className="space-y-2 max-h-[60vh] overflow-y-auto">
             {posts.map((post) => (
               <div
                 key={post.id}
-                className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
+                className="flex items-center justify-between p-4 bg-muted/50 rounded-lg gap-3"
               >
                 <div className="min-w-0 flex-1">
-                  <p className="font-medium truncate">{post.title}</p>
-                  <p className="text-sm text-muted-foreground">/blog/{post.slug}</p>
+                  <p className="font-medium truncate text-base">{post.title}</p>
+                  <p className="text-sm text-muted-foreground truncate">/blog/{post.slug}</p>
                 </div>
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <Button variant="ghost" size="sm" onClick={() => startEdit(post)}>
-                    <Edit className="h-4 w-4" />
+                <div className="flex items-center gap-1 flex-shrink-0">
+                  <Button 
+                    variant="outline" 
+                    size="icon" 
+                    onClick={() => startEdit(post)}
+                    className="h-11 w-11 sm:h-10 sm:w-10"
+                  >
+                    <Edit className="h-5 w-5" />
                   </Button>
                   <Button
-                    variant="ghost"
-                    size="sm"
+                    variant="outline"
+                    size="icon"
                     onClick={() => handleDelete(post.id)}
-                    className="text-destructive hover:text-destructive"
+                    className="h-11 w-11 sm:h-10 sm:w-10 text-destructive hover:text-destructive hover:bg-destructive/10"
                   >
-                    <Trash2 className="h-4 w-4" />
+                    <Trash2 className="h-5 w-5" />
                   </Button>
                 </div>
               </div>
