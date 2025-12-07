@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,9 +24,9 @@ export default function VideoUploader() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Fetch existing videos on mount
-  useState(() => {
+  useEffect(() => {
     fetchVideos();
-  });
+  }, []);
 
   const fetchVideos = async () => {
     try {
