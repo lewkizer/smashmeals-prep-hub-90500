@@ -20,32 +20,40 @@ import honeyGlazedSalmon from "@/assets/products/honey-glazed-salmon.jpg";
 import filetMignonAlacarte from "@/assets/products/filet-mignon-alacarte.jpg";
 import smokedChickenWings from "@/assets/products/smoked-chicken-wings.jpg";
 import baconEggCheeseCasserole from "@/assets/products/bacon-egg-cheese-casserole.jpg";
+import shrimpCheeseGrits from "@/assets/products/shrimp-cheese-grits.jpg";
 
-// Direct product ID to image mapping for guaranteed accuracy
-const productImageMap: Record<string, string> = {
-  // Current featured products by ID
-  "03e89298-f725-43b3-af24-52be832452f7": sweetPotatoQuesadilla,
-  "b4b4c643-9806-454b-969e-6881c5b32791": berryOatmealBake,
-  "685ff3b9-2f2b-4f3d-a731-cf56df251d22": santaFeBreakfastBowl,
-  "27c99295-ed3a-4129-af87-c617ada03b2c": broccoliCheddarSoup,
-  "18f3aad0-c936-43af-a183-3c8b23ae81cb": shrimpEggRollBowl,
-  "2c37c01d-93c7-4118-839a-0b08520bdaa8": grilledSteakSalad,
-  "a3c1ea80-06cd-4416-ab2f-04c37fb1297f": grilledChickenSalad,
-  "50ea4a99-1212-409c-b972-aabfbd6ed250": spicyPeanutNoodles,
-  "901252ac-e087-4cba-8ca0-ac96ad572f9c": sunDriedTomatoOmelet,
-  "8193a086-8df9-446c-a9f4-3584ff4e1947": honeyGlazedSalmon,
-  "06883367-57c5-43ee-839e-4197ff089f3d": smokedChickenWings,
-  "187a19bb-a05f-4698-87fa-37047610f80b": filetMignonAlacarte,
-  "927a05f0-f9f6-447e-8d74-c9770a39930c": eggRollBowlTurkey,
-  "dd7d0d8f-97c9-4dfa-b114-c458ffc3be07": bananaSmashPudding,
-  "b870d0f1-e572-4ce9-a019-d007d7b34cd5": berryOatmealBake,
-  "237798a1-7262-43b0-aa64-b0f0eb9cd420": smokedChickenLeg,
-};
+// New menu images
+import uncleTommysCasserole from "@/assets/products/uncle-tommys-breakfast-casserole.jpg";
+import cheesyEggWhitesSweetPotatoes from "@/assets/products/cheesy-egg-whites-sweet-potatoes.jpg";
+import cheesyEggWhitesPorkBacon from "@/assets/products/cheesy-egg-whites-pork-bacon.jpg";
+import yogurtOatBlueberryCake from "@/assets/products/yogurt-oat-blueberry-cake.jpg";
+import stuffedPorkLoinRice from "@/assets/products/stuffed-pork-loin-rice.jpg";
+import cheeseburgerPie from "@/assets/products/cheeseburger-pie.jpg";
+import chickenNoodleSoup from "@/assets/products/chicken-noodle-soup.jpg";
+import holidayTurkeyAsparagus from "@/assets/products/holiday-turkey-asparagus.jpg";
+import zucchiniLasagna from "@/assets/products/zucchini-lasagna.jpg";
+import bariatricTurkeyEggScramble from "@/assets/products/bariatric-turkey-egg-scramble.jpg";
 
-// Fallback name-based matching for any new products
+// Fallback name-based matching for products
 const getProductImageByName = (productName: string): string => {
   const nameLower = productName.toLowerCase();
   
+  // New menu items first
+  if (nameLower.includes('uncle tommy')) return uncleTommysCasserole;
+  if (nameLower.includes('cheesy egg white') && nameLower.includes('sweet potato')) return cheesyEggWhitesSweetPotatoes;
+  if (nameLower.includes('cheesy egg white') && nameLower.includes('pork bacon')) return cheesyEggWhitesPorkBacon;
+  if (nameLower.includes('yogurt') && nameLower.includes('blueberry')) return yogurtOatBlueberryCake;
+  if (nameLower.includes('stuffed pork loin')) return stuffedPorkLoinRice;
+  if (nameLower.includes('cheeseburger pie')) return cheeseburgerPie;
+  if (nameLower.includes('chicken noodle soup')) return chickenNoodleSoup;
+  if (nameLower.includes('jane') && nameLower.includes('turkey')) return holidayTurkeyAsparagus;
+  if (nameLower.includes('holiday turkey')) return holidayTurkeyAsparagus;
+  if (nameLower.includes('zucchini lasagna')) return zucchiniLasagna;
+  if (nameLower.includes('bariatric') && nameLower.includes('turkey') && nameLower.includes('egg')) return bariatricTurkeyEggScramble;
+  if (nameLower.includes('shrimp') && nameLower.includes('cheese grits')) return shrimpCheeseGrits;
+  if (nameLower.includes('shrimp') && nameLower.includes('grits')) return shrimpCheeseGrits;
+  
+  // Existing items
   if (nameLower.includes('santa fe breakfast')) return santaFeBreakfastBowl;
   if (nameLower.includes('sun dried tomato') || nameLower.includes('sundried tomato')) return sunDriedTomatoOmelet;
   if (nameLower.includes('banana smash')) return bananaSmashPudding;
@@ -61,6 +69,7 @@ const getProductImageByName = (productName: string): string => {
   if (nameLower.includes('salmon') && (nameLower.includes('honey') || nameLower.includes('glazed'))) return honeyGlazedSalmon;
   if (nameLower.includes('smoked chicken wings') || nameLower.includes('wings and drumsticks')) return smokedChickenWings;
   if (nameLower.includes('filet mignon')) return filetMignonAlacarte;
+  if (nameLower.includes('turkey bacon') && nameLower.includes('egg')) return baconEggCheeseCasserole;
   
   return baconEggCheeseCasserole;
 };
@@ -101,10 +110,8 @@ const WeeklyMenu = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-8">
           {products.map((product) => {
-            // Priority: 1) ID-based map, 2) HTTP URL from DB, 3) Name-based fallback
-            const productImage = productImageMap[product.id] 
-              || (product.image_url?.startsWith('http') ? product.image_url : null)
-              || getProductImageByName(product.name);
+            // Use name-based matching for images
+            const productImage = getProductImageByName(product.name);
             
             return (
               <Link key={product.id} to={`/product/${product.id}`}>
