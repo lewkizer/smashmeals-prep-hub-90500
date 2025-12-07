@@ -5,9 +5,10 @@ import { Session } from "@supabase/supabase-js";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
-import { Loader2, LogOut, Video, Image } from "lucide-react";
+import { Loader2, LogOut, Video, Image, Upload } from "lucide-react";
 import { GenerateProductImages } from "@/components/GenerateProductImages";
 import VideoPageManager from "@/components/admin/VideoPageManager";
+import VideoUploader from "@/components/admin/VideoUploader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Admin() {
@@ -120,10 +121,14 @@ export default function Admin() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Tabs defaultValue="videos" className="w-full">
-          <TabsList className="grid w-full max-w-md grid-cols-2">
+          <TabsList className="grid w-full max-w-lg grid-cols-3">
             <TabsTrigger value="videos" className="flex items-center gap-2">
               <Video className="h-4 w-4" />
               Video Pages
+            </TabsTrigger>
+            <TabsTrigger value="uploads" className="flex items-center gap-2">
+              <Upload className="h-4 w-4" />
+              Video Uploads
             </TabsTrigger>
             <TabsTrigger value="products" className="flex items-center gap-2">
               <Image className="h-4 w-4" />
@@ -133,6 +138,10 @@ export default function Admin() {
 
           <TabsContent value="videos" className="mt-6">
             <VideoPageManager />
+          </TabsContent>
+
+          <TabsContent value="uploads" className="mt-6">
+            <VideoUploader />
           </TabsContent>
 
           <TabsContent value="products" className="mt-6">
