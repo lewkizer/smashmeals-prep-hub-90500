@@ -110,34 +110,47 @@ export default function Admin() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-900">SmashMeals Admin</h1>
-          <Button onClick={handleSignOut} variant="outline" size="sm">
-            <LogOut className="mr-2 h-4 w-4" />
-            Log Out
+      <header className="bg-white shadow sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex justify-between items-center">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900">SmashMeals Admin</h1>
+          <Button onClick={handleSignOut} variant="outline" size="default" className="h-11 px-4">
+            <LogOut className="mr-2 h-5 w-5" />
+            <span className="hidden sm:inline">Log Out</span>
           </Button>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
         <Tabs defaultValue="blogs" className="w-full">
-          <TabsList className="grid w-full max-w-2xl grid-cols-4">
-            <TabsTrigger value="blogs" className="flex items-center gap-2">
-              <FileText className="h-4 w-4" />
-              Blog Posts
+          {/* Mobile: 2x2 grid, Desktop: horizontal */}
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 gap-1 h-auto p-1 sm:max-w-2xl">
+            <TabsTrigger 
+              value="blogs" 
+              className="flex items-center justify-center gap-2 h-12 sm:h-10 text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              <FileText className="h-5 w-5 sm:h-4 sm:w-4" />
+              <span>Blogs</span>
             </TabsTrigger>
-            <TabsTrigger value="videos" className="flex items-center gap-2">
-              <Video className="h-4 w-4" />
-              Video Pages
+            <TabsTrigger 
+              value="videos" 
+              className="flex items-center justify-center gap-2 h-12 sm:h-10 text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              <Video className="h-5 w-5 sm:h-4 sm:w-4" />
+              <span>Videos</span>
             </TabsTrigger>
-            <TabsTrigger value="uploads" className="flex items-center gap-2">
-              <Upload className="h-4 w-4" />
-              Video Uploads
+            <TabsTrigger 
+              value="uploads" 
+              className="flex items-center justify-center gap-2 h-12 sm:h-10 text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              <Upload className="h-5 w-5 sm:h-4 sm:w-4" />
+              <span>Upload</span>
             </TabsTrigger>
-            <TabsTrigger value="products" className="flex items-center gap-2">
-              <Image className="h-4 w-4" />
-              Products
+            <TabsTrigger 
+              value="products" 
+              className="flex items-center justify-center gap-2 h-12 sm:h-10 text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              <Image className="h-5 w-5 sm:h-4 sm:w-4" />
+              <span>Products</span>
             </TabsTrigger>
           </TabsList>
 

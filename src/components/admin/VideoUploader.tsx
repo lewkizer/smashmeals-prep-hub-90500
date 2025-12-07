@@ -153,101 +153,100 @@ export default function VideoUploader() {
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
+      <CardHeader className="pb-4">
+        <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
           <Video className="h-5 w-5" />
           Video Uploads
         </CardTitle>
-        <CardDescription>
-          Upload videos up to 100MB. Videos are stored securely and accessible via public URLs.
+        <CardDescription className="text-sm">
+          Upload videos up to 100MB for use in blog posts.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         {/* Upload Section */}
         <div className="space-y-4">
-          <div className="flex items-center gap-4">
-            <Input
-              ref={fileInputRef}
-              type="file"
-              accept="video/*"
-              onChange={handleFileSelect}
-              disabled={uploading}
-              className="hidden"
-              id="video-upload"
-            />
-            <Label
-              htmlFor="video-upload"
-              className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md cursor-pointer hover:bg-primary/90 transition-colors"
-            >
-              {uploading ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
-              ) : (
-                <Upload className="h-4 w-4" />
-              )}
-              {uploading ? "Uploading..." : "Select Video"}
-            </Label>
-            <span className="text-sm text-muted-foreground">
-              MP4, WebM, MOV (max 100MB)
-            </span>
-          </div>
+          <Input
+            ref={fileInputRef}
+            type="file"
+            accept="video/*"
+            onChange={handleFileSelect}
+            disabled={uploading}
+            className="hidden"
+            id="video-upload"
+          />
+          <Label
+            htmlFor="video-upload"
+            className="flex items-center justify-center gap-3 w-full h-14 sm:h-12 px-6 bg-primary text-primary-foreground rounded-lg cursor-pointer hover:bg-primary/90 transition-colors text-base font-medium active:scale-[0.98]"
+          >
+            {uploading ? (
+              <Loader2 className="h-5 w-5 animate-spin" />
+            ) : (
+              <Upload className="h-5 w-5" />
+            )}
+            {uploading ? "Uploading..." : "Select Video to Upload"}
+          </Label>
+          <p className="text-sm text-muted-foreground text-center">
+            MP4, WebM, MOV (max 100MB)
+          </p>
 
           {uploading && (
             <div className="space-y-2">
-              <Progress value={progress} className="h-2" />
-              <p className="text-sm text-muted-foreground">{progress}% uploaded</p>
+              <Progress value={progress} className="h-3" />
+              <p className="text-sm text-muted-foreground text-center">{progress}% uploaded</p>
             </div>
           )}
         </div>
 
         {/* Video List */}
         <div className="space-y-3">
-          <h4 className="font-medium">Uploaded Videos ({videos.length})</h4>
+          <h4 className="font-medium text-base">Uploaded Videos ({videos.length})</h4>
           
           {loading ? (
             <div className="flex items-center justify-center py-8">
               <Loader2 className="h-6 w-6 animate-spin" />
             </div>
           ) : videos.length === 0 ? (
-            <p className="text-sm text-muted-foreground py-4">
+            <p className="text-sm text-muted-foreground py-4 text-center">
               No videos uploaded yet. Upload your first video above.
             </p>
           ) : (
-            <div className="space-y-2 max-h-96 overflow-y-auto">
+            <div className="space-y-2 max-h-[60vh] overflow-y-auto">
               {videos.map((video) => (
                 <div
                   key={video.name}
-                  className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
+                  className="flex items-center justify-between p-4 bg-muted/50 rounded-lg gap-3"
                 >
                   <div className="flex items-center gap-3 min-w-0 flex-1">
-                    <Video className="h-5 w-5 flex-shrink-0 text-muted-foreground" />
+                    <Video className="h-6 w-6 flex-shrink-0 text-muted-foreground" />
                     <div className="min-w-0">
-                      <p className="text-sm font-medium truncate">{video.name}</p>
+                      <p className="text-sm font-medium truncate max-w-[150px] sm:max-w-none">{video.name}</p>
                       <p className="text-xs text-muted-foreground">
                         {formatFileSize(video.size)}
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 flex-shrink-0">
+                  <div className="flex items-center gap-1 flex-shrink-0">
                     <Button
-                      variant="ghost"
-                      size="sm"
+                      variant="outline"
+                      size="icon"
                       onClick={() => copyUrl(video.url)}
                       title="Copy URL"
+                      className="h-11 w-11 sm:h-10 sm:w-10"
                     >
                       {copiedUrl === video.url ? (
-                        <Check className="h-4 w-4 text-green-500" />
+                        <Check className="h-5 w-5 text-green-500" />
                       ) : (
-                        <Copy className="h-4 w-4" />
+                        <Copy className="h-5 w-5" />
                       )}
                     </Button>
                     <Button
-                      variant="ghost"
-                      size="sm"
+                      variant="outline"
+                      size="icon"
                       onClick={() => handleDelete(video.name)}
                       title="Delete"
-                      className="text-destructive hover:text-destructive"
+                      className="h-11 w-11 sm:h-10 sm:w-10 text-destructive hover:text-destructive hover:bg-destructive/10"
                     >
-                      <Trash2 className="h-4 w-4" />
+                      <Trash2 className="h-5 w-5" />
                     </Button>
                   </div>
                 </div>
