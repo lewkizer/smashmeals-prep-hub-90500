@@ -6,6 +6,17 @@ import { Helmet } from "react-helmet";
 const Testimonials = () => {
   const testimonials = [
     {
+      name: "Amanda Smith",
+      location: "Tri-Cities, TN",
+      rating: 5,
+      text: "This has honestly been a life saver! On days like today when school lets out early and I'm trying to navigate the day, it takes the guess work out. I came home, put the kids down for a nap, and had lunch ready in 90 seconds.",
+      meal: "Busy Mom Favorite",
+      verified: true,
+      source: "Facebook",
+      tags: ["Time saver", "Busy parents", "Quick meals", "Family-friendly"],
+      featured: true
+    },
+    {
       name: "Becky Halbrook",
       location: "Sullivan County, TN",
       rating: 5,
