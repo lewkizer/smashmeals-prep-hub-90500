@@ -135,6 +135,10 @@ const MealQuiz = () => {
       title: '',
       description: '',
       meals: [] as string[],
+      alaCarte: {
+        proteins: [] as { name: string; price: string }[],
+        sides: [] as { name: string; price: string }[]
+      },
       cta: ''
     };
 
@@ -143,6 +147,20 @@ const MealQuiz = () => {
         title: 'Low-Carb Power Meals',
         description: 'Based on your goals, we recommend our high-protein, lower-carb options that keep you satisfied while supporting weight loss.',
         meals: ['Grilled Steak Salad', 'Lemon Herb Chicken', 'Mexican Chicken Bowl', 'Zucchini Lasagna'],
+        alaCarte: {
+          proteins: [
+            { name: 'Grilled Chicken Tenders (4oz)', price: '$4' },
+            { name: 'Grilled Sirloin', price: 'from $6' },
+            { name: 'Sauteed Shrimp', price: 'from $5' },
+            { name: 'Filet Mignon', price: '$8' }
+          ],
+          sides: [
+            { name: 'Steamed Broccoli (4oz)', price: '$3' },
+            { name: 'Sauteed Zucchini (4oz)', price: '$3' },
+            { name: 'Roasted Brussel Sprouts', price: '$3' },
+            { name: 'Steamed Green Beans (4oz)', price: '$3' }
+          ]
+        },
         cta: 'These meals average 35g+ protein and under 25g carbs!'
       };
     } else if (goal === 'muscle' || dietary.includes('highprotein')) {
@@ -150,6 +168,20 @@ const MealQuiz = () => {
         title: 'Muscle-Building Meals',
         description: 'For building muscle, you need serious protein. Our high-protein meals deliver 40g+ per serving to fuel your gains.',
         meals: ['Filet Mignon Plate', 'BBQ Chicken Mac & Cheese', 'Grilled Steak & Potato', 'Shrimp & Cheese Grits'],
+        alaCarte: {
+          proteins: [
+            { name: 'Filet Mignon', price: '$8' },
+            { name: 'Grilled Sirloin', price: 'from $6' },
+            { name: 'Beef Brisket', price: 'from $6' },
+            { name: 'Smoked Rack of Ribs', price: '$28' }
+          ],
+          sides: [
+            { name: 'Scrambled Eggs (5oz)', price: '$4' },
+            { name: 'Steamed Jasmine Rice', price: 'from $3' },
+            { name: 'Roasted Russet Potatoes (4oz)', price: '$4' },
+            { name: 'Mac & Cheese', price: 'from $4' }
+          ]
+        },
         cta: 'Perfect for post-workout recovery and muscle growth!'
       };
     } else if (goal === 'energy') {
@@ -157,6 +189,20 @@ const MealQuiz = () => {
         title: 'Energy-Boosting Meals',
         description: 'Balanced macros with complex carbs and lean proteins to keep your energy steady throughout the day.',
         meals: ['Sweet Potato Hash', 'Honey Glazed Salmon', 'Arroz con Pollo', 'Blueberry Protein Oats'],
+        alaCarte: {
+          proteins: [
+            { name: 'Grilled Chicken', price: 'from $4' },
+            { name: 'Smoked Chicken', price: 'from $5' },
+            { name: 'Pork Tenderloin', price: 'from $5' },
+            { name: 'Hard Boiled Eggs (3)', price: '$4' }
+          ],
+          sides: [
+            { name: 'Roasted Sweet Potatoes (4oz)', price: '$4' },
+            { name: 'Mashed Sweet Potatoes (5oz)', price: '$3' },
+            { name: 'Butternut Squash (4oz)', price: '$4' },
+            { name: 'Steamed Jasmine Rice', price: 'from $3' }
+          ]
+        },
         cta: 'Fuel your day without the crash!'
       };
     } else {
@@ -164,6 +210,20 @@ const MealQuiz = () => {
         title: 'Balanced Meal Plan',
         description: 'A perfect mix of proteins, carbs, and healthy fats to maintain your health and enjoy delicious variety.',
         meals: ['Shrimp & Cheese Grits', 'Mexican Chicken Bowl', 'Stuffed Pork Loin', 'Greek Yogurt Parfait'],
+        alaCarte: {
+          proteins: [
+            { name: 'Pulled Pork', price: 'from $5' },
+            { name: 'Smoked Chicken Wings (12pc)', price: '$20' },
+            { name: 'Classic Chicken Salad', price: 'from $5' },
+            { name: 'Buffalo Chicken Salad', price: 'from $6' }
+          ],
+          sides: [
+            { name: 'Toasted Corn', price: '$4' },
+            { name: 'Steamed Carrots (4oz)', price: '$4' },
+            { name: 'Apple Wood Smoked Bacon (4 slices)', price: '$4.75' },
+            { name: 'Mac & Cheese', price: 'from $4' }
+          ]
+        },
         cta: 'Something for every craving, every day!'
       };
     }
@@ -190,11 +250,11 @@ const MealQuiz = () => {
             <h1 className="text-4xl font-bold mb-4">We Found Your Perfect Match!</h1>
             <p className="text-xl text-muted-foreground mb-8">{rec.title}</p>
             
-            <Card className="mb-8">
+            <Card className="mb-6">
               <CardContent className="pt-6">
                 <p className="text-lg mb-6">{rec.description}</p>
                 
-                <h3 className="font-semibold mb-4">Recommended for You:</h3>
+                <h3 className="font-semibold mb-4">Recommended Complete Meals:</h3>
                 <div className="grid grid-cols-2 gap-3 mb-6">
                   {rec.meals.map((meal) => (
                     <div key={meal} className="p-3 rounded-lg bg-primary/5 text-sm font-medium">
@@ -203,20 +263,57 @@ const MealQuiz = () => {
                   ))}
                 </div>
                 
-                <p className="text-primary font-medium mb-6">{rec.cta}</p>
+                <p className="text-primary font-medium">{rec.cta}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="mb-8">
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-4 flex items-center gap-2">
+                  <Utensils className="w-5 h-5" />
+                  Build Your Own - A La Carte
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Mix and match proteins and sides to create your perfect custom meal!
+                </p>
                 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild className="flex-1" size="lg">
-                    <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
-                      Order Now - This Week's Menu
-                    </a>
-                  </Button>
-                  <Button variant="outline" onClick={() => navigate('/menu')} className="flex-1">
-                    Browse Full Menu
-                  </Button>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-medium text-sm mb-3 text-primary">Proteins</h4>
+                    <div className="space-y-2">
+                      {rec.alaCarte.proteins.map((item) => (
+                        <div key={item.name} className="flex justify-between items-center text-sm p-2 rounded bg-muted/50">
+                          <span>{item.name}</span>
+                          <span className="font-medium text-primary">{item.price}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-sm mb-3 text-primary">Sides</h4>
+                    <div className="space-y-2">
+                      {rec.alaCarte.sides.map((item) => (
+                        <div key={item.name} className="flex justify-between items-center text-sm p-2 rounded bg-muted/50">
+                          <span>{item.name}</span>
+                          <span className="font-medium text-primary">{item.price}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
+            
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
+              <Button asChild className="flex-1" size="lg">
+                <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
+                  Order Now - This Week's Menu
+                </a>
+              </Button>
+              <Button variant="outline" onClick={() => navigate('/menu')} className="flex-1">
+                Browse Full Menu
+              </Button>
+            </div>
             
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
