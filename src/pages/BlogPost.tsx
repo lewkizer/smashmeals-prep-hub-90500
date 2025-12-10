@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
+import DOMPurify from 'dompurify';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -12,6 +13,29 @@ import { Loader2, Clock, Calendar, ArrowLeft } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import type { Database } from '@/integrations/supabase/types';
 
+// Configure DOMPurify to allow video embeds while sanitizing XSS
+const configureDOMPurify = () => {
+  DOMPurify.addHook('uponSanitizeElement', (node, data) => {
+    // Allow video and source elements
+    if (data.tagName === 'video' || data.tagName === 'source') {
+      return;
+    }
+  });
+  
+  return DOMPurify;
+};
+
+const purify = configureDOMPurify();
+
+// Sanitize content while preserving video embeds
+const sanitizeContent = (content: string): string => {
+  return purify.sanitize(content, {
+    ADD_TAGS: ['video', 'source', 'iframe'],
+    ADD_ATTR: ['controls', 'autoplay', 'muted', 'loop', 'playsinline', 'poster', 'preload', 'src', 'type', 'width', 'height', 'allowfullscreen', 'frameborder', 'allow'],
+    ALLOWED_URI_REGEXP: /^(?:(?:https?|mailto|tel):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i,
+    ALLOW_DATA_ATTR: false,
+  });
+};
 interface BlogPost {
   id: string;
   title: string;
@@ -221,7 +245,7 @@ const BlogPost = () => {
                   <ReactMarkdown
                     rehypePlugins={[rehypeRaw]}
                   >
-                    {post.content}
+                    {sanitizeContent(post.content)}
                   </ReactMarkdown>
                 </div>
               </CardContent>
