@@ -140,6 +140,8 @@ import BeanStation from "./pages/BeanStation";
 import NewTazewell from "./pages/NewTazewell";
 import Harrogate from "./pages/Harrogate";
 import Maynardville from "./pages/Maynardville";
+import MacroCalculator from "./pages/MacroCalculator";
+import MealQuiz from "./pages/MealQuiz";
 
 const queryClient = new QueryClient();
 
@@ -288,6 +290,8 @@ const App = () => (
           <Route path="/new-tazewell" element={<NewTazewell />} />
           <Route path="/harrogate" element={<Harrogate />} />
           <Route path="/maynardville" element={<Maynardville />} />
+          <Route path="/macro-calculator" element={<MacroCalculator />} />
+          <Route path="/meal-quiz" element={<MealQuiz />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

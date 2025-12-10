@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import StickyOrderBanner from "@/components/StickyOrderBanner";
 import ChristmasBanner from "@/components/ChristmasBanner";
 import TrustStrip from "@/components/TrustStrip";
+import TrustBadges from "@/components/TrustBadges";
 import HowItWorks from "@/components/HowItWorks";
 import FeaturedMeals from "@/components/FeaturedMeals";
 import SmashBarShowcase from "@/components/SmashBarShowcase";
@@ -59,6 +60,7 @@ const Index = () => {
       <Header />
       <ChristmasBanner />
       <Hero />
+      <TrustBadges />
       <TrustStrip />
       <HowItWorks />
       <FeaturedMeals />
