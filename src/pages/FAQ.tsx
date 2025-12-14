@@ -14,6 +14,27 @@ import { HelpCircle, MessageCircle } from "lucide-react";
 const FAQ = () => {
   const faqs = [
     {
+      category: "What is SmashMeals?",
+      questions: [
+        {
+          q: "What is SmashMeals?",
+          a: "SmashMeals is a 100% gluten-free meal prep company based in Kingsport, Tennessee. We prepare fresh, chef-made meals with complete macro nutrition information, delivered to the Tri-Cities area or shipped nationwide via FedEx.",
+        },
+        {
+          q: "Who is SmashMeals for?",
+          a: "SmashMeals serves anyone who wants healthy, convenient meals: busy professionals, families, athletes, fitness enthusiasts, people with celiac disease or gluten sensitivity, GLP-1 medication users, bariatric surgery patients, college students, and seniors looking for nutritious ready-to-eat options.",
+        },
+        {
+          q: "Are you a franchise or local business?",
+          a: "We're a locally-owned, family-run business based in Kingsport, TN. We're not a franchise—we're your neighbors! Lewis Kizer has led SmashMeals since 2024, growing us from 20 customers to over 10,000.",
+        },
+        {
+          q: "How did SmashMeals start?",
+          a: "SmashMeals started in 2017 to fill the gap for convenient, gluten-free meal prep in the Tri-Cities area. We've been serving the community for over 8 years with trusted, quality meals.",
+        },
+      ],
+    },
+    {
       category: "Ordering & Pricing",
       questions: [
         {
@@ -89,23 +110,44 @@ const FAQ = () => {
       ],
     },
     {
+      category: "Delivery & Service Areas",
+      questions: [
+        {
+          q: "Where does SmashMeals deliver?",
+          a: "We offer FREE local delivery throughout the Tri-Cities area including Kingsport, Johnson City, Bristol, Greeneville, Elizabethton, Gray, Jonesborough, and surrounding areas. We also ship nationwide via FedEx 2-day delivery.",
+        },
+        {
+          q: "How much does delivery cost?",
+          a: "Local home delivery in the Tri-Cities is $12. Shipping via FedEx to anywhere in the US is $25. Many areas qualify for free pickup at partner locations.",
+        },
+        {
+          q: "Where can I pick up my meals?",
+          a: "We have multiple pickup locations including our kitchen at 1917 Meadowview Parkway Suite 100 in Kingsport, plus partner locations at CrossFit Arcane and Center of Strength. Sunday pickups are 2-3 PM.",
+        },
+        {
+          q: "Do you ship frozen meals?",
+          a: "Yes! We ship frozen meals with dry ice via FedEx 2-day delivery anywhere in the continental US. Frozen meals arrive safely packed and last 3-6 months in your freezer.",
+        },
+      ],
+    },
+    {
       category: "About SmashMeals",
       questions: [
         {
-          q: "Are you a franchise or local business?",
-          a: "We're a locally-owned, family-run business based in Kingsport, TN. We're not a franchise—we're your neighbors!",
-        },
-        {
-          q: "How did SmashMeals start?",
-          a: "SmashMeals started in 2017 to fill the gap for convenient, gluten-free meal prep. Under Lewis Kizer's leadership since 2024, we've grown from 20 customers to over 10,000!",
-        },
-        {
           q: "Do you offer catering?",
-          a: "Yes! We offer catering for events of all sizes with options like taco bars, BBQ, chili, and more. All catering is 100% gluten-free.",
+          a: "Yes! We offer 100% gluten-free catering for events of all sizes including corporate lunches, weddings, and parties. Options include taco bars, BBQ, chili, and more. Visit smashmeals.com/catering for details.",
+        },
+        {
+          q: "Do you serve athletes and fitness centers?",
+          a: "Absolutely! We're trusted by ETSU athletes and partner with CrossFit Arcane and Center of Strength. All meals include detailed macro information (protein, carbs, fats, calories) perfect for tracking fitness goals.",
         },
         {
           q: "Can I visit your kitchen?",
           a: "Our kitchen is located at 1917 Meadowview Parkway Suite 100 in Kingsport, TN. Sunday pickups are from 2-3 PM. For other visits, please call ahead at (423) 525-2489.",
+        },
+        {
+          q: "How do I contact SmashMeals?",
+          a: "Call us at (423) 525-2489, email lew@smashmeals.com, or visit smashmeals.com/contact. We're happy to answer any questions about our meals, delivery, or catering services.",
         },
       ],
     },

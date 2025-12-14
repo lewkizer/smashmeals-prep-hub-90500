@@ -1,11 +1,29 @@
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Flame, Leaf, Drumstick, Apple, Package } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+import AIProductCatalog from "@/components/AIProductCatalog";
 
 const Menu = () => {
+  // Fetch products for AI catalog schema
+  const { data: products } = useQuery({
+    queryKey: ['products-for-catalog'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('products')
+        .select('name, description, price, category, calories, protein, carbs, fat')
+        .eq('is_available', true)
+        .order('category');
+      if (error) throw error;
+      return data || [];
+    }
+  });
+
   const categories = [
     {
       icon: Drumstick,
@@ -42,6 +60,23 @@ const Menu = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Weekly Menu | SmashMeals Gluten-Free Meal Prep</title>
+        <meta 
+          name="description" 
+          content="Browse this week's 100% gluten-free meal prep menu. New meals every Monday. Order by Thursday for Sunday delivery. Breakfast, entrees, sides, and snacks with complete macro info." 
+        />
+        <meta name="ai:menu-url" content="https://smashmeals.bottle.com/b/9814360" />
+        <meta name="ai:order-deadline" content="Thursday 11:59 PM" />
+        <meta name="ai:menu-refresh" content="Every Monday" />
+        <link rel="canonical" href="https://smashmeals.com/menu" />
+      </Helmet>
+      
+      {/* AI Product Catalog Schema */}
+      {products && products.length > 0 && (
+        <AIProductCatalog products={products} />
+      )}
+      
       <Header />
       
       {/* Hero Section */}
