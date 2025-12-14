@@ -4,72 +4,65 @@ import { Card } from "@/components/ui/card";
 import { useFeaturedProducts } from "@/hooks/useProducts";
 
 // Import ALL product images
-import santaFeBreakfastBowl from "@/assets/products/santa-fe-breakfast-bowl.jpg";
-import sunDriedTomatoOmelet from "@/assets/products/sun-dried-tomato-omelet.jpg";
-import bananaSmashPudding from "@/assets/products/banana-smash-pudding.jpg";
-import berryOatmealBake from "@/assets/products/berry-oatmeal-bake.jpg";
-import smokedChickenLeg from "@/assets/products/smoked-chicken-leg.jpg";
-import shrimpEggRollBowl from "@/assets/products/shrimp-egg-roll-bowl.jpg";
 import grilledSteakSalad from "@/assets/products/grilled-steak-salad.jpg";
 import grilledChickenSalad from "@/assets/products/grilled-chicken-salad.jpg";
-import sweetPotatoQuesadilla from "@/assets/products/sweet-potato-quesadilla.jpg";
-import spicyPeanutNoodles from "@/assets/products/spicy-peanut-noodles.jpg";
-import broccoliCheddarSoup from "@/assets/products/broccoli-cheddar-soup.jpg";
-import eggRollBowlTurkey from "@/assets/products/egg-roll-bowl-turkey.jpg";
-import honeyGlazedSalmon from "@/assets/products/honey-glazed-salmon.jpg";
-import filetMignonAlacarte from "@/assets/products/filet-mignon-alacarte.jpg";
-import smokedChickenWings from "@/assets/products/smoked-chicken-wings.jpg";
 import baconEggCheeseCasserole from "@/assets/products/bacon-egg-cheese-casserole.jpg";
-import shrimpCheeseGrits from "@/assets/products/shrimp-cheese-grits.jpg";
 
-// New menu images
-import uncleTommysCasserole from "@/assets/products/uncle-tommys-breakfast-casserole.jpg";
-import cheesyEggWhitesSweetPotatoes from "@/assets/products/cheesy-egg-whites-sweet-potatoes.jpg";
-import cheesyEggWhitesPorkBacon from "@/assets/products/cheesy-egg-whites-pork-bacon.jpg";
-import yogurtOatBlueberryCake from "@/assets/products/yogurt-oat-blueberry-cake.jpg";
-import stuffedPorkLoinRice from "@/assets/products/stuffed-pork-loin-rice.jpg";
-import cheeseburgerPie from "@/assets/products/cheeseburger-pie.jpg";
-import chickenNoodleSoup from "@/assets/products/chicken-noodle-soup.jpg";
-import holidayTurkeyAsparagus from "@/assets/products/holiday-turkey-asparagus.jpg";
-import zucchiniLasagna from "@/assets/products/zucchini-lasagna.jpg";
-import bariatricTurkeyEggScramble from "@/assets/products/bariatric-turkey-egg-scramble.jpg";
+// NEW MENU ITEMS - Week of Dec 2024
+import pulledPorkBreakfastHash from "@/assets/products/pulled-pork-breakfast-hash.jpg";
+import mexicanChickenBowl from "@/assets/products/mexican-chicken-bowl.jpg";
+import italianBeefMarinara from "@/assets/products/italian-beef-marinara.jpg";
+import spinachArtichokeChicken from "@/assets/products/spinach-artichoke-chicken.jpg";
+import firecrackerSalmonBowl from "@/assets/products/firecracker-salmon-bowl.jpg";
+import smoresProteinPudding from "@/assets/products/smores-protein-pudding.jpg";
+import blueberryPancakesPorkBacon from "@/assets/products/blueberry-pancakes-pork-bacon.jpg";
+import blueberryPancakesTurkeyBacon from "@/assets/products/blueberry-pancakes-turkey-bacon.jpg";
+import blueberryPancakesEggs from "@/assets/products/blueberry-pancakes-eggs.jpg";
+import tomatoBasilSoup from "@/assets/products/tomato-basil-soup.jpg";
+import pulledPorkCauliMac from "@/assets/products/pulled-pork-cauli-mac.jpg";
+import mexicanBreakfastBake from "@/assets/products/mexican-breakfast-bake.jpg";
+import sweetPotatoHashEggs from "@/assets/products/sweet-potato-hash-eggs.jpg";
+
+// Bariatric line
+import bariatricItalianBeef from "@/assets/products/bariatric-italian-beef.jpg";
+import bariatricPulledPork from "@/assets/products/bariatric-pulled-pork.jpg";
+import bariatricSalmon from "@/assets/products/bariatric-salmon.jpg";
+import bariatricCinnamonSouffle from "@/assets/products/bariatric-cinnamon-souffle.jpg";
+import bariatricChickenHibachi from "@/assets/products/bariatric-chicken-hibachi.jpg";
+import bariatricCheesyEggWhite from "@/assets/products/bariatric-cheesy-egg-white.jpg";
+import bariatricStrawberryCheesecake from "@/assets/products/bariatric-strawberry-cheesecake.jpg";
 
 // Fallback name-based matching for products
 const getProductImageByName = (productName: string): string => {
   const nameLower = productName.toLowerCase();
   
-  // New menu items first
-  if (nameLower.includes('uncle tommy')) return uncleTommysCasserole;
-  if (nameLower.includes('cheesy egg white') && nameLower.includes('sweet potato')) return cheesyEggWhitesSweetPotatoes;
-  if (nameLower.includes('cheesy egg white') && nameLower.includes('pork bacon')) return cheesyEggWhitesPorkBacon;
-  if (nameLower.includes('yogurt') && nameLower.includes('blueberry')) return yogurtOatBlueberryCake;
-  if (nameLower.includes('stuffed pork loin')) return stuffedPorkLoinRice;
-  if (nameLower.includes('cheeseburger pie')) return cheeseburgerPie;
-  if (nameLower.includes('chicken noodle soup')) return chickenNoodleSoup;
-  if (nameLower.includes('jane') && nameLower.includes('turkey')) return holidayTurkeyAsparagus;
-  if (nameLower.includes('holiday turkey')) return holidayTurkeyAsparagus;
-  if (nameLower.includes('zucchini lasagna')) return zucchiniLasagna;
-  if (nameLower.includes('bariatric') && nameLower.includes('turkey') && nameLower.includes('egg')) return bariatricTurkeyEggScramble;
-  if (nameLower.includes('shrimp') && nameLower.includes('cheese grits')) return shrimpCheeseGrits;
-  if (nameLower.includes('shrimp') && nameLower.includes('grits')) return shrimpCheeseGrits;
+  // NEW MENU ITEMS - Priority matching
+  if (nameLower.includes('pulled pork') && nameLower.includes('hash')) return pulledPorkBreakfastHash;
+  if (nameLower.includes('mexican chicken bowl') || nameLower.includes('smashmeals mexican')) return mexicanChickenBowl;
+  if (nameLower.includes('italian beef marinara')) return italianBeefMarinara;
+  if (nameLower.includes('spinach artichoke')) return spinachArtichokeChicken;
+  if (nameLower.includes('firecracker salmon')) return firecrackerSalmonBowl;
+  if (nameLower.includes('smore') || nameLower.includes('s\'more')) return smoresProteinPudding;
+  if (nameLower.includes('blueberry pancakes') && nameLower.includes('pork bacon')) return blueberryPancakesPorkBacon;
+  if (nameLower.includes('blueberry pancakes') && nameLower.includes('turkey bacon')) return blueberryPancakesTurkeyBacon;
+  if (nameLower.includes('blueberry pancakes') && nameLower.includes('scrambled')) return blueberryPancakesEggs;
+  if (nameLower.includes('tomato basil') && nameLower.includes('soup')) return tomatoBasilSoup;
+  if (nameLower.includes('pulled pork') && nameLower.includes('cauliflower mac')) return pulledPorkCauliMac;
+  if (nameLower.includes('mexican breakfast bake')) return mexicanBreakfastBake;
+  if (nameLower.includes('sweet potato hash')) return sweetPotatoHashEggs;
   
-  // Existing items
-  if (nameLower.includes('santa fe breakfast')) return santaFeBreakfastBowl;
-  if (nameLower.includes('sun dried tomato') || nameLower.includes('sundried tomato')) return sunDriedTomatoOmelet;
-  if (nameLower.includes('banana smash')) return bananaSmashPudding;
-  if (nameLower.includes('berry oatmeal')) return berryOatmealBake;
-  if (nameLower.includes('smoked chicken leg') || nameLower.includes('leg quarter')) return smokedChickenLeg;
-  if (nameLower.includes('shrimp egg roll') || nameLower.includes('shrimp eggroll')) return shrimpEggRollBowl;
+  // Bariatric items
+  if (nameLower.includes('bariatric') && nameLower.includes('italian beef')) return bariatricItalianBeef;
+  if (nameLower.includes('bariatric') && nameLower.includes('pulled pork')) return bariatricPulledPork;
+  if (nameLower.includes('bariatric') && nameLower.includes('salmon')) return bariatricSalmon;
+  if (nameLower.includes('bariatric') && nameLower.includes('cinnamon')) return bariatricCinnamonSouffle;
+  if (nameLower.includes('bariatric') && nameLower.includes('hibachi')) return bariatricChickenHibachi;
+  if (nameLower.includes('bariatric') && nameLower.includes('cheesy egg')) return bariatricCheesyEggWhite;
+  if (nameLower.includes('bariatric') && nameLower.includes('strawberry')) return bariatricStrawberryCheesecake;
+  
+  // Salads
   if (nameLower.includes('grilled steak salad') || nameLower.includes('steak salad')) return grilledSteakSalad;
   if (nameLower.includes('grilled chicken salad') || nameLower.includes('chicken salad')) return grilledChickenSalad;
-  if (nameLower.includes('sweet potato') && nameLower.includes('quesadilla')) return sweetPotatoQuesadilla;
-  if (nameLower.includes('spicy peanut') || nameLower.includes('peanut noodles')) return spicyPeanutNoodles;
-  if (nameLower.includes('broccoli cheddar') || nameLower.includes('cheddar soup')) return broccoliCheddarSoup;
-  if (nameLower.includes('egg roll in a bowl') || nameLower.includes('turkey egg roll')) return eggRollBowlTurkey;
-  if (nameLower.includes('salmon') && (nameLower.includes('honey') || nameLower.includes('glazed'))) return honeyGlazedSalmon;
-  if (nameLower.includes('smoked chicken wings') || nameLower.includes('wings and drumsticks')) return smokedChickenWings;
-  if (nameLower.includes('filet mignon')) return filetMignonAlacarte;
-  if (nameLower.includes('turkey bacon') && nameLower.includes('egg')) return baconEggCheeseCasserole;
   
   return baconEggCheeseCasserole;
 };
