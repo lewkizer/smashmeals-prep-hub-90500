@@ -142,6 +142,7 @@ import Harrogate from "./pages/Harrogate";
 import Maynardville from "./pages/Maynardville";
 import MacroCalculator from "./pages/MacroCalculator";
 import MealQuiz from "./pages/MealQuiz";
+import Order from "./pages/Order";
 
 const queryClient = new QueryClient();
 
@@ -292,6 +293,7 @@ const App = () => (
           <Route path="/maynardville" element={<Maynardville />} />
           <Route path="/macro-calculator" element={<MacroCalculator />} />
           <Route path="/meal-quiz" element={<MealQuiz />} />
+          <Route path="/order" element={<Order />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
