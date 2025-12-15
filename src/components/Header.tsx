@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Menu, X, ShoppingCart, ChevronDown } from "lucide-react";
@@ -89,25 +90,37 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <img 
               src={logo} 
               alt="SmashMeals Logo" 
               className="h-12 w-12 object-contain"
             />
             <span className="font-bold font-playfair text-xl hidden md:block">SmashMeals</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                {link.name}
-              </a>
+              link.href.startsWith('http') ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
             <DropdownMenu>
               <DropdownMenuTrigger className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1">
@@ -115,16 +128,16 @@ const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
-                  <a href="/faq" className="cursor-pointer">FAQ</a>
+                  <Link to="/faq" className="cursor-pointer">FAQ</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="/glp1" className="cursor-pointer">GLP-1</a>
+                  <Link to="/glp1" className="cursor-pointer">GLP-1</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="/partners" className="cursor-pointer">Partners</a>
+                  <Link to="/partners" className="cursor-pointer">Partners</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="/contact" className="cursor-pointer">Contact</a>
+                  <Link to="/contact" className="cursor-pointer">Contact</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -154,14 +167,27 @@ const Header = () => {
           <nav className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-4">
               {mobileNavLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
+                link.href.startsWith('http') ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
               <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer" className="w-full" onClick={() => {
                 if ((window as any).fbq) (window as any).fbq('track', 'InitiateCheckout');
