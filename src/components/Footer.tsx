@@ -25,7 +25,10 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Weekly Menu</a></li>
+              <li><Link to="/freezer-meals" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Freezer Meals</Link></li>
+              <li><Link to="/bariatric-line" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Bariatric Line</Link></li>
               <li><Link to="/catering" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Catering</Link></li>
+              <li><Link to="/blogs" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Blog</Link></li>
               <li><Link to="/about" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">About</Link></li>
               <li><Link to="/faq" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">FAQ</Link></li>
               <li><Link to="/contact" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Contact</Link></li>
