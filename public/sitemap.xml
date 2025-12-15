@@ -121,9 +121,21 @@
   <!-- Blog Pages -->
   <url>
     <loc>https://smashmeals.com/blogs</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2025-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smashmeals.com/blog/randy-johnson-20-pound-weight-loss-smashmeals-chatgpt</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashmeals.com/blog/weekly-menu-december-2024-pulled-pork-hash-mexican-chicken</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smashmeals.com/blog/smashmeals-bariatric-line-launch</loc>
