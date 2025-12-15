@@ -1,44 +1,91 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import honeyGlazedSalmon from "@/assets/products/honey-glazed-salmon.jpg";
-import shrimpEggRollBowl from "@/assets/products/shrimp-egg-roll-bowl.jpg";
-import grilledSteakSalad from "@/assets/products/grilled-steak-salad.jpg";
 import { Flame, Heart, Sparkles } from "lucide-react";
+import { useFeaturedProducts } from "@/hooks/useProducts";
+
+// Import product images
+import pulledPorkBreakfastHash from "@/assets/products/pulled-pork-breakfast-hash.jpg";
+import mexicanChickenBowl from "@/assets/products/mexican-chicken-bowl.jpg";
+import spinachArtichokeChicken from "@/assets/products/spinach-artichoke-chicken.jpg";
+import firecrackerSalmon from "@/assets/products/firecracker-salmon-bowl.jpg";
+import italianBeefMarinara from "@/assets/products/italian-beef-marinara.jpg";
+import grilledSteakSalad from "@/assets/products/grilled-steak-salad.jpg";
+import grilledChickenSalad from "@/assets/products/grilled-chicken-salad.jpg";
+import sweetPotatoHash from "@/assets/products/sweet-potato-hash-eggs.jpg";
+import mexicanBreakfastBake from "@/assets/products/mexican-breakfast-bake.jpg";
+import blueberryPancakesPork from "@/assets/products/blueberry-pancakes-pork-bacon.jpg";
+import blueberryPancakesTurkey from "@/assets/products/blueberry-pancakes-turkey-bacon.jpg";
+
+// Image mapping for products
+const productImages: Record<string, string> = {
+  "pulled pork breakfast hash": pulledPorkBreakfastHash,
+  "smashmeals mexican chicken bowl": mexicanChickenBowl,
+  "spinach artichoke chicken bowl": spinachArtichokeChicken,
+  "firecracker salmon and rice bowl": firecrackerSalmon,
+  "italian beef marinara plate": italianBeefMarinara,
+  "grilled steak salad": grilledSteakSalad,
+  "grilled chicken salad": grilledChickenSalad,
+  "sweet potato hash with fried eggs and chicken sausage": sweetPotatoHash,
+  "mexican breakfast bake": mexicanBreakfastBake,
+  "blueberry pancakes with pork bacon": blueberryPancakesPork,
+  "blueberry pancakes with turkey bacon": blueberryPancakesTurkey,
+};
+
+const getProductImage = (name: string, imageUrl: string | null): string => {
+  const normalizedName = name.toLowerCase().trim();
+  if (productImages[normalizedName]) {
+    return productImages[normalizedName];
+  }
+  if (imageUrl) {
+    return imageUrl;
+  }
+  // Fallback to mexican chicken bowl
+  return mexicanChickenBowl;
+};
+
+const generateSlug = (name: string): string => {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+};
 
 const FeaturedMeals = () => {
-  const featuredMeals = [
-    {
-      slug: "honey-glazed-salmon",
-      name: "Honey-Glazed Salmon with Rice & Asparagus",
-      description: "Perfectly glazed salmon fillet served with fluffy rice and crisp asparagus spears",
-      price: "$14.00",
-      image: honeyGlazedSalmon,
-      badge: "Fan Favorite",
-      icon: Heart,
-      isNew: false,
-    },
-    {
-      slug: "shrimp-egg-roll-bowl",
-      name: "Shrimp Egg Roll Bowl",
-      description: "Asian-inspired bowl with seasoned shrimp, cabbage slaw, and savory egg roll flavors",
-      price: "$12.00",
-      image: shrimpEggRollBowl,
-      badge: "NEW This Week",
-      icon: Sparkles,
-      isNew: true,
-    },
-    {
-      slug: "grilled-steak-salad",
-      name: "Grilled Steak Salad",
-      description: "Spring mix with grilled steak, sharp cheddar, bacon bits, cucumbers and cherry tomatoes",
-      price: "$10.50",
-      image: grilledSteakSalad,
-      badge: "Best Seller",
-      icon: Flame,
-      isNew: false,
-    },
+  const { data: featuredProducts, isLoading } = useFeaturedProducts();
+
+  // Filter out bariatric items and take only first 3 non-bariatric items
+  const displayProducts = featuredProducts
+    ?.filter(product => !product.name.toLowerCase().includes('bariatric'))
+    .slice(0, 3) || [];
+
+  const badges = [
+    { badge: "Fan Favorite", icon: Heart, isNew: false },
+    { badge: "NEW This Week", icon: Sparkles, isNew: true },
+    { badge: "Best Seller", icon: Flame, isNew: false },
   ];
+
+  if (isLoading) {
+    return (
+      <section className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold font-playfair text-foreground mb-4">
+              Featured This Week
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[1, 2, 3].map((i) => (
+              <Card key={i} className="overflow-hidden animate-pulse">
+                <div className="w-full h-64 bg-muted" />
+                <div className="p-6">
+                  <div className="h-6 bg-muted rounded mb-2" />
+                  <div className="h-4 bg-muted rounded w-3/4" />
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/20">
@@ -57,34 +104,38 @@ const FeaturedMeals = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {featuredMeals.map((meal, index) => {
-            const Icon = meal.icon;
+          {displayProducts.map((product, index) => {
+            const badgeInfo = badges[index % badges.length];
+            const Icon = badgeInfo.icon;
+            const slug = generateSlug(product.name);
+            const image = getProductImage(product.name, product.image_url);
+            
             return (
-              <Link key={index} to={`/meals/${meal.slug}`}>
+              <Link key={product.id} to={`/meals/${slug}`}>
                 <Card className="overflow-hidden hover:shadow-elevated transition-all duration-300 hover:scale-105 border-2 cursor-pointer">
                   <div className="relative">
                     <img
-                      src={meal.image}
-                      alt={`${meal.name} - Gluten-free meal prep in Tri-Cities TN`}
+                      src={image}
+                      alt={`${product.name} - Gluten-free meal prep in Tri-Cities TN`}
                       width={400}
                       height={256}
                       loading="lazy"
                       decoding="async"
                       className="w-full h-64 object-cover"
                     />
-                    <div className={`absolute top-4 left-4 ${meal.isNew ? 'bg-gradient-to-r from-accent to-primary' : 'bg-accent'} text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg animate-pulse`}>
+                    <div className={`absolute top-4 left-4 ${badgeInfo.isNew ? 'bg-gradient-to-r from-accent to-primary' : 'bg-accent'} text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg animate-pulse`}>
                       <Icon className="w-4 h-4" />
-                      <span className="text-sm font-semibold">{meal.badge}</span>
+                      <span className="text-sm font-semibold">{badgeInfo.badge}</span>
                     </div>
                   </div>
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="text-2xl font-bold font-playfair text-foreground flex-1">
-                        {meal.name}
+                        {product.name}
                       </h3>
-                      <span className="text-2xl font-bold text-primary ml-2">{meal.price}</span>
+                      <span className="text-2xl font-bold text-primary ml-2">${Number(product.price).toFixed(2)}</span>
                     </div>
-                    <p className="text-muted-foreground mb-4">{meal.description}</p>
+                    <p className="text-muted-foreground mb-4">{product.description || 'Delicious gluten-free meal prepared fresh weekly.'}</p>
                   </div>
                 </Card>
               </Link>
