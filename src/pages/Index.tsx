@@ -7,6 +7,7 @@ import TrustBadges from "@/components/TrustBadges";
 import HowItWorks from "@/components/HowItWorks";
 import FeaturedMeals from "@/components/FeaturedMeals";
 import SmashBarShowcase from "@/components/SmashBarShowcase";
+import BariatricShowcase from "@/components/BariatricShowcase";
 import Testimonials from "@/components/Testimonials";
 import Mission from "@/components/Mission";
 import WeeklyMenu from "@/components/WeeklyMenu";
@@ -65,6 +66,7 @@ const Index = () => {
       <HowItWorks />
       <FeaturedMeals />
       <SmashBarShowcase />
+      <BariatricShowcase />
       <Testimonials />
       <Mission />
       <WeeklyMenu />
