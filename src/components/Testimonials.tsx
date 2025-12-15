@@ -6,6 +6,17 @@ import { Helmet } from "react-helmet";
 const Testimonials = () => {
   const testimonials = [
     {
+      name: "Randy Johnson",
+      location: "Tri-Cities, TN",
+      rating: 5,
+      text: "Over the last 3 months, SmashMeals has been a huge part of my Fit by 51 journey. I'm down over 20 pounds, and for the first time in a long time, it feels sustainable, not extreme. What sets SmashMeals apart isn't just the taste — it's the clarity and consistency. Every meal is clearly labeled with calories and macros, which makes planning my week simple and stress-free. SmashMeals has removed the daily decision-fatigue around food. If fat loss, structure, and long-term consistency matter to you, SmashMeals delivers.",
+      meal: "Fit by 51 Journey",
+      verified: true,
+      source: "Google",
+      tags: ["Weight loss", "Macro tracking", "Consistency", "Fat loss"],
+      featured: true
+    },
+    {
       name: "Amanda Smith",
       location: "Tri-Cities, TN",
       rating: 5,
