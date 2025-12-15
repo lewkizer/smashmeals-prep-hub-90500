@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Facebook, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/smashmeals-logo.webp";
 
 const Footer = () => {
@@ -8,14 +9,14 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
+            <Link to="/" className="flex items-center space-x-3 mb-4">
               <img 
                 src={logo} 
                 alt="SmashMeals Logo" 
                 className="h-12 w-12 object-contain"
               />
               <span className="font-bold font-playfair text-xl">SmashMeals</span>
-            </div>
+            </Link>
             <p className="text-background/80 text-sm font-caveat text-lg">Eat Healthy. Live Healthy.</p>
           </div>
 
@@ -24,10 +25,10 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Weekly Menu</a></li>
-              <li><a href="/#catering" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Catering</a></li>
-              <li><a href="/#about" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">About</a></li>
-              <li><a href="/faq" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">FAQ</a></li>
-              <li><a href="/contact" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Contact</a></li>
+              <li><Link to="/catering" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Catering</Link></li>
+              <li><Link to="/about" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">About</Link></li>
+              <li><Link to="/faq" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">FAQ</Link></li>
+              <li><Link to="/contact" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Contact</Link></li>
             </ul>
           </div>
 
