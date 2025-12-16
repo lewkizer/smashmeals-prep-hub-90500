@@ -99,7 +99,7 @@ const RichmondKY = () => {
               <Card className="p-6 text-center">
                 <Package className="w-12 h-12 text-primary mb-4 mx-auto" />
                 <h3 className="text-xl font-bold mb-2">Fresh Preparation</h3>
-                <p className="text-muted-foreground">Cooked Friday in certified kitchen</p>
+                <p className="text-muted-foreground">Cooked Friday in dedicated kitchen</p>
               </Card>
 
               <Card className="p-6 text-center">

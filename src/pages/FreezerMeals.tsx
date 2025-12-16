@@ -229,7 +229,7 @@ const benefits = [
   {
     icon: Flame,
     title: "100% Gluten-Free",
-    description: "Every meal is certified gluten-free, made with premium ingredients and no artificial preservatives.",
+    description: "Every meal is 100% gluten-free, made with premium ingredients and no artificial preservatives.",
   },
   {
     icon: Users,
@@ -710,10 +710,10 @@ export default function FreezerMeals() {
                 Are all meals 100% gluten-free?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground space-y-2 pt-2">
-                <p><strong className="text-foreground">Yes!</strong> Every single meal we prepare is certified 100% gluten-free. We use:</p>
+                <p><strong className="text-foreground">Yes!</strong> Every single meal we prepare is 100% gluten-free. We use:</p>
                 <ul className="space-y-1 ml-4 mt-2">
                   <li>• Gluten-free quinoa pasta in our Alfredo and pesto dishes</li>
-                  <li>• Certified gluten-free oats in breakfast bakes</li>
+                  <li>• Gluten-free oats in breakfast bakes</li>
                   <li>• Fresh, whole ingredients with no gluten-containing fillers</li>
                   <li>• Dedicated gluten-free preparation area in our commercial kitchen</li>
                 </ul>

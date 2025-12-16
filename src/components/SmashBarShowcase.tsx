@@ -55,7 +55,7 @@ const SmashBarShowcase = () => {
                       100% Gluten-Free
                     </h3>
                     <p className="text-muted-foreground">
-                      Made in our certified gluten-free kitchen with wholesome ingredients
+                      Made in our dedicated gluten-free kitchen with wholesome ingredients
                     </p>
                   </div>
                 </div>

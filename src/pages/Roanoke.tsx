@@ -15,7 +15,7 @@ const Roanoke = () => {
       answer: "Yes! We deliver fresh, gluten-free meals to Roanoke, Virginia every week. Order by Thursday for next-week delivery."
     },
     {
-      question: "Are SmashMeals gluten-free certified?",
+      question: "Are SmashMeals 100% gluten-free?",
       answer: "Yes, our entire facility is 100% gluten-free with zero cross-contamination. Safe for celiac disease and gluten sensitivity."
     },
     {

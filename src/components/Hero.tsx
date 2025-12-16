@@ -30,7 +30,7 @@ const Hero = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-white font-bold font-inter text-lg">100% GLUTEN-FREE</span>
-              <span className="text-white/90 font-inter text-sm">Tri-Cities&apos; FIRST &amp; ONLY Certified Kitchen</span>
+              <span className="text-white/90 font-inter text-sm">Tri-Cities&apos; FIRST &amp; ONLY Dedicated GF Kitchen</span>
             </div>
           </div>
           

@@ -332,7 +332,7 @@ export default function MealDetail() {
                       Contains: {meal.allergens.join(", ")}
                     </div>
                     <div className="text-sm text-orange-700 dark:text-orange-200">
-                      100% gluten-free certified facility
+                      100% gluten-free dedicated facility
                     </div>
                   </div>
                 </div>

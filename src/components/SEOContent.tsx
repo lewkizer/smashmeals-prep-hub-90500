@@ -56,7 +56,7 @@ const SEOContent = () => {
         Trusted by East Tennessee State University (ETSU) Buccaneers athletes for performance nutrition. 
         8+ years serving the Tri-Cities community with excellence since 2017. 
         5-star verified catering reviews on ezCater. 
-        100% gluten-free certified kitchen - safe for celiac disease. 
+        100% gluten-free dedicated kitchen - safe for celiac disease. 
         Local family-owned and operated business supporting the Tri-Cities economy.
         Featured partner at Misfits Fitness, CrossFit Arcane, and The Great Body Company.
         First meal prep company in Tri-Cities history - the original and still the best.

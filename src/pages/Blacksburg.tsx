@@ -61,7 +61,7 @@ const Blacksburg = () => {
                 <Award className="w-12 h-12 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-3">100% Gluten-Free Kitchen</h3>
                 <p className="text-muted-foreground">
-                  Certified gluten-free facility means zero cross-contamination. Safe for Hokies with celiac disease and gluten sensitivity.
+                  Dedicated gluten-free facility means zero cross-contamination. Safe for Hokies with celiac disease and gluten sensitivity.
                 </p>
               </Card>
 

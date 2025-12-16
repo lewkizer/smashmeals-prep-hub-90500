@@ -85,7 +85,7 @@ const Louisville = () => {
                 <Award className="w-12 h-12 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-3">100% Gluten-Free Kitchen</h3>
                 <p className="text-muted-foreground">
-                  Certified gluten-free facility means zero cross-contamination. Perfect for Louisville's growing celiac and gluten-sensitive community.
+                  Dedicated gluten-free facility means zero cross-contamination. Perfect for Louisville's growing celiac and gluten-sensitive community.
                 </p>
               </Card>
 
@@ -123,7 +123,7 @@ const Louisville = () => {
               <Card className="p-6 text-center">
                 <Package className="w-12 h-12 text-primary mb-4 mx-auto" />
                 <h3 className="text-xl font-bold mb-2">2. We Prep Fresh</h3>
-                <p className="text-muted-foreground">Chef-prepared Friday in our certified gluten-free kitchen</p>
+                <p className="text-muted-foreground">Chef-prepared Friday in our dedicated gluten-free kitchen</p>
               </Card>
 
               <Card className="p-6 text-center">

@@ -206,7 +206,7 @@ const TriCitiesMealPrep = () => {
             <ul>
               <li>Zero risk of cross-contamination</li>
               <li>No shared cooking surfaces with gluten-containing foods</li>
-              <li>All ingredients sourced from certified gluten-free suppliers</li>
+              <li>All ingredients sourced from trusted gluten-free suppliers</li>
               <li>Safe for celiac disease, gluten sensitivity, and gluten intolerance</li>
               <li>Perfect for families where some members are gluten-free and others aren't</li>
             </ul>

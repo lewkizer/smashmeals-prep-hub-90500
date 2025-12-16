@@ -216,7 +216,7 @@ const HighProteinShipping = () => {
 
             <h4 className="text-xl font-semibold mt-6 mb-3">Step 2: Fresh Preparation Over the Weekend</h4>
             <p>
-              Our chefs prepare your meals fresh in our dedicated gluten-free kitchen in Kingsport, Tennessee. Every ingredient is sourced from certified gluten-free suppliers, and every meal is macro-counted with precision.
+              Our chefs prepare your meals fresh in our dedicated gluten-free kitchen in Kingsport, Tennessee. Every ingredient is sourced from trusted gluten-free suppliers, and every meal is macro-counted with precision.
             </p>
 
             <h4 className="text-xl font-semibold mt-6 mb-3">Step 3: Professional Packaging</h4>
@@ -299,7 +299,7 @@ const HighProteinShipping = () => {
             <ul>
               <li>Zero risk of cross-contamination</li>
               <li>Safe for celiac disease</li>
-              <li>All ingredients sourced from certified gluten-free suppliers</li>
+              <li>All ingredients sourced from trusted gluten-free suppliers</li>
               <li>8+ years of safe production with zero incidents</li>
             </ul>
 
