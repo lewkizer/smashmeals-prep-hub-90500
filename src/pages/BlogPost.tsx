@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -9,9 +9,64 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Loader2, Clock, Calendar, ArrowLeft } from 'lucide-react';
+import { Loader2, Clock, Calendar, ArrowLeft, ArrowRight } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import type { Database } from '@/integrations/supabase/types';
+
+// Persona page mapping based on blog tags
+const getRelatedPersonaPage = (tags: string[] | null | undefined): { path: string; title: string; description: string } | null => {
+  if (!tags || tags.length === 0) return null;
+  
+  const lowerTags = tags.map(t => t.toLowerCase());
+  
+  // Athletes/ETSU
+  if (lowerTags.some(t => ['athletes', 'etsu', 'sports nutrition', 'performance', 'college athletics'].includes(t))) {
+    return {
+      path: '/athletes',
+      title: 'Meal Prep for Athletes',
+      description: 'Discover how SmashMeals fuels peak athletic performance with high-protein, macro-counted meals.'
+    };
+  }
+  
+  // Bariatric
+  if (lowerTags.some(t => ['bariatric', 'gastric sleeve', 'gastric bypass', 'post-surgery', 'weight loss surgery'].includes(t))) {
+    return {
+      path: '/bariatric-line',
+      title: 'SmashMeals Bariatric Line',
+      description: 'Explore our specialized bariatric-friendly meals designed for post-surgery recovery and long-term success.'
+    };
+  }
+  
+  // Seniors/Elderly
+  if (lowerTags.some(t => ['seniors', 'elderly', 'cooking for one', 'independent living'].includes(t))) {
+    return {
+      path: '/elderly',
+      title: 'Meal Prep for Seniors',
+      description: 'Learn how SmashMeals makes healthy eating easy and enjoyable for seniors living independently.'
+    };
+  }
+  
+  // Families/Busy Parents
+  if (lowerTags.some(t => ['busy parents', 'family meals', 'working moms', 'family', 'time saving'].includes(t))) {
+    return {
+      path: '/families',
+      title: 'Meal Prep for Busy Families',
+      description: 'See how SmashMeals helps busy families save time while eating healthy, delicious meals.'
+    };
+  }
+  
+  // Weight Loss (non-surgical) / GLP-1
+  if (lowerTags.some(t => ['weight loss', 'fat loss', 'sustainable weight loss', 'macro tracking'].includes(t)) && 
+      !lowerTags.some(t => ['bariatric', 'surgery', 'gastric'].includes(t))) {
+    return {
+      path: '/glp1',
+      title: 'Meal Prep for Weight Loss',
+      description: 'Discover how SmashMeals supports your weight loss journey with portion-controlled, high-protein meals.'
+    };
+  }
+  
+  return null;
+};
 
 // Configure DOMPurify to allow video embeds while sanitizing XSS
 const configureDOMPurify = () => {
@@ -159,10 +214,10 @@ const BlogPost = () => {
         <main className="flex-1 pt-32 pb-20">
           <article className="container mx-auto px-4 max-w-5xl">
             {/* Back Button */}
-            <a href="/blogs" className="inline-flex items-center text-primary hover:text-primary/80 mb-8 transition-colors group">
+            <Link to="/blogs" className="inline-flex items-center text-primary hover:text-primary/80 mb-8 transition-colors group">
               <ArrowLeft className="w-5 h-5 mr-2 transition-transform group-hover:-translate-x-1" />
               <span className="font-inter font-medium">Back to Blog</span>
-            </a>
+            </Link>
 
             {/* Featured Image */}
             {post.featured_image_url && (
@@ -225,6 +280,26 @@ const BlogPost = () => {
               </div>
             )}
 
+            {/* Related Persona Page Link */}
+            {(() => {
+              const personaPage = getRelatedPersonaPage(post.tags);
+              if (!personaPage) return null;
+              return (
+                <div className="mb-12 p-6 rounded-xl bg-primary/5 border border-primary/20">
+                  <p className="text-sm text-muted-foreground mb-2 font-inter">Related Resource</p>
+                  <Link to={personaPage.path} className="group block">
+                    <h3 className="text-xl font-bold font-playfair text-foreground group-hover:text-primary transition-colors mb-2">
+                      {personaPage.title}
+                    </h3>
+                    <p className="text-muted-foreground font-inter mb-3">{personaPage.description}</p>
+                    <span className="inline-flex items-center text-primary font-semibold font-inter group-hover:underline">
+                      Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                </div>
+              );
+            })()}
+
             {/* Content */}
             <Card className="border-0 bg-white/80 dark:bg-card/80 backdrop-blur-sm shadow-card mb-12">
               <CardContent className="pt-12 pb-12 px-8 md:px-12">
@@ -253,12 +328,12 @@ const BlogPost = () => {
 
             {/* Back to Blog CTA */}
             <div className="text-center py-12 border-t border-border">
-              <a href="/blogs">
+              <Link to="/blogs">
                 <Button variant="hero" size="lg" className="font-inter">
                   <ArrowLeft className="w-5 h-5 mr-2" />
                   Read More Articles
                 </Button>
-              </a>
+              </Link>
             </div>
           </article>
         </main>
