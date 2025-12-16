@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import StickyOrderBanner from "@/components/StickyOrderBanner";
 import ChristmasBanner from "@/components/ChristmasBanner";
+import MobileOrderButton from "@/components/MobileOrderButton";
 import TrustStrip from "@/components/TrustStrip";
 import TrustBadges from "@/components/TrustBadges";
 import HowItWorks from "@/components/HowItWorks";
@@ -77,6 +78,7 @@ const Index = () => {
       <FAQSection faqs={homepageFAQs} />
       <Footer />
       <SEOContent />
+      <MobileOrderButton />
     </div>
   );
 };
