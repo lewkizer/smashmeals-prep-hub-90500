@@ -21,17 +21,12 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl">
-          {/* Prominent GF Certification Badge */}
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/90 to-accent/90 backdrop-blur-md border-2 border-white/30 rounded-full px-8 py-4 mb-6 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] animate-fade-in">
-            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-white font-bold font-inter text-lg">100% GLUTEN-FREE</span>
-              <span className="text-white/90 font-inter text-sm">Tri-Cities&apos; FIRST &amp; ONLY Dedicated GF Kitchen</span>
-            </div>
+          {/* Gluten-Free Badge */}
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/90 to-accent/90 backdrop-blur-md border-2 border-white/30 rounded-full px-6 py-3 mb-6 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] animate-fade-in">
+            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <span className="text-white font-bold font-inter text-lg">100% GLUTEN-FREE MEAL PREP</span>
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-playfair text-white mb-6 leading-tight animate-on-scroll">
