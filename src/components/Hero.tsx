@@ -21,12 +21,25 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl">
-          {/* Gluten-Free Badge */}
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/90 to-accent/90 backdrop-blur-md border-2 border-white/30 rounded-full px-6 py-3 mb-6 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] animate-fade-in">
-            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
-            <span className="text-white font-bold font-inter text-lg">100% GLUTEN-FREE MEAL PREP</span>
+          {/* Gluten-Free Badge + Mobile Order Button */}
+          <div className="flex flex-wrap items-center gap-3 mb-6 animate-fade-in">
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/90 to-accent/90 backdrop-blur-md border-2 border-white/30 rounded-full px-6 py-3 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]">
+              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-white font-bold font-inter text-lg">100% GLUTEN-FREE MEAL PREP</span>
+            </div>
+            <a 
+              href="https://smashmeals.bottle.com/b/9814360" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={() => {
+                if ((window as any).fbq) (window as any).fbq('track', 'InitiateCheckout');
+              }}
+              className="md:hidden inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-full font-bold font-inter text-lg shadow-[0_8px_30px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 animate-pulse-gentle"
+            >
+              Order Now
+            </a>
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-playfair text-white mb-6 leading-tight animate-on-scroll">
