@@ -130,7 +130,7 @@ const Morristown = () => {
                   <UtensilsCrossed className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Fresh Prep Friday</h3>
-                <p className="text-muted-foreground">Our chefs prepare your meals fresh in our certified gluten-free kitchen in Kingsport</p>
+                <p className="text-muted-foreground">Our chefs prepare your meals fresh in our dedicated gluten-free kitchen in Kingsport</p>
               </Card>
               <Card className="p-6 text-center">
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">

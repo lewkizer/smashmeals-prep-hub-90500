@@ -10,7 +10,7 @@ const TrustBadges = ({ variant = 'horizontal', showAll = true }: TrustBadgesProp
     {
       icon: <Shield className="w-6 h-6" />,
       label: '100% Gluten-Free',
-      sublabel: 'Certified Kitchen',
+      sublabel: 'Dedicated Kitchen',
       color: 'text-green-600'
     },
     {

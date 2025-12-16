@@ -59,7 +59,7 @@ const Frankfort = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="p-6">
                 <Award className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-bold mb-3">Certified Gluten-Free</h3>
+                <h3 className="text-xl font-bold mb-3">100% Gluten-Free</h3>
                 <p className="text-muted-foreground">
                   Dedicated facility eliminates cross-contamination risk. Safe for celiac and gluten-sensitive residents.
                 </p>
