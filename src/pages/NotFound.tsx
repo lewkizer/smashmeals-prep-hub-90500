@@ -27,6 +27,16 @@ const redirectMap: Record<string, string> = {
   '/feed': '/blogs',
   // Service worker
   '/runtime-service-worker.js': '/',
+  // Recently crawled old URLs (Dec 2025)
+  '/family-dinner-made-easy': '/families',
+  '/weekly-subscription': '/how-it-works',
+  '/new-smash-dip': '/menu',
+  '/smash-mouth-football-begins-with-smashmeals': '/athletes',
+  '/try-these-cookies-now': '/menu',
+  '/smash-sides': '/menu',
+  '/weekly-menu-highlights': '/menu',
+  '/tackle-that-funky-sink-smell-with-ease': '/blogs',
+  '/taste-the-joy-of-snacking': '/menu',
 };
 
 const NotFound = () => {
