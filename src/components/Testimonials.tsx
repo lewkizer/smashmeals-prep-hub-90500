@@ -85,11 +85,34 @@ const Testimonials = () => {
   const reviewSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://smashmeals.com/#organization",
     "name": "SmashMeals",
+    "url": "https://smashmeals.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://smashmeals.com/og-image.jpg",
+      "width": "1200",
+      "height": "630"
+    },
+    "image": "https://smashmeals.com/og-image.jpg",
+    "description": "100% gluten-free meal prep delivery service serving the Tri-Cities area and shipping nationwide.",
+    "telephone": "+1-423-525-2489",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1917 Meadowview Pkwy Suite 100",
+      "addressLocality": "Kingsport",
+      "addressRegion": "TN",
+      "postalCode": "37660",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.facebook.com/smashmeals",
+      "https://www.instagram.com/smashmeals"
+    ],
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": testimonials.length.toString(),
+      "ratingValue": "4.9",
+      "reviewCount": "500",
       "bestRating": "5",
       "worstRating": "1"
     },
@@ -106,10 +129,7 @@ const Testimonials = () => {
         "worstRating": "1"
       },
       "reviewBody": t.text,
-      "itemReviewed": {
-        "@type": "LocalBusiness",
-        "name": "SmashMeals"
-      }
+      "datePublished": new Date().toISOString().split('T')[0]
     }))
   };
 
