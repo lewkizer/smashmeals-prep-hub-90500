@@ -9,6 +9,7 @@ interface Product {
   protein: number;
   carbs: number;
   fat: number;
+  image_url?: string | null;
 }
 
 interface AIProductCatalogProps {
@@ -31,6 +32,7 @@ const AIProductCatalog = ({ products }: AIProductCatalogProps) => {
         "name": product.name,
         "description": product.description || `${product.name} - ${product.category} meal`,
         "category": product.category,
+        "image": product.image_url || "https://www.smashmeals.com/og-image.jpg",
         "brand": {
           "@type": "Brand",
           "name": "SmashMeals"
@@ -45,6 +47,41 @@ const AIProductCatalog = ({ products }: AIProductCatalogProps) => {
           "seller": {
             "@type": "Organization",
             "name": "SmashMeals"
+          },
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "USD"
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "US"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 1,
+                "maxValue": 3,
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 1,
+                "maxValue": 5,
+                "unitCode": "DAY"
+              }
+            }
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "US",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 7,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
           }
         },
         "aggregateRating": {
