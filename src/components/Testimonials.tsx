@@ -129,7 +129,13 @@ const Testimonials = () => {
         "worstRating": "1"
       },
       "reviewBody": t.text,
-      "datePublished": new Date().toISOString().split('T')[0]
+      "datePublished": "2024-12-01",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "@id": "https://smashmeals.com/#restaurant",
+        "name": "SmashMeals",
+        "image": "https://smashmeals.com/og-image.jpg"
+      }
     }))
   };
 
