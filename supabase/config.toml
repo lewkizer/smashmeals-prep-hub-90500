@@ -7,3 +7,7 @@ verify_jwt = false
 # Protected endpoint - JWT required
 [functions.generate-product-images]
 verify_jwt = true
+
+# Public endpoint for Google reviews
+[functions.fetch-google-reviews]
+verify_jwt = false
