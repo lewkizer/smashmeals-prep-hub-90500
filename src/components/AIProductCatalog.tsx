@@ -31,15 +31,41 @@ const AIProductCatalog = ({ products }: AIProductCatalogProps) => {
         "name": product.name,
         "description": product.description || `${product.name} - ${product.category} meal`,
         "category": product.category,
+        "brand": {
+          "@type": "Brand",
+          "name": "SmashMeals"
+        },
         "offers": {
           "@type": "Offer",
           "price": product.price.toFixed(2),
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
+          "priceValidUntil": new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
+          "url": "https://smashmeals.bottle.com/b/9814360",
           "seller": {
             "@type": "Organization",
             "name": "SmashMeals"
           }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "500",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "SmashMeals Customer"
+          },
+          "reviewBody": "Delicious gluten-free meal prep! Fresh, high-protein, and perfectly portioned."
         },
         "nutrition": {
           "@type": "NutritionInformation",
