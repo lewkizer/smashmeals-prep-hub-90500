@@ -208,19 +208,6 @@ const Testimonials = () => {
             ))}
           </div>
 
-          {/* Live Google Reviews Widget */}
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold font-playfair mb-8">
-              Live Google Reviews
-            </h3>
-            <Card className="p-8 border-0 bg-white/80 dark:bg-card/80 backdrop-blur-sm shadow-elevated">
-              {/* Elfsight Google Reviews Widget */}
-              <div 
-                className="elfsight-app-d8c0e8f5-7d0f-4c3e-9c3d-8e5e5e5e5e5e"
-                data-elfsight-app-lazy
-              ></div>
-            </Card>
-          </div>
 
           {/* Google Reviews CTA */}
           <div className="text-center">
