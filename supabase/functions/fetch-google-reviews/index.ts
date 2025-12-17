@@ -5,9 +5,6 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// SmashMeals Google Place ID - you can find this in Google Business Profile
-const PLACE_ID = 'ChIJq6qqatIGXIgRPzxq5mBwMzQ';
-
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -19,12 +16,29 @@ serve(async (req) => {
       throw new Error('GOOGLE_PLACES_API_KEY is not configured');
     }
 
-    // Fetch place details including reviews
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=name,rating,user_ratings_total,reviews&key=${apiKey}`;
+    // First, find the place by searching for the business name
+    const searchQuery = 'SmashMeals 1917 Meadowview Pkwy Kingsport TN';
+    const findPlaceUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${encodeURIComponent(searchQuery)}&inputtype=textquery&fields=place_id,name&key=${apiKey}`;
     
-    console.log('Fetching Google reviews for place:', PLACE_ID);
+    console.log('Searching for SmashMeals place ID...');
     
-    const response = await fetch(url);
+    const findResponse = await fetch(findPlaceUrl);
+    const findData = await findResponse.json();
+    
+    if (findData.status !== 'OK' || !findData.candidates || findData.candidates.length === 0) {
+      console.error('Could not find place:', findData.status, findData.error_message);
+      throw new Error(`Could not find SmashMeals: ${findData.status}`);
+    }
+    
+    const placeId = findData.candidates[0].place_id;
+    console.log('Found Place ID:', placeId);
+
+    // Now fetch place details including reviews
+    const detailsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,user_ratings_total,reviews&key=${apiKey}`;
+    
+    console.log('Fetching Google reviews for place:', placeId);
+    
+    const response = await fetch(detailsUrl);
     const data = await response.json();
 
     if (data.status !== 'OK') {
@@ -39,6 +53,7 @@ serve(async (req) => {
       businessName: result.name,
       overallRating: result.rating,
       totalReviews: result.user_ratings_total,
+      placeId: placeId,
       reviews: (result.reviews || []).map((review: any) => ({
         authorName: review.author_name,
         authorPhoto: review.profile_photo_url,
@@ -49,7 +64,7 @@ serve(async (req) => {
       })),
     };
 
-    console.log(`Successfully fetched ${formattedResponse.reviews.length} reviews`);
+    console.log(`Successfully fetched ${formattedResponse.reviews.length} reviews for ${formattedResponse.businessName}`);
 
     return new Response(JSON.stringify(formattedResponse), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
