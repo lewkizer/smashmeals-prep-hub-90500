@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Star, Quote, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
+import GoogleReviews from "./GoogleReviews";
 
 const Testimonials = () => {
   const testimonials = [
@@ -208,6 +209,8 @@ const Testimonials = () => {
             ))}
           </div>
 
+          {/* Live Google Reviews */}
+          <GoogleReviews />
 
           {/* Google Reviews CTA */}
           <div className="text-center">
