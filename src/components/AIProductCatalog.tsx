@@ -17,14 +17,17 @@ interface AIProductCatalogProps {
 }
 
 const AIProductCatalog = ({ products }: AIProductCatalogProps) => {
+  // Only include products with actual images in schema (Google requires product-specific images)
+  const productsWithImages = products.filter(p => p.image_url && p.image_url.trim() !== '');
+  
   // Create structured data for AI/search engines
   const productListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "SmashMeals Product Catalog",
     "description": "Complete catalog of 100% gluten-free meal prep options from SmashMeals",
-    "numberOfItems": products.length,
-    "itemListElement": products.slice(0, 50).map((product, index) => ({
+    "numberOfItems": productsWithImages.length,
+    "itemListElement": productsWithImages.slice(0, 50).map((product, index) => ({
       "@type": "ListItem",
       "position": index + 1,
       "item": {
@@ -32,7 +35,7 @@ const AIProductCatalog = ({ products }: AIProductCatalogProps) => {
         "name": product.name,
         "description": product.description || `${product.name} - ${product.category} meal`,
         "category": product.category,
-        "image": product.image_url || "https://www.smashmeals.com/og-image.jpg",
+        "image": product.image_url,
         "brand": {
           "@type": "Brand",
           "name": "SmashMeals"
@@ -133,13 +136,14 @@ const AIProductCatalog = ({ products }: AIProductCatalogProps) => {
         "@type": "MenuSection",
         "name": "Breakfast",
         "description": "High-protein gluten-free breakfast meals",
-        "hasMenuItem": products
+        "hasMenuItem": productsWithImages
           .filter(p => p.category.toLowerCase() === 'breakfast')
           .slice(0, 10)
           .map(p => ({
             "@type": "MenuItem",
             "name": p.name,
             "description": p.description || `${p.calories} cal, ${p.protein}g protein`,
+            "image": p.image_url,
             "offers": {
               "@type": "Offer",
               "price": p.price.toFixed(2),
@@ -152,13 +156,14 @@ const AIProductCatalog = ({ products }: AIProductCatalogProps) => {
         "@type": "MenuSection",
         "name": "Entrees",
         "description": "Chef-prepared gluten-free lunch and dinner meals",
-        "hasMenuItem": products
+        "hasMenuItem": productsWithImages
           .filter(p => p.category.toLowerCase() === 'entree')
           .slice(0, 15)
           .map(p => ({
             "@type": "MenuItem",
             "name": p.name,
             "description": p.description || `${p.calories} cal, ${p.protein}g protein`,
+            "image": p.image_url,
             "offers": {
               "@type": "Offer",
               "price": p.price.toFixed(2),
@@ -171,13 +176,14 @@ const AIProductCatalog = ({ products }: AIProductCatalogProps) => {
         "@type": "MenuSection",
         "name": "A La Carte",
         "description": "Individual proteins and sides for custom meal building",
-        "hasMenuItem": products
+        "hasMenuItem": productsWithImages
           .filter(p => p.category.toLowerCase().includes('carte') || p.category.toLowerCase().includes('bulk'))
           .slice(0, 10)
           .map(p => ({
             "@type": "MenuItem",
             "name": p.name,
             "description": p.description || `${p.calories} cal, ${p.protein}g protein`,
+            "image": p.image_url,
             "offers": {
               "@type": "Offer",
               "price": p.price.toFixed(2),
