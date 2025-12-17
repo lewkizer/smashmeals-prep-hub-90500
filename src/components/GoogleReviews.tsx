@@ -15,6 +15,7 @@ interface GoogleReviewsData {
   businessName: string;
   overallRating: number;
   totalReviews: number;
+  placeId: string;
   reviews: Review[];
 }
 
@@ -136,7 +137,7 @@ const GoogleReviews = () => {
 
       <div className="text-center mt-6">
         <a
-          href="https://www.google.com/maps/place/?q=place_id:ChIJq6qqatIGXIgRPzxq5mBwMzQ"
+          href={`https://www.google.com/maps/place/?q=place_id:${data.placeId}`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-primary hover:underline"
