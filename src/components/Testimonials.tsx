@@ -81,8 +81,8 @@ const Testimonials = () => {
     },
   ];
 
-  // Generate Review schema for SEO
-  const reviewSchema = {
+  // Generate Organization schema with aggregateRating (no nested reviews)
+  const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": "https://smashmeals.com/#organization",
@@ -115,35 +115,14 @@ const Testimonials = () => {
       "reviewCount": "500",
       "bestRating": "5",
       "worstRating": "1"
-    },
-    "review": testimonials.map(t => ({
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": t.name
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": t.rating.toString(),
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "reviewBody": t.text,
-      "datePublished": "2024-12-01",
-      "itemReviewed": {
-        "@type": "LocalBusiness",
-        "@id": "https://smashmeals.com/#restaurant",
-        "name": "SmashMeals",
-        "image": "https://smashmeals.com/og-image.jpg"
-      }
-    }))
+    }
   };
 
   return (
     <>
       <Helmet>
         <script type="application/ld+json">
-          {JSON.stringify(reviewSchema)}
+          {JSON.stringify(organizationSchema)}
         </script>
       </Helmet>
       <section id="testimonials" className="py-20 bg-gradient-to-b from-secondary to-background">
