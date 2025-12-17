@@ -143,6 +143,10 @@ import Maynardville from "./pages/Maynardville";
 import MacroCalculator from "./pages/MacroCalculator";
 import MealQuiz from "./pages/MealQuiz";
 import Order from "./pages/Order";
+import KetoMeals from "./pages/KetoMeals";
+import HighProtein from "./pages/HighProtein";
+import PaleoMeals from "./pages/PaleoMeals";
+import LowCarb from "./pages/LowCarb";
 
 const queryClient = new QueryClient();
 
