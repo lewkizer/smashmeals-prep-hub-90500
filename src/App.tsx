@@ -198,7 +198,6 @@ const App = () => (
           <Route path="/charleston" element={<Charleston />} />
           <Route path="/columbia" element={<Columbia />} />
           <Route path="/thanksgiving" element={<Thanksgiving />} />
-          <Route path="/christmas" element={<Thanksgiving />} />
           <Route path="/glp1" element={<GLP1 />} />
           <Route path="/vs-clean-eatz" element={<ComparisonPage />} />
           <Route path="/comparison" element={<ComparisonPage />} />

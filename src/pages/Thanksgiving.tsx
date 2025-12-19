@@ -30,13 +30,13 @@ const Thanksgiving = () => {
     { 
       name: "Green Bean Casserole", 
       category: "Sides",
-      description: "Classic green beans baked with creamy mushroom sauce and crispy fried onions. A traditional Christmas favorite ready to heat and serve.",
+      description: "Classic green beans baked with creamy mushroom sauce and crispy fried onions. A traditional holiday favorite ready to heat and serve.",
       image: greenBeanCasserole
     },
     { 
       name: "Smoked Bourbon Honey Ham", 
       category: "Mains",
-      description: "Slow-smoked ham glazed with a sweet bourbon honey sauce. Fully cooked and ready to slice, perfect as your Christmas main course or alongside turkey.",
+      description: "Slow-smoked ham glazed with a sweet bourbon honey sauce. Fully cooked and ready to slice, perfect as your holiday main course or alongside turkey.",
       image: bourbonHam
     },
     { 
@@ -84,7 +84,7 @@ const Thanksgiving = () => {
     { 
       name: "Pumpkin Pie (gluten free/dairy free)", 
       category: "Desserts",
-      description: "Classic pumpkin pie with warm spices in a gluten-free and dairy-free crust. The perfect end to your Christmas feast.",
+      description: "Classic pumpkin pie with warm spices in a gluten-free and dairy-free crust. The perfect end to your holiday feast.",
       image: pumpkinPie
     },
     { 
@@ -96,11 +96,11 @@ const Thanksgiving = () => {
     { 
       name: "Bacon Deviled Eggs (12 Halves)", 
       category: "Appetizers",
-      description: "Creamy deviled eggs topped with crispy bacon bits. The perfect appetizer to start your Christmas meal. 12 halves per order.",
+      description: "Creamy deviled eggs topped with crispy bacon bits. The perfect appetizer to start your holiday meal. 12 halves per order.",
       image: deviledEggs
     },
     { 
-      name: "Christmas Smash Charcuterie Special", 
+      name: "Smash Charcuterie Special", 
       category: "Appetizers",
       description: "Delight your family and friends with a charcuterie appetizer box to snack on while waiting for the main meal. Each box includes a trio of cured meats, four artisanal cheeses along with dried fruits, mixed nuts, olives, pickles, and sweet treats. Gluten free crackers and pretzels packaged separately. The 10x10 bakery box is beautifully arranged and ready to serve straight from the fridge to the table. Serves 6 people as an appetizer. For a larger board customized to your event reach out directly to info@tasteandseecharcuterie.com.",
       image: charcuterie
@@ -145,14 +145,14 @@ const Thanksgiving = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
-        <title>Christmas Menu | SmashMeals - Order Your Holiday Feast</title>
+        <title>Holiday Menu | SmashMeals - Order Your Holiday Feast</title>
         <meta 
           name="description" 
-          content="Pre-order your Christmas feast from SmashMeals. Featuring smoked turkey, bourbon honey ham, and all your favorite holiday sides and desserts." 
+          content="Pre-order your holiday feast from SmashMeals. Featuring smoked turkey, bourbon honey ham, and all your favorite holiday sides and desserts." 
         />
         <meta 
           name="keywords" 
-          content="christmas meal prep, holiday catering, smoked turkey, christmas sides, gluten free christmas" 
+          content="holiday meal prep, holiday catering, smoked turkey, thanksgiving sides, gluten free holiday" 
         />
         <link rel="canonical" href="https://smashmeals.com/thanksgiving" />
       </Helmet>
@@ -161,18 +161,18 @@ const Thanksgiving = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 bg-gradient-to-br from-red-600/20 via-green-600/10 to-red-600/20">
+        <section className="relative py-20 px-4 bg-gradient-to-br from-primary/20 via-accent/10 to-primary/20">
           <div className="container mx-auto max-w-6xl text-center">
-            <div className="mb-6 text-6xl">🎄</div>
+            <div className="mb-6 text-6xl">🍂</div>
             <h1 className="font-playfair text-5xl md:text-7xl font-bold mb-6 text-foreground">
-              Christmas Menu
+              Holiday Menu
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-inter">
-              Let us handle the cooking this Christmas. Pre-order your holiday feast today!
+              Let us handle the cooking this holiday season. Pre-order your feast today!
             </p>
             <Button 
               size="lg" 
-              className="font-semibold text-lg px-8 bg-gradient-to-r from-red-600 to-green-700 hover:from-red-700 hover:to-green-800 text-white border-0"
+              className="font-semibold text-lg px-8"
               onClick={handleOrderClick}
               asChild
             >
@@ -181,7 +181,7 @@ const Thanksgiving = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                Order Now 🎁
+                Order Now 🍽️
               </a>
             </Button>
           </div>
@@ -242,19 +242,19 @@ const Thanksgiving = () => {
 
             {/* Order CTA */}
             <div className="text-center mt-16">
-              <Card className="bg-gradient-to-br from-red-600/10 to-green-600/10 border-2 border-red-600/30">
+              <Card className="bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30">
                 <CardContent className="p-12">
-                  <div className="mb-4 text-5xl">🎅🎄</div>
+                  <div className="mb-4 text-5xl">🍂🍁</div>
                   <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4 text-foreground">
                     Ready to Order?
                   </h2>
                   <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                    Don't stress about cooking this Christmas. Let SmashMeals prepare a delicious, 
+                    Don't stress about cooking this holiday season. Let SmashMeals prepare a delicious, 
                     wholesome feast for you and your family.
                   </p>
                   <Button 
                     size="lg" 
-                    className="font-semibold text-lg px-8 bg-gradient-to-r from-red-600 to-green-700 hover:from-red-700 hover:to-green-800 text-white border-0"
+                    className="font-semibold text-lg px-8"
                     onClick={handleOrderClick}
                     asChild
                   >
@@ -263,7 +263,7 @@ const Thanksgiving = () => {
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
-                      Order Your Christmas Feast 🎁
+                      Order Your Holiday Feast 🍽️
                     </a>
                   </Button>
                 </CardContent>

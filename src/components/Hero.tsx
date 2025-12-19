@@ -52,22 +52,13 @@ const Hero = () => {
             Order by Thursday at 11:59 PM → Pick up Sunday → Enjoy more family time.
           </p>
           
-          {/* Promo Banners */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-on-scroll animate-delay-200">
-            <div className="flex-1 bg-accent/90 backdrop-blur-sm border-2 border-white/20 rounded-lg px-6 py-4 shadow-elevated hover:scale-105 transition-transform duration-300">
+          {/* Promo Banner */}
+          <div className="mb-8 animate-on-scroll animate-delay-200">
+            <div className="bg-accent/90 backdrop-blur-sm border-2 border-white/20 rounded-lg px-6 py-4 shadow-elevated hover:scale-105 transition-transform duration-300 max-w-xl">
               <p className="text-white font-inter text-lg">
                 <span className="font-bold">New Customer?</span> Use code <span className="font-bold text-white bg-white/20 px-3 py-1 rounded">WELCOME</span> for 10% off your first order!
               </p>
             </div>
-            <a href="https://smashmeals.bottle.com/b/9814348" target="_blank" rel="noopener noreferrer" onClick={() => {
-              if ((window as any).fbq) (window as any).fbq('track', 'InitiateCheckout');
-            }}>
-              <div className="bg-gradient-to-r from-red-600 to-green-700 backdrop-blur-sm border-2 border-red-300 rounded-lg px-6 py-4 shadow-elevated hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <p className="text-white font-inter text-lg font-bold text-center whitespace-nowrap">
-                  🎄 Special Christmas Menu
-                </p>
-              </div>
-            </a>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-on-scroll animate-delay-300">
