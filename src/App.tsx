@@ -147,6 +147,7 @@ import KetoMeals from "./pages/KetoMeals";
 import HighProtein from "./pages/HighProtein";
 import PaleoMeals from "./pages/PaleoMeals";
 import LowCarb from "./pages/LowCarb";
+import GiftCards from "./pages/GiftCards";
 
 const queryClient = new QueryClient();
 
@@ -297,6 +298,7 @@ const App = () => (
           <Route path="/macro-calculator" element={<MacroCalculator />} />
           <Route path="/meal-quiz" element={<MealQuiz />} />
           <Route path="/order" element={<Order />} />
+          <Route path="/gift-cards" element={<GiftCards />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
