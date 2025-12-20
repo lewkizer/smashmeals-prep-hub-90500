@@ -69,6 +69,11 @@ const Hero = () => {
                 View This Week's Menu
               </Button>
             </a>
+            <a href="https://smashmeals.bottle.com/b/10429588" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6 h-auto bg-accent/80 backdrop-blur-sm border-2 border-white text-white hover:bg-accent hover:scale-105 w-full sm:w-auto font-inter transition-all duration-300">
+                🎁 Buy Gift Cards
+              </Button>
+            </a>
             <a href="/how-it-works">
               <Button variant="outline" size="lg" className="text-lg px-8 py-6 h-auto bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-foreground w-full sm:w-auto font-inter hover:scale-105 transition-all duration-300">
                 How It Works
