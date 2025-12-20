@@ -65,6 +65,7 @@ const Header = () => {
   const mobileNavLinks = [
     { name: "Home", href: "/" },
     { name: "Menu", href: "https://smashmeals.bottle.com/b/9814360" },
+    { name: "🎁 Gift Cards", href: "/gift-cards" },
     { name: "Freezer Meals", href: "/freezer-meals" },
     { name: "Bariatric Line", href: "/bariatric-line" },
     { name: "GLP-1", href: "/glp1" },
@@ -125,6 +126,9 @@ const Header = () => {
                 More <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
+                <DropdownMenuItem asChild>
+                  <Link to="/gift-cards" className="cursor-pointer">🎁 Gift Cards</Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link to="/faq" className="cursor-pointer">FAQ</Link>
                 </DropdownMenuItem>
