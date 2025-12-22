@@ -126,38 +126,38 @@ const Testimonials = () => {
           {JSON.stringify(organizationSchema)}
         </script>
       </Helmet>
-      <section id="testimonials" className="py-20 bg-gradient-to-b from-secondary to-background">
+      <section id="testimonials" className="py-12 md:py-20 bg-gradient-to-b from-secondary to-background">
         <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <div className="flex justify-center items-center gap-2 mb-4">
+          <div className="text-center mb-10 md:mb-16">
+            <div className="flex justify-center items-center gap-1 md:gap-2 mb-4">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="w-8 h-8 fill-yellow-400 text-yellow-400" />
+                <Star key={star} className="w-6 h-6 md:w-8 md:h-8 fill-yellow-400 text-yellow-400" />
               ))}
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold font-playfair mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-3 md:mb-4">
               What Our Customers Say
             </h2>
-            <p className="text-xl font-inter text-muted-foreground mb-6">
+            <p className="text-lg md:text-xl font-inter text-muted-foreground mb-4 md:mb-6">
               Join over 10,000 satisfied customers in the Tri-Cities
             </p>
-            <div className="inline-flex items-center gap-3 bg-white/80 dark:bg-card/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-card">
-              <div className="flex gap-1">
+            <div className="inline-flex items-center gap-2 md:gap-3 bg-white/80 dark:bg-card/80 backdrop-blur-sm px-4 md:px-6 py-2 md:py-3 rounded-full shadow-card">
+              <div className="flex gap-0.5 md:gap-1">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  <Star key={star} className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <span className="text-lg font-bold font-inter">5.0 on Google</span>
+              <span className="text-base md:text-lg font-bold font-inter">5.0 on Google</span>
             </div>
           </div>
 
           {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-12">
             {testimonials.map((testimonial, index) => (
               <Card 
                 key={index} 
-                className="p-8 border-0 bg-white/80 dark:bg-card/80 backdrop-blur-sm shadow-card hover:shadow-elevated transition-all hover:scale-105 relative"
+                className="p-5 md:p-8 border-0 bg-white/80 dark:bg-card/80 backdrop-blur-sm shadow-card hover:shadow-elevated transition-all hover:scale-105 relative"
               >
                 <Quote className="w-10 h-10 text-primary/20 absolute top-6 right-6" />
                 

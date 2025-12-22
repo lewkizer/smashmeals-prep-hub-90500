@@ -27,11 +27,12 @@ const StickyOrderBanner = () => {
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="bg-primary text-primary-foreground py-3 px-4 shadow-elevated">
-        <div className="container mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-4 flex-1">
-            <span className="font-semibold text-sm md:text-base">
-              ⏰ Order by Thursday 11:59 PM for Sunday pickup
+      <div className="bg-primary text-primary-foreground py-2 md:py-3 px-3 md:px-4 shadow-elevated">
+        <div className="container mx-auto flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 md:gap-4 flex-1 min-w-0">
+            <span className="font-semibold text-xs md:text-base truncate">
+              <span className="hidden sm:inline">⏰ Order by Thursday 11:59 PM for Sunday pickup</span>
+              <span className="sm:hidden">⏰ Order by Thu 11:59 PM</span>
             </span>
             <a
               href="https://smashmeals.bottle.com/b/9814360"
@@ -40,17 +41,17 @@ const StickyOrderBanner = () => {
               onClick={() => {
                 if ((window as any).fbq) (window as any).fbq('track', 'InitiateCheckout');
               }}
-              className="bg-accent hover:bg-accent/90 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 whitespace-nowrap"
+              className="bg-accent hover:bg-accent/90 text-white px-3 md:px-6 py-1.5 md:py-2 rounded-full font-semibold text-xs md:text-base transition-all duration-300 hover:scale-105 whitespace-nowrap flex-shrink-0"
             >
               Order Now
             </a>
           </div>
           <button
             onClick={() => setIsDismissed(true)}
-            className="ml-4 hover:opacity-70 transition-opacity"
+            className="ml-1 md:ml-4 hover:opacity-70 transition-opacity flex-shrink-0"
             aria-label="Close banner"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4 md:w-5 md:h-5" />
           </button>
         </div>
       </div>

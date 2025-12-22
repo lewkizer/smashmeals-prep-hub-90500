@@ -79,15 +79,17 @@ const TrustBadges = ({ variant = 'horizontal', showAll = true }: TrustBadgesProp
 
   // Default horizontal variant
   return (
-    <div className="w-full bg-muted/50 border-y">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex flex-wrap justify-center md:justify-between items-center gap-4 md:gap-6">
+    <div className="w-full bg-muted/50 border-y overflow-x-auto">
+      <div className="container mx-auto px-4 py-3 md:py-4">
+        <div className="flex justify-start md:justify-between items-center gap-4 md:gap-6 min-w-max md:min-w-0">
           {displayBadges.map((badge, index) => (
-            <div key={index} className="flex items-center gap-2">
-              <div className={`${badge.color}`}>{badge.icon}</div>
+            <div key={index} className="flex items-center gap-2 flex-shrink-0">
+              <div className={`${badge.color} flex-shrink-0`}>
+                <span className="[&>svg]:w-5 [&>svg]:h-5 md:[&>svg]:w-6 md:[&>svg]:h-6">{badge.icon}</span>
+              </div>
               <div className="flex flex-col">
-                <span className="font-semibold text-sm leading-tight">{badge.label}</span>
-                <span className="text-xs text-muted-foreground leading-tight">{badge.sublabel}</span>
+                <span className="font-semibold text-xs md:text-sm leading-tight whitespace-nowrap">{badge.label}</span>
+                <span className="text-[10px] md:text-xs text-muted-foreground leading-tight whitespace-nowrap">{badge.sublabel}</span>
               </div>
             </div>
           ))}

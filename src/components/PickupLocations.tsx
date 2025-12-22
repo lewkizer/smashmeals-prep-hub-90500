@@ -54,16 +54,16 @@ const PickupLocations = () => {
   ];
 
   return (
-    <section id="locations" className="py-20 bg-background">
+    <section id="locations" className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-playfair mb-4">Pickup & Delivery</h2>
-          <p className="text-xl font-inter text-muted-foreground max-w-2xl mx-auto">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-3 md:mb-4">Pickup & Delivery</h2>
+          <p className="text-lg md:text-xl font-inter text-muted-foreground max-w-2xl mx-auto">
             Choose from convenient pickup locations across the Tri-Cities or get delivery right to your door.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto mb-6 md:mb-8">
           {locations.map((location, index) => (
             <Card key={index} className="p-6 hover:shadow-soft transition-all duration-300 border-0 bg-white/60 dark:bg-card/60 backdrop-blur-sm">
               <div className="flex items-start space-x-3 mb-4">
