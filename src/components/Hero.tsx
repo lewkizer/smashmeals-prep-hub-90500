@@ -23,11 +23,14 @@ const Hero = () => {
         <div className="max-w-3xl">
           {/* Gluten-Free Badge + Mobile Order Button */}
           <div className="flex flex-wrap items-center gap-3 mb-6 animate-fade-in">
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/90 to-accent/90 backdrop-blur-md border-2 border-white/30 rounded-full px-6 py-3 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]">
-              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-primary/90 to-accent/90 backdrop-blur-md border-2 border-white/30 rounded-full px-4 md:px-6 py-2 md:py-3 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]">
+              <svg className="w-5 h-5 md:w-6 md:h-6 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span className="text-white font-bold font-inter text-lg">100% GLUTEN-FREE MEAL PREP</span>
+              <span className="text-white font-bold font-inter text-sm md:text-lg">
+                <span className="hidden sm:inline">100% GLUTEN-FREE MEAL PREP</span>
+                <span className="sm:hidden">100% GLUTEN-FREE</span>
+              </span>
             </div>
             <a 
               href="https://smashmeals.bottle.com/b/9814360" 
@@ -42,40 +45,40 @@ const Hero = () => {
             </a>
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-playfair text-white mb-6 leading-tight animate-on-scroll">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair text-white mb-4 md:mb-6 leading-tight animate-on-scroll">
             More Than Meals—<span className="text-accent">Time Back</span> with Your Family
           </h1>
-          <p className="text-xl md:text-2xl font-inter text-white/90 mb-6 leading-relaxed animate-on-scroll animate-delay-100">
-            <span className="font-semibold">Trusted by Tri-Cities families for 8+ years.</span> We handle the cooking, so you can focus on what matters most. 100% gluten-free, chef-made, <span className="font-caveat text-2xl md:text-3xl text-accent">delivered fresh</span> every week.
+          <p className="text-lg md:text-2xl font-inter text-white/90 mb-4 md:mb-6 leading-relaxed animate-on-scroll animate-delay-100">
+            <span className="font-semibold">Trusted by Tri-Cities families for 8+ years.</span> We handle the cooking, so you can focus on what matters most. 100% gluten-free, chef-made, <span className="font-caveat text-xl md:text-3xl text-accent">delivered fresh</span> every week.
           </p>
-          <p className="text-lg font-inter text-white/80 mb-8 animate-on-scroll animate-delay-100">
+          <p className="text-base md:text-lg font-inter text-white/80 mb-6 md:mb-8 animate-on-scroll animate-delay-100">
             Order by Thursday at 11:59 PM → Pick up Sunday → Enjoy more family time.
           </p>
           
           {/* Promo Banner */}
-          <div className="mb-8 animate-on-scroll animate-delay-200">
-            <div className="bg-accent/90 backdrop-blur-sm border-2 border-white/20 rounded-lg px-6 py-4 shadow-elevated hover:scale-105 transition-transform duration-300 max-w-xl">
-              <p className="text-white font-inter text-lg">
-                <span className="font-bold">New Customer?</span> Use code <span className="font-bold text-white bg-white/20 px-3 py-1 rounded">WELCOME</span> for 10% off your first order!
+          <div className="mb-6 md:mb-8 animate-on-scroll animate-delay-200">
+            <div className="bg-accent/90 backdrop-blur-sm border-2 border-white/20 rounded-lg px-4 md:px-6 py-3 md:py-4 shadow-elevated hover:scale-105 transition-transform duration-300 max-w-xl">
+              <p className="text-white font-inter text-sm md:text-lg">
+                <span className="font-bold">New Customer?</span> Use code <span className="font-bold text-white bg-white/20 px-2 md:px-3 py-1 rounded">WELCOME</span> for 10% off your first order!
               </p>
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 animate-on-scroll animate-delay-300">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 animate-on-scroll animate-delay-300">
             <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer" onClick={() => {
               if ((window as any).fbq) (window as any).fbq('track', 'InitiateCheckout');
             }}>
-              <Button variant="hero" size="lg" className="text-lg px-8 py-6 h-auto w-full sm:w-auto font-inter hover:scale-105 hover:shadow-2xl transition-all duration-300">
+              <Button variant="hero" size="lg" className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 h-auto w-full sm:w-auto font-inter hover:scale-105 hover:shadow-2xl transition-all duration-300">
                 View This Week's Menu
               </Button>
             </a>
-            <a href="https://smashmeals.bottle.com/b/10429588" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6 h-auto bg-accent/80 backdrop-blur-sm border-2 border-white text-white hover:bg-accent hover:scale-105 w-full sm:w-auto font-inter transition-all duration-300">
+            <a href="https://smashmeals.bottle.com/b/10429588" target="_blank" rel="noopener noreferrer" className="hidden sm:block">
+              <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 h-auto bg-accent/80 backdrop-blur-sm border-2 border-white text-white hover:bg-accent hover:scale-105 w-full sm:w-auto font-inter transition-all duration-300">
                 🎁 Buy Gift Cards
               </Button>
             </a>
-            <a href="/how-it-works">
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6 h-auto bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-foreground w-full sm:w-auto font-inter hover:scale-105 transition-all duration-300">
+            <a href="/how-it-works" className="hidden sm:block">
+              <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 h-auto bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-foreground w-full sm:w-auto font-inter hover:scale-105 transition-all duration-300">
                 How It Works
               </Button>
             </a>

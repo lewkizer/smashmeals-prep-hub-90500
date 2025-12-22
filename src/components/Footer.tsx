@@ -4,20 +4,20 @@ import logo from "@/assets/smashmeals-logo.webp";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-12">
+    <footer className="bg-foreground text-background py-8 md:py-12 pb-24 md:pb-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8">
           {/* Brand */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center space-x-3 mb-4">
               <img 
                 src={logo} 
                 alt="SmashMeals Logo" 
-                className="h-12 w-12 object-contain"
+                className="h-10 w-10 md:h-12 md:w-12 object-contain"
               />
-              <span className="font-bold font-playfair text-xl">SmashMeals</span>
+              <span className="font-bold font-playfair text-lg md:text-xl">SmashMeals</span>
             </Link>
-            <p className="text-background/80 text-sm font-caveat text-lg">Eat Healthy. Live Healthy.</p>
+            <p className="text-background/80 font-caveat text-base md:text-lg">Eat Healthy. Live Healthy.</p>
           </div>
 
           {/* Quick Links */}

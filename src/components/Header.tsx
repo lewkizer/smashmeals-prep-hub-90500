@@ -166,8 +166,8 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="lg:hidden py-4 border-t border-border">
-            <div className="flex flex-col space-y-4">
+          <nav className="lg:hidden py-4 border-t border-border max-h-[70vh] overflow-y-auto">
+            <div className="flex flex-col space-y-3">
               {mobileNavLinks.map((link) => (
                 link.href.startsWith('http') ? (
                   <a
@@ -175,7 +175,7 @@ const Header = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                    className="text-base font-medium text-foreground hover:text-primary transition-colors py-1"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.name}
@@ -184,14 +184,14 @@ const Header = () => {
                   <Link
                     key={link.name}
                     to={link.href}
-                    className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                    className="text-base font-medium text-foreground hover:text-primary transition-colors py-1"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.name}
                   </Link>
                 )
               ))}
-              <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer" className="w-full" onClick={() => {
+              <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer" className="w-full pt-2" onClick={() => {
                 if ((window as any).fbq) (window as any).fbq('track', 'InitiateCheckout');
               }}>
                 <Button variant="hero" className="w-full">

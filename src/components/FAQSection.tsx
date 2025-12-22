@@ -35,16 +35,16 @@ const FAQSection = ({ title = "Frequently Asked Questions", faqs, includeSchema 
           </script>
         </Helmet>
       )}
-      <section className="py-20 px-4">
+      <section className="py-12 md:py-20 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold font-playfair text-center mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold font-playfair text-center mb-8 md:mb-12">
             {title}
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {faqs.map((faq, index) => (
-              <Card key={index} className="p-6">
-                <h3 className="text-xl font-bold mb-3">{faq.question}</h3>
-                <p className="text-muted-foreground">{faq.answer}</p>
+              <Card key={index} className="p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">{faq.question}</h3>
+                <p className="text-sm md:text-base text-muted-foreground">{faq.answer}</p>
               </Card>
             ))}
           </div>
