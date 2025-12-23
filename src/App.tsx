@@ -147,6 +147,7 @@ import KetoMeals from "./pages/KetoMeals";
 import HighProtein from "./pages/HighProtein";
 import PaleoMeals from "./pages/PaleoMeals";
 import LowCarb from "./pages/LowCarb";
+import Install from "./pages/Install";
 import GiftCards from "./pages/GiftCards";
 
 const queryClient = new QueryClient();
@@ -299,8 +300,12 @@ const App = () => (
           <Route path="/meal-quiz" element={<MealQuiz />} />
           <Route path="/order" element={<Order />} />
           <Route path="/gift-cards" element={<GiftCards />} />
+          <Route path="/keto-meals" element={<KetoMeals />} />
+          <Route path="/high-protein" element={<HighProtein />} />
+          <Route path="/paleo-meals" element={<PaleoMeals />} />
+          <Route path="/low-carb" element={<LowCarb />} />
+          <Route path="/install" element={<Install />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
