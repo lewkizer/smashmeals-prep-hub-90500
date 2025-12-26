@@ -7,8 +7,28 @@ import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
+import FAQSection from "@/components/FAQSection";
 
 const Charleston = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Charleston, SC?",
+      answer: "Yes! We ship to Charleston via FedEx 2-day delivery. Free shipping on orders over $130. Meals arrive in insulated packaging."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated gluten-free kitchen with zero cross-contamination risk. Safe for celiac disease."
+    },
+    {
+      question: "How long do the meals last?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen—longer than most competitors."
+    },
+    {
+      question: "Do you deliver to Mount Pleasant and James Island?",
+      answer: "Yes! We ship to all Charleston area addresses including Mount Pleasant, James Island, Daniel Island, and West Ashley."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -79,6 +99,8 @@ const Charleston = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">

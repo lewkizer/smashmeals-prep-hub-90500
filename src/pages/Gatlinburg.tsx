@@ -6,8 +6,29 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const Gatlinburg = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Gatlinburg, TN?",
+      answer: "Yes! We ship to Gatlinburg via FedEx. Free shipping on orders over $130. Meals arrive in insulated packaging."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated gluten-free kitchen with zero cross-contamination risk. Safe for celiac disease."
+    },
+    {
+      question: "Do you deliver to the Smokies?",
+      answer: "Yes! We ship to Gatlinburg, Pigeon Forge, Sevierville, and surrounding Smoky Mountain communities."
+    },
+    {
+      question: "How long do the meals last?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen—perfect for vacation rentals."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -20,6 +41,7 @@ const Gatlinburg = () => {
       <CitySchema cityName="Gatlinburg" state="Tennessee" stateAbbr="TN" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Gatlinburg, TN" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4">
@@ -77,6 +99,8 @@ const Gatlinburg = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">

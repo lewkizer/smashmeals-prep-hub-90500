@@ -6,8 +6,29 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock, CheckCircle, Users, Award } from "lucide-react";
 import { Link } from "react-router-dom";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const BowlingGreen = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Bowling Green, KY?",
+      answer: "Yes! We ship to Bowling Green via FedEx 2-day delivery. Free shipping on orders over $130. Meals arrive Tuesday or Wednesday in insulated packaging."
+    },
+    {
+      question: "Are your meals safe for celiac disease?",
+      answer: "Absolutely. Every meal is prepared in our dedicated 100% gluten-free kitchen with zero cross-contamination risk."
+    },
+    {
+      question: "Can WKU students order?",
+      answer: "Yes! We deliver to WKU dorms and off-campus housing. Our high-protein meals are perfect for students and athletes."
+    },
+    {
+      question: "How long do the meals last?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen—longer than most competitors."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -20,6 +41,7 @@ const BowlingGreen = () => {
       <CitySchema cityName="Bowling Green" state="Kentucky" stateAbbr="KY" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Bowling Green, KY" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
@@ -144,6 +166,8 @@ const BowlingGreen = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="container mx-auto max-w-4xl text-center">
