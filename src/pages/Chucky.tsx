@@ -5,6 +5,7 @@ import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle, Dumbbell } from "lucide-react";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const Chucky = () => {
   return (
@@ -19,6 +20,7 @@ const Chucky = () => {
       <CitySchema cityName="Chucky" state="Tennessee" stateAbbr="TN" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Chucky, TN" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4">

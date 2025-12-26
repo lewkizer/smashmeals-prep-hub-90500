@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock, CheckCircle, Users, Award } from "lucide-react";
 import { Link } from "react-router-dom";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const Owensboro = () => {
   return (
@@ -20,6 +21,7 @@ const Owensboro = () => {
       <CitySchema cityName="Owensboro" state="Kentucky" stateAbbr="KY" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Owensboro, KY" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4 bg-gradient-to-br from-primary/5 via-background to-secondary/5">

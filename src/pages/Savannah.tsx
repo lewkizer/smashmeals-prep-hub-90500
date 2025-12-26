@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock, Shield, ChefHat, Leaf, Star, Heart, Sun } from "lucide-react";
 import { Link } from "react-router-dom";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const Savannah = () => {
   const faqs = [
@@ -47,6 +48,7 @@ const Savannah = () => {
       <CitySchema cityName="Savannah" state="Georgia" stateAbbr="GA" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Savannah, GA" />
 
       <main className="min-h-screen">
         {/* Hero Section */}

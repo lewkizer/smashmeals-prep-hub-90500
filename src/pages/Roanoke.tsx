@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, CheckCircle, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const Roanoke = () => {
   const faqItems = [
@@ -47,6 +48,7 @@ const Roanoke = () => {
       <CitySchema cityName="Roanoke" state="Virginia" stateAbbr="VA" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Roanoke, VA" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4">
