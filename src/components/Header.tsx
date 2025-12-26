@@ -68,12 +68,16 @@ const Header = () => {
     { name: "🎁 Gift Cards", href: "/gift-cards" },
     { name: "Freezer Meals", href: "/freezer-meals" },
     { name: "Bariatric Line", href: "/bariatric-line" },
-    { name: "GLP-1", href: "/glp1" },
     { name: "How It Works", href: "/how-it-works" },
     { name: "Catering", href: "/catering" },
+    { name: "Service Areas", href: "/service-areas" },
     { name: "About", href: "/about" },
     { name: "Blogs", href: "/blogs" },
     { name: "FAQ", href: "/faq" },
+    { name: "Athletes", href: "/athletes" },
+    { name: "GLP-1", href: "/glp1" },
+    { name: "Families", href: "/families" },
+    { name: "Seniors", href: "/elderly" },
     { name: "Partners", href: "/partners" },
     { name: "Contact", href: "/contact" },
   ];
@@ -123,6 +127,31 @@ const Header = () => {
             ))}
             <DropdownMenu>
               <DropdownMenuTrigger className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1">
+                For You <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link to="/athletes" className="cursor-pointer">Athletes</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/glp1" className="cursor-pointer">GLP-1 Users</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/families" className="cursor-pointer">Busy Families</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/elderly" className="cursor-pointer">Seniors</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/high-protein" className="cursor-pointer">High Protein</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/keto-meals" className="cursor-pointer">Keto</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1">
                 More <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -130,10 +159,10 @@ const Header = () => {
                   <Link to="/gift-cards" className="cursor-pointer">🎁 Gift Cards</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/faq" className="cursor-pointer">FAQ</Link>
+                  <Link to="/service-areas" className="cursor-pointer">Service Areas</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/glp1" className="cursor-pointer">GLP-1</Link>
+                  <Link to="/faq" className="cursor-pointer">FAQ</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link to="/partners" className="cursor-pointer">Partners</Link>
