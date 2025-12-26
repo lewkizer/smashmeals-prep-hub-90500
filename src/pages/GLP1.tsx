@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -17,6 +18,7 @@ const GLP1 = () => {
       </Helmet>
 
       <Header />
+      <PageBreadcrumb currentPage="GLP-1 Friendly" />
 
       <main className="container mx-auto px-4 pt-32 pb-8 max-w-7xl">
         {/* Hero Section */}
