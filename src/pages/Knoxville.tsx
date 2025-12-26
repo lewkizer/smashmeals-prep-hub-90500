@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import CitySchema from "@/components/CitySchema";
 import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
@@ -39,6 +40,10 @@ const Knoxville = () => {
       <CitySchema cityName="Knoxville" state="Tennessee" stateAbbr="TN" />
 
       <Header />
+      <PageBreadcrumb 
+        parentPage={{ label: "Service Areas", href: "/service-areas" }} 
+        currentPage="Knoxville, TN" 
+      />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4">
