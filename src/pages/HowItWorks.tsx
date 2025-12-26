@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BookOpen, DollarSign, ShoppingBag, MapPin, Clock, Calendar, Package, Truck, Snowflake, Star } from "lucide-react";
@@ -42,6 +43,7 @@ const HowItWorks = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      <PageBreadcrumb />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-secondary to-background">
