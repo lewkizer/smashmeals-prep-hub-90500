@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background py-8 md:py-12 pb-24 md:pb-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center space-x-3 mb-4">
@@ -28,9 +28,21 @@ const Footer = () => {
               <li><Link to="/freezer-meals" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Freezer Meals</Link></li>
               <li><Link to="/bariatric-line" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Bariatric Line</Link></li>
               <li><Link to="/catering" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Catering</Link></li>
+              <li><Link to="/gift-cards" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Gift Cards</Link></li>
+              <li><Link to="/how-it-works" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">How It Works</Link></li>
               <li><Link to="/blogs" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Blog</Link></li>
-              <li><Link to="/about" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">About</Link></li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="font-bold text-lg mb-4">Resources</h3>
+            <ul className="space-y-2">
+              <li><Link to="/about" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">About Us</Link></li>
               <li><Link to="/faq" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">FAQ</Link></li>
+              <li><Link to="/service-areas" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Service Areas</Link></li>
+              <li><Link to="/delivery-info" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Delivery Info</Link></li>
+              <li><Link to="/partners" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Partners</Link></li>
               <li><Link to="/contact" className="text-background/80 hover:text-background transition-all duration-300 hover:translate-x-1 inline-block text-sm">Contact</Link></li>
             </ul>
           </div>
