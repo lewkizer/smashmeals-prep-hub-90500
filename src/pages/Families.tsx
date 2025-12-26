@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -66,6 +67,7 @@ const Families = () => {
 
       <LocalBusinessSchema />
       <Header />
+      <PageBreadcrumb currentPage="For Families" />
 
       <main className="min-h-screen pt-24">
         {/* Hero */}
