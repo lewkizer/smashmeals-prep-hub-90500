@@ -2,12 +2,32 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const Chilhowie = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Chilhowie, VA?",
+      answer: "Yes! We ship to Chilhowie and Marion area for $25. Free shipping + 10% off on orders over $130."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated 100% gluten-free kitchen with zero cross-contamination risk."
+    },
+    {
+      question: "How long do the meals stay fresh?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen."
+    },
+    {
+      question: "What's the ordering deadline?",
+      answer: "Order by Thursday at 11:59 PM. We prepare your meals fresh on Friday for delivery early the following week."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -99,6 +119,8 @@ const Chilhowie = () => {
             </Card>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">
