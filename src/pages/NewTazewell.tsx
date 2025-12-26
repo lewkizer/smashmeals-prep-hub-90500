@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { MapPin, Truck, Clock, ChefHat, Leaf, Heart } from "lucide-react";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const NewTazewell = () => {
   return (
@@ -17,6 +18,7 @@ const NewTazewell = () => {
       <CitySchema cityName="New Tazewell" state="Tennessee" stateAbbr="TN" />
       
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="New Tazewell, TN" />
       
       <main className="flex-1">
         {/* Hero Section */}

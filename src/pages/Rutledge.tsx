@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Clock, ChefHat, Leaf, Heart, CheckCircle, Award, Package, Mountain } from "lucide-react";
 import { Link } from "react-router-dom";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const Rutledge = () => {
   const faqs = [
@@ -47,6 +48,7 @@ const Rutledge = () => {
       <CitySchema cityName="Rutledge" state="Tennessee" stateAbbr="TN" />
       
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Rutledge, TN" />
       
       <main className="flex-1">
         {/* Hero Section */}
