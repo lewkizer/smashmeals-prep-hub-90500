@@ -5,8 +5,29 @@ import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const FallBranch = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Fall Branch, TN?",
+      answer: "Yes! $12 home delivery to Fall Branch and surrounding Kingsport areas. Order by Thursday for Sunday-Monday delivery."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated gluten-free kitchen with zero cross-contamination risk. Safe for celiac disease."
+    },
+    {
+      question: "Can I pick up instead?",
+      answer: "Yes! FREE pickup available at our Johnson City location on Sunday and Monday from 5-7 PM."
+    },
+    {
+      question: "How long do the meals last?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -19,6 +40,7 @@ const FallBranch = () => {
       <CitySchema cityName="Fall Branch" state="Tennessee" stateAbbr="TN" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Fall Branch, TN" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4">
@@ -98,6 +120,8 @@ const FallBranch = () => {
             </Card>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">

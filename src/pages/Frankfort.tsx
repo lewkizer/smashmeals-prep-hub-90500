@@ -6,8 +6,29 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock, CheckCircle, Users, Award } from "lucide-react";
 import { Link } from "react-router-dom";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const Frankfort = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Frankfort, KY?",
+      answer: "Yes! We ship to Frankfort via FedEx. Free shipping on orders over $130. Meals arrive in insulated packaging."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated gluten-free kitchen with zero cross-contamination risk. Safe for celiac disease."
+    },
+    {
+      question: "Do you deliver to state offices?",
+      answer: "Yes! We ship to any Frankfort address including downtown and state government buildings."
+    },
+    {
+      question: "How long do the meals last?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen—longer than most competitors."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -20,6 +41,7 @@ const Frankfort = () => {
       <CitySchema cityName="Frankfort" state="Kentucky" stateAbbr="KY" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Frankfort, KY" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
@@ -144,6 +166,8 @@ const Frankfort = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="container mx-auto max-w-4xl text-center">

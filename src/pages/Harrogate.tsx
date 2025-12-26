@@ -4,8 +4,29 @@ import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { MapPin, Truck, Clock, ChefHat, Leaf, Heart } from "lucide-react";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const Harrogate = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Harrogate, TN?",
+      answer: "Yes! We deliver to Harrogate and Lincoln Memorial University. Order by Thursday for delivery the following week."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated gluten-free kitchen with zero cross-contamination risk. Safe for celiac disease."
+    },
+    {
+      question: "Do you deliver to LMU?",
+      answer: "Yes! LMU students and faculty can order SmashMeals for convenient, healthy meals delivered right to campus."
+    },
+    {
+      question: "How long do the meals last?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen."
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
@@ -17,6 +38,7 @@ const Harrogate = () => {
       <CitySchema cityName="Harrogate" state="Tennessee" stateAbbr="TN" />
       
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Harrogate, TN" />
       
       <main className="flex-1">
         {/* Hero Section */}
@@ -117,6 +139,8 @@ const Harrogate = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         {/* CTA Section */}
         <section className="py-16 bg-primary text-primary-foreground">

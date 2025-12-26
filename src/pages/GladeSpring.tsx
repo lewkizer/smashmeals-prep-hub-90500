@@ -5,8 +5,29 @@ import CitySchema from "@/components/CitySchema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const GladeSpring = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Glade Spring, VA?",
+      answer: "Yes! FREE shipping to Glade Spring on orders over $130. Meals arrive in insulated packaging via FedEx."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated gluten-free kitchen with zero cross-contamination risk. Safe for celiac disease."
+    },
+    {
+      question: "How do I order?",
+      answer: "Order online by Thursday 11:59 PM and your meals will be freshly prepared and shipped to arrive early the following week."
+    },
+    {
+      question: "How long do the meals last?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -19,6 +40,7 @@ const GladeSpring = () => {
       <CitySchema cityName="Glade Spring" state="Virginia" stateAbbr="VA" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Glade Spring, VA" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4">
@@ -89,6 +111,8 @@ const GladeSpring = () => {
             </Card>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">

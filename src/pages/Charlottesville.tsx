@@ -7,8 +7,28 @@ import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
+import FAQSection from "@/components/FAQSection";
 
 const Charlottesville = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Charlottesville?",
+      answer: "Yes! We ship to Charlottesville via FedEx 2-day delivery. Free shipping on orders over $130. Meals arrive Tuesday or Wednesday."
+    },
+    {
+      question: "Are your meals safe for celiac disease?",
+      answer: "Absolutely. Every meal is prepared in our dedicated 100% gluten-free kitchen with zero cross-contamination risk."
+    },
+    {
+      question: "Can UVA students order?",
+      answer: "Yes! We deliver to UVA dorms and off-campus housing. Our high-protein meals are perfect for students and athletes."
+    },
+    {
+      question: "How long do the meals last?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen—longer than most competitors."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -79,6 +99,8 @@ const Charlottesville = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">
