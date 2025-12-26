@@ -2,12 +2,32 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle, Dumbbell } from "lucide-react";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const Chucky = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Chucky, TN?",
+      answer: "Yes! We offer FREE home delivery to Chucky. You can also pick up at CrossFit Arcane on Sunday or Monday from 5-7 PM."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated 100% gluten-free kitchen with zero cross-contamination risk."
+    },
+    {
+      question: "How long do the meals stay fresh?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen."
+    },
+    {
+      question: "What's the ordering deadline?",
+      answer: "Order by Thursday at 11:59 PM. We prepare your meals fresh on Friday for delivery Sunday-Monday."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -121,6 +141,8 @@ const Chucky = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">

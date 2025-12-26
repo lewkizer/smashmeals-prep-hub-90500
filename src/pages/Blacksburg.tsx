@@ -2,12 +2,33 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock, CheckCircle, Users, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Blacksburg = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Blacksburg and Virginia Tech?",
+      answer: "Yes! We ship to Blacksburg, VA and Virginia Tech campus via FedEx 2-day delivery. Free shipping on orders over $130."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated 100% gluten-free kitchen with zero cross-contamination risk."
+    },
+    {
+      question: "Can I have meals delivered to my dorm?",
+      answer: "Yes! We deliver to on-campus dorms, off-campus apartments, and any Blacksburg address via FedEx."
+    },
+    {
+      question: "How long do the meals stay fresh?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -20,6 +41,7 @@ const Blacksburg = () => {
       <CitySchema cityName="Blacksburg" state="Virginia" stateAbbr="VA" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Blacksburg, VA" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
@@ -149,6 +171,8 @@ const Blacksburg = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="container mx-auto max-w-4xl text-center">

@@ -3,11 +3,31 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
 
 const Abingdon = () => {
+  const faqs = [
+    {
+      question: "Do you deliver to Abingdon, VA?",
+      answer: "Yes! We offer $12 home delivery to Abingdon and surrounding areas including Glade Spring and Meadowview. You can also pick up at our location on Sunday or Monday from 5-7 PM."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated 100% gluten-free kitchen with zero cross-contamination risk. Safe for celiac disease."
+    },
+    {
+      question: "How long do the meals stay fresh?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen—longer than most competitors."
+    },
+    {
+      question: "What's the ordering deadline for Abingdon delivery?",
+      answer: "Order by Thursday at 11:59 PM. We prepare your meals fresh on Friday for delivery Sunday-Monday."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -110,6 +130,8 @@ const Abingdon = () => {
             </Card>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">

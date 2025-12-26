@@ -2,12 +2,33 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Cleveland = () => {
+  const faqs = [
+    {
+      question: "Do you ship to Cleveland, TN?",
+      answer: "Yes! We ship to Cleveland and Bradley County via FedEx 2-day delivery. Free shipping on orders over $130."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated 100% gluten-free kitchen with zero cross-contamination risk."
+    },
+    {
+      question: "How long do the meals stay fresh?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen."
+    },
+    {
+      question: "When will my order arrive?",
+      answer: "Order by Thursday at 11:59 PM. Meals ship Monday and arrive Tuesday-Wednesday via FedEx."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -20,6 +41,7 @@ const Cleveland = () => {
       <CitySchema cityName="Cleveland" state="Tennessee" stateAbbr="TN" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Cleveland, TN" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4">
@@ -77,6 +99,8 @@ const Cleveland = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">

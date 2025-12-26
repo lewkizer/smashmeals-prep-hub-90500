@@ -1,13 +1,34 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Alcoa = () => {
+  const faqs = [
+    {
+      question: "Do you ship to Alcoa, TN?",
+      answer: "Yes! We ship to Alcoa and all Blount County addresses via FedEx 2-day delivery. Free shipping on orders over $130."
+    },
+    {
+      question: "Are your meals 100% gluten-free?",
+      answer: "Absolutely. Every meal is prepared in our dedicated 100% gluten-free kitchen with zero cross-contamination risk."
+    },
+    {
+      question: "How long do the meals stay fresh?",
+      answer: "Our meals stay fresh for 5-7 days refrigerated or up to 6 months frozen."
+    },
+    {
+      question: "When will my order arrive in Alcoa?",
+      answer: "Order by Thursday at 11:59 PM. Meals ship Monday and arrive Tuesday-Wednesday via FedEx."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -77,6 +98,8 @@ const Alcoa = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">
