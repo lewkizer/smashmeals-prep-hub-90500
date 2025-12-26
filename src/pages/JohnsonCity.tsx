@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import CitySchema from "@/components/CitySchema";
 import Footer from "@/components/Footer";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -38,6 +39,10 @@ const JohnsonCity = () => {
       </Helmet>
 
       <Header />
+      <PageBreadcrumb 
+        parentPage={{ label: "Service Areas", href: "/service-areas" }} 
+        currentPage="Johnson City, TN" 
+      />
 
       <main className="min-h-screen">
         {/* Hero Section */}
