@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import CitySchema from "@/components/CitySchema";
 import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
@@ -47,6 +48,7 @@ const Wytheville = () => {
       <CitySchema cityName="Wytheville" state="Virginia" stateAbbr="VA" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Wytheville" />
 
       <main className="min-h-screen">
         {/* Hero Section */}
