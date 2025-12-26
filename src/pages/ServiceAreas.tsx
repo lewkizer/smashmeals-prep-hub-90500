@@ -35,6 +35,9 @@ const ServiceAreas = () => {
         { name: "Cleveland", slug: "cleveland" },
         { name: "Cookeville", slug: "cookeville" },
         { name: "Crossville", slug: "crossville" },
+        { name: "Jefferson City", slug: "jefferson-city" },
+        { name: "White Pine", slug: "white-pine" },
+        { name: "Strawberry Plains", slug: "strawberry-plains" },
       ]
     },
     {
@@ -82,6 +85,7 @@ const ServiceAreas = () => {
         { name: "Glade Spring", slug: "glade-spring" },
         { name: "Chilhowie", slug: "chilhowie" },
         { name: "Marion", slug: "marion" },
+        { name: "Wytheville", slug: "wytheville" },
       ]
     },
     {
@@ -93,12 +97,18 @@ const ServiceAreas = () => {
         { name: "Raleigh-Durham, NC", slug: "raleigh-durham" },
         { name: "Triad, NC", slug: "triad-nc" },
         { name: "Boone-Hickory, NC", slug: "boone-hickory" },
+        { name: "Greensboro, NC", slug: "greensboro" },
+        { name: "Banner Elk, NC", slug: "banner-elk" },
+        { name: "Fayetteville, NC", slug: "fayetteville" },
         { name: "Greenville, SC", slug: "greenville" },
         { name: "Spartanburg, SC", slug: "spartanburg" },
         { name: "Charleston, SC", slug: "charleston" },
         { name: "Columbia, SC", slug: "columbia" },
+        { name: "Savannah, GA", slug: "savannah" },
         { name: "Chattanooga, TN", slug: "chattanooga" },
         { name: "Nashville, TN", slug: "nashville" },
+        { name: "Memphis, TN", slug: "memphis" },
+        { name: "Birmingham, AL", slug: "birmingham" },
         { name: "Atlanta, GA", slug: "atlanta" },
         { name: "Richmond, VA", slug: "richmond" },
         { name: "Roanoke, VA", slug: "roanoke" },
