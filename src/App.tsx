@@ -149,6 +149,16 @@ import PaleoMeals from "./pages/PaleoMeals";
 import LowCarb from "./pages/LowCarb";
 import Install from "./pages/Install";
 import GiftCards from "./pages/GiftCards";
+import Birmingham from "./pages/Birmingham";
+import Memphis from "./pages/Memphis";
+import Savannah from "./pages/Savannah";
+import Greensboro from "./pages/Greensboro";
+import Fayetteville from "./pages/Fayetteville";
+import JeffersonCity from "./pages/JeffersonCity";
+import WhitePine from "./pages/WhitePine";
+import StrawberryPlains from "./pages/StrawberryPlains";
+import Wytheville from "./pages/Wytheville";
+import BannerElk from "./pages/BannerElk";
 
 const queryClient = new QueryClient();
 
