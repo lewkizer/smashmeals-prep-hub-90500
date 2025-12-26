@@ -6,6 +6,7 @@ import rehypeRaw from 'rehype-raw';
 import DOMPurify from 'dompurify';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -210,6 +211,10 @@ const BlogPost = () => {
       
       <div className="min-h-screen flex flex-col">
         <Header />
+        <PageBreadcrumb 
+          items={[{ label: "Blog", href: "/blogs" }]} 
+          currentPage={post.title} 
+        />
         
         <main className="flex-1 pt-32 pb-20">
           <article className="container mx-auto px-4 max-w-5xl">

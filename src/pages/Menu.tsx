@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,7 +9,6 @@ import { Flame, Leaf, Drumstick, Apple, Package } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import AIProductCatalog from "@/components/AIProductCatalog";
-
 const Menu = () => {
   // Fetch products for AI catalog schema
   const { data: products } = useQuery({
@@ -78,6 +78,7 @@ const Menu = () => {
       )}
       
       <Header />
+      <PageBreadcrumb currentPage="Weekly Menu" />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-primary/10 via-background to-background relative overflow-hidden">

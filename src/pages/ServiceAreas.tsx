@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Navigation } from "lucide-react";
@@ -148,6 +149,7 @@ const ServiceAreas = () => {
       </Helmet>
 
       <Header />
+      <PageBreadcrumb />
 
       <main className="min-h-screen">
         {/* Hero Section */}

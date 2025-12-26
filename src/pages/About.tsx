@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Heart, Users, TrendingUp, Award, CheckCircle2 } from "lucide-react";
@@ -48,6 +49,7 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      <PageBreadcrumb currentPage="About Us" />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-primary/10 via-background to-background">
