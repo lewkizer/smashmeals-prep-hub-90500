@@ -315,7 +315,18 @@ const App = () => (
           <Route path="/paleo-meals" element={<PaleoMeals />} />
           <Route path="/low-carb" element={<LowCarb />} />
           <Route path="/install" element={<Install />} />
+          <Route path="/birmingham" element={<Birmingham />} />
+          <Route path="/memphis" element={<Memphis />} />
+          <Route path="/savannah" element={<Savannah />} />
+          <Route path="/greensboro" element={<Greensboro />} />
+          <Route path="/fayetteville" element={<Fayetteville />} />
+          <Route path="/jefferson-city" element={<JeffersonCity />} />
+          <Route path="/white-pine" element={<WhitePine />} />
+          <Route path="/strawberry-plains" element={<StrawberryPlains />} />
+          <Route path="/wytheville" element={<Wytheville />} />
+          <Route path="/banner-elk" element={<BannerElk />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
