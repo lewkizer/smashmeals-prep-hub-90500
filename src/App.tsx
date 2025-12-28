@@ -159,6 +159,7 @@ import WhitePine from "./pages/WhitePine";
 import StrawberryPlains from "./pages/StrawberryPlains";
 import Wytheville from "./pages/Wytheville";
 import BannerElk from "./pages/BannerElk";
+import CateringHub from "./pages/CateringHub";
 
 const queryClient = new QueryClient();
 
@@ -177,6 +178,7 @@ const App = () => (
           <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/catering" element={<Catering />} />
+          <Route path="/catering-services" element={<CateringHub />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/blogs" element={<Blogs />} />
