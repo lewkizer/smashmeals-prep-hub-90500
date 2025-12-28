@@ -2,12 +2,18 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const Marion = () => {
+  const faqs = [
+    { question: "Do you deliver to Marion, VA?", answer: "Yes! We ship to Marion and Chilhowie area with $25 shipping. 10% off orders over $130." },
+    { question: "Are meals gluten-free?", answer: "Yes. Every meal is prepared in our dedicated 100% gluten-free kitchen—safe for celiac disease." },
+    { question: "How long do meals last?", answer: "5-7 days refrigerated or up to 6 months frozen." }
+  ];
   return (
     <>
       <Helmet>
@@ -103,6 +109,8 @@ const Marion = () => {
             </Card>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">

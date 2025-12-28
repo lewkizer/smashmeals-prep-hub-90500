@@ -2,11 +2,18 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle, Dumbbell } from "lucide-react";
 
 const Mosheim = () => {
+  const faqs = [
+    { question: "Do you deliver to Mosheim, TN?", answer: "Yes! We offer FREE home delivery or pickup at Center of Strength and CrossFit Arcane." },
+    { question: "Are meals gluten-free?", answer: "Yes. Every meal is prepared in our dedicated 100% gluten-free kitchen." },
+    { question: "When can I pick up?", answer: "Sunday-Monday 5:00 PM - 7:00 PM at either location." }
+  ];
   return (
     <>
       <Helmet>
@@ -19,6 +26,7 @@ const Mosheim = () => {
       <CitySchema cityName="Mosheim" state="Tennessee" stateAbbr="TN" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Mosheim, TN" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4">
@@ -128,6 +136,8 @@ const Mosheim = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">

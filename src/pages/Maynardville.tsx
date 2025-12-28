@@ -2,10 +2,17 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { MapPin, Truck, Clock, ChefHat, Leaf, Heart } from "lucide-react";
 
 const Maynardville = () => {
+  const faqs = [
+    { question: "Do you deliver to Maynardville, TN?", answer: "Yes! We ship to Maynardville and Union County. Free shipping on orders over $130." },
+    { question: "Are meals gluten-free?", answer: "Yes. Every meal is prepared in our dedicated 100% gluten-free kitchen." },
+    { question: "How long do meals last?", answer: "5-7 days refrigerated or up to 6 months frozen." }
+  ];
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
@@ -17,6 +24,7 @@ const Maynardville = () => {
       <CitySchema cityName="Maynardville" state="Tennessee" stateAbbr="TN" />
       
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Maynardville, TN" />
       
       <main className="flex-1">
         {/* Hero Section */}
@@ -117,6 +125,8 @@ const Maynardville = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         {/* CTA Section */}
         <section className="py-16 bg-primary text-primary-foreground">

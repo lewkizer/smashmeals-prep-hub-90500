@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock } from "lucide-react";
@@ -9,6 +10,11 @@ import { Link } from "react-router-dom";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 
 const LaFollette = () => {
+  const faqs = [
+    { question: "Do you deliver to LaFollette, TN?", answer: "Yes! We ship to LaFollette and Campbell County via FedEx 2-day delivery. Free shipping on orders over $130." },
+    { question: "Are meals safe for celiac?", answer: "Absolutely. Our dedicated 100% gluten-free kitchen has zero cross-contamination risk." },
+    { question: "How long do meals last?", answer: "5-7 days refrigerated or up to 6 months frozen." }
+  ];
   return (
     <>
       <Helmet>
@@ -79,6 +85,8 @@ const LaFollette = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">

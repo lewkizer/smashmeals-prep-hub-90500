@@ -2,11 +2,18 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
 
 const MountCarmel = () => {
+  const faqs = [
+    { question: "Do you deliver to Mount Carmel, TN?", answer: "Yes! We offer $12 home delivery to Mount Carmel and Church Hill area." },
+    { question: "Are meals gluten-free?", answer: "Yes. Every meal is prepared in our dedicated 100% gluten-free kitchen." },
+    { question: "When do you deliver?", answer: "Sunday-Monday delivery. Order by Thursday 11:59 PM." }
+  ];
   return (
     <>
       <Helmet>
@@ -19,6 +26,7 @@ const MountCarmel = () => {
       <CitySchema cityName="Mount Carmel" state="Tennessee" stateAbbr="TN" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Mount Carmel, TN" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4">
@@ -90,6 +98,8 @@ const MountCarmel = () => {
             </Card>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">

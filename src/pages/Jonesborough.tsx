@@ -3,11 +3,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
 
 const Jonesborough = () => {
+  const faqs = [
+    { question: "Do you deliver to Jonesborough?", answer: "Yes! We offer $12 home delivery to Jonesborough and surrounding areas including Limestone and Telford." },
+    { question: "Are meals gluten-free?", answer: "Yes. Every meal is prepared in our dedicated 100% gluten-free kitchen—safe for celiac disease." },
+    { question: "When do you deliver?", answer: "Order by Thursday 11:59 PM for Sunday-Monday delivery to Jonesborough." }
+  ];
   return (
     <>
       <Helmet>
@@ -103,6 +109,8 @@ const Jonesborough = () => {
             </Card>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">
