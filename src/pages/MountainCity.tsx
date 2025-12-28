@@ -2,11 +2,18 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Truck, CheckCircle } from "lucide-react";
 
 const MountainCity = () => {
+  const faqs = [
+    { question: "Do you deliver to Mountain City, TN?", answer: "Yes! We ship to Mountain City and Trade area with $25 shipping. 10% off orders over $130." },
+    { question: "Are meals gluten-free?", answer: "Yes. Every meal is prepared in our dedicated 100% gluten-free kitchen." },
+    { question: "How long do meals last?", answer: "5-7 days refrigerated or up to 6 months frozen." }
+  ];
   return (
     <>
       <Helmet>
@@ -19,6 +26,7 @@ const MountainCity = () => {
       <CitySchema cityName="Mountain City" state="Tennessee" stateAbbr="TN" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Mountain City, TN" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4">
@@ -97,6 +105,8 @@ const MountainCity = () => {
             </Card>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">

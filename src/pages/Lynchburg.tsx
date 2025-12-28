@@ -2,12 +2,19 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock, CheckCircle, Users, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Lynchburg = () => {
+  const faqs = [
+    { question: "Do you deliver to Lynchburg, VA?", answer: "Yes! We ship to Lynchburg via FedEx 2-day delivery. Free shipping on orders over $130." },
+    { question: "Are meals safe for celiac?", answer: "Absolutely. Our dedicated 100% gluten-free kitchen eliminates cross-contamination risk entirely." },
+    { question: "How long do meals last?", answer: "5-7 days refrigerated or up to 6 months frozen." }
+  ];
   return (
     <>
       <Helmet>
@@ -20,6 +27,7 @@ const Lynchburg = () => {
       <CitySchema cityName="Lynchburg" state="Virginia" stateAbbr="VA" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Lynchburg, VA" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
@@ -144,6 +152,8 @@ const Lynchburg = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="container mx-auto max-w-4xl text-center">

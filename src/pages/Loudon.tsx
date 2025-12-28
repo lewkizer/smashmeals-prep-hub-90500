@@ -2,12 +2,19 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CitySchema from "@/components/CitySchema";
+import FAQSection from "@/components/FAQSection";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Truck, Package, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Loudon = () => {
+  const faqs = [
+    { question: "Do you deliver to Loudon, TN?", answer: "Yes! We ship to Loudon and Tellico Lake area via FedEx 2-day delivery. Free shipping on orders over $130." },
+    { question: "Are meals gluten-free?", answer: "Yes. Every meal is prepared in our dedicated 100% gluten-free kitchen." },
+    { question: "How long do meals last?", answer: "5-7 days refrigerated or up to 6 months frozen." }
+  ];
   return (
     <>
       <Helmet>
@@ -20,6 +27,7 @@ const Loudon = () => {
       <CitySchema cityName="Loudon" state="Tennessee" stateAbbr="TN" />
 
       <Header />
+      <PageBreadcrumb parentPage={{ label: "Service Areas", href: "/service-areas" }} currentPage="Loudon, TN" />
 
       <main className="min-h-screen">
         <section className="relative py-20 px-4">
@@ -77,6 +85,8 @@ const Loudon = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection faqs={faqs} />
 
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">
