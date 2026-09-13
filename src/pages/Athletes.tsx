@@ -61,7 +61,7 @@ const Athletes = () => {
       <Helmet>
         <title>Gluten-Free Meal Prep for Athletes | 30-45g Protein | SmashMeals</title>
         <meta name="description" content="30-45g protein per meal, macro-counted, and 100% gluten-free. Perfect for bodybuilding, CrossFit, powerlifting, and endurance sports." />
-        <meta name="keywords" content="athlete meal prep, high protein gluten free, bodybuilding meal prep, CrossFit meals, powerlifting nutrition, athlete meal delivery, ETSU meal prep" />
+        <meta name="keywords" content="athlete meal prep, high protein gluten free, bodybuilding meal prep, CrossFit meals, powerlifting nutrition, athlete meal delivery" />
         <link rel="canonical" href="https://smashmeals.com/athletes" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>

@@ -137,7 +137,7 @@ const JohnsonCity = () => {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    ETSU Campus Area
+                    University and Campus Area
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-primary" />

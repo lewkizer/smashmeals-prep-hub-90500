@@ -221,7 +221,7 @@ const TriCitiesMealPrep = () => {
             <h4 className="text-xl font-semibold mt-6 mb-3">Free Local Delivery Areas (Orders $50+)</h4>
             <ul>
               <li><strong>Kingsport, TN</strong> - Our home base at 1917 Meadowview Pkwy Suite 100</li>
-              <li><strong>Johnson City, TN</strong> - Serving downtown, ETSU campus, and surrounding neighborhoods</li>
+              <li><strong>Johnson City, TN</strong> - Serving downtown, local campuses, and surrounding neighborhoods</li>
               <li><strong>Bristol, TN/VA</strong> - Both Tennessee and Virginia sides</li>
               <li><strong>Gray, TN</strong> - Boones Creek and surrounding areas</li>
               <li><strong>Colonial Heights, TN</strong></li>

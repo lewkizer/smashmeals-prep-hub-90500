@@ -345,7 +345,7 @@ export default function BlogPostManager() {
               id="tags"
               value={tags}
               onChange={(e) => setTags(e.target.value)}
-              placeholder="ETSU, Athletes, Meal Prep"
+              placeholder="Athletes, Meal Prep, Performance Nutrition"
               className="h-12 text-base"
             />
           </div>
