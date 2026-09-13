@@ -27,7 +27,7 @@ const TriCitiesMealPrep = () => {
     },
     {
       title: "Athletes & Bodybuilders",
-      description: "Trusted by ETSU Division I athletics. 30-45g protein per meal, macro-counted.",
+      description: "Built for athletes and active lifestyles. 30-45g protein per meal, macro-counted.",
       path: "/athletes"
     },
     {
@@ -93,7 +93,7 @@ const TriCitiesMealPrep = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Gluten-Free Meal Prep in Tri-Cities Tennessee: The Complete Guide",
-    "description": "Discover why SmashMeals is the #1 gluten-free meal prep service in Kingsport, Johnson City, and Bristol. 100% gluten-free kitchen, local delivery, and trusted by ETSU athletes.",
+    "description": "Discover why SmashMeals is the #1 gluten-free meal prep service in Kingsport, Johnson City, and Bristol. 100% gluten-free kitchen, local delivery, and macro-counted meals.",
     "author": {
       "@type": "Organization",
       "name": "SmashMeals"
@@ -114,7 +114,7 @@ const TriCitiesMealPrep = () => {
     <>
       <Helmet>
         <title>Gluten-Free Meal Prep Tri-Cities TN | Kingsport, Johnson City, Bristol | SmashMeals</title>
-        <meta name="description" content="The #1 gluten-free meal prep service in Tri-Cities Tennessee. 100% gluten-free kitchen serving Kingsport, Johnson City, Bristol. Free local delivery. Trusted by ETSU athletes for 8+ years." />
+        <meta name="description" content="The #1 gluten-free meal prep service in Tri-Cities Tennessee. 100% gluten-free kitchen serving Kingsport, Johnson City, Bristol. Free local delivery and macro-counted meals." />
         <meta name="keywords" content="gluten free meal prep tri cities, meal prep Kingsport TN, meal prep Johnson City, meal prep Bristol TN, gluten free Tri-Cities, healthy meal delivery Kingsport, macro counted meals Johnson City, high protein meal prep Bristol" />
         <link rel="canonical" href="https://smashmeals.com/tri-cities-meal-prep" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -137,7 +137,7 @@ const TriCitiesMealPrep = () => {
                 Gluten-Free Meal Prep<br />in Tri-Cities Tennessee
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                The #1 gluten-free meal prep service in Kingsport, Johnson City, and Bristol. Trusted by ETSU athletes, busy families, and health-conscious residents for over 8 years.
+                The #1 gluten-free meal prep service in Kingsport, Johnson City, and Bristol. Trusted by athletes, busy families, and health-conscious residents for over 8 years.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
@@ -170,8 +170,8 @@ const TriCitiesMealPrep = () => {
 
               <Card className="p-6 text-center">
                 <Award className="w-12 h-12 text-primary mb-4 mx-auto" />
-                <h3 className="text-xl font-bold mb-2">Trusted by ETSU Athletes</h3>
-                <p className="text-muted-foreground">Official meal prep partner for ETSU football and basketball teams.</p>
+                <h3 className="text-xl font-bold mb-2">Built for Active Lifestyles</h3>
+                <p className="text-muted-foreground">High-protein, macro-counted meals for local athletes.</p>
               </Card>
 
               <Card className="p-6 text-center">
@@ -245,12 +245,12 @@ const TriCitiesMealPrep = () => {
               <li><strong>Variety:</strong> 10+ rotating menu items each week so you never get bored</li>
             </ul>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Trusted by ETSU Athletes</h3>
+            <h3 className="text-2xl font-bold mt-8 mb-4">Nutrition for Local Athletes</h3>
             <p>
-              SmashMeals is the official meal prep partner for <strong>East Tennessee State University (ETSU) athletics</strong>, serving the football team and both men's and women's basketball teams. When elite athletes trust us to fuel their performance, you know we're doing something right.
+              SmashMeals serves athletes and active customers throughout the Tri-Cities with high-protein, gluten-free meals designed to make consistent nutrition easier.
             </p>
             <p>
-              Our meals help ETSU athletes:
+              Our meals help athletes:
             </p>
             <ul>
               <li>Hit their macronutrient targets for peak performance</li>
@@ -367,8 +367,8 @@ const TriCitiesMealPrep = () => {
               <p className="font-semibold mt-2">— Sarah M., Johnson City</p>
             </div>
             <div className="bg-muted p-6 rounded-lg my-8">
-              <p className="italic">"As an ETSU athlete, nutrition is critical. SmashMeals makes it easy to hit my macros without spending hours in the kitchen. Plus, knowing it's made right here in Kingsport makes me proud to support local."</p>
-              <p className="font-semibold mt-2">— Marcus J., ETSU Football</p>
+              <p className="italic">"Nutrition is critical. SmashMeals makes it easy to hit my macros without spending hours in the kitchen. Plus, knowing it's made right here in Kingsport makes me proud to support local."</p>
+              <p className="font-semibold mt-2">— Marcus J., Local Athlete</p>
             </div>
 
             <h3 className="text-2xl font-bold mt-8 mb-4">Ready to Try SmashMeals?</h3>

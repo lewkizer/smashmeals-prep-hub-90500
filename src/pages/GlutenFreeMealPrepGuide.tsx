@@ -406,7 +406,7 @@ export default function GlutenFreeMealPrepGuide() {
             <h2 className="text-3xl font-bold mb-6">Gluten-Free Meal Prep for Athletes</h2>
             
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Athletes with celiac disease or gluten sensitivity face unique challenges: fueling intense training while avoiding gluten. SmashMeals has become the trusted choice for ETSU athletes, CrossFit competitors, and fitness enthusiasts throughout the region.
+              Athletes with celiac disease or gluten sensitivity face unique challenges: fueling intense training while avoiding gluten. SmashMeals has become a trusted choice for CrossFit competitors and fitness enthusiasts throughout the region.
             </p>
 
             <h3 className="text-2xl font-semibold mb-4">Why Athletes Choose SmashMeals:</h3>
@@ -442,9 +442,9 @@ export default function GlutenFreeMealPrepGuide() {
 
             <Card className="bg-primary/5 border-primary/20">
               <CardContent className="p-6">
-                <h3 className="font-bold text-xl mb-3">Success Story: ETSU Athletes</h3>
+                <h3 className="font-bold text-xl mb-3">Success Story: A Local Athlete</h3>
                 <p className="text-muted-foreground text-sm">
-                  "As a celiac athlete, finding safe fuel was nearly impossible until SmashMeals. Now I can focus on training instead of worrying about cross-contamination. The macro tracking helps me hit my performance goals every time." - ETSU Track & Field athlete
+                  "As a celiac athlete, finding safe fuel was nearly impossible until SmashMeals. Now I can focus on training instead of worrying about cross-contamination. The macro tracking helps me hit my performance goals every time." - Local athlete
                 </p>
               </CardContent>
             </Card>

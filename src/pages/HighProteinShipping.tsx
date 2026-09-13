@@ -27,7 +27,7 @@ const HighProteinShipping = () => {
     },
     {
       title: "Athletes & Bodybuilders",
-      description: "Trusted by ETSU athletes. Hit your protein goals with 30-45g per meal.",
+      description: "Built for active lifestyles. Hit your protein goals with 30-45g per meal.",
       path: "/athletes"
     },
     {
@@ -310,7 +310,7 @@ const HighProteinShipping = () => {
               Hitting your protein target of 150-200g per day is challenging when you're gluten-free. Our meals provide 30-45g per serving, making it easy to stay on track without hours of meal prep.
             </p>
             <p>
-              SmashMeals is trusted by <strong>ETSU Division I athletes</strong>—if it works for them, it'll work for you.
+              SmashMeals is built for <strong>athletes and active lifestyles</strong>, with consistent portions and clearly labeled macros.
             </p>
 
             <h4 className="text-xl font-semibold mt-6 mb-3">Weight Loss and Fat Loss Goals</h4>

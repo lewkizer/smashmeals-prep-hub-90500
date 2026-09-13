@@ -49,7 +49,7 @@ VALUES (
 <p>We don''t make "diet food." We make delicious food that happens to be nutritious. Our Arroz con Pollo has the perfect spice blend. Our Baked Salmon is restaurant-quality. Our BBQ Chicken Mac & Cheese? People can''t believe it''s gluten-free.</p>
 
 <h2>8+ Years of Serving the Tri-Cities</h2>
-<p>We''ve been part of this community for over 8 years, and we''ve built our reputation one satisfied customer at a time. ETSU athletes trust us to fuel their performance. Busy families rely on us for stress-free dinners. Health-conscious individuals count on us for meals that support their goals.</p>
+<p>We''ve been part of this community for over 8 years, and we''ve built our reputation one satisfied customer at a time. Local athletes trust us to fuel their performance. Busy families rely on us for stress-free dinners. Health-conscious individuals count on us for meals that support their goals.</p>
 
 <h2>More Than Just Convenience</h2>
 <p>Sure, our customers love the time they save. No shopping, no prep, no cleanup—just heat and eat. But what they really love is how our meals make them feel. Energized. Satisfied. Confident in their food choices.</p>

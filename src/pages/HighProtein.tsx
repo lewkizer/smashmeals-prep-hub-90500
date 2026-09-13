@@ -118,7 +118,7 @@ const HighProtein = () => {
                 30-45g Protein Per Meal<br />Zero Prep Required
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Fuel muscle growth, support weight loss, and hit your protein goals with chef-prepared, gluten-free meals. Trusted by ETSU Division I athletes.
+                Fuel muscle growth, support weight loss, and hit your protein goals with chef-prepared, gluten-free meals built for active lifestyles.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
@@ -171,7 +171,7 @@ const HighProtein = () => {
               <Card className="p-6 text-center">
                 <Dumbbell className="w-12 h-12 text-primary mb-4 mx-auto" />
                 <h3 className="text-xl font-bold mb-2">Athlete Approved</h3>
-                <p className="text-muted-foreground">Official meal prep partner for ETSU Division I athletics.</p>
+                <p className="text-muted-foreground">High-protein, macro-counted meals for active lifestyles.</p>
               </Card>
             </div>
           </div>
@@ -253,7 +253,7 @@ const HighProtein = () => {
 
             <h3 className="text-2xl font-bold mt-8 mb-4">Why Athletes Trust SmashMeals</h3>
             <p>
-              SmashMeals is the <strong>official meal prep partner for ETSU Division I athletics</strong>—including football, men's basketball, and women's basketball. When elite athletes and their coaches trust our high-protein, gluten-free meals for performance, you know you're getting quality nutrition.
+              SmashMeals prepares high-protein, gluten-free meals for athletes and active customers throughout the Tri-Cities. Consistent portions and clearly labeled macros make performance nutrition easier to manage.
             </p>
 
             <div className="bg-muted p-6 rounded-lg my-8">

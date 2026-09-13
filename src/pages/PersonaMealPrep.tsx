@@ -46,7 +46,7 @@ const PersonaMealPrep = () => {
         "name": "Do you have meals for athletes?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! We're the official meal prep partner for ETSU athletics. Our meals contain 30-45g protein, are macro-counted, and designed for peak performance and recovery."
+          "text": "Yes! Our meals contain 30-45g protein, are macro-counted, and are designed to support performance and recovery."
         }
       },
       {
@@ -109,7 +109,7 @@ const PersonaMealPrep = () => {
     <>
       <Helmet>
         <title>Gluten-Free Meal Prep for Athletes, Families, GLP-1 & Bariatric | SmashMeals</title>
-        <meta name="description" content="Tailored gluten-free meal prep for athletes (ETSU trusted), GLP-1 users, bariatric patients, busy families, and elderly customers. High-protein, macro-counted, delivered fresh." />
+        <meta name="description" content="Tailored gluten-free meal prep for athletes, GLP-1 users, bariatric patients, busy families, and elderly customers. High-protein, macro-counted, delivered fresh." />
         <meta name="keywords" content="gluten free meal prep athletes, GLP-1 meals, bariatric meal prep, family meal prep gluten free, elderly meal delivery, high protein meals athletes" />
         <link rel="canonical" href="https://smashmeals.com/persona-meal-prep" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -155,7 +155,7 @@ const PersonaMealPrep = () => {
               <Card className="p-6">
                 <Dumbbell className="w-12 h-12 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-2">Athletes & Bodybuilders</h3>
-                <p className="text-muted-foreground mb-4">30-45g protein per meal. Macro-counted. Trusted by ETSU Division I athletes.</p>
+                <p className="text-muted-foreground mb-4">30-45g protein per meal. Macro-counted. Built for active lifestyles.</p>
                 <Link to="/athletes" className="text-primary hover:underline text-sm font-semibold">Learn More →</Link>
               </Card>
 
@@ -204,7 +204,7 @@ const PersonaMealPrep = () => {
             
             <h3 className="text-2xl font-bold mt-8 mb-4" id="athletes">SmashMeals for Athletes & Bodybuilders</h3>
             <p>
-              When you're training hard, nutrition isn't negotiable. SmashMeals is the <strong>official meal prep partner for ETSU Division I athletics</strong>, serving the football team and both men's and women's basketball teams.
+              When you're training hard, nutrition isn't negotiable. SmashMeals makes high-protein, macro-counted meals for athletes and active customers who want consistent nutrition without the prep work.
             </p>
             <p>
               <strong>Why athletes choose SmashMeals:</strong>

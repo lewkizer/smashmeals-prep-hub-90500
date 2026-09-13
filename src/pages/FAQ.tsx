@@ -140,7 +140,7 @@ const FAQ = () => {
         },
         {
           q: "Do you serve athletes and fitness centers?",
-          a: "Absolutely! We're trusted by ETSU athletes and partner with CrossFit Arcane and Center of Strength. All meals include detailed macro information (protein, carbs, fats, calories) perfect for tracking fitness goals.",
+          a: "Absolutely! We're trusted by local athletes and partner with CrossFit Arcane and Center of Strength. All meals include detailed macro information (protein, carbs, fats, calories) perfect for tracking fitness goals.",
         },
         {
           q: "Can I visit your kitchen?",

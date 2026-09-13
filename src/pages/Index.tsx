@@ -41,7 +41,7 @@ const Index = () => {
     },
     {
       question: "Are these meals good for athletes or GLP-1 users?",
-      answer: "Definitely! We're the official meal prep partner for ETSU Division I athletics. Our high-protein (30-45g), macro-counted meals are perfect for athletes, bodybuilders, GLP-1 users (Ozempic, Wegovy, Mounjaro), bariatric patients, and anyone focused on nutrition."
+      answer: "Definitely! Our high-protein (30-45g), macro-counted meals are designed for athletes, bodybuilders, GLP-1 users (Ozempic, Wegovy, Mounjaro), bariatric patients, and anyone focused on nutrition."
     },
     {
       question: "How long do the meals last?",

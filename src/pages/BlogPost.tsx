@@ -106,6 +106,12 @@ interface BlogPost {
   tags?: string[];
 }
 
+const impliesOfficialEtsuRelationship = (post: BlogPost) => {
+  const text = `${post.title} ${post.excerpt} ${post.content} ${post.slug}`.toLowerCase();
+  return (text.includes('etsu') || text.includes('east tennessee state')) &&
+    (text.includes('official') || text.includes('partner'));
+};
+
 const BlogPost = () => {
   const { slug } = useParams();
   const [post, setPost] = useState<BlogPost | null>(null);
@@ -123,7 +129,8 @@ const BlogPost = () => {
         setLoading(false);
         return;
       }
-      setPost(data || null);
+      const loadedPost = data as BlogPost | null;
+      setPost(loadedPost && !impliesOfficialEtsuRelationship(loadedPost) ? loadedPost : null);
       setLoading(false);
     };
     load();
@@ -144,6 +151,9 @@ const BlogPost = () => {
   if (!post) {
     return (
       <>
+        <Helmet>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
         <Header />
         <div className="min-h-screen flex items-center justify-center bg-background">
           <div className="text-center">

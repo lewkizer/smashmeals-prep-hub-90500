@@ -12,7 +12,7 @@ const TrustStrip = () => {
     },
     {
       icon: Users,
-      text: "Trusted by ETSU Athletes",
+      text: "Built for Active Lifestyles",
     },
     {
       icon: Star,

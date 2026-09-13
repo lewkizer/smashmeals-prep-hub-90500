@@ -32,7 +32,7 @@ const ComparisonPage = () => {
         "name": "How does SmashMeals compare to Good Batch Mama?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SmashMeals has been serving customers for 8+ years (established track record), offers 30-45g protein per meal (vs. variable protein), is 100% gluten-free (Good Batch Mama is not), and provides both local delivery and nationwide shipping. We're also trusted by ETSU Division I athletes."
+          "text": "SmashMeals has been serving customers for 8+ years (established track record), offers 30-45g protein per meal (vs. variable protein), is 100% gluten-free (Good Batch Mama is not), and provides both local delivery and nationwide shipping."
         }
       }
     ]
@@ -42,7 +42,7 @@ const ComparisonPage = () => {
     <>
       <Helmet>
         <title>Why SmashMeals Beats Factor75, Clean Eatz, FitPlus & Others | Meal Prep Comparison</title>
-        <meta name="description" content="Compare SmashMeals to Factor75, Clean Eatz, FitPlus Meals, and Good Batch Mama. Discover why our 100% gluten-free kitchen, local freshness, 8+ years experience, and ETSU partnership make us the #1 choice." />
+        <meta name="description" content="Compare SmashMeals to Factor75, Clean Eatz, FitPlus Meals, and Good Batch Mama. Discover why our 100% gluten-free kitchen, local freshness, and 8+ years of experience make us the #1 choice." />
         <meta name="keywords" content="smashmeals vs factor75, smashmeals vs clean eatz, meal prep comparison, best gluten free meal delivery, factor75 alternative, clean eatz alternative" />
         <link rel="canonical" href="https://smashmeals.com/comparison" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -151,7 +151,7 @@ const ComparisonPage = () => {
                     </tr>
                     <tr>
                       <td className="p-3">Trusted by Division I Athletes</td>
-                      <td className="text-center p-3"><Check className="w-6 h-6 text-primary mx-auto" /><span className="text-xs text-primary block">ETSU Official Partner</span></td>
+                      <td className="text-center p-3"><Check className="w-6 h-6 text-primary mx-auto" /><span className="text-xs text-primary block">Locally Trusted</span></td>
                       <td className="text-center p-3 text-muted-foreground">N/A</td>
                     </tr>
                   </tbody>
@@ -214,7 +214,7 @@ const ComparisonPage = () => {
               <div className="space-y-4">
                 <div className="border-l-4 border-primary pl-4">
                   <h4 className="font-bold mb-2">vs. FitPlus Meals</h4>
-                  <p className="text-sm text-muted-foreground"><strong>Advantage SmashMeals:</strong> 100% gluten-free (FitPlus is not), longer shelf life (5-7 days vs. 4-5 days), established Tri-Cities presence, trusted by ETSU athletes.</p>
+                  <p className="text-sm text-muted-foreground"><strong>Advantage SmashMeals:</strong> 100% gluten-free (FitPlus is not), longer shelf life (5-7 days vs. 4-5 days), and an established Tri-Cities presence.</p>
                 </div>
                 <div className="border-l-4 border-primary pl-4">
                   <h4 className="font-bold mb-2">vs. Good Batch Mama</h4>
@@ -269,12 +269,12 @@ const ComparisonPage = () => {
 
             <h3 className="text-2xl font-bold mt-8 mb-4">4. Trusted by Elite Athletes</h3>
             <p>
-              SmashMeals is the <strong>official meal prep partner for ETSU Division I athletics</strong>, serving:
+              SmashMeals prepares high-protein, macro-counted meals for athletes and active customers throughout the Tri-Cities, including:
             </p>
             <ul>
-              <li>ETSU Football Team</li>
-              <li>ETSU Men's Basketball</li>
-              <li>ETSU Women's Basketball</li>
+              <li>Football players</li>
+              <li>Basketball players</li>
+              <li>Strength and endurance athletes</li>
             </ul>
             <p>
               When college coaches and trainers trust SmashMeals to fuel their athletes' performance, you know we're delivering elite-level nutrition. Factor75, Clean Eatz, and others don't have this level of athletic endorsement.
@@ -339,7 +339,7 @@ const ComparisonPage = () => {
               Ready to Experience the SmashMeals Difference?
             </h2>
             <p className="text-xl mb-8">
-              100% gluten-free. Locally made. Trusted by ETSU athletes. 8+ years serving Tri-Cities.
+              100% gluten-free. Locally made. Built for active lifestyles. 8+ years serving Tri-Cities.
             </p>
             <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
               <Button variant="secondary" size="lg" className="text-lg">

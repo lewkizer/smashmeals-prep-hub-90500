@@ -23,10 +23,10 @@ const Athletes = () => {
       },
       {
         "@type": "Question",
-        "name": "Why do ETSU athletes use SmashMeals?",
+        "name": "Why do athletes use SmashMeals?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SmashMeals is the official meal prep partner for ETSU football and basketball teams. Athletes choose us for consistent macros, high protein content, gluten-free nutrition (reduces inflammation), and zero meal prep time."
+          "text": "Athletes choose SmashMeals for consistent macros, high protein content, gluten-free nutrition, and zero meal prep time."
         }
       },
       {
@@ -60,7 +60,7 @@ const Athletes = () => {
     <>
       <Helmet>
         <title>Gluten-Free Meal Prep for Athletes | 30-45g Protein | SmashMeals</title>
-        <meta name="description" content="Trusted by ETSU Division I athletes. 30-45g protein per meal, macro-counted, 100% gluten-free. Perfect for bodybuilding, CrossFit, powerlifting, and endurance sports." />
+        <meta name="description" content="30-45g protein per meal, macro-counted, and 100% gluten-free. Perfect for bodybuilding, CrossFit, powerlifting, and endurance sports." />
         <meta name="keywords" content="athlete meal prep, high protein gluten free, bodybuilding meal prep, CrossFit meals, powerlifting nutrition, athlete meal delivery, ETSU meal prep" />
         <link rel="canonical" href="https://smashmeals.com/athletes" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -77,13 +77,13 @@ const Athletes = () => {
             <div className="text-center space-y-6">
               <div className="flex items-center justify-center gap-2 text-primary">
                 <Dumbbell className="w-6 h-6" />
-                <span className="text-lg font-semibold">Trusted by ETSU Division I Athletes</span>
+                <span className="text-lg font-semibold">Built for Athletes</span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold font-playfair">
                 Fuel Your Performance with<br />High-Protein Gluten-Free Meals
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                30-45g protein per meal. Macro-counted precision. Zero meal prep time. The same meals that power ETSU football and basketball teams.
+                30-45g protein per meal. Macro-counted precision. Zero meal prep time. Performance-minded meals made locally.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
@@ -135,14 +135,14 @@ const Athletes = () => {
           <div className="container mx-auto max-w-4xl prose prose-lg">
             <h2 className="text-3xl md:text-4xl font-bold font-playfair mb-8">Athlete-Grade Nutrition Without the Meal Prep</h2>
             
-            <h3 className="text-2xl font-bold mt-8 mb-4">The ETSU Partnership: Proven Performance Nutrition</h3>
+            <h3 className="text-2xl font-bold mt-8 mb-4">Performance Nutrition Made Practical</h3>
             <p>
-              SmashMeals is the <strong>official meal prep partner for East Tennessee State University athletics</strong>, serving:
+              SmashMeals prepares convenient, macro-counted meals for athletes across the Tri-Cities, including:
             </p>
             <ul>
-              <li><strong>ETSU Football Team</strong> - Division I FCS athletes competing at the highest level</li>
-              <li><strong>ETSU Men's Basketball</strong> - Southern Conference competitors</li>
-              <li><strong>ETSU Women's Basketball</strong> - Elite Division I athletes</li>
+              <li><strong>Football players</strong> - High-protein meals for strength and recovery</li>
+              <li><strong>Basketball players</strong> - Balanced fuel for training and competition</li>
+              <li><strong>Endurance athletes</strong> - Consistent portions and clearly labeled macros</li>
             </ul>
             <p>
               When Division I coaches and trainers trust SmashMeals to fuel their athletes' performance, you know we're doing something right. These athletes require:
@@ -269,7 +269,7 @@ const Athletes = () => {
 
             <h4 className="text-xl font-semibold mt-6 mb-3">Team Sports (Basketball, Football, Soccer)</h4>
             <p>
-              The same nutrition powering ETSU athletes. Quick-digesting protein and carbs for practice recovery, plus convenient grab-and-go meals for travel.
+              Practical nutrition for active customers. Quick-digesting protein and carbs for practice recovery, plus convenient grab-and-go meals for travel.
             </p>
 
             <h3 className="text-2xl font-bold mt-8 mb-4">Time Savings = Better Training</h3>
@@ -305,8 +305,8 @@ const Athletes = () => {
 
             <h3 className="text-2xl font-bold mt-8 mb-4">Athlete Testimonials</h3>
             <div className="bg-muted p-6 rounded-lg my-8">
-              <p className="italic">"As an ETSU football player, nutrition is part of my job. SmashMeals makes it easy to hit my 200g protein target every day without thinking. The coaches trust it, and so do I."</p>
-              <p className="font-semibold mt-2">— Marcus J., ETSU Football</p>
+              <p className="italic">"Nutrition is part of my routine. SmashMeals makes it easy to hit my protein target every day without thinking."</p>
+              <p className="font-semibold mt-2">— Marcus J., Local Athlete</p>
             </div>
             <div className="bg-muted p-6 rounded-lg my-8">
               <p className="italic">"I'm a competitive powerlifter with celiac disease. Finding high-protein gluten-free meals was impossible until SmashMeals. 45g protein, zero cross-contamination risk, and it tastes amazing. PRs every month."</p>
@@ -348,7 +348,7 @@ const Athletes = () => {
               Train Like a Champion. Eat Like One Too.
             </h2>
             <p className="text-xl mb-8">
-              Trusted by ETSU Division I athletes. 30-45g protein per meal. Delivered fresh.
+              Built for athletes. 30-45g protein per meal. Delivered fresh.
             </p>
             <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
               <Button variant="secondary" size="lg" className="text-lg">

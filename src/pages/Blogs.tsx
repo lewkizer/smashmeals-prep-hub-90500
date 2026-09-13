@@ -18,6 +18,12 @@ interface BlogPost {
   author?: string;
 }
 
+const impliesOfficialEtsuRelationship = (post: Pick<BlogPost, 'title' | 'excerpt' | 'slug'>) => {
+  const text = `${post.title} ${post.excerpt} ${post.slug}`.toLowerCase();
+  return (text.includes('etsu') || text.includes('east tennessee state')) &&
+    (text.includes('official') || text.includes('partner'));
+};
+
 const Blogs = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
@@ -33,7 +39,7 @@ const Blogs = () => {
         setLoading(false);
         return;
       }
-      setPosts(data || []);
+      setPosts((data || []).filter(post => !impliesOfficialEtsuRelationship(post)));
       setLoading(false);
     };
     load();

@@ -28,7 +28,7 @@ const Louisville = () => {
     },
     {
       question: "What makes SmashMeals different from other meal prep services?",
-      answer: "We're a 100% gluten-free facility trusted by ETSU athletes for 8+ years. Our meals are chef-prepared, macro-counted, and delivered fresh—never frozen during shipping."
+      answer: "We're a 100% gluten-free facility with 8+ years of experience. Our meals are chef-prepared, macro-counted, and delivered fresh—never frozen during shipping."
     }
   ];
 
@@ -93,7 +93,7 @@ const Louisville = () => {
                 <Users className="w-12 h-12 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-3">8+ Years Serving Athletes</h3>
                 <p className="text-muted-foreground">
-                  Trusted by ETSU athletes and now available to Louisville residents. Professional-grade nutrition for your active lifestyle.
+                  Performance-minded nutrition now available to Louisville residents. Professional-grade meals for your active lifestyle.
                 </p>
               </Card>
 
@@ -168,7 +168,7 @@ const Louisville = () => {
 
               <h3 className="text-2xl font-bold font-playfair mt-8">Trusted by Athletes, Perfect for Everyone</h3>
               <p>
-                SmashMeals has been fueling ETSU athletes for over 8 years. Now Louisville residents can access the same professional-grade nutrition trusted by Division I performers. Whether you're an athlete, busy parent, or health-focused professional, our meals support your goals.
+                SmashMeals has been preparing high-protein, macro-counted meals for over 8 years. Louisville residents can now access the same performance-minded nutrition. Whether you're an athlete, busy parent, or health-focused professional, our meals support your goals.
               </p>
             </div>
           </div>

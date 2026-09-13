@@ -53,7 +53,7 @@ const SEOContent = () => {
       {/* Trust Signals - Enhanced */}
       <h3>Why Tri-Cities Trusts SmashMeals</h3>
       <p>
-        Trusted by East Tennessee State University (ETSU) Buccaneers athletes for performance nutrition. 
+        Trusted by athletes and active customers throughout the Tri-Cities for performance nutrition.
         8+ years serving the Tri-Cities community with excellence since 2017. 
         5-star verified catering reviews on ezCater. 
         100% gluten-free dedicated kitchen - safe for celiac disease. 
