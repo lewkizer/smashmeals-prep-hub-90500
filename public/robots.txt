@@ -13,5 +13,6 @@ Allow: /
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemaps
 Sitemap: https://smashmeals.com/sitemap.xml
+Sitemap: https://smashmeals.com/sitemap-support.xml
