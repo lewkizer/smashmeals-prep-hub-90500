@@ -1,14 +1,17 @@
 import { Helmet } from "react-helmet";
 
 const LocalBusinessSchema = () => {
-  // Main Restaurant/FoodEstablishment schema
+  // Core business entity. Keep review/aggregateRating markup off this site-wide
+  // schema: Google does not show self-serving LocalBusiness review stars, and
+  // duplicating rating entities across landing pages can trigger Review snippet
+  // errors such as "Review has multiple aggregate ratings".
   const restaurantSchema = {
     "@context": "https://schema.org",
     "@type": ["Restaurant", "FoodEstablishment", "MealDeliveryService"],
     "@id": "https://smashmeals.com/#restaurant",
     "name": "SmashMeals",
     "alternateName": "Smash Meals",
-    "description": "Tri-Cities' first and only 100% gluten-free meal prep kitchen. Chef-prepared, macro-counted, high-protein meals with local pickup in Kingsport, Johnson City, Bristol, and nationwide shipping.",
+    "description": "100% gluten-free meal prep kitchen. Chef-prepared, macro-counted, high-protein meals with local pickup and delivery in the Tri-Cities plus shipping to eligible destinations.",
     "slogan": "100% Gluten-Free Meal Prep",
     "url": "https://smashmeals.com",
     "logo": {
@@ -56,63 +59,9 @@ const LocalBusinessSchema = () => {
     },
     "paymentAccepted": ["Credit Card", "Debit Card", "Cash"],
     "currenciesAccepted": "USD",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": "500",
-      "reviewCount": "500"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Randy Johnson"
-        },
-        "datePublished": "2024-10-15",
-        "reviewBody": "Over the last 3 months, SmashMeals has been a huge part of my Fit by 51 journey. I'm down over 20 pounds, and for the first time in a long time, it feels sustainable.",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        }
-      },
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Amanda Smith"
-        },
-        "datePublished": "2024-11-20",
-        "reviewBody": "This has honestly been a life saver! On days when school lets out early, it takes the guess work out. I had lunch ready in 90 seconds.",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        }
-      },
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Becky Halbrook"
-        },
-        "datePublished": "2024-09-10",
-        "reviewBody": "We utilized Smash Meals for a football banquet, and the food was remarkable. Not a single barbecue sandwich remained. I highly recommend their catering services.",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        }
-      }
-    ],
     "founder": {
       "@type": "Person",
-      "name": "Lewis Kizer",
-      "jobTitle": "Owner & Pitmaster",
-      "description": "Passionate about providing healthy, convenient, 100% gluten-free meals to the Tri-Cities community since 2017."
+      "name": "Lewis Kizer"
     },
     "foundingDate": "2017",
     "knowsAbout": [
@@ -128,142 +77,55 @@ const LocalBusinessSchema = () => {
       "name": "SmashMeals Services",
       "itemListElement": [
         {
-          "@type": "OfferCatalog",
-          "name": "Weekly Meal Prep",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Breakfast Meals",
-                "description": "High-protein gluten-free breakfast options"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Entree Meals",
-                "description": "Chef-prepared lunch and dinner entrees"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Bariatric Meals",
-                "description": "Portion-controlled meals for bariatric patients"
-              }
-            }
-          ]
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Weekly Meal Prep",
+            "description": "Chef-prepared gluten-free meals available from the rotating weekly menu."
+          }
         },
         {
-          "@type": "OfferCatalog",
-          "name": "Catering Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Event Catering",
-                "description": "Full-service catering for events and gatherings"
-              }
-            }
-          ]
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Catering Services",
+            "description": "Catering for businesses, teams, meetings, churches and events."
+          }
         },
         {
-          "@type": "OfferCatalog",
-          "name": "Shipping",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "DeliveryService",
-                "name": "Nationwide Shipping",
-                "description": "Gluten-free meals shipped anywhere in the continental US"
-              }
-            }
-          ]
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "DeliveryService",
+            "name": "Meal Shipping",
+            "description": "Prepared meal shipping to eligible destinations."
+          }
         }
       ]
     },
     "areaServed": [
-      {
-        "@type": "City",
-        "name": "Kingsport",
-        "containedInPlace": { "@type": "State", "name": "Tennessee" }
-      },
-      {
-        "@type": "City",
-        "name": "Johnson City",
-        "containedInPlace": { "@type": "State", "name": "Tennessee" }
-      },
-      {
-        "@type": "City",
-        "name": "Bristol",
-        "containedInPlace": { "@type": "State", "name": "Tennessee" }
-      },
-      {
-        "@type": "City",
-        "name": "Greeneville",
-        "containedInPlace": { "@type": "State", "name": "Tennessee" }
-      },
-      {
-        "@type": "City",
-        "name": "Morristown",
-        "containedInPlace": { "@type": "State", "name": "Tennessee" }
-      },
-      {
-        "@type": "City",
-        "name": "Knoxville",
-        "containedInPlace": { "@type": "State", "name": "Tennessee" }
-      },
+      { "@type": "City", "name": "Kingsport", "containedInPlace": { "@type": "State", "name": "Tennessee" } },
+      { "@type": "City", "name": "Johnson City", "containedInPlace": { "@type": "State", "name": "Tennessee" } },
+      { "@type": "City", "name": "Bristol", "containedInPlace": { "@type": "State", "name": "Tennessee" } },
       { "@type": "Country", "name": "United States" }
     ],
-    "serviceArea": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": 36.5484,
-        "longitude": -82.5618
-      },
-      "geoRadius": "2500 mi"
-    },
-    "potentialAction": [
-      {
-        "@type": "OrderAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://smashmeals.bottle.com/b/9814360",
-          "inLanguage": "en-US",
-          "actionPlatform": [
-            "http://schema.org/DesktopWebPlatform",
-            "http://schema.org/MobileWebPlatform"
-          ]
-        },
-        "deliveryMethod": [
-          "http://schema.org/OnSitePickup",
-          "http://schema.org/DeliveryMethod"
+    "potentialAction": {
+      "@type": "OrderAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://smashmeals.bottle.com/b/9814360",
+        "inLanguage": "en-US",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
         ]
-      },
-      {
-        "@type": "ReserveAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://smashmeals.bottle.com/b/9730176",
-          "name": "Book Catering"
-        }
       }
-    ],
+    },
     "sameAs": [
       "https://www.facebook.com/smashmeals",
-      "https://www.instagram.com/smashmeals",
-      "https://maps.app.goo.gl/qqowjpLzbtk14G2ZA"
-    ],
-    "keywords": "gluten-free meal prep, meal prep delivery, healthy meals Kingsport, meal prep Tri-Cities, gluten-free catering, high-protein meals, bariatric meal prep, athlete meal prep"
+      "https://www.instagram.com/smashmeals"
+    ]
   };
 
-  // Website schema with search action
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -271,108 +133,25 @@ const LocalBusinessSchema = () => {
     "url": "https://smashmeals.com",
     "name": "SmashMeals",
     "description": "100% Gluten-Free Meal Prep Delivery",
-    "publisher": { "@id": "https://smashmeals.com/#restaurant" },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://smashmeals.com/menu?search={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
+    "publisher": { "@id": "https://smashmeals.com/#restaurant" }
   };
 
-  // Breadcrumb schema for homepage
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://smashmeals.com"
-      }
-    ]
-  };
-
-  // Service schema for meal prep
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "FoodService",
+    "@type": "Service",
     "@id": "https://smashmeals.com/#mealprep",
     "name": "SmashMeals Gluten-Free Meal Prep",
-    "description": "Weekly chef-prepared, macro-counted, 100% gluten-free meals with local pickup and nationwide shipping.",
+    "description": "Weekly chef-prepared, macro-counted, 100% gluten-free meals with local pickup, delivery and shipping to eligible destinations.",
     "provider": { "@id": "https://smashmeals.com/#restaurant" },
     "serviceType": "Meal Preparation and Delivery",
-    "areaServed": { "@type": "Country", "name": "United States" },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Meal Categories",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Breakfast Meals",
-            "description": "High-protein gluten-free breakfast options starting at $6"
-          },
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "price": "6.00",
-            "priceCurrency": "USD",
-            "minPrice": "6.00",
-            "maxPrice": "10.00"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Entree Meals",
-            "description": "Chef-prepared lunch and dinner entrees"
-          },
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "price": "9.00",
-            "priceCurrency": "USD",
-            "minPrice": "9.00",
-            "maxPrice": "15.00"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Bariatric Meals",
-            "description": "Portion-controlled high-protein meals for post-surgery recovery"
-          },
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "price": "6.00",
-            "priceCurrency": "USD",
-            "minPrice": "3.00",
-            "maxPrice": "8.00"
-          }
-        }
-      ]
-    }
+    "areaServed": { "@type": "Country", "name": "United States" }
   };
 
   return (
     <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(restaurantSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(websiteSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(breadcrumbSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(serviceSchema)}
-      </script>
+      <script type="application/ld+json">{JSON.stringify(restaurantSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
     </Helmet>
   );
 };
