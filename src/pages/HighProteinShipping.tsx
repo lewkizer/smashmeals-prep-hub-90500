@@ -12,7 +12,7 @@ const HighProteinShipping = () => {
   const internalLinks = [
     {
       title: "Charlotte Delivery",
-      description: "FedEx 2-day shipping to all Charlotte neighborhoods. Free on orders $130+.",
+      description: "FedEx shipping to all Charlotte neighborhoods. $30 flat-rate shipping.",
       path: "/charlotte"
     },
     {
@@ -80,10 +80,10 @@ const HighProteinShipping = () => {
       },
       {
         "@type": "Question",
-        "name": "Do you offer free shipping?",
+        "name": "How much does shipping cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! We offer free shipping on orders over $130. For smaller orders, shipping is calculated based on your location."
+          "text": "Shipping is a flat $30 via FedEx Ground to eligible addresses."
         }
       }
     ]
@@ -177,7 +177,7 @@ const HighProteinShipping = () => {
               <Card className="p-6 text-center">
                 <Truck className="w-12 h-12 text-primary mb-4 mx-auto" />
                 <h3 className="text-xl font-bold mb-2">FedEx 2-Day Delivery</h3>
-                <p className="text-muted-foreground">Fresh meals arrive cold and ready to enjoy. Free shipping over $130.</p>
+                <p className="text-muted-foreground">Fresh meals arrive cold and ready to enjoy. $30 flat-rate FedEx shipping.</p>
               </Card>
             </div>
           </div>
@@ -351,7 +351,7 @@ const HighProteinShipping = () => {
             </p>
             <ul>
               <li><strong>Meals:</strong> $10-14 per serving depending on the entrée</li>
-              <li><strong>Shipping:</strong> FREE on orders $130+ (calculated at checkout for smaller orders)</li>
+              <li><strong>Shipping:</strong> $30 flat-rate FedEx Ground</li>
               <li><strong>No subscriptions required:</strong> Order as much or as little as you need each week</li>
             </ul>
             <p>
