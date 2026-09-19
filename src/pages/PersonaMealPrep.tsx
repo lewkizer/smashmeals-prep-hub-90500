@@ -22,7 +22,7 @@ const PersonaMealPrep = () => {
     },
     {
       title: "Charlotte Delivery",
-      description: "FedEx shipping to all Charlotte neighborhoods. Free on orders $130+.",
+      description: "FedEx shipping to all Charlotte neighborhoods. $30 flat-rate shipping.",
       path: "/charlotte"
     },
     {
