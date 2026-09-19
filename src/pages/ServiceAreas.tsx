@@ -163,7 +163,7 @@ const ServiceAreas = () => {
                 We Deliver Fresh Meal Prep<br />Across the Southeast
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                SmashMeals serves 70+ cities with FREE delivery on orders over $130. Find your city below to learn more about delivery to your area.
+                SmashMeals serves 70+ cities with $30 flat-rate FedEx Ground shipping. Find your city below to learn more about shipping to your area.
               </p>
             </div>
           </div>
@@ -206,7 +206,7 @@ const ServiceAreas = () => {
               Ready to Order?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Choose your meals and we'll deliver fresh meal prep right to your door with FREE shipping on orders over $130.
+              Choose your meals and we'll ship fresh meal prep right to your door with $30 flat-rate FedEx Ground shipping.
             </p>
             <a href="https://smashmeals.bottle.com/b/9814360" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="text-lg">
@@ -228,7 +228,7 @@ const ServiceAreas = () => {
               <ul>
                 <li><strong>Order by Thursday:</strong> Browse our weekly menu and place your order online</li>
                 <li><strong>We Prepare Friday:</strong> Our chefs prepare your meals fresh with premium ingredients</li>
-                <li><strong>FREE Delivery:</strong> Orders over $130 ship free via FedEx with tracking</li>
+                <li><strong>$30 FedEx Shipping:</strong> Flat-rate FedEx Ground shipping with tracking</li>
                 <li><strong>Enjoy All Week:</strong> Meals stay fresh in your fridge for 7-10 days</li>
               </ul>
               <h3 className="font-playfair">Coverage Map</h3>
