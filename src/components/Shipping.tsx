@@ -84,7 +84,7 @@ const Shipping = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-accent font-bold">✓</span>
-                  <span>FREE shipping on orders $130+</span>
+                  <span>$30 flat-rate FedEx shipping</span>
                 </li>
               </ul>
               <p className="text-sm text-muted-foreground">Ships to 98+ cities across the Southeast and beyond</p>
