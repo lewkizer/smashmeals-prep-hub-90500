@@ -251,7 +251,7 @@ const KetoMeals = () => {
 
             <h3 className="text-2xl font-bold mt-8 mb-4">Local Delivery & Nationwide Shipping</h3>
             <p>
-              We deliver locally to Johnson City, Kingsport, Bristol, and the entire Tri-Cities area. Plus, we ship nationwide to 98+ cities via FedEx 2-day delivery. <strong>Free shipping on orders $130+.</strong>
+              We deliver locally to Johnson City, Kingsport, Bristol, and the entire Tri-Cities area. Plus, we ship nationwide to 98+ cities via FedEx 2-day delivery. <strong>FedEx shipping is $30 flat-rate.</strong>
             </p>
 
             <div className="text-center my-8">
