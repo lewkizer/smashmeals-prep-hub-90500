@@ -29,7 +29,7 @@ const Index = () => {
     },
     {
       question: "Do you ship gluten-free meals nationwide?",
-      answer: "Yes! We ship to 98+ cities across the Southeast and beyond using FedEx 2-day delivery. Free shipping on orders $130+. Your meals arrive Tuesday or Wednesday in insulated packaging with ice packs."
+      answer: "Yes! We ship to 98+ cities across the Southeast and beyond using FedEx 2-day delivery. Shipping is $30 flat-rate via FedEx Ground to eligible addresses. Your meals arrive in insulated packaging with ice packs."
     },
     {
       question: "Are your meals safe for celiac disease?",
